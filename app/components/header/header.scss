@@ -1,0 +1,217 @@
+.header {
+  display: block;
+  
+  @include screen('tablet-wide') {
+    border-bottom: 1px solid #e8e8e8;
+  }
+  
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    
+    &.container {
+      padding: 26px 20px 22px;
+      
+      @include screen('tablet-wide') {
+        padding: 21px 40px 36px;
+      }
+      
+      @include screen('phablet') {
+        padding: 12px 20px 18px;
+      }
+    }
+  }
+  
+  &__logo {
+    align-self: flex-start;
+    font-size: 0;
+    margin-left: -66px;
+    margin-top: 10px;
+    margin-right: 78px;
+    flex-shrink: 0;
+    
+    @include screen('desktop-wide') {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    @include screen('phablet') {
+      margin-top: 0;
+      align-self: center;
+    }
+    
+    img {
+      width: 132px;
+      
+      @include screen('tablet-wide') {
+        width: 200px;
+      }
+      
+      @include screen('phablet') {
+        width: 100px;
+      }
+    }
+  }
+  
+  &__search {
+    width: 508px;
+    height: 44px;
+    border: 2px solid #e4e2e2;
+    margin-left: auto;
+    padding: 0 16px 5px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    
+    @include screen('desktop') {
+      margin-left: 24px;
+      margin-right: 12px;
+    }
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
+    
+    &-button {
+      width: 15px;
+      height: 15px;
+      
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    
+    &-input {
+      width: calc(100% - 37px);
+      margin-left: 22px;
+      opacity: 0.6;
+      color: #1e1e1e;
+      font-family: $font-second;
+      font-size: 17px;
+      line-height: (18.72/17);
+      letter-spacing: .025em;
+    }
+  }
+  
+  &__discounts {
+    margin-left: 55px;
+    height: 36px;
+    padding: 0 24px;
+    background-image: linear-gradient(to right, #8f43ab 0%, #be3b30 100%);
+    color: #fffefe;
+    font-family: $font-second;
+    font-size: 18px;
+    line-height: 38px;
+    letter-spacing: .03em;
+    margin-right: auto;
+    flex-shrink: 0;
+    
+    @include screen('desktop') {
+      margin-left: 12px;
+      margin-right: 24px;
+    }
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
+  
+  &__select {
+    border: 2px solid #f6e177;
+    height: 35px;
+    color: #202020;
+    font-size: 18px;
+    line-height: 33px;
+    letter-spacing: .025em;
+    margin-right: 10px;
+    cursor: pointer;
+    min-width: 135px;
+    position: relative;
+    padding: 0 40px 0 12px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    
+    @include screen('desktop-wide') {
+      margin-right: 0;
+    }
+    
+    @include screen('tablet-wide') {
+      min-width: 196px;
+      height: 52px;
+      font-size: 26px;
+      line-height: 50px;
+      padding: 0 56px 0 18px;
+    }
+    
+    @include screen('phablet') {
+      min-width: 98px;
+      height: 26px;
+      font-size: 13px;
+      line-height: 21px;
+      padding: 0 28px 0 9px;
+    }
+    
+    &-arrow {
+      width: 10px;
+      height: 4px;
+      stroke: #000;
+      opacity: .6;
+      position: absolute;
+      right: 20px;
+      top: 3px;
+      bottom: 0;
+      margin: auto;
+      
+      @include screen('tablet-wide') {
+        right: 33px;
+        top: 6px;
+      }
+      
+      @include screen('phablet') {
+        right: 12px;
+        top: 0;
+      }
+    }
+  }
+  
+  &__line {
+    background-color: #6c7896;
+    height: 30px;
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
+  
+  &__menu {
+    width: 1330px;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    
+    &-link {
+      color: #ffffff;
+      //font-family: "PT Sans";
+      font-size: 16px;
+      line-height: (26/16);
+      letter-spacing: -0.03em;
+      
+      & + & {
+        margin-left: 40px;
+      }
+    }
+    
+    &-icon {
+      width: 10px;
+      height: 10px;
+      margin-right: 6px;
+      fill: #aeaeae;
+    }
+  }
+}

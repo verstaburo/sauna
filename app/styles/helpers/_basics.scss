@@ -86,6 +86,10 @@ span {
 a {
   text-decoration: none;
   cursor: pointer;
+  
+  &:hover {
+    opacity: .85;
+  }
 }
 
 /* ##########
@@ -93,7 +97,7 @@ a {
 ########## */
 
 a, input, button, select, textarea {
-  transition: color $ease-main, border-color $ease-main;
+  transition: all $ease-main;
 }
 
 button { cursor: pointer; }
