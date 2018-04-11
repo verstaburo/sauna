@@ -3,8 +3,9 @@
 // ##########
 // Базовые настройки сетки сайта
 // ##########
-$container-width: 1220px; // Максимальная ширина контейнера контента
-$container-padding: 20px; // Отступы слева и справа у контейнера
+$container-width: 1240px; // Максимальная ширина контейнера контента
+$container-padding: 30px; // Отступы слева и справа у контейнера
+$container-padding-mobile: 20px; // Отступы слева и справа у контейнера
 $grid-container-width: 100%; // Ширина контейнера сетки
 $grid-cols: 12; // Количество колонок в сетке
 $grid-gap: 20px; // Расстояние между колонками
@@ -26,6 +27,8 @@ $color-placeholder: #777; // Основной цвет для placeholder
 $color-input: black; // Основной цвет input, select и textarea
 $color-main: #2252d8; // Основной фирменный цвет
 $color-border: #ccc; // Основной цвет границ таблиц, секций
+
+$color-yellow: #f6e177;
 
 // ##########
 // Transitions

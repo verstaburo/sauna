@@ -1,0 +1,121 @@
+.tags {
+  display: block;
+  background-image: linear-gradient(to top, #6c7896 0%, #7d8cb2 100%);
+  font-family: $font-second;
+  padding: 27px 0 24px;
+  
+  @include screen('tablet-wide') {
+    padding: 18px 0 24px;
+  }
+  
+  &__container {
+    position: relative;
+    
+    &.container {
+      @include screen('desktop-large') {
+        padding: 0 120px;
+      }
+      
+      @include screen('tablet-wide') {
+        padding: 0 30px;
+      }
+      
+      @include screen('phablet') {
+        padding: 0 20px;
+      }
+    }
+  }
+  
+  &__desc {
+    display: none;
+    color: #fffefe;
+    font-style: italic;
+    font-size: 32px;
+    line-height: (43.75/32);
+    letter-spacing: .02em;
+    font-weight: 500;
+    
+    @include screen('tablet-wide') {
+      display: block;
+    }
+    
+    @include screen('phablet') {
+      font-size: 18px;
+    }
+  }
+  
+  &__side-button {
+    position: absolute;
+    top: 4px;
+    right: -76px;
+    padding: 0 9px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: .02em;
+    border-radius: 5px;
+    border: 1px solid #aed8fb;
+    
+    @include screen('desktop-large') {
+      right: 30px;
+    }
+    
+    @include screen('tablet-wide') {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: (43.75/28);
+      text-decoration: underline;
+      top: -2px;
+      border: 0;
+    }
+    
+    @include screen('phablet') {
+      font-size: 18px;
+    }
+  }
+  
+  &__list {
+    text-align: center;
+    
+    @include screen('tablet-wide') {
+      text-align: left;
+      margin: 4px -6px;
+    }
+    
+    @include screen('phablet') {
+      margin: 4px -4px;
+    }
+  }
+  
+  &__list-item {
+    margin: 4px;
+    display: inline-block;
+    color: #538be0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 40px;
+    border-radius: 5px;
+    padding: 0 8px;
+    background-color: #ffffff;
+    
+    @include screen('tablet-wide') {
+      color: #000000;
+      font-size: 28px;
+      line-height: 100px;
+      padding: 0 31px;
+      margin: 7px 6px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 16px;
+      line-height: 40px;
+      padding: 0 10px;
+      margin: 4px;
+    }
+    
+    &_active {
+      background-color: #78a2e1;
+      color: #fff;
+    }
+  }
+}

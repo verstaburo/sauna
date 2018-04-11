@@ -104,8 +104,9 @@ $breakpoints: (
   'tablet-small': 640px,
   'tablet': 760px,
   'tablet-wide': 1020px,
-  'desktop': 1248px,
-  'desktop-wide': 1400px
+  'desktop': 1240px,
+  'desktop-wide': 1400px,
+  'desktop-large': 1590px
 );
 
 @mixin screen($width, $type: max) {

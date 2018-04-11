@@ -18,6 +18,11 @@
   margin: 0 auto;
   max-width: 100%;
   box-sizing: border-box;
+  
+  @include screen('phablet') {
+    padding-left: $container-padding-mobile;
+    padding-right: $container-padding-mobile;
+  }
 }
 
 .js-sr {

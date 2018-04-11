@@ -1,0 +1,27 @@
+mixin filter()
+  +b.filter&attributes(attributes)
+    +e.IMG(src='assets/images/wave.svg').bg
+    +e.container.container
+      +e.P.heading Фильтр поиска:
+      +e.list
+        +e.list-item
+          +e.list-icon
+            img(src='assets/images/filter1.png')
+          +e.P.list-text Тип отдыха
+          +e.P.list-text._mobile Тип отдыха
+          +e.P.list-select Любой
+            +icon('arrow_down').list-select-icon
+        +e.list-item
+          +e.list-icon._cover
+            img(src='assets/images/filter2.jpg')
+          +e.P.list-text Расположение: карта, метро, районы
+          +e.P.list-text._mobile Расположение
+          +e.P.list-select Любое
+            +icon('arrow_down').list-select-icon
+        +e.list-item
+          +e.list-icon
+            img(src='assets/images/filter3.jpg')
+          +e.P.list-text Стоимость, тип парной и другое
+          +e.P.list-text._mobile Дополнительно
+          +e.P.list-select Ничего не выбрано
+            +icon('arrow_down').list-select-icon
