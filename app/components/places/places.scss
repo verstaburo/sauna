@@ -60,6 +60,7 @@
     display: inline-block;
     width: 25%;
     padding: 0 10px;
+    box-sizing: border-box;
     
     @include screen('tablet-wide') {
       width: 600px;

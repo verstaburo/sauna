@@ -1,0 +1,142 @@
+.typecard {
+  display: block;
+  font-family: $font-second;
+  position: relative;
+  cursor: pointer;
+  
+  &:before, &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 20px;
+    border-radius: 5px;
+  }
+  
+  &:before {
+    background-color: $color-yellow;
+    bottom: -6px;
+    left: 16px;
+    right: 16px;
+    z-index: 2;
+    
+    @include screen('tablet-wide') {
+      bottom: -8px;
+      left: 23px;
+      right: 23px;
+    }
+    
+    @include screen('phablet') {
+      bottom: -6px;
+      left: 16px;
+      right: 16px;
+    }
+  }
+  
+  &:after {
+    background-color: $color-lightred;
+    bottom: -3px;
+    left: 10px;
+    right: 10px;
+    z-index: 3;
+    
+    @include screen('tablet-wide') {
+      bottom: -4px;
+      left: 15px;
+      right: 15px;
+    }
+    
+    @include screen('phablet') {
+      bottom: -3px;
+      left: 10px;
+      right: 10px;
+    }
+  }
+  
+  &__content {
+    position: relative;
+    z-index: 4;
+    padding: 23px 4px 15px;
+    border-radius: 5px;
+    border: 1px solid #acacac;
+    background: #ffffff;
+    
+    @include screen('tablet-wide') {
+      padding: 35px 8px 21px;
+    }
+    
+    @include screen('phablet') {
+      padding: 23px 4px 15px;
+    }
+  }
+  
+  &__img {
+    text-align: center;
+    height: 75px;
+    
+    @include screen('tablet-wide') {
+      height: 100px;
+    }
+    
+    @include screen('phablet') {
+      height: 75px;
+    }
+    
+    img {
+      width: 75px;
+      max-width: 90%;
+      max-height: 100%;
+      
+      @include screen('tablet-wide') {
+        width: 105px;
+      }
+      
+      @include screen('phablet') {
+        width: 75px;
+      }
+    }
+  }
+  
+  &__name {
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: -.01em;
+    margin-top: 16px;
+    
+    @include screen('tablet-wide') {
+      font-size: 26px;
+      margin-top: 28px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 16px;
+      margin-top: 16px;
+    }
+  }
+  
+  &__desc {
+    color: #979696;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 7px;
+    
+    @include screen('tablet-wide') {
+      font-size: 23px;
+      margin-top: 11px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 14px;
+      margin-top: 7px;
+    }
+  }
+  
+  &_active {
+    .typecard__content {
+      background: linear-gradient(to top, #fed059 0%, #f6e177 100%);
+    }
+    .typecard__desc {
+      color: #000;
+    }
+  }
+}

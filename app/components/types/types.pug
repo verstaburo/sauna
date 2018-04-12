@@ -1,0 +1,20 @@
+mixin types()
+  +b.types&attributes(attributes)
+    .container
+      +e.H2.heading По типу парной
+    +e.content
+      +e.bg
+      .container
+        +e.cards
+          +e.card-wrapper
+            +typecard('type4.svg', 'Финская сауна')
+          +e.card-wrapper
+            +typecard('type16.svg', 'Турецкий хамам')
+          +e.card-wrapper
+            +typecard('type7.svg', 'Японская баня')
+          +e.card-wrapper
+            +typecard('type14.svg', 'Инфракрасная')
+          +e.card-wrapper
+            +typecard('type1.svg', 'Баня на дровах')
+          +e.card-wrapper
+            +typecard('type6.svg', 'Русская баня')._active
