@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Versta Project Template</title>
+    <title>Main</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link href="favicon.ico" rel="shortcut icon">
@@ -14,24 +14,30 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="header__container container"><a class="header__logo" href="/"><img src="assets/images/vs_logo.svg"/></a>
-            <form class="header__search"><button class="header__search-button"><img src="assets/images/search.png"/></button><input class="header__search-input" placeholder="Название сауны, тип парной или адрес  г. Москва" type="text" /></form><a class="header__discounts" href="#">Акции и скидки</a>
-            <div
-                class="header__select">Москва<svg class="header__select-arrow"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></div>
+    <div class="index">
+        <div class="header">
+            <div class="container"><a class="header__logo" href="/"><img src="assets/images/vs_logo.svg"/></a>
+                <form class="header__search"><button class="header__search-button"><img src="assets/images/search.png"/></button><input class="header__search-input" placeholder="Название сауны, тип парной или адрес  г. Москва" type="text" /></form><a class="header__discounts" href="#">Акции и скидки</a>
+                <div
+                    class="header__select">Москва<svg class="header__select-arrow"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></div>
+        </div>
+        <div class="header__line">
+            <div class="header__menu"><a class="header__menu-link" href="#">карта сайта</a><a class="header__menu-link" href="#"><svg class="header__menu-icon"><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg>Добавить заведение</a></div>
+        </div>
     </div>
-    <div class="header__line">
-        <div class="header__menu"><a class="header__menu-link" href="#">карта сайта</a><a class="header__menu-link" href="#"><svg class="header__menu-icon"><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg>Добавить заведение</a></div>
-    </div>
-    </div>
-    <div class="headblock"><img class="headblock__side-img headblock__side-img_left" src="assets/images/celebrate1.jpg" alt="" role="presentation" /><img class="headblock__side-img headblock__side-img_right" src="assets/images/celebrate2.png" alt="" role="presentation" />
-        <div
-            class="headblock__container container">
-            <h1 class="headblock__heading">Бани и сауны в Москве</h1>
-            <p class="headblock__subheading">572 заведения</p>
-            <p class="headblock__other">Города рядом:<a class="headblock__other-link" href="#">Люберцы</a><a class="headblock__other-link" href="#">Балашиха </a><a class="headblock__other-link" href="#">Одинцово</a><a class="headblock__other-link" href="#">Красногорск</a><a class="headblock__other-link"
-                    href="#">Мытищи</a><a class="headblock__other-link" href="#">Зеленоград </a></p>
-    </div>
+    <div data-slot-id="indexHeadblock" data-slot-res="xl">
+        <div data-target-slot="indexHeadblock">
+            <div class="headblock"><img class="headblock__side-img headblock__side-img_left" src="assets/images/celebrate1.jpg" alt="" role="presentation" /><img class="headblock__side-img headblock__side-img_right" src="assets/images/celebrate2.png" alt="" role="presentation"
+                />
+                <div class="headblock__container container">
+                    <h1 class="headblock__heading">Бани и сауны в Москве</h1>
+                    <p class="headblock__subheading">572 заведения</p>
+                    <p class="headblock__other">Города рядом:<a class="headblock__other-link" href="#">Люберцы</a><a class="headblock__other-link" href="#">Балашиха </a><a class="headblock__other-link" href="#">Одинцово</a><a class="headblock__other-link" href="#">Красногорск</a>
+                        <a
+                            class="headblock__other-link" href="#">Мытищи</a><a class="headblock__other-link" href="#">Зеленоград </a></p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="filter"><img class="filter__bg" src="assets/images/wave.svg" alt="" role="presentation" />
         <div class="filter__container container">
@@ -68,6 +74,109 @@
                         class="tags__list-item" href="#">Сауны с отзывами</a><a class="tags__list-item" href="#">Недорогие сауны с бассейном</a><a class="tags__list-item" href="#">С банщиком и вениками</a><a class="tags__list-item" href="#">Элитные VIP сауны</a><a class="tags__list-item"
                             href="#">Бани на дровах</a><a class="tags__list-item" href="#">Сауна с бильярдом</a><a class="tags__list-item" href="#">День рождения в сауне</a></div>
         </div>
+    </div>
+    <div data-slot-id="indexHeadblock" data-slot-res="md"></div>
+    <div class="places">
+        <div class="container">
+            <h2 class="places__heading"> Какие-то заведения</h2>
+        </div>
+        <div class="places__tabs">
+            <div class="container">
+                <ul class="tabs">
+                    <li class="tabs__tab" data-tab-target="tab1">Любые</li>
+                    <li class="tabs__tab active" data-tab-target="tab2">Сауны</li>
+                    <li class="tabs__tab" data-tab-target="tab3">Частные бани</li>
+                    <li class="tabs__tab" data-tab-target="tab4">Общественные бани</li>
+                    <li class="tabs__tab" data-tab-target="tab5">Спа-центы</li>
+                </ul>
+                <div class="tabs-content">
+                    <div class="tabs-content__wrapper active" data-tab="tab1" data-tab-group="places">
+                        <div class="places__cards">
+                            <div class="infocard places__card">
+                                <div class="infocard__img"><img src="assets/images/place1.jpg" />
+                                    <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
+                                </div>
+                                <div class="infocard__content">
+                                    <div class="infocard__rating">
+                                        <div class="rating">
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                        </div><a class="infocard__reviews" href="#">15 отзывов</a></div>
+                                    <div class="infocard__name">САУНА ПРИ ОТЕЛЕ</div>
+                                    <div class="infocard__location">Чикаго Голд</div>
+                                    <div class="infocard__price">1000 - 1200 руб.</div>
+                                    <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
+                                </div>
+                            </div>
+                            <div class="infocard places__card">
+                                <div class="infocard__img"><img src="assets/images/place2.jpg" />
+                                    <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
+                                </div>
+                                <div class="infocard__content">
+                                    <div class="infocard__rating">
+                                        <div class="rating">
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                        </div><a class="infocard__reviews" href="#">15 отзывов</a></div>
+                                    <div class="infocard__name">КОТЕДЖ</div>
+                                    <div class="infocard__location">Избушка у реки</div>
+                                    <div class="infocard__price">1000 - 1200 руб.</div>
+                                    <div class="infocard__desc">7 отдельных котеджей</div>
+                                    <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
+                                </div>
+                            </div>
+                            <div class="infocard places__card">
+                                <div class="infocard__img"><img src="assets/images/place3.jpg" />
+                                    <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
+                                </div>
+                                <div class="infocard__content">
+                                    <div class="infocard__rating">
+                                        <div class="rating">
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                        </div>
+                                    </div>
+                                    <div class="infocard__name">САУНА</div>
+                                    <div class="infocard__location">Заречье</div>
+                                    <div class="infocard__price">1000 - 1200 руб.</div>
+                                    <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
+                                </div>
+                            </div>
+                            <div class="infocard places__card">
+                                <div class="infocard__img"><img src="assets/images/place4.jpg" />
+                                    <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
+                                </div>
+                                <div class="infocard__content">
+                                    <div class="infocard__rating">
+                                        <div class="rating">
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                            <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                        </div><a class="infocard__reviews" href="#">15 отзывов</a></div>
+                                    <div class="infocard__name">ОБЩЕСТВЕННАЯ БАНЯ</div>
+                                    <div class="infocard__location">Краснопресненские бани</div>
+                                    <div class="infocard__price">1000 - 1200 руб.</div>
+                                    <div class="infocard__desc">7 отдельных залов</div>
+                                    <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <script src="assets/scripts/app.min.js"></script>
     <script src="assets/scripts/main.js"></script>
