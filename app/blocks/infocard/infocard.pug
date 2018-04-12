@@ -1,0 +1,20 @@
+mixin infocard(img, reviews, name, location, desc)
+  +b.infocard&attributes(attributes)
+    +e.img
+      img(src='assets/images/'+img)
+      +e.img-hover
+        img(src='assets/images/metro.png')
+        | Новослободская
+    +e.content
+      +e.rating
+        +rating(3)
+        if reviews
+          +e.A(href='#').reviews 15 отзывов
+      +e.name= name
+      +e.location= location
+      +e.price 1000 - 1200 руб.
+      if desc
+        +e.desc= desc
+      +e.address
+        img(src='assets/images/pin.png')
+        | ул. Ленина 16/2

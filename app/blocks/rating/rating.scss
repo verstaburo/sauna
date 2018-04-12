@@ -3,28 +3,27 @@
   font-size: 0;
   display: inline-flex;
   flex-flow: row-reverse;
-  margin-left: -4px;
 
   &__box {
-    margin-left: 4px;
+    margin-right: 2px;
     #{$b}_interactive & { cursor: pointer; }
   }
 
   &__control { display: none; }
 
   &__icon {
-    stroke: $color-border;
-    fill: transparent;
+    stroke: #dbdbdb;
+    fill: #dbdbdb;
     transition: fill $ease-main, stroke $ease-main;
-    width: 24px;
-    height: 22px;
+    width: 22px;
+    height: 19px;
 
     #{$b}_interactive #{$b}__box:hover &,
     #{$b}_interactive #{$b}__box:hover ~ #{$b}__box &,
     #{$b}__box.is-active &,
     #{$b}__box.is-active ~ #{$b}__box & {
-      fill: $color-main;
-      stroke: $color-main;
+      fill: #fed059;
+      stroke: #fed059;
     }
   }
 }

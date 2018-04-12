@@ -1,0 +1,98 @@
+.places {
+  display: block;
+  background-color: #f8f8f8;
+  padding: 48px 0 0;
+  
+  @include screen('tablet-wide') {
+    background-color: #fff;
+    padding: 0;
+  }
+  
+  &__heading {
+    @include heading-2;
+    text-align: center;
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
+  
+  &__tabs {
+    margin-top: 23px;
+    border-top: 1px solid #ebebeb;
+    background-color: #fff;
+    
+    @include screen('tablet-wide') {
+      margin-top: 0;
+      border: 0;
+      overflow: hidden;
+    }
+  }
+  
+  .tabs {
+    padding-left: 53px;
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
+  
+  &__cards {
+    padding-top: 2px;
+    padding-bottom: 26px;
+    margin: 0 -10px;
+    display: flex;
+    
+    @include screen('tablet-wide') {
+      padding-top: 0;
+      margin: 0 -30px;
+      overflow-x: auto;
+      margin-bottom: -20px;
+      padding-bottom: 20px;
+    }
+    
+    @include screen('phablet') {
+      margin: 0 -20px;
+    }
+  }
+  
+  &__card {
+    display: inline-block;
+    width: 25%;
+    padding: 0 10px;
+    
+    @include screen('tablet-wide') {
+      width: 600px;
+      padding: 0 24px;
+      flex: none;
+    }
+    
+    @include screen('tablet') {
+      width: 78%;
+    }
+    
+    @include screen('phablet') {
+      padding: 0 12px;
+    }
+    
+    &:first-child {
+      @include screen('tablet-wide') {
+        padding-left: 30px;
+      }
+      
+      @include screen('phablet') {
+        padding-left: 20px;
+      }
+    }
+    
+    &:last-child {
+      @include screen('tablet-wide') {
+        padding-right: 30px;
+      }
+      
+      @include screen('phablet') {
+        padding-right: 20px;
+      }
+    }
+  }
+}

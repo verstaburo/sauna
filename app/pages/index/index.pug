@@ -1,10 +1,14 @@
 extends ../../layouts/default
 
 block head
-  - var pageTitle = 'Versta Project Template'
+  - var pageTitle = 'Main'
 
 block content
-  +header()
-  +headblock()
-  +filter()
-  +tags()
+  +b.index
+    +header()
+    +put-block-into-slot('indexHeadblock', 'xl')
+      +headblock()
+    +filter()
+    +tags()
+    +put-block-into-slot('indexHeadblock', 'md')
+    +places()

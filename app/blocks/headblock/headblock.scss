@@ -5,6 +5,10 @@
   text-align: center;
   border-bottom: 1px solid #ebebeb;
   
+  @include screen('tablet-wide') {
+    border-bottom: 0;
+  }
+  
   &__side-img {
     position: absolute;
     max-width: 117px;

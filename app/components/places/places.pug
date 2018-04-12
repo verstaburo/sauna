@@ -1,0 +1,21 @@
+mixin places()
+  +b.places&attributes(attributes)
+    .container
+      +e.H2.heading  Какие-то заведения
+    +e.tabs
+      .container
+        +tabs()
+          +tab()(data-tab-target="tab1") Любые
+          +tab()(data-tab-target="tab2").active Сауны
+          +tab()(data-tab-target="tab3") Частные бани
+          +tab()(data-tab-target="tab4") Общественные бани
+          +tab()(data-tab-target="tab5") Спа-центы
+        +tabs-content
+          +tab-wrapper()(data-tab="tab1" data-tab-group="places").active
+            +e.cards
+              +infocard('place1.jpg', true, 'САУНА ПРИ ОТЕЛЕ', 'Чикаго Голд').places__card
+              +infocard('place2.jpg', true, 'КОТЕДЖ', 'Избушка у реки', '7 отдельных котеджей').places__card
+              +infocard('place3.jpg', false, 'САУНА', 'Заречье').places__card
+              +infocard('place4.jpg', true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Краснопресненские бани', '7 отдельных залов').places__card
+              
+    
