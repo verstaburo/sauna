@@ -1,0 +1,33 @@
+.random {
+  display: block;
+  
+  &__heading {
+    @include heading-2;
+    text-align: center;
+  }
+  
+  &__refresh {
+    margin-left: 20px;
+    
+    img {
+      vertical-align: bottom;
+      margin-right: 10px;
+    }
+    
+    span {
+      color: #787777;
+      font-size: 22px;
+      line-height: 26px;
+      letter-spacing: 0.44px;
+      border-bottom: 1px dashed #787777;
+    }
+  }
+  
+  &__cards {
+    display: flex;
+  }
+  
+  &__card {
+    width: 33.3333%;
+  }
+}

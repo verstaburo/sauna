@@ -1,0 +1,140 @@
+.infocard {
+  display: block;
+  
+  &__img {
+    position: relative;
+    padding-top: 67.8%;
+    overflow: hidden;
+    
+    @include screen('tablet-wide') {
+      padding-top: 69.7%;
+    }
+    
+    > img {
+      @include fill-img;
+    }
+    
+    &-hover {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: rgba(#000, .3);
+      color: rgba(#fff, .9);
+      font-size: 16px;
+      text-align: center;
+      padding: 4px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all $ease-main;
+      
+      @include screen('tablet-wide') {
+        font-size: 27px;
+        font-weight: 500;
+        padding: 7px;
+      }
+      
+      @include screen('phablet') {
+        font-size: 16px;
+        font-weight: 400;
+        padding: 4px;
+      }
+      
+      img {
+        margin-right: 8px;
+        width: 17px;
+        
+        @include screen('tablet-wide') {
+          margin-right: 15px;
+          width: 29px;
+        }
+        
+        @include screen('phablet') {
+          margin-right: 8px;
+          width: 17px;
+        }
+      }
+    }
+    
+    &:hover {
+      .infocard__img-hover {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+  
+  &__content {
+    margin-top: 15px;
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
+  
+  .rating {
+    margin-right: 8px;
+  }
+  
+  &__reviews {
+    display: inline-block;
+    vertical-align: top;
+    color: #030303;
+    font-family: $font-second;
+    font-size: 16px;
+    line-height: 1.1;
+    border-bottom: 1px solid #a0a0a0;
+    letter-spacing: .05em;
+    
+    &:hover {
+      opacity: 1;
+      color: #8e8d8d;
+    }
+  }
+  
+  &__name {
+    margin-top: 5px;
+    color: $color-darkred;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .01em;
+  }
+  
+  &__location {
+    margin-top: 6px;
+    color: $color-lightblue;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+  
+  &__price {
+    margin-top: 4px;
+    color: #595959;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+  
+  &__desc {
+    color: #595959;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: .02em;
+    margin-top: 6px;
+    padding-left: 5px;
+  }
+  
+  &__address {
+    margin-top: 6px;
+    opacity: 0.9;
+    color: #595959;
+    font-size: 16px;
+    font-weight: 500;
+    
+    img {
+      margin-right: 7px;
+    }
+  }
+}

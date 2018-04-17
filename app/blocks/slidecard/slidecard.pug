@@ -1,0 +1,18 @@
+mixin slidecard(img, name, location, desc)
+  +b.slidecard&attributes(attributes)
+    +e.img
+      +slider()
+        +slide()
+          img(src='assets/images/' + img)
+        +slide()
+          img(src='assets/images/' + img)
+        +slide()
+          img(src='assets/images/' + img)      
+    +e.content
+      +e.name= name
+      +e.location= location
+      +e.desc
+        - for (var i = 0; i < desc.length; i++)
+          | #{desc[i]}
+          if (i < desc.length - 1)
+            br
