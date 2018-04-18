@@ -1,0 +1,132 @@
+.offers {
+  display: block;
+  text-align: center;
+  padding: 63px 0 0;
+  
+  @include screen('tablet-wide') {
+    padding: 46px 0 0;
+  }
+  
+  &__heading {
+    @include heading-2;
+    
+    @include screen('tablet-wide') {
+      text-align: left;
+    }
+  }
+  
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 52px;
+    
+    @include screen('tablet-wide') {
+      margin-top: 12px;
+    }
+  }
+  
+  &__card {
+    background-color: #000;
+    width: 16.6666%;
+    padding: 24px 24px 74px;
+    box-sizing: border-box;
+    
+    @include screen('desktop-wide') {
+      width: 33.3333%;
+    }
+    
+    @include screen('tablet-wide') {
+      padding: 25px 20px 76px;
+    }
+    
+    @include screen('phablet') {
+      padding: 18px 12px 36px;
+      width: 50%;
+    }
+    
+    &_wide {
+      width: 33.3333%;
+      
+      @include screen('phablet') {
+        width: 50%;
+      }
+    }
+    
+    &:nth-child(6) {
+      display: none;
+      
+      @include screen('desktop-wide') {
+        display: block;
+      }
+    }
+    
+    &_pink {
+      background-image: linear-gradient(30deg, #f387b8 0%, #f4a2c7 100%);
+    }
+    
+    &_blue {
+      background-image: linear-gradient(77deg, #308aca 0%, #97bed8 100%);
+    }
+    
+    &_green {
+      background-image: linear-gradient(30deg, #b4c850 0%, #2a4a16 100%);
+    }
+    
+    &_black {
+      background-image: linear-gradient(45deg, #120c06 0%, #303a45 100%);
+    }
+    
+    &_blue-red-yellow {
+      background-image: linear-gradient(45deg, #363496 0%, #fc0d1b 50%, #eae635 100%);
+    }
+  }
+  
+  &__title {
+    color: #fffefe;
+    font-size: 24px;
+    font-weight: 500;
+    
+    @include screen('tablet-wide') {
+      font-size: 25px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 18px;
+    }
+  }
+  
+  &__img {
+    margin-top: 37px;
+    height: 137px;
+    
+    @include screen('tablet-wide') {
+      margin-top: 42px;
+    }
+    
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  
+  &__desc {    
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 39px;
+    
+    @include screen('tablet-wide') {
+      font-size: 22px;
+      margin-top: 43px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 16px;
+      margin-top: 22px;
+    }
+    
+    a {
+      color: #fffefe;
+      border-bottom: 1px solid #fffefe;
+    }
+  }
+}

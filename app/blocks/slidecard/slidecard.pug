@@ -1,7 +1,7 @@
 mixin slidecard(img, name, location, desc)
   +b.slidecard&attributes(attributes)
     +e.img
-      +slider()
+      +slider(false, true)
         +slide()
           img(src='assets/images/' + img)
         +slide()

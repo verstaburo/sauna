@@ -1,7 +1,7 @@
 .types {
   display: block;
   text-align: center;
-  padding: 24px 0 0;
+  padding: 28px 0 0;
   
   @include screen('tablet-wide') {
     padding: 77px 0 0;
@@ -61,7 +61,7 @@
   &__card-wrapper {
     display: inline-block;
     width: 16.6666%;
-    padding: 25px 26px;
+    padding: 25px 26px 26px;
     box-sizing: border-box;
     
     @include screen('desktop') {

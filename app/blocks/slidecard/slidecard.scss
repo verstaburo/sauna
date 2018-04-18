@@ -1,140 +1,78 @@
-.infocard {
+.slidecard {
   display: block;
   
-  &__img {
+  .slider__slide {
     position: relative;
-    padding-top: 67.8%;
+    padding-top: 68.42%;
     overflow: hidden;
-    
-    @include screen('tablet-wide') {
-      padding-top: 69.7%;
-    }
     
     > img {
       @include fill-img;
     }
     
-    &-hover {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      box-sizing: border-box;
-      background-color: rgba(#000, .3);
-      color: rgba(#fff, .9);
-      font-size: 16px;
-      text-align: center;
-      padding: 4px;
-      opacity: 0;
-      pointer-events: none;
-      transition: all $ease-main;
-      
-      @include screen('tablet-wide') {
-        font-size: 27px;
-        font-weight: 500;
-        padding: 7px;
-      }
-      
-      @include screen('phablet') {
-        font-size: 16px;
-        font-weight: 400;
-        padding: 4px;
-      }
-      
-      img {
-        margin-right: 8px;
-        width: 17px;
-        
-        @include screen('tablet-wide') {
-          margin-right: 15px;
-          width: 29px;
-        }
-        
-        @include screen('phablet') {
-          margin-right: 8px;
-          width: 17px;
-        }
-      }
-    }
-    
-    &:hover {
-      .infocard__img-hover {
-        opacity: 1;
-        pointer-events: all;
-      }
+    @include screen('tablet-wide') {
+      padding-top: 68%;
     }
   }
   
   &__content {
-    margin-top: 15px;
+    margin-top: 21px;
+    padding-left: 6px;
+    
+    @include screen('tablet-wide') {
+      margin-top: 15px;
+    }
+  }
+  
+  &__name {
+    color: $color-darkred;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .01em;
     
     @include screen('tablet-wide') {
       display: none;
     }
   }
   
-  .rating {
-    margin-right: 8px;
-  }
-  
-  &__reviews {
-    display: inline-block;
-    vertical-align: top;
-    color: #030303;
-    font-family: $font-second;
-    font-size: 16px;
-    line-height: 1.1;
-    border-bottom: 1px solid #a0a0a0;
-    letter-spacing: .05em;
-    
-    &:hover {
-      opacity: 1;
-      color: #8e8d8d;
-    }
-  }
-  
-  &__name {
-    margin-top: 5px;
-    color: $color-darkred;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: .01em;
-  }
-  
   &__location {
-    margin-top: 6px;
+    margin-top: 7px;
     color: $color-lightblue;
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 700;
     letter-spacing: .02em;
-  }
-  
-  &__price {
-    margin-top: 4px;
-    color: #595959;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: .02em;
+    
+    @include screen('tablet-wide') {
+      font-size: 36px;
+      margin-top: 0;
+    }
+    
+    @include screen('phablet') {
+      font-size: 18px;
+    }
   }
   
   &__desc {
     color: #595959;
     font-size: 16px;
+    line-height: (20/16);
     font-weight: 300;
     letter-spacing: .02em;
-    margin-top: 6px;
-    padding-left: 5px;
-  }
-  
-  &__address {
-    margin-top: 6px;
-    opacity: 0.9;
-    color: #595959;
-    font-size: 16px;
-    font-weight: 500;
+    margin-top: 8px;
+    max-height: 4*(20/16)*1em;
+    overflow: hidden;
     
-    img {
-      margin-right: 7px;
+    @include screen('tablet-wide') {
+      font-size: 28px;
+      line-height: (40/28);
+      margin-top: 3px;
+      max-height: 4*(40/28)*1em;
+    }
+    
+    @include screen('phablet') {
+      font-size: 16px;
+      line-height: (20/16);
+      max-height: 4*(20/16)*1em;
     }
   }
 }

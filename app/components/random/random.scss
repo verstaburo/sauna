@@ -1,17 +1,58 @@
 .random {
   display: block;
+  padding: 70px 0 0;
+  
+  @include screen('tablet-wide') {
+    padding: 65px 0 0;
+  }
+  
+  @include screen('phablet') {
+    padding: 33px 0 0;
+  }
   
   &__heading {
     @include heading-2;
     text-align: center;
+    
+    @include screen('tablet-wide') {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   
   &__refresh {
-    margin-left: 20px;
+    margin-left: 130px;
+    margin-right: -145px;
+    
+    @include screen('tablet-wide') {
+      margin-left: 24px;
+      margin-right: 22px;
+      line-height: 43px;
+      white-space: nowrap;
+    }
+    
+    @include screen('phablet') {
+      line-height: 1.15;
+      margin-right: 0;
+    }
     
     img {
       vertical-align: bottom;
-      margin-right: 10px;
+      margin-right: 12px;
+      margin-bottom: 2px;
+      width: 24px;
+      height: 25px;
+      
+      @include screen('tablet-wide') {
+        width: 33px;
+        height: 34px;
+      }
+      
+      @include screen('phablet') {
+        width: 19px;
+        height: 20px;
+        margin-right: 6px;
+      }
     }
     
     span {
@@ -20,14 +61,49 @@
       line-height: 26px;
       letter-spacing: 0.44px;
       border-bottom: 1px dashed #787777;
+      
+      @include screen('tablet-wide') {
+        font-size: 32px;
+        border-bottom: 0;
+      }
+      
+      @include screen('phablet') {
+        font-size: 16px;
+      }
+    }
+  }
+  
+  &__content {
+    margin-top: 29px;
+    
+    @include screen('tablet-wide') {
+      margin-top: 14px;
     }
   }
   
   &__cards {
     display: flex;
+    margin: 0 -10px;
+    
+    @include screen('tablet-wide') {
+      margin: 0;
+    }
   }
   
   &__card {
     width: 33.3333%;
+    padding: 10px;
+    box-sizing: border-box;
+    
+    @include screen('tablet-wide') {
+      width: 100%;
+      padding: 0;
+    }
+    
+    &:not(:first-child) {
+      @include screen('tablet-wide') {
+        display: none;
+      }
+    }
   }
 }

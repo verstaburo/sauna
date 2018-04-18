@@ -1,0 +1,19 @@
+mixin offers()
+  +b.offers&attributes(attributes)
+    .container
+      +e.H2.heading Акции и спецпредложения
+    +e.cards
+      +offers-card('Скидка на СПА', 'offer1.png', 'Сауна Афродита')._pink
+      +offers-card('Час в подарок', 'offer2.png', '15 заведений')._blue
+      +offers-card('Банный комплекс', 'offer3.png', 'Скидка 30% в декабре')._wide._green
+      +offers-card('Мальчишник', 'offer4.png', '15 заведений')._black
+      +offers-card('День рождения', 'offer5.png', '15 заведений')._blue-red-yellow
+      +offers-card('День рождения', 'offer5.png', '15 заведений')._blue-red-yellow
+    
+mixin offers-card(title, img, desc)
+  +e.card&attributes(attributes)
+    +e.P.title= title
+    +e.img
+      img(src='assets/images/' + img)
+    +e.desc
+      a(href='#')= desc
