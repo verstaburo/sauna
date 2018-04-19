@@ -15,6 +15,14 @@
     @include screen('tablet-wide') {
       display: none;
     }
+    
+    & + .places__cards {
+      margin-top: 47px;
+      
+      @include screen('tablet-wide') {
+        margin-top: 18px;
+      }
+    }
   }
   
   &__tabs {
@@ -39,7 +47,6 @@
   
   &__cards {
     padding-top: 2px;
-    padding-bottom: 26px;
     margin: 0 -10px;
     display: flex;
     
@@ -53,6 +60,7 @@
     
     @include screen('phablet') {
       margin: 0 -20px;
+      margin-bottom: -20px;
     }
   }
   
@@ -63,7 +71,7 @@
     box-sizing: border-box;
     
     @include screen('tablet-wide') {
-      width: 600px;
+      width: 648px;
       padding: 0 24px;
       flex: none;
     }
@@ -79,20 +87,50 @@
     &:first-child {
       @include screen('tablet-wide') {
         padding-left: 30px;
+        width: 654px;
       }
       
       @include screen('phablet') {
         padding-left: 20px;
+        width: calc(78% + 8px);
       }
     }
     
     &:last-child {
       @include screen('tablet-wide') {
         padding-right: 30px;
+        width: 654px;
       }
       
       @include screen('phablet') {
         padding-right: 20px;
+        width: calc(78% + 8px);
+      }
+    }
+  }
+  
+  &_new {
+    background-color: transparent;
+    padding-bottom: 57px;
+    
+    @include screen('tablet-wide') {
+      padding-top: 84px;
+      padding-bottom: 72px;
+    }
+    
+    @include screen('phablet') {
+      padding-top: 48px;
+      padding-bottom: 36px;
+    }
+    
+    .container {
+      overflow: hidden;
+    }
+    
+    .places__heading {
+      @include screen('tablet-wide') {
+        display: block;
+        text-align: left;
       }
     }
   }

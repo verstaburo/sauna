@@ -11,11 +11,43 @@ mixin places()
           +tab()(data-tab-target="tab4") Общественные бани
           +tab()(data-tab-target="tab5") Спа-центы
         +tabs-content
-          +tab-wrapper()(data-tab="tab1" data-tab-group="places").active
+          +tab-wrapper()(data-tab="tab1" data-tab-group="places")
+            +e.cards
+              +infocard('place1.jpg', true, 'САУНА ПРИ ОТЕЛЕ', 'Чикаго Голд').places__card
+              +infocard('place2.jpg', true, 'КОТЕДЖ', 'Избушка у реки', '7 отдельных котеджей').places__card
+              +infocard('place3.jpg', false, 'САУНА', 'Заречье').places__card
+              +infocard('place4.jpg', true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Краснопресненские бани', '7 отдельных залов').places__card
+          +tab-wrapper()(data-tab="tab2" data-tab-group="places").active
+            +e.cards
+              +infocard('place1.jpg', true, 'САУНА ПРИ ОТЕЛЕ', 'Чикаго Голд').places__card
+              +infocard('place2.jpg', true, 'КОТЕДЖ', 'Избушка у реки', '7 отдельных котеджей').places__card
+              +infocard('place3.jpg', false, 'САУНА', 'Заречье').places__card
+              +infocard('place4.jpg', true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Краснопресненские бани', '7 отдельных залов').places__card
+          +tab-wrapper()(data-tab="tab3" data-tab-group="places")
+            +e.cards
+              +infocard('place1.jpg', true, 'САУНА ПРИ ОТЕЛЕ', 'Чикаго Голд').places__card
+              +infocard('place2.jpg', true, 'КОТЕДЖ', 'Избушка у реки', '7 отдельных котеджей').places__card
+              +infocard('place3.jpg', false, 'САУНА', 'Заречье').places__card
+              +infocard('place4.jpg', true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Краснопресненские бани', '7 отдельных залов').places__card
+          +tab-wrapper()(data-tab="tab4" data-tab-group="places")
+            +e.cards
+              +infocard('place1.jpg', true, 'САУНА ПРИ ОТЕЛЕ', 'Чикаго Голд').places__card
+              +infocard('place2.jpg', true, 'КОТЕДЖ', 'Избушка у реки', '7 отдельных котеджей').places__card
+              +infocard('place3.jpg', false, 'САУНА', 'Заречье').places__card
+              +infocard('place4.jpg', true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Краснопресненские бани', '7 отдельных залов').places__card
+          +tab-wrapper()(data-tab="tab5" data-tab-group="places")
             +e.cards
               +infocard('place1.jpg', true, 'САУНА ПРИ ОТЕЛЕ', 'Чикаго Голд').places__card
               +infocard('place2.jpg', true, 'КОТЕДЖ', 'Избушка у реки', '7 отдельных котеджей').places__card
               +infocard('place3.jpg', false, 'САУНА', 'Заречье').places__card
               +infocard('place4.jpg', true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Краснопресненские бани', '7 отдельных залов').places__card
               
-    
+mixin places-new()
+  +b.places._new&attributes(attributes)
+    .container
+      +e.H2.heading Новые заведения в нашем каталоге
+      +e.cards
+        +infocard('place1.jpg', true, 'САУНА ПРИ ОТЕЛЕ', 'Чикаго Голд')._visible.places__card
+        +infocard('place2.jpg', true, 'КОТЕДЖ', 'Избушка у реки', '7 отдельных котеджей')._visible.places__card
+        +infocard('place3.jpg', true, 'САУНА', 'Заречье')._visible.places__card
+        +infocard('place4.jpg', true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Краснопресненские бани', '7 отдельных залов')._visible.places__card

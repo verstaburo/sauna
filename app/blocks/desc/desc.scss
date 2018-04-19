@@ -1,0 +1,162 @@
+.desc {
+  display: block;
+  position: relative;
+  padding: 26px 0 46px;
+  
+  @include screen('tablet-wide') {
+    padding: 46px 0 84px;
+  }
+  
+  @include screen('phablet') {
+    padding: 30px 0;
+  }
+  
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+    img {
+      @include fill-img;
+      z-index: 2;
+    }
+    
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 3;
+    }
+  }
+  
+  .container {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-wrap: wrap;
+    
+    @include screen('tablet-wide') {
+      display: block;
+    }
+  }
+  
+  &__block {
+    background-color: #fff;
+    width: calc(100% - 361px);
+    margin: 7px 0;
+    box-sizing: border-box;
+    padding: 17px 40px 26px;
+    
+    @include screen('tablet-wide') {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      background-color: transparent;
+      color: #fff;
+    }
+    
+    &_side {
+      @include screen('tablet-wide', min) {
+        width: 337px;
+        margin-left: 24px;
+        padding: 35px 32px 26px;
+      }
+    }
+    
+    &_list {
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 58px 20px;
+      
+      @include screen('tablet-wide') {
+        display: none;
+      }
+    }
+    
+    & + & {
+      @include screen('tablet-wide') {
+        margin-top: 34px;
+      }
+      
+      @include screen('phablet') {
+        margin-top: 20px;
+      }
+    }
+  }
+  
+  &__heading {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: (28.8/24);
+    margin-bottom: 10px;
+    
+    @include screen('tablet-wide') {
+      font-size: 45px;
+      font-weight: 300;
+      line-height: 1;
+    }
+    
+    @include screen('phablet') {
+      font-size: 24px;
+      line-height: 1.15;
+    }
+  }
+  
+  &__text {
+    font-family: $font-second;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: .01em;
+    
+    @include screen('tablet-wide') {
+      font-size: 28px;
+      font-weight: 400;
+      line-height: (34/28);
+    }
+    
+    @include screen('phablet') {
+      font-size: 16px;
+      line-height: 1.35;
+    }
+  }
+  
+  &__number {
+    display: block;
+    color: #191919;
+    font-family: $font-main;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 9px;
+  }
+  
+  &__fact {
+    color: rgba(#191919, .44);
+    font-family: $font-second;
+    font-size: 11px;
+    letter-spacing: .02em;
+    margin-right: auto;
+    
+    @include screen('desktop') {
+      margin-right: 0;
+    }
+  }
+  
+  &__more {
+    color: #fcd601;
+    text-transform: uppercase;
+    
+    @include screen('tablet-wide', min) {
+      display: none;
+    }
+  }
+}

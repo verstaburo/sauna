@@ -12,9 +12,17 @@ mixin infocard(img, reviews, name, location, desc)
           +e.A(href='#').reviews 15 отзывов
       +e.name= name
       +e.location= location
-      +e.price 1000 - 1200 руб.
-      if desc
-        +e.desc= desc
-      +e.address
-        img(src='assets/images/pin.png')
-        | ул. Ленина 16/2
+      +e.info
+        +e.price 1000 - 1200 руб.
+        if desc
+          +e.desc= desc
+        +e.address
+          img(src='assets/images/pin.png')
+          | ул. Ленина 16/2
+      +e.P.text Температура парилки от 30 до 50 градусов
+        br
+        | настоящий подарок тем, кто не может 
+        br
+        | позволить себе горячие пропарки. 
+        br
+        | Нежный пар хамама, который

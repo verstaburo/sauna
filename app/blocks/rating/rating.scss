@@ -17,6 +17,16 @@
     transition: fill $ease-main, stroke $ease-main;
     width: 22px;
     height: 19px;
+    
+    @include screen('tablet-wide') {
+      width: 37px;
+      height: 32px;
+    }
+    
+    @include screen('phablet') {
+      width: 22px;
+      height: 19px;
+    }
 
     #{$b}_interactive #{$b}__box:hover &,
     #{$b}_interactive #{$b}__box:hover ~ #{$b}__box &,
