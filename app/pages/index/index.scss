@@ -1,3 +1,19 @@
 .index {
   display: block;
+  
+  &__banner {
+    display: none;
+    height: 455px;
+    background-color: #a2a2a2;
+    margin: 53px 30px 26px;
+    
+    @include screen('tablet-wide') {
+      display: block;
+    }
+    
+    @include screen('phablet') {
+      height: 220px;
+      margin: 26px 20px 13px;
+    }
+  }
 }
