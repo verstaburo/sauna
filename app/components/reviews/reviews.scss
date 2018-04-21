@@ -2,8 +2,12 @@
   display: block;
   padding: 53px 0;
   
+  @include screen('tablet-wide') {
+    padding: 53px 0 0;
+  }
+  
   @include screen('phablet') {
-    padding: 26px 0;
+    padding: 26px 0 0;
   }
   
   &__heading {

@@ -1,0 +1,9 @@
+mixin blog()
+  +b.blog&attributes(attributes)
+    .container
+      +e.H2.heading Блог
+      +e.cards
+        +blogcard('Интересное').blog__card
+        +blogcard('Ликбез').blog__card
+        +blogcard('Новости').blog__card
+        +blogcard('Обзоры').blog__card
