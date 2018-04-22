@@ -1,0 +1,57 @@
+.lastview {
+  display: block;
+  padding: 66px 0 29px;
+  background-color: #f8f8f8;
+  
+  @include screen('tablet-wide') {
+    display: none;
+  }
+  
+  .container {
+    overflow: hidden;
+    width: 1440px;
+    padding: 0;
+  }
+  
+  &__heading {
+    color: #1f1f1f;
+    font-size: 21px;
+    font-weight: 300;
+    letter-spacing: .04em;
+    padding: 0 50px;
+  }
+  
+  &__cards-container {
+    margin-top: 11px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: -20px;
+    padding-bottom: 20px;
+    display: flex;
+  }
+  
+  &__cards-wrapper {
+    padding: 0 10px;
+    min-width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+  
+  &__cards {
+    display: flex;
+  }
+  
+  &__card {
+    width: 267px;
+    margin: 0 13px;
+    flex-shrink: 0;
+    
+    &:first-child {
+      margin-left: 0;
+    }
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

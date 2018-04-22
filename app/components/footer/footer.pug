@@ -1,0 +1,30 @@
+mixin footer()
+  +b.footer&attributes(attributes)
+    +e.desktop
+      .container
+        +e.P.copyright © 2011-2015 
+          br
+          | ООО«Адвертсервис»
+        +e.menu
+          +e.menu-row
+            +e.A(href='#').menu-link Акции
+            +e.A(href='#').menu-link Партнерам
+            +e.A(href='#').menu-link Блог
+            +e.A(href='#').menu-link Вопрос-ответ
+          +e.menu-row
+            +e.A(href='#').menu-link О проекте
+            +e.A(href='#').menu-link Помощь
+            +e.A(href='#').menu-link Контакты
+            +e.A(href='#').menu-link Правила
+        +e.social
+        +e.A(href='#').button Добавить сауну
+    +e.mob
+      +e.mob-row
+        .container
+          +e.P.text Москва
+      +e.mob-row
+        .container
+          +e.A(href='#').menu-link Полная версия сайта
+      +e.mob-row
+        .container
+          +e.P.copyright © 2011-2018 «vSaunu.ru»

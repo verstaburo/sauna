@@ -1,0 +1,10 @@
+mixin imgcard()
+  +b.imgcard&attributes(attributes)
+    +e.img
+      img(src='assets/images/lastview1.jpg')
+    +e.hover
+      +e.P.text САУНА
+        br
+        | ДВА БЕРЕГА
+      +rating(2).imgcard__rating
+      +e.A(href='#').button подробнее

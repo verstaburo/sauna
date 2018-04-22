@@ -28,3 +28,10 @@
 .js-sr {
   visibility: hidden;
 }
+
+.dragscroll {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
