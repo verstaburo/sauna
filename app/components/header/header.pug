@@ -10,9 +10,17 @@ mixin header()
       +e.A(href='#').discounts Акции и скидки
       +e.select Москва
         +icon('arrow_down').select-arrow
-    +e.line
-      +e.menu
-        +e.A(href='#').menu-link карта сайта
-        +e.A(href='#').menu-link
-          +icon('plus').menu-icon
-          | Добавить заведение
+    block
+    
+
+mixin header-line(img)
+  +e.line&attributes(attributes)
+    +e.IMG(src='assets/images/' + img).linebg
+
+mixin header-line-menu()
+  +e.line&attributes(attributes)
+    +e.menu
+      +e.A(href='#').menu-link карта сайта
+      +e.A(href='#').menu-link
+        +icon('plus').menu-icon
+        | Добавить заведение

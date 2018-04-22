@@ -6,8 +6,9 @@ block head
 block content
   +b.index
     +header()
+      +header-line-menu()
     +put-block-into-slot('indexHeadblock', 'xl')
-      +headblock()
+      +headblock-main()._main
     +filter()
     +tags()
     +put-block-into-slot('indexHeadblock', 'md')

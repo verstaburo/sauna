@@ -1,0 +1,11 @@
+mixin switcher()
+  +b.switcher&attributes(attributes)
+    .container
+      +e.types
+        +e.A(href='#').type Популярность
+        +e.A(href='#').type._active Цена
+      +e.views
+        +e.A(href='#').view
+          +icon('view1')
+        +e.A(href='#').view
+          +icon('view2')

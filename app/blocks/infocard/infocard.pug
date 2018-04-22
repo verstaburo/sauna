@@ -1,4 +1,4 @@
-mixin infocard(img, reviews, name, location, desc)
+mixin infocard(img, reviews, title, name, desc)
   +b.infocard&attributes(attributes)
     +e.img
       img(src='assets/images/'+img)
@@ -10,8 +10,31 @@ mixin infocard(img, reviews, name, location, desc)
         +rating(3)
         if reviews
           +e.A(href='#').reviews 15 отзывов
+      +e.title= title
       +e.name= name
-      +e.location= location
+      +e.info
+        +e.price 1000 - 1200 руб.
+        if desc
+          +e.desc= desc
+        +e.address
+          img(src='assets/images/pin.png')
+          | ул. Ленина 16/2
+
+
+mixin infocard-hover(img, reviews, title, name, desc)
+  +b.infocard&attributes(attributes)
+    +e.img
+      img(src='assets/images/'+img)
+      +e.img-hover
+        img(src='assets/images/metro.png')
+        | Новослободская
+    +e.content
+      +e.rating
+        +rating(3)
+        if reviews
+          +e.A(href='#').reviews 15 отзывов
+      +e.title= title
+      +e.name= name
       +e.info
         +e.price 1000 - 1200 руб.
         if desc
@@ -26,3 +49,29 @@ mixin infocard(img, reviews, name, location, desc)
         | позволить себе горячие пропарки. 
         br
         | Нежный пар хамама, который
+
+
+mixin infocard-list(img, reviews, title, name, metro, desc)
+  +b.infocard&attributes(attributes)
+    +e.img
+      img(src='assets/images/'+img)
+    +e.content
+      +e.title= title
+      +e.rating
+        +rating(3)
+        if reviews
+          +e.A(href='#').reviews (15 отзывов)      
+      +e.name= name
+      +e.info
+        +e.price 1000 - 1200 руб.
+        if metro
+          +e.P.metro
+            img(src='assets/images/metro.png')
+            | Новослободская
+        if desc
+          +e.desc
+            +e.desctype Финский зал
+            | В сауне 7 залов
+          +e.address
+            img(src='assets/images/pin.png')
+            | ул. Ленина 16/2

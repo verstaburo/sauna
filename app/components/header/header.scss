@@ -174,16 +174,22 @@
   
   &__line {
     background-color: #6c7896;
-    height: 30px;
+    min-height: 28px;
+    position: relative;
+    overflow: hidden;
     
     @include screen('tablet-wide') {
       display: none;
     }
   }
   
+  &__linebg {
+    @include fill-img;
+  }
+  
   &__menu {
     width: 1330px;
-    padding: 0 20px;
+    padding: 2px 20px;
     margin: 0 auto;
     display: flex;
     justify-content: flex-end;

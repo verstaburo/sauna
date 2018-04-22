@@ -1,7 +1,7 @@
 mixin filter()
   +b.filter&attributes(attributes)
     +e.IMG(src='assets/images/bg1.svg').bg
-    +e.container.container
+    .container
       +e.P.heading Фильтр поиска:
       +e.list
         +e.list-item
@@ -25,3 +25,21 @@ mixin filter()
           +e.P.list-text._mobile Дополнительно
           +e.P.list-select Ничего не выбрано
             +icon('arrow_down').list-select-icon
+      block
+
+
+mixin filter-tags()
+  +e.tags&attributes(attributes)
+    +e.A(href='#').tag
+      +e.SPAN.tag-symbol ₽
+      | 1000-2500 час
+      +e.SPAN.tag-close
+    +e.A(href='#').tag
+      +e.SPAN.tag-icon
+      | метро Чертановская
+      +e.SPAN.tag-close
+    +e.A(href='#').tag._blue
+      | финская парная
+      +e.SPAN.tag-close
+    +e.A(href='#').tag._grey
+      | сбросить все

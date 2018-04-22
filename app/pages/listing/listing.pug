@@ -1,0 +1,35 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Listing'
+
+block content
+  +b.listing
+    +header()
+      +header-line('linebg1.jpg')
+    +headblock('Бани и сауны Москвы', 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%).')
+    +filter()
+      +filter-tags()
+    +switcher()
+    +mapblock()
+    +e.content
+      .container
+        +e.cards
+          +infocard-list('place1.jpg', true, 'САУНА ПРИ ОТЕЛЕ', 'Сауна Чикаго Голд', true, false).listing__card
+          +infocard-list('place2.jpg', true, 'КОТЕДЖ', 'Сауна Чикаго Голд', false, true).listing__card
+          +infocard-list('place3.jpg', false, 'САУНА', 'Сауна Чикаго Голд', true, false).listing__card
+          +infocard-list('place4.jpg', true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Сауна Чикаго Голд', false, true).listing__card
+          +infocard-list('place1.jpg', true, 'САУНА ПРИ ОТЕЛЕ', 'Сауна Чикаго Голд', true, false).listing__card
+          +infocard-list('place2.jpg', true, 'КОТЕДЖ', 'Сауна Чикаго Голд', false, true).listing__card
+          +infocard-list('place3.jpg', false, 'САУНА', 'Сауна Чикаго Голд', true, false).listing__card
+          +infocard-list('place4.jpg', true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Сауна Чикаго Голд', false, true).listing__card
+          +infocard-list('place1.jpg', true, 'САУНА ПРИ ОТЕЛЕ', 'Сауна Чикаго Голд', true, false).listing__card
+          +infocard-list('place2.jpg', true, 'КОТЕДЖ', 'Сауна Чикаго Голд', false, true).listing__card
+          +infocard-list('place3.jpg', false, 'САУНА', 'Сауна Чикаго Голд', true, false).listing__card
+          +infocard-list('place4.jpg', true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Сауна Чикаго Голд', false, true).listing__card
+          +infocard-list('place1.jpg', true, 'САУНА ПРИ ОТЕЛЕ', 'Сауна Чикаго Голд', true, false).listing__card
+          +infocard-list('place2.jpg', true, 'КОТЕДЖ', 'Сауна Чикаго Голд', false, true).listing__card
+          +infocard-list('place3.jpg', false, 'САУНА', 'Сауна Чикаго Голд', true, false).listing__card
+          +infocard-list('place4.jpg', true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Сауна Чикаго Голд', false, true).listing__card
+    +e.ads
+    +footer()

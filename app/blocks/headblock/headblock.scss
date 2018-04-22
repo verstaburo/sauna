@@ -4,9 +4,15 @@
   position: relative;
   text-align: center;
   border-bottom: 1px solid #ebebeb;
+  padding: 62px 0 56px;
   
   @include screen('tablet-wide') {
     border-bottom: 0;
+    padding: 49px 0 38px;
+  }
+  
+  @include screen('phablet') {
+    padding: 25px 0 19px;
   }
   
   &__side-img {
@@ -28,18 +34,13 @@
     }
   }
   
-  &__container {
+  .container {    
+    @include screen('tablet-wide') {
+      padding: 0 30px;
+    }
     
-    &.container {
-      padding: 36px 160px 23px;
-      
-      @include screen('tablet-wide') {
-        padding: 49px 20px 38px;
-      }
-      
-      @include screen('phablet') {
-        padding: 25px 20px 19px;
-      }
+    @include screen('phablet') {
+      padding: 0 20px;
     }
   }
   
@@ -78,6 +79,16 @@
     }
   }
   
+  &__text {
+    text-align: left;
+    color: #202020;
+    font-family: $font-second;
+    font-size: 15px;
+    line-height: (24.77/15);
+    max-width: 980px;
+    margin: 21px auto 0;
+  }
+  
   &__other {
     opacity: 0.8;
     color: #484848;
@@ -98,6 +109,18 @@
       &:hover {
         color: #fd0101;
         opacity: 1;
+      }
+    }
+  }
+  
+  &_main {
+    @include screen('tablet-wide', min) {
+      padding: 36px 0 23px;
+    }
+    
+    .container {
+      @include screen('tablet-wide', min) {
+        padding: 0 160px;
       }
     }
   }

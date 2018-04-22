@@ -1,8 +1,14 @@
-mixin headblock()
+mixin headblock(heading, text)
+  +b.headblock&attributes(attributes)
+    .container
+      +e.H1.heading= heading
+      +e.P.text= text
+
+mixin headblock-main()
   +b.headblock&attributes(attributes)
     +e.IMG(src='assets/images/celebrate1.jpg').side-img._left
     +e.IMG(src='assets/images/celebrate2.png').side-img._right
-    +e.container.container
+    .container
       +e.H1.heading Бани и сауны в Москве
       +e.P.subheading 572 заведения
       +e.P.other Города рядом:
@@ -11,4 +17,4 @@ mixin headblock()
         +e.A(href='#').other-link Одинцово
         +e.A(href='#').other-link Красногорск
         +e.A(href='#').other-link Мытищи
-        +e.A(href='#').other-link Зеленоград 
+        +e.A(href='#').other-link Зеленоград
