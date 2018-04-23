@@ -1,39 +1,44 @@
-mixin review(author, images, text)
+mixin review()
   +b.review&attributes(attributes)
     +e.top
       +e.top-img
         img(src='assets/images/review1.jpg')
-      +e.P.top-author-name Петр Петров о(об)
       +e.P.heading Усадьба банная на Угрешской
       +rating(2).review__top-rating
       +e.P.reviews Отзывы 231
-    +e.content
-      +e.author
-        +e.P.author-name= author
-        +e.P.date 15 мая 2015
-      +e.ratings
-        +e.ratings-col
-          +e.P.ratings-item Персонал
-            +rating(3).review__rating
-          +e.P.ratings-item Услуги 
-            +rating(3).review__rating
-        +e.ratings-col
-          +e.P.ratings-item Интерьер
-            +rating(3).review__rating
-          +e.P.ratings-item Расположение
-            +rating(3).review__rating
-      +e.P.text= text
-      if images
-        +e.images
-          +e.img
-            img(src='assets/images/review2.jpg')
-          +e.img
-            img(src='assets/images/review2.jpg')
-      +e.useful
-        +e.P.useful-text Полезный отзыв?
-        +e.useful-buttons
-          +e.A(href='#').useful-button Да
-            +e.SPAN.useful-count 7
-          +e.A(href='#').useful-button Нет
-            +e.SPAN.useful-count 2
+    block
+            
+mixin review-block(author, images, text)
+  +e.content
+    +e.mob-top
+      +e.P.top-author-name= author + ' о(об)'
+      +e.P.heading Усадьба банная на Угрешской
+    +e.author
+      +e.P.author-name= author
+      +e.P.date 15 мая 2015
+    +e.ratings
+      +e.ratings-col
+        +e.P.ratings-item Персонал
+          +rating(3).review__rating
+        +e.P.ratings-item Услуги 
+          +rating(3).review__rating
+      +e.ratings-col
+        +e.P.ratings-item Интерьер
+          +rating(3).review__rating
+        +e.P.ratings-item Расположение
+          +rating(3).review__rating
+    +e.P.text= text
+    if images
+      +e.images
+        +e.img
+          img(src='assets/images/review2.jpg')
+        +e.img
+          img(src='assets/images/review2.jpg')
+    +e.useful
+      +e.P.useful-text Полезный отзыв?
+      +e.useful-buttons
+        +e.A(href='#').useful-button Да
+          +e.SPAN.useful-count 7
+        +e.A(href='#').useful-button Нет
+          +e.SPAN.useful-count 2
       
