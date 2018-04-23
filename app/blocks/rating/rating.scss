@@ -23,7 +23,7 @@
       height: 32px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       width: 22px;
       height: 19px;
     }

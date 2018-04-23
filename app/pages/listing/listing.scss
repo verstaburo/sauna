@@ -30,7 +30,7 @@
       padding: 30px 0;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       padding: 20px 0;
     }
   }

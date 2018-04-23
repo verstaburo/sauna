@@ -53,7 +53,7 @@
       font-size: 27px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 16px;
     }
   }
@@ -69,7 +69,7 @@
       font-size: 28px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 18px;
     }
   }
@@ -83,7 +83,7 @@
       width: 100%;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       padding-bottom: 5px;
     }
     
@@ -96,7 +96,7 @@
         height: 25px;
       }
       
-      @include screen('phablet') {
+      @include screen('tablet-small') {
         width: 16px;
         height: 15px;
       }
@@ -109,7 +109,7 @@
         margin-right: 4px;
       }
       
-      @include screen('phablet') {
+      @include screen('tablet-small') {
         margin-right: 3px;
       }
     }
@@ -129,7 +129,7 @@
       font-size: 24px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 14px;
     }
   }
@@ -156,7 +156,7 @@
       padding-bottom: 20px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 16px;
       padding-bottom: 10px;
     }
@@ -175,7 +175,7 @@
       padding-right: 0;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       padding-top: 10px;
     }
   }
@@ -193,7 +193,7 @@
       font-size: 26px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 16px;
     }
     
@@ -228,7 +228,7 @@
       margin-top: 18px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 18px;
     }
     
@@ -236,7 +236,7 @@
       color: inherit;
       margin-right: 11px;
       
-      @include screen('phablet') {
+      @include screen('tablet-small') {
         display: inline-block;
         margin-top: 5px;
         margin-bottom: 5px;
@@ -267,7 +267,7 @@
       margin-top: 20px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       margin-top: 10px;
     }
   }
@@ -281,7 +281,7 @@
       font-size: 31px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 21px;
     }
   }
@@ -306,7 +306,7 @@
       padding: 12px 20px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 14px;
       padding: 6px 10px;
     }

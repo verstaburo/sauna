@@ -3,6 +3,7 @@
   
   @include screen('tablet-wide') {
     border-bottom: 1px solid #e8e8e8;
+    position: relative;
   }
   
   .container {
@@ -14,7 +15,7 @@
       padding: 21px 40px 36px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       padding: 12px 20px 18px;
     }
   }
@@ -32,7 +33,7 @@
       margin-right: 0;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       margin-top: 0;
       align-self: center;
     }
@@ -44,7 +45,7 @@
         width: 200px;
       }
       
-      @include screen('phablet') {
+      @include screen('tablet-small') {
         width: 100px;
       }
     }
@@ -110,7 +111,25 @@
     }
     
     @include screen('tablet-wide') {
-      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 19px);
+      margin: 0;
+      font-size: 32px;
+      font-weight: 300;
+      height: 90px;
+      line-height: 90px;
+      padding: 0 45px;
+      letter-spacing: .045em;
+      z-index: 3;
+    }
+    
+    @include screen('tablet-small') {
+      top: calc(100% + 10px);
+      font-size: 16px;
+      height: 36px;
+      line-height: 36px;
+      padding: 0 12px;
     }
   }
   
@@ -141,7 +160,7 @@
       padding: 0 56px 0 18px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       min-width: 98px;
       height: 26px;
       font-size: 13px;
@@ -165,7 +184,7 @@
         top: 6px;
       }
       
-      @include screen('phablet') {
+      @include screen('tablet-small') {
         right: 12px;
         top: 0;
       }

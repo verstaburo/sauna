@@ -1,0 +1,30 @@
+.results {
+  display: block;
+  
+  &__list {
+    padding: 23px 0;
+    
+    @include screen('tablet-wide') {
+      padding: 0;
+    }
+  }
+  
+  &__list-item {
+    border-bottom: 1px solid #ebebeb;
+    transition: background-color $ease-main;
+    
+    &:hover {
+      background-color: #f8f8f8;
+      
+      .result__text {
+        color: #010101;
+      }
+    }
+    
+    &:last-child {
+      @include screen('tablet-wide') {
+        border-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+mixin result(title, name, onetel)
+  +b.result&attributes(attributes)
+    +e.P.title= title
+    +e.content
+      +e.left
+        +e.row
+          +e.P.name= name
+          +e.rating
+            +rating(3)
+            +e.P.reviews 15 отзывов
+          +e.P.address Москва, ул. Ленина 16/2
+        +e.row
+          +e.P.text Финская, турецкая, комната отдыха, массаж, бильярд. 3 зала. Круглосуточно.
+      +e.right
+        +e.row
+          +e.A(href='tel:+74951853423').tel +7(495)185-34-23
+          if !onetel
+            +e.A(href='tel:+74951853423').tel +7(495)185-34-23
+        +e.row
+          +e.P.price 1500-2000 руб/час
+          +e.A(href='#').button подробнее
+        

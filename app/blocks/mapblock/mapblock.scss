@@ -43,7 +43,7 @@
       padding: 31px 33px 27px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 16px;
       margin: 17px 0;
       padding: 16px;
@@ -60,7 +60,7 @@
       display: inline-block;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       width: 17px;
       height: 16px;
       margin-right: 10px;

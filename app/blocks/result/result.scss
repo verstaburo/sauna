@@ -1,0 +1,239 @@
+.result {
+  display: block;
+  letter-spacing: .02em;
+  padding: 21px 0 16px;
+  
+  @include screen('tablet-wide') {
+    padding: 40px 0;
+  }
+  
+  @include screen('tablet-small') {
+    padding: 20px 0;
+  }
+  
+  &__title {
+    color: $color-darkred;
+    font-size: 16px;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 16px;
+    
+    @include screen('tablet-wide') {
+      font-size: 26px;
+      margin-bottom: 32px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+  }
+  
+  &__content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    
+    @include screen('tablet-wide') {
+      flex-wrap: wrap;
+    }
+  }
+  
+  &__left {
+    margin-right: 24px;
+    padding-bottom: 7px;
+    
+    @include screen('tablet-wide') {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  
+  &__right {
+    width: 413px;
+    flex-shrink: 0;
+    
+    @include screen('tablet-wide') {
+      width: 100%;
+      margin-top: 22px;
+    }
+    
+    @include screen('tablet-small') {
+      margin-top: 11px;
+    }
+  }
+  
+  &__row {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  &__name {
+    color: $color-lightblue;
+    font-size: 21px;
+    font-weight: 700;
+    padding: 3px 0 4px;
+    margin-right: 61px;
+    
+    @include screen('tablet-wide') {
+      font-size: 31px;
+      padding: 6px 0;
+      width: 100%;
+      margin-right: 0;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 21px;
+      padding: 3px 0;
+    }
+  }
+  
+  &__rating {
+    display: flex;
+    align-items: center;
+    margin-right: 27px;
+    padding: 3px 0;
+    
+    @include screen('tablet-wide') {
+      width: 100%;
+      margin-right: 0;
+      padding: 6px 0;
+    }
+    
+    @include screen('tablet-small') {
+      padding: 3px 0;
+    }
+    
+    .rating__icon {
+      width: 16px;
+      height: 15px;
+      
+      @include screen('tablet-wide') {
+        width: 26px;
+        height: 25px;
+      }
+      
+      @include screen('tablet-small') {
+        width: 16px;
+        height: 15px;
+      }
+    }
+  }
+  
+  &__reviews {
+    font-family: $font-second;
+    font-size: 16px;
+    padding-top: 3px;
+    margin-left: 30px;
+    
+    @include screen('tablet-wide') {
+      font-size: 26px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 16px;
+    }
+  }
+  
+  &__address {
+    opacity: 0.9;
+    color: #76a1e3;
+    font-family: $font-second;
+    font-size: 16px;
+    letter-spacing: .005em;
+    padding: 3px 0;
+    
+    @include screen('tablet-wide') {
+      width: 100%;
+      font-size: 26px;
+      padding: 6px 0;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 16px;
+      padding: 3px 0;
+    }
+  }
+  
+  &__text {
+    color: #595959;
+    font-family: $font-second;
+    font-size: 16px;
+    margin-top: 12px;
+    letter-spacing: -.01em;
+    transition: color $ease-main;
+    
+    @include screen('tablet-wide') {
+      font-size: 26px;
+      margin-top: 24px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 16px;
+      margin-top: 12px;
+    }
+  }
+  
+  &__tel {
+    opacity: 0.9;
+    color: #000;
+    font-family: $font-second;
+    font-size: 18px;
+    letter-spacing: 0;
+    margin-bottom: 11px;
+    margin-right: 32px;
+    
+    @include screen('tablet-wide') {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  &__price {
+    color: #020202;
+    font-size: 21px;
+    letter-spacing: -.025em;
+    margin-right: 31px;
+    
+    @include screen('tablet-wide') {
+      width: 100%;
+      font-size: 31px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 21px;
+    }
+  }
+  
+  &__button {
+    min-width: 162px;
+    border-radius: 3px;
+    padding: 6px 10px;
+    background-color: $color-yellow;
+    text-align: center;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: .04em;
+    box-sizing: border-box;
+    
+    @include screen('tablet-wide') {
+      padding: 12px 20px;
+      font-size: 24px;
+      margin-top: 15px;
+    }
+    
+    @include screen('tablet-small') {
+      padding: 6px 10px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  }
+}

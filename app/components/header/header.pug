@@ -17,10 +17,12 @@ mixin header-line(img)
   +e.line&attributes(attributes)
     +e.IMG(src='assets/images/' + img).linebg
 
-mixin header-line-menu()
+mixin header-line-menu(firstlink, secondlink)
   +e.line&attributes(attributes)
     +e.menu
-      +e.A(href='#').menu-link карта сайта
-      +e.A(href='#').menu-link
-        +icon('plus').menu-icon
-        | Добавить заведение
+      if firstlink
+        +e.A(href='#').menu-link= firstlink
+      if secondlink
+        +e.A(href='#').menu-link
+          +icon('plus').menu-icon
+          = secondlink

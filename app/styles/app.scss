@@ -19,7 +19,7 @@
   max-width: 100%;
   box-sizing: border-box;
   
-  @include screen('phablet') {
+  @include screen('tablet-small') {
     padding-left: $container-padding-mobile;
     padding-right: $container-padding-mobile;
   }

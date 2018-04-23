@@ -18,3 +18,9 @@ mixin headblock-main()
         +e.A(href='#').other-link Красногорск
         +e.A(href='#').other-link Мытищи
         +e.A(href='#').other-link Зеленоград
+        
+mixin headblock-span(heading, span)
+  +b.headblock&attributes(attributes)
+    .container
+      +e.H1.heading._small= heading
+        +e.SPAN.span= span

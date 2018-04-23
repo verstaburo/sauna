@@ -58,7 +58,7 @@
       padding-bottom: 20px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       margin: 0 -20px;
       margin-bottom: -20px;
     }
@@ -80,7 +80,7 @@
       width: 78%;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       padding: 0 12px;
     }
     
@@ -90,7 +90,7 @@
         width: 654px;
       }
       
-      @include screen('phablet') {
+      @include screen('tablet-small') {
         padding-left: 20px;
         width: calc(78% + 8px);
       }
@@ -102,7 +102,7 @@
         width: 654px;
       }
       
-      @include screen('phablet') {
+      @include screen('tablet-small') {
         padding-right: 20px;
         width: calc(78% + 8px);
       }
@@ -118,7 +118,7 @@
       padding-bottom: 72px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       padding-top: 48px;
       padding-bottom: 36px;
     }

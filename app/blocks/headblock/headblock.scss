@@ -11,7 +11,7 @@
     padding: 49px 0 38px;
   }
   
-  @include screen('phablet') {
+  @include screen('tablet-small') {
     padding: 25px 0 19px;
   }
   
@@ -39,7 +39,7 @@
       padding: 0 30px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       padding: 0 20px;
     }
   }
@@ -48,7 +48,7 @@
     font-size: 60px;
     font-weight: 500;
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 30px;
     }
     
@@ -59,9 +59,29 @@
         margin-top: 11px;
       }
       
-      @include screen('phablet') {
+      @include screen('tablet-small') {
         margin-top: 6px;
       }
+    }
+    
+    &_small {
+      font-size: 37px;
+      
+      @include screen('tablet-small') {
+        font-size: 27px;
+      }
+    }
+  }
+  
+  &__span {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    
+    @include screen('tablet-small') {
+      font-size: 16px;
+      display: block;
+      margin-top: 12px;
     }
   }
   
@@ -74,7 +94,7 @@
       font-size: 32px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 16px;
     }
   }
@@ -91,7 +111,7 @@
       font-size: 25px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 15px;
     }
   }

@@ -16,7 +16,7 @@
     font-size: 36px;
   }
   
-  @include screen('phablet') {
+  @include screen('tablet-small') {
     font-size: 23px;
   }
 }

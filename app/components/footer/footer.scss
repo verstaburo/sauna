@@ -39,7 +39,7 @@
       padding: 13px 0 25px;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 16px;
       padding: 6px 0 12px;
     }
@@ -65,7 +65,7 @@
       margin-right: 0;
     }
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 16px;
     }
     
@@ -97,7 +97,7 @@
     border-top: 1px solid #e7e7e7;
     padding: 33px 0 32px;
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       padding: 16px;
     }
   }
@@ -108,7 +108,7 @@
     font-size: 25px;
     letter-spacing: .02em;
     
-    @include screen('phablet') {
+    @include screen('tablet-small') {
       font-size: 16px;
     }
   }

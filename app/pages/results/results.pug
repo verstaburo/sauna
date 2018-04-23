@@ -1,0 +1,42 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Results'
+
+block content
+  +b.results
+    +header()
+      +header-line-menu(false, 'Добавить сауну')
+    +put-block-into-slot('headblock', 'xl')
+      +headblock-span('Результат поиска: ', '214 заведений')
+    +filter()
+      +filter-tags()
+    +switcher()
+    +mapblock('Показать на карте')
+    +put-block-into-slot('headblock', 'md')
+    +e.list
+      +e.list-item
+        .container
+          +result('ОБЩЕСТВЕННАЯ БАНЯ', 'Краснопресненские бани', true).results__result
+      +e.list-item
+        .container
+          +result('САУНА', 'Чикаго Голд').results__result
+      +e.list-item
+        .container
+          +result('СПА-ЦЕНТР', 'Ромео и Джуьета').results__result
+      +e.list-item
+        .container
+          +result('БАННЫЙ КОМПЛЕКС', 'Краснопресненские бани').results__result
+      +e.list-item
+        .container
+          +result('САУНА ПРИ ОТЕЛЕ', 'Чикаго Голд').results__result
+      +e.list-item
+        .container
+          +result('ОБЩЕСТВЕННАЯ БАНЯ', 'Краснопресненские бани').results__result
+      +e.list-item
+        .container
+          +result('БАНЯ', 'Чикаго Голд').results__result
+      +e.list-item
+        .container
+          +result('КОТЕДЖ С САУНОЙ', 'Чикаго Голд').results__result
+    +footer()
