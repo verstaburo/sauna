@@ -1,0 +1,23 @@
+mixin sale(img, title)
+  +b.sale&attributes(attributes)
+    +e.top
+      +e.img
+        img(src='assets/images/' + img)
+      +e.heading
+        +e.P.title= title
+        +e.P.name Усадьба банная на Угрешской
+      +e.rating
+        +rating(2)
+        +e.P.reviews Отзывы 231
+      +e.P.address Москва, ул. Ленина 16/2
+    +e.content
+      +e.main
+        +e.P.text Скидка именинникам при предьявлении
+          br
+          | паспорта. 20% на время и 10% на кухню.
+        +e.P.tel
+          a(href='tel:+71234567890') +7(123)456-7890
+          a(href='tel:+71234567890') +7(123)456-7890
+      +e.aside
+        +e.P.price 1500-2000 руб/час
+        +e.A(href='#').button подробнее

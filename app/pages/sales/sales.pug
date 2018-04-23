@@ -1,0 +1,25 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Sales'
+
+block content
+  +b.sales
+    +header()
+      +header-line('linebg2.jpg')
+    +headblock('Акции на день рождения', 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%).')
+    +filter()
+    +switcher()
+    +mapblock('Показать на карте')
+    +e.content
+      .container
+        +e.list
+          +sale('sale1.jpg', 'САУНА').sales__sale
+          +sale('sale1.jpg', 'САУНА ПРИ ОТЕЛЕ').sales__sale
+          +sale('sale2.png', 'ОБЩЕСТВЕННАЯ БАНЯ').sales__sale
+          +e.list-banner
+          +sale('sale1.jpg', 'САУНА').sales__sale
+          +sale('sale1.jpg', 'САУНА ПРИ ОТЕЛЕ').sales__sale
+          +sale('sale2.png', 'ОБЩЕСТВЕННАЯ БАНЯ').sales__sale
+        +e.banner
+    +footer()

@@ -1,0 +1,314 @@
+.sale {
+  display: block;
+  
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(#000, .1);
+    align-items: flex-end;
+    padding-left: 122px;
+    position: relative;
+    min-height: 65px;
+    
+    @include screen('tablet-wide') {
+      padding-left: 0;
+      min-height: 0;
+    }
+  }
+  
+  &__img {
+    width: 92px;
+    height: 65px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
+    
+    img {
+      @include fill-img;
+    }
+  }
+  
+  &__heading {
+    padding-bottom: 9px;
+    width: 290px;
+    flex-shrink: 0;
+    
+    @include screen('tablet-wide') {
+      width: 100%;
+    }
+  }
+  
+  &__title {
+    color: $color-darkred;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    
+    @include screen('tablet-wide') {
+      font-size: 27px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 16px;
+    }
+  }
+  
+  &__name {
+    color: $color-lightblue;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .045em;
+    margin-top: 8px;
+    
+    @include screen('tablet-wide') {
+      font-size: 28px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 18px;
+    }
+  }
+  
+  &__rating {
+    margin-left: 24px;
+    padding-bottom: 10px;
+    
+    @include screen('tablet-wide') {
+      margin-left: 0;
+      width: 100%;
+    }
+    
+    @include screen('phablet') {
+      padding-bottom: 5px;
+    }
+    
+    .rating__icon {
+      width: 16px;
+      height: 15px;
+      
+      @include screen('tablet-wide') {
+        width: 24px;
+        height: 25px;
+      }
+      
+      @include screen('phablet') {
+        width: 16px;
+        height: 15px;
+      }
+    }
+    
+    .rating__box {
+      margin-right: 3px;
+      
+      @include screen('tablet-wide') {
+        margin-right: 4px;
+      }
+      
+      @include screen('phablet') {
+        margin-right: 3px;
+      }
+    }
+  }
+  
+  &__reviews {
+    opacity: 0.5;
+    color: #000000;
+    font-family: $font-second;
+    font-size: 14px;
+    letter-spacing: .02em;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: bottom;
+    
+    @include screen('tablet-wide') {
+      font-size: 24px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 14px;
+    }
+  }
+  
+  &__address {
+    color: $color-lightblue;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .005em;
+    margin-left: auto;
+    width: 225px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    
+    @include screen('desktop') {
+      margin-left: 0;
+      width: 100%;
+    }
+    
+    @include screen('tablet-wide') {
+      font-size: 26px;
+      padding-bottom: 20px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 16px;
+      padding-bottom: 10px;
+    }
+  }
+  
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 133px;
+    padding-top: 7px;
+    padding-right: 31px;
+    
+    @include screen('tablet-wide') {
+      padding-left: 0;
+      padding-top: 20px;
+      padding-right: 0;
+    }
+    
+    @include screen('phablet') {
+      padding-top: 10px;
+    }
+  }
+  
+  &__text {
+    color: #1f1f1f;
+    font-family: $font-second;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: (18/16);
+    letter-spacing: .03em;
+    position: relative;
+    
+    @include screen('tablet-wide') {
+      font-size: 26px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 16px;
+    }
+    
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -12px;
+      top: 6px;
+      width: 5px;
+      height: 5px;
+      border-radius: 1000px;
+      background-image: linear-gradient(to top, #903eac 0%, #c03a2b 100%);
+      
+      @include screen('tablet-wide') {
+        display: none;
+      }
+    }
+  }
+  
+  &__tel {
+    color: #1f1f1f;
+    font-family: $font-second;
+    font-size: 18px;
+    letter-spacing: .03em;
+    margin-top: 9px;
+    margin-left: -4px;
+    
+    @include screen('tablet-wide') {
+      font-size: 28px;
+      margin-left: 0;
+      margin-top: 18px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 18px;
+    }
+    
+    a {
+      color: inherit;
+      margin-right: 11px;
+      
+      @include screen('phablet') {
+        display: inline-block;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  
+  &__main {
+    margin-right: 24px;
+  }
+  
+  &__aside {
+    margin-left: auto;
+    padding-top: 5px;
+    text-align: right;
+    
+    @include screen('desktop') {
+      width: 100%;
+      text-align: left;
+      margin-top: 10px;
+    }
+    
+    @include screen('tablet-wide') {
+      margin-top: 20px;
+    }
+    
+    @include screen('phablet') {
+      margin-top: 10px;
+    }
+  }
+  
+  &__price {
+    color: #020202;
+    font-size: 21px;
+    letter-spacing: -.015em;
+    
+    @include screen('tablet-wide') {
+      font-size: 31px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 21px;
+    }
+  }
+  
+  &__button {
+    display: inline-block;
+    min-width: 162px;
+    border-radius: 3px;
+    background-color: $color-yellow;
+    padding: 6px 10px;
+    text-align: center;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: .04em;
+    margin-top: 19px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    
+    @include screen('tablet-wide') {
+      font-size: 24px;
+      padding: 12px 20px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+  }
+}
