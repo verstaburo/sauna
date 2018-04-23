@@ -69,8 +69,8 @@ mixin infocard-list(img, reviews, title, name, metro, desc)
             img(src='assets/images/metro.png')
             | Новослободская
         if desc
-          +e.desc
-            +e.desctype Финский зал
+          +e.desc._type
+            +e.A(href='#').desctype Финский зал
             | В сауне 7 залов
           +e.address
             img(src='assets/images/pin.png')

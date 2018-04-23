@@ -87,6 +87,14 @@
     line-height: (24.77/15);
     max-width: 980px;
     margin: 21px auto 0;
+    
+    @include screen('tablet-wide') {
+      font-size: 25px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 15px;
+    }
   }
   
   &__other {

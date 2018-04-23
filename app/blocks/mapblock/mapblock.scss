@@ -15,10 +15,15 @@
     position: relative;
     z-index: 2;
     text-align: right;
+    
+    @include screen('tablet-wide') {
+      text-align: center;
+    }
   }
   
   &__button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     background-color: rgba(#000000, .5);
     padding: 8px 35px;
     color: #ffffff;
@@ -26,5 +31,39 @@
     font-size: 16px;
     letter-spacing: -.02em;
     margin: 10px 4px;
+    
+    @include screen('tablet-wide') {
+      background-color: rgba(#000000, .7);
+      border-radius: 5px;
+      font-family: $font-main;
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: .02em;
+      margin: 34px 0;
+      padding: 31px 33px 27px;
+    }
+    
+    @include screen('phablet') {
+      font-size: 16px;
+      margin: 17px 0;
+      padding: 16px;
+    }
+  }
+  
+  &__button-icon {
+    width: 34px;
+    height: 33px;
+    margin-right: 20px;
+    display: none;
+    
+    @include screen('tablet-wide') {
+      display: inline-block;
+    }
+    
+    @include screen('phablet') {
+      width: 17px;
+      height: 16px;
+      margin-right: 10px;
+    }
   }
 }
