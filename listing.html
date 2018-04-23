@@ -23,11 +23,15 @@
         </div>
         <div class="header__line"><img class="header__linebg" src="assets/images/linebg1.jpg" alt="" role="presentation" /></div>
     </div>
-    <div class="headblock">
-        <div class="container">
-            <h1 class="headblock__heading">Бани и сауны Москвы</h1>
-            <p class="headblock__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от напряжения
-                и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%).</p>
+    <div data-slot-id="headblock" data-slot-res="xl">
+        <div data-target-slot="headblock">
+            <div class="headblock">
+                <div class="container">
+                    <h1 class="headblock__heading">Бани и сауны Москвы</h1>
+                    <p class="headblock__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться
+                        от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%).</p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="filter"><img class="filter__bg" src="assets/images/bg1.svg" alt="" role="presentation" />
@@ -68,6 +72,7 @@
         <div class="map mapblock__map" id="map"></div>
         <div class="container"><a class="mapblock__button" href="#"><img class="mapblock__button-icon" src="assets/images/map_arrow.png" alt="" role="presentation"/>Показать на карте</a></div>
     </div>
+    <div data-slot-id="headblock" data-slot-res="md"></div>
     <div class="listing__content">
         <div class="container">
             <div class="listing__cards">
