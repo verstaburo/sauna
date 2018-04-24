@@ -8,9 +8,9 @@
 .popup {
   background-color: rgba(#010101, .9);
   box-sizing: border-box;
-  min-height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
+  //max-height: 100vh;
+  //overflow-y: auto;
+  //overflow-x: hidden;
   position: relative;
   
   &__close {
@@ -79,8 +79,20 @@
       padding-right: 70px;
     }
     
+    &_medium {
+      font-size: 27px;
+      
+      @include screen('tablet-small') {
+        font-size: 20px;
+      }
+    }
+    
     &_small {
       font-size: 24px;
+      
+      @include screen('tablet-small') {
+        font-size: 20px;
+      }
     }
   }
   
@@ -529,14 +541,15 @@
     align-items: center;
     padding: 4px 13px;
     border-radius: 2px;
-    background-color: $color-yellow;
-    color: #635b36;
+    background-color: rgba(#fff, .9);
+    color: #1e1e1e;
     font-family: $font-second;
     font-style: italic;
     font-size: 14px;
     letter-spacing: .02em;
     margin-right: 12px;
     margin-bottom: 12px;
+    position: relative;
     
     &-close {
       display: inline-block;
@@ -570,10 +583,41 @@
       }
     }
     
-    &_res {
-      background-color: #dadfe0;
-      font-style: normal;
-      color: #3d3d3d;
+    &_darkgrey {
+      background-color: rgba(#ffffff, .3);
+      color: #fff;
+      
+      .popup__filter-close:before,
+      .popup__filter-close:after {
+        background-color: #9e914d;
+      }
+    }
+    
+    &_metro {
+      padding-left: 17px;
+      
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 9px;
+        height: 100%;
+        border-radius: 2px 0 0 2px;
+      }
+      
+      &-grey:before {
+        background-color: #c9c9c9;
+      }
+      
+      &-green:before {
+        background-color: #49bb7b;
+      }
+      
+      &-darkred:before {
+        background-color: #98315f;
+      }
     }
   }
   
@@ -588,12 +632,395 @@
     margin-top: 14px;
   }
   
-  &_sales {
-    padding: 23px 22px 14px;
-    text-align: center;
+  &__container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  &__tab-links {
+    margin-left: 20px;
+    position: relative;
+    top: -2px;
+    
+    @include screen('tablet-wide') {
+      display: block;
+      margin-left: 0;
+      top: 0;
+    }
     
     @include screen('tablet-small') {
-      padding: 20px;
+      margin-top: 8px;
+    }
+  }
+  
+  &__tab-link {
+    margin-right: 41px;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 300;
+    letter-spacing: .02em;
+    padding-bottom: 3px;
+    white-space: nowrap;
+    
+    @include screen('tablet-small') {
+      font-size: 16px;
+      display: inline-block;
+      padding-bottom: 0;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    
+    &:last-child {
+      margin-right: 0;
+    }
+    
+    &.active {
+      border-bottom: 1px solid #fff;
+    }
+  }
+  
+  &__tab {
+    display: none;
+    
+    &.active {
+      display: block;
+    }
+  }
+  
+  &__map-top {
+    display: flex;
+    align-items: center;
+    margin-top: 17px;
+    padding: 0 22px;
+    
+    @include screen('tablet-wide') {
+      flex-wrap: wrap;
+      padding: 0;
+    }
+  }
+  
+  &__map-link {
+    color: #fefcfc;
+    font-size: 21px;
+    font-weight: 300;
+    letter-spacing: .02em;
+    border-bottom: 1px dashed #fefcfc;
+    padding-bottom: 1px;
+    margin: 5px 0;
+    margin-right: 50px;
+    flex-shrink: 0;
+    
+    @include screen('tablet-small') {
+      font-size: 16px;
+      margin: 7px 0;
+      margin-right: 30px;
+    }
+  }
+  
+  &__address {
+    color: #fefcfc;
+    font-size: 21px;
+    font-weight: 300;
+    letter-spacing: .02em;
+    margin: 5px 0;
+    margin-right: 53px;
+    flex-shrink: 0;
+    
+    @include screen('tablet-small') {
+      font-size: 16px;
+      margin: 7px 0;
+      margin-right: 30px;
+    }
+  }
+  
+  &__controls {
+    margin: 5px 0;
+    flex-shrink: 0;
+    
+    @include screen('tablet-small') {
+      margin: 7px 0;
+    }
+  }
+  
+  &__control {
+    display: inline-block;
+    width: 42px;
+    height: 29px;
+    background-color: $color-yellow;
+    color: #212121;
+    font-size: 23px;
+    font-weight: 300;
+    line-height: 29px;
+    text-align: center;
+  }
+  
+  &__controls-text {
+    color: #fefcfc;
+    font-size: 21px;
+    font-weight: 300;
+    letter-spacing: .02em;
+    margin: 0 19px;
+    
+    @include screen('tablet-small') {
+      font-size: 16px;
+    }
+  }
+  
+  &__map {
+    margin-top: 15px;
+    margin-right: 6px;
+    height: 576px;
+    background-color: #ccc;
+    
+    @include screen('tablet-wide') {
+      margin-right: 0;
+    }
+    
+    @include screen('tablet-small') {
+      height: 300px;
+      margin-right: 0;
+    }
+  }
+  
+  &__map-bottom {
+    text-align: center;
+    position: relative;
+    margin-top: 11px;
+    padding: 6px 400px 0;
+    margin-bottom: -13px;
+    
+    @include screen('tablet-wide') {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 0;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  }
+  
+  &__checkbox {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    
+    @include screen('tablet-wide') {
+      position: relative;
+      margin-right: 24px;
+      align-items: flex-start;
+    }
+    
+    input {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      
+      &:checked ~ .popup__checkbox-box svg {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+    
+    &-box {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #fff;
+      position: relative;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      
+      svg {
+        @include center-margin(12px, 9px);
+        fill: none;
+        stroke: #fff;
+        transition: opacity $ease-main;
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+    
+    &-text {
+      display: inline-block;
+      opacity: 0.9;
+      color: #fffefe;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: .02em;
+      margin-left: 13px;
+    }
+  }
+  
+  &__map-hint {
+    opacity: 0.8;
+    color: #ffffff;
+    font-size: 14px;
+    font-style: italic;
+    letter-spacing: .025em;
+    margin-left: -47px;
+    
+    @include screen('tablet-wide') {
+      margin-left: 0;
+      text-align: right;
+    }
+    
+    @include screen('tablet-small') {
+      width: 100%;
+      text-align: left;
+      margin-top: 10px;
+    }
+  }
+  
+  &__metro-top {
+    margin-top: 13px;
+    padding: 0 20px;
+    
+    @include screen('tablet-wide') {
+      margin-top: 30px;
+      padding: 0;
+    }
+  }
+  
+  &__metro-hint {
+    color: #ffffff;
+    font-family: $font-second;
+    font-size: 18px;
+    font-style: italic;
+    letter-spacing: .02em;
+  }
+  
+  &__metro {
+    margin-top: 15px;
+    padding: 0 56px;
+    overflow: hidden;
+    
+    @include screen('tablet-wide') {
+      padding: 0;
+    }
+  }
+  
+  &__metro-bottom {
+    margin-top: 21px;
+    padding: 0 38px;
+    padding-right: 400px;
+    
+    @include screen('tablet-wide') {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  
+  &__cols {
+    display: flex;
+    
+    &_scrollable {
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin-right: -42px;
+      margin-bottom: -20px;
+      padding-bottom: 20px;
+    }
+  }
+  
+  &__col {
+    flex-shrink: 0;
+    width: 220px;
+    padding-right: 40px;
+    box-sizing: border-box;
+  }
+  
+  &__list {
+    
+    & + & {
+      margin-top: 10px;
+    }
+    
+    &-heading {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: (30/16);
+      letter-spacing: .02em;
+    }
+  }
+  
+  &__label {
+    position: relative;
+    cursor: pointer;
+    transition: opacity $ease-main;
+    
+    &:hover {
+      opacity: .85;
+    }
+    
+    input {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      
+      &:checked ~ .popup__label-icon {
+        opacity: 1;
+      }
+    }
+    
+    &-icon {
+      width: 5px;
+      height: 5px;
+      border-radius: 1000px;
+      position: absolute;
+      left: -18px;
+      top: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $ease-main;
+      
+      &_green {
+        background-color: #49bb7b;
+      }
+      
+      &_yellow {
+        background-color: #f7e26f;
+      }
+      
+      &_darkred {
+        background-color: #98315f;
+      }
+      
+      &_grey {
+        background-color: #c9c9c9;
+      }
+    }
+    
+    &-text {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: (30/16);
+      letter-spacing: .02em;
+    }
+  }
+  
+  &_sales {
+    
+    .popup__container {
+      padding: 23px 22px 14px;
+      text-align: center;
+      
+      @include screen('tablet-small') {
+        padding: 20px;
+      }
     }
     
     .popup__heading {
@@ -615,14 +1042,56 @@
   }
   
   &_categories {
-    padding: 22px 29px 34px;
     
-    @include screen('tablet-small') {
-      padding: 20px;
+    .popup__container {
+      padding: 22px 29px 34px;
+      
+      @include screen('tablet-small') {
+        padding: 20px;
+      }
     }
     
     .popup__button {
       min-width: 263px;
+    }
+  }
+  
+  &_location {
+    
+    .popup__container {
+      padding: 23px 25px 49px;
+      
+      @include screen('tablet-small') {
+        padding: 20px;
+      }
+    }
+    
+    .popup__heading {
+      margin-left: 21px;
+      letter-spacing: .02em;
+      
+      @include screen('tablet-wide') {
+        margin-left: 0;
+      }
+    }
+    
+    .popup__button {
+      min-width: 354px;
+      padding: 18px;
+      position: absolute;
+      right: 38px;
+      bottom: 22px;
+      
+      @include screen('tablet-wide') {
+        position: static;
+        display: block;
+        margin: 30px auto 0;
+      }
+      
+      @include screen('tablet-small') {
+        min-width: 280px;
+        padding: 15px;
+      }
     }
   }
 }

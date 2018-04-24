@@ -200,6 +200,17 @@ div {
   transform: translate(-50%, -50%);
 }
 
+@mixin center-margin($width, $height) {
+  width: $width;
+  height: $height;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 /*
 Миксин для быстрого выравнивания картинки по центру
 Пример использования:
