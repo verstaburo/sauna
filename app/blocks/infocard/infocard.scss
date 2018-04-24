@@ -146,6 +146,7 @@
   }
   
   &__name {
+    display: inline-block;
     margin-top: 6px;
     color: $color-lightblue;
     font-size: 18px;
@@ -289,7 +290,7 @@
     font-family: $font-second;
     font-size: 16px;
     font-weight: 400;
-    line-height: (19.94/16);
+    line-height: 1.2;
     letter-spacing: .02em;   
     height: 0;
     opacity: 0;

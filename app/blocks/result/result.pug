@@ -4,7 +4,8 @@ mixin result(title, name, onetel)
     +e.content
       +e.left
         +e.row
-          +e.P.name= name
+          +e.P.name
+            a(href='#')= name
           +e.rating
             +rating(3)
             +e.P.reviews 15 отзывов

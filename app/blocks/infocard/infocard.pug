@@ -11,7 +11,7 @@ mixin infocard(img, reviews, title, name, desc)
         if reviews
           +e.A(href='#').reviews 15 отзывов
       +e.title= title
-      +e.name= name
+      +e.A(href='#').name= name
       +e.info
         +e.price 1000 - 1200 руб.
         if desc
@@ -34,7 +34,7 @@ mixin infocard-hover(img, reviews, title, name, desc)
         if reviews
           +e.A(href='#').reviews 15 отзывов
       +e.title= title
-      +e.name= name
+      +e.A(href='#').name= name
       +e.info
         +e.price 1000 - 1200 руб.
         if desc
@@ -61,7 +61,7 @@ mixin infocard-list(img, reviews, title, name, metro, desc)
         +rating(3)
         if reviews
           +e.A(href='#').reviews (15 отзывов)      
-      +e.name= name
+      +e.A(href='#').name= name
       +e.info
         +e.price 1000 - 1200 руб.
         if metro

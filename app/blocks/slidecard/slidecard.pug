@@ -1,4 +1,4 @@
-mixin slidecard(img, name, location, desc)
+mixin slidecard(img, title, name, desc)
   +b.slidecard&attributes(attributes)
     +e.img
       +slider(false, true)
@@ -9,8 +9,8 @@ mixin slidecard(img, name, location, desc)
         +slide()
           img(src='assets/images/' + img)      
     +e.content
-      +e.name= name
-      +e.location= location
+      +e.title= title
+      +e.A(href='#').name= name
       +e.desc
         - for (var i = 0; i < desc.length; i++)
           | #{desc[i]}

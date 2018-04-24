@@ -1,7 +1,7 @@
 mixin mapblock(buttontext)
   +b.mapblock&attributes(attributes)
     +map().mapblock__map#map
-    .container
+    +e.container.container
       +e.A(href='#').button
         +e.IMG(src='assets/images/map_arrow.png').button-icon
         = buttontext

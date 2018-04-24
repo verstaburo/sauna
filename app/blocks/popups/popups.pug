@@ -2,6 +2,115 @@ mixin popups()
   +b.popups&attributes(attributes)
     block
 
-mixin popup()
-  +b.popup&attributes(attributes)
-    block
+
+mixin popup-sales()
+  +b.FORM.popup._sales#popup-sales&attributes(attributes)
+    +e.A(href='#').close
+      +e.SPAN.close-text Закрыть
+      +e.SPAN.close-icon
+    +e.P.heading Выберите подходящую акцию
+    +e.UL.sales
+      +label-sale('sale1', 'Любая')
+      +label-sale('sale2', 'Час в подарок')
+      +label-sale('sale3', 'День рождения')
+      +label-sale('sale4', 'Подарок от заведения')
+      +label-sale('sale5', 'Скидка на СПА (SPA)')
+      +label-sale('sale6', 'Мальчишник')
+      +label-sale('sale7', 'Девичник')
+      +label-sale('sale8', 'Подарок от заведения')
+      +label-sale('sale9', 'Подарок от заведения')
+    +e.BUTTON.button Показать 251 сауну
+      
+mixin label-sale(value, text)
+  +e.LI.sales-item
+    +e.LABEL.sale
+      input(type='checkbox' name='sale' value=value)
+      +e.SPAN.sale-icon
+        +icon('diamond')
+      +e.P.sale-text= text
+        +e.SPAN.sale-check
+          +icon('check')
+
+
+mixin popup-categories()
+  +b.FORM.popup._categories#popup-categories&attributes(attributes)
+    +e.A(href='#').close
+      +e.SPAN.close-text Закрыть
+      +e.SPAN.close-icon
+    +e.P.heading._small Поиск по категориям
+      +e.BUTTON(type='reset').reset очистить форму
+    +e.categories
+      +popup-category(6, 'Вид парной', 'category1', ['Финская парная', 'Турецкий хамам', 'Баня на дровах', 'Инфракрасная сауна', 'Русская баня', 'Японская баня Офуро'])
+      +popup-category(6, 'Кухня', 'category2', ['Ресторан', 'Мангал', 'Алкоголь', 'Разливное пиво', 'Япоские суши', 'Можно со своими продуктами'])
+      +popup-category(6, 'Услуги', 'category3', ['Веники', 'Банщик', 'СПА терапия', 'Спортивный массаж', 'Эротический массаж', 'Кальян'])
+      +popup-category(8, 'Сервис', 'category4', ['Караоке', 'Бильярд', 'Джакузи', 'Бассейн', 'Купель', 'Комната отдыха', 'Спуниковое ТВ', 'Парковка'])
+      +popup-category(7, 'Стоимость', 'category5', ['Любая', 'до 700 ₽/час', '700-1000 ₽/час', '1000-1500 ₽/час', '1500-2000 ₽/час', '2000-3000 ₽/час', 'от 3000 ₽/час'])._blue
+    +e.count
+      +e.P.count-heading Вместимость сауны
+      +label-count('count1', 'двое')
+      +label-count('count2', 'до 10')
+      +label-count('count3', '10-20')
+      +label-count('count4', 'от 20 человек')
+      +e.count-groups
+        +e.count-group
+          +icon('person').__count-icon._active
+          +icon('person').__count-icon._active
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+        +e.count-group
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+        +e.count-group
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+        +e.count-group
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+          +icon('person').__count-icon
+      +label-count('count5', 'любая')
+    +e.bottom
+      +e.bottom-left
+        +e.P.filter Финская парная
+          +e.A(href='#').filter-close
+        +e.P.filter Ароматерапия
+          +e.A(href='#').filter-close
+        +e.P.filter Оздоровительный массаж
+          +e.A(href='#').filter-close
+        +e.P.filter Оздоровительный массаж
+          +e.A(href='#').filter-close
+        +e.P.filter Охраняемая парковка
+          +e.A(href='#').filter-close
+        +e.A(href='#').filter._res Сбросить фильтры
+      +e.bottom-right
+        +e.BUTTON.button._blue Показать 251 сауну
+        +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
+
+mixin popup-category(count, heading, name, texts)
+  +e.category&attributes(attributes)
+    +e.P.category-heading= heading
+    +e.UL.category-list
+      - for (var i = 0; i < count; i++)
+        +label-category(name, 'type' + i, texts[i])
+
+mixin label-category(name, value, text)
+  +e.LI.category-item
+    +e.LABEL.type
+      input(type='checkbox', name=name, value=value)
+      +e.SPAN.type-icon
+      +e.SPAN.type-text= text
+      
+mixin label-count(value, text)
+  +e.LABEL.count-item
+    input(type='radio', name='count', value=value)
+    +e.SPAN.count-radio
+    +e.SPAN.count-text= text
+

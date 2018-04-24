@@ -100,7 +100,13 @@ a, input, button, select, textarea {
   transition: all $ease-main;
 }
 
-button { cursor: pointer; }
+button {
+  cursor: pointer;
+  
+  &:hover {
+    opacity: .85;
+  }
+}
 
 select, input, textarea, button {
   color: $color-input;

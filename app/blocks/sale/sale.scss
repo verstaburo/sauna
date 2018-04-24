@@ -72,6 +72,10 @@
     @include screen('tablet-small') {
       font-size: 18px;
     }
+    
+    a {
+      color: inherit;
+    }
   }
   
   &__rating {

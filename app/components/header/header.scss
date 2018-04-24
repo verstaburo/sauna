@@ -40,13 +40,16 @@
     
     img {
       width: 132px;
+      height: 23px;
       
       @include screen('tablet-wide') {
         width: 200px;
+        height: 34px;
       }
       
       @include screen('tablet-small') {
         width: 100px;
+        height: 17px;
       }
     }
   }

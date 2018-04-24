@@ -5,7 +5,8 @@ mixin sale(img, title)
         img(src='assets/images/' + img)
       +e.heading
         +e.P.title= title
-        +e.P.name Усадьба банная на Угрешской
+        +e.P.name
+          a(href='#') Усадьба банная на Угрешской
       +e.rating
         +rating(2)
         +e.P.reviews Отзывы 231

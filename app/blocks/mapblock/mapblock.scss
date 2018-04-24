@@ -11,7 +11,7 @@
     pointer-events: none;
   }
   
-  .container {
+  &__container {
     position: relative;
     z-index: 2;
     text-align: right;
