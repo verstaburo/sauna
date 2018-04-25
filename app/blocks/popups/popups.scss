@@ -764,6 +764,8 @@
     top: 3px;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    transition: opacity $ease-main;
     
     @include screen('tablet-wide') {
       position: relative;
@@ -771,6 +773,10 @@
       align-items: flex-start;
       top: 0;
       margin-bottom: 10px;
+    }
+    
+    &:hover {
+      opacity: .85;
     }
     
     input {

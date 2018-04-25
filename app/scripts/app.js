@@ -16,6 +16,7 @@ import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
 import '../blocks/put-block-into-slot/put-block-into-slot';
+import '../blocks/sitemap/sitemap';
 import '../components/lastview/lastview';
 
 const $ = window.$;

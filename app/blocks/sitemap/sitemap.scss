@@ -1,0 +1,134 @@
+.sitemap {
+  display: block;
+  background-color: #000;
+  color: #fdfdfd;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: .02em;
+  padding-top: 32px;
+  
+  @include screen('tablet-wide') {
+    display: none;
+  }
+  
+  a {
+    color: inherit;
+  }
+  
+  &__heading {
+    font-size: 31px;
+  }
+  
+  &__tab-links {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  &__tab-link {
+    display: inline-block;
+    margin: 10px 20px 6px;
+    font-size: 21px;
+    border-bottom: 1px solid #fdfdfd;
+    
+    &.active {
+      border-bottom: 1px solid transparent;
+    }
+  }
+  
+  &__tab {
+    display: none;
+    
+    &.active {
+      display: block;
+    }
+  }
+  
+  &__nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto 24px;
+    width: 100%;
+    max-width: 850px;
+  }
+  
+  &__nav-link {
+    display: inline-block;
+    margin: 10px 4px 6px 3px;
+    font-size: 21px;
+    font-weight: 400;
+    border-bottom: 1px solid #fdfdfd;
+    position: relative;
+    
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 9px solid rgba(#f7e26f, .8);
+      position: absolute;
+      left: 0;
+      top: calc(100% + 7px);
+      right: 0;
+      margin: auto;
+      transition: opacity $ease-main;
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    &.active {
+      border-bottom: 1px solid transparent;
+      
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+  
+  &__links {
+    overflow: hidden;
+    text-align: left;
+  }
+  
+  &__cols {
+    height: 514px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-right: -20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  &__col {
+    width: 23%;
+    padding-right: 33px;
+    align-self: flex-start;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+  }
+  
+  &__list {
+    
+    & + & {
+      margin-top: 3px;
+    }
+    
+    &-heading {
+      font-size: 21px;
+      margin-bottom: 2px;
+    }
+    
+    &-link {
+      font-size: 16px;
+      line-height: (28/16);  
+      border-bottom: 1px solid #fdfdfd;
+    }
+  }
+}

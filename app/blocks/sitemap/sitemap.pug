@@ -1,0 +1,169 @@
+mixin sitemap()
+  +b.sitemap&attributes(attributes)
+    .container
+      +e.P.heading Карта сайта (Москва)
+      +e.tab-links
+        each val, index in ['По алфавиту', 'Популярное', 'По районам', 'По округам', 'Метро', 'Улицам']
+          if index == 0
+            +e.A(href='#' data-tab-target='linkgroup1').tab-link.active= val
+          else
+            +e.A(href='#' data-tab-target='linkgroup' + (index + 1)).tab-link= val
+      +e.tab(data-tab='linkgroup1' data-tab-group='linkgroups').active
+        +e.nav-links
+          each val, index in ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Щ', 'Э', 'Ю', 'Я']
+            if index == 3
+              +e.A(href='#sitelinks4').nav-link.active= val
+            else
+              +e.A(href='#sitelinks' + (index+1)).nav-link= val
+        +e.links
+          +e.cols
+            +e.col
+              +sitemap-list('sitelinks1', 'А', ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна', 'Crazy в отеле, сауна', 'ELITE & CLUB GOLD SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна'])
+              +sitemap-list('sitelinks2', 'Б', ['Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks3', 'В', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks4', 'Г', ['Crazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks5', 'Д', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks6', 'Е', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks7', 'Ж', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks8', 'З', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks9', 'И', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+      +e.tab(data-tab='linkgroup2' data-tab-group='linkgroups')
+        +e.nav-links
+          each val, index in ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Щ', 'Э', 'Ю', 'Я']
+            if index == 3
+              +e.A(href='#sitelinks24').nav-link.active= val
+            else
+              +e.A(href='#sitelinks2' + (index+1)).nav-link= val
+        +e.links
+          +e.cols
+            +e.col
+              +sitemap-list('sitelinks21', 'А', ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна', 'Crazy в отеле, сауна', 'ELITE & CLUB GOLD SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна'])
+              +sitemap-list('sitelinks22', 'Б', ['Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks23', 'В', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks24', 'Г', ['Crazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks25', 'Д', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks26', 'Е', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks27', 'Ж', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks28', 'З', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks29', 'И', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+      +e.tab(data-tab='linkgroup3' data-tab-group='linkgroups')
+        +e.nav-links
+          each val, index in ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Щ', 'Э', 'Ю', 'Я']
+            if index == 3
+              +e.A(href='#sitelinks34').nav-link.active= val
+            else
+              +e.A(href='#sitelinks3' + (index+1)).nav-link= val
+        +e.links
+          +e.cols
+            +e.col
+              +sitemap-list('sitelinks31', 'А', ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна', 'Crazy в отеле, сауна', 'ELITE & CLUB GOLD SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна'])
+              +sitemap-list('sitelinks32', 'Б', ['Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks33', 'В', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks34', 'Г', ['Crazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks35', 'Д', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks36', 'Е', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks37', 'Ж', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks38', 'З', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks39', 'И', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+      +e.tab(data-tab='linkgroup4' data-tab-group='linkgroups')
+        +e.nav-links
+          each val, index in ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Щ', 'Э', 'Ю', 'Я']
+            if index == 3
+              +e.A(href='#sitelinks44').nav-link.active= val
+            else
+              +e.A(href='#sitelinks4' + (index+1)).nav-link= val
+        +e.links
+          +e.cols
+            +e.col
+              +sitemap-list('sitelinks41', 'А', ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна', 'Crazy в отеле, сауна', 'ELITE & CLUB GOLD SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна'])
+              +sitemap-list('sitelinks42', 'Б', ['Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks43', 'В', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks44', 'Г', ['Crazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks45', 'Д', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks46', 'Е', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks47', 'Ж', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks48', 'З', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks49', 'И', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+      +e.tab(data-tab='linkgroup5' data-tab-group='linkgroups')
+        +e.nav-links
+          each val, index in ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Щ', 'Э', 'Ю', 'Я']
+            if index == 3
+              +e.A(href='#sitelinks54').nav-link.active= val
+            else
+              +e.A(href='#sitelinks5' + (index+1)).nav-link= val
+        +e.links
+          +e.cols
+            +e.col
+              +sitemap-list('sitelinks51', 'А', ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна', 'Crazy в отеле, сауна', 'ELITE & CLUB GOLD SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна'])
+              +sitemap-list('sitelinks52', 'Б', ['Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks53', 'В', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks54', 'Г', ['Crazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks55', 'Д', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks56', 'Е', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks57', 'Ж', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks58', 'З', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks59', 'И', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+      +e.tab(data-tab='linkgroup6' data-tab-group='linkgroups')
+        +e.nav-links
+          each val, index in ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Щ', 'Э', 'Ю', 'Я']
+            if index == 3
+              +e.A(href='#sitelinks64').nav-link.active= val
+            else
+              +e.A(href='#sitelinks6' + (index+1)).nav-link= val
+        +e.links
+          +e.cols
+            +e.col
+              +sitemap-list('sitelinks61', 'А', ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна', 'Crazy в отеле, сауна', 'ELITE & CLUB GOLD SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна'])
+              +sitemap-list('sitelinks62', 'Б', ['Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks63', 'В', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks64', 'Г', ['Crazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks65', 'Д', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks66', 'Е', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks67', 'Ж', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+            +e.col
+              +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
+              +sitemap-list('sitelinks68', 'З', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
+              +sitemap-list('sitelinks69', 'И', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
+
+mixin sitemap-list(id, heading, links)
+  +e.list(id=id)
+    if heading
+      +e.P.list-heading= heading
+    +e.UL.list-items
+      each item in links
+        +e.LI.list-item
+          +e.A(href='#').list-link= item
