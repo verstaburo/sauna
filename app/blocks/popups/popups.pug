@@ -1,17 +1,19 @@
 mixin popups()
   +b.popups&attributes(attributes)
-    block
+    +popup-sales()
+    +popup-categories()
+    +popup-location()
 
 mixin popup()
   +b.popup&attributes(attributes)
     block
 
-mixin popup-list(heading, name, texts, iconColors)
+mixin popup-list(heading, name, value, texts, iconColors)
   +e.list&attributes(attributes)
     +e.P.list-heading= heading
     +e.UL.list-items
       - for (var i = 0; i < texts.length; i++)
-        +popup-label(name, 'type' + i, texts[i], iconColors ? iconColors[i] : 'yellow')
+        +popup-label(name, value + i, texts[i], iconColors ? iconColors[i] : 'yellow')
 
 mixin popup-label(name, value, text, iconColor)
   +e.LI.list-item
@@ -20,7 +22,7 @@ mixin popup-label(name, value, text, iconColor)
       +e.SPAN.label-icon(class='_' + (iconColor ? iconColor : 'yellow'))
       +e.SPAN.label-text= text
       
-mixin popup-countlabel(value, text)
+mixin label-count(value, text)
   +e.LABEL.count-item
     input(type='radio', name='count', value=value)
     +e.SPAN.count-radio
@@ -29,8 +31,8 @@ mixin popup-countlabel(value, text)
 // popup-sales
 
 mixin popup-sales()
-  +b.FORM.popup._sales#salespopup&attributes(attributes)
-    +e.container
+  +b.popup._sales#salespopup&attributes(attributes)
+    +e.FORM.container
       +e.A(href='#').close
         +e.SPAN.close-text Закрыть
         +e.SPAN.close-icon
@@ -45,7 +47,9 @@ mixin popup-sales()
         +label-sale('sale7', 'Девичник')
         +label-sale('sale8', 'Подарок от заведения')
         +label-sale('sale9', 'Подарок от заведения')
-      +e.BUTTON.button Показать 251 сауну
+      +e.button-block
+        +e.BUTTON.button Показать 251 сауну
+        +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
       
 mixin label-sale(value, text)
   +e.LI.sales-item
@@ -60,24 +64,25 @@ mixin label-sale(value, text)
 // popup-categories
 
 mixin popup-categories()
-  +b.FORM.popup._categories#categoriespopup&attributes(attributes)
-    +e.container
+  +b.popup._categories#categoriespopup&attributes(attributes)
+    +e.FORM.container.error
       +e.A(href='#').close
         +e.SPAN.close-text Закрыть
         +e.SPAN.close-icon
       +e.P.heading._small Поиск по категориям
         +e.BUTTON(type='reset').reset очистить форму
-      +e.cols
-        +e.col
-          +popup-list(6, 'Вид парной', 'category1', ['Финская парная', 'Турецкий хамам', 'Баня на дровах', 'Инфракрасная сауна', 'Русская баня', 'Японская баня Офуро'])
-        +e.col
-          +popup-category(6, 'Кухня', 'category2', ['Ресторан', 'Мангал', 'Алкоголь', 'Разливное пиво', 'Япоские суши', 'Можно со своими продуктами'])
-        +e.col
-          +popup-category(6, 'Услуги', 'category3', ['Веники', 'Банщик', 'СПА терапия', 'Спортивный массаж', 'Эротический массаж', 'Кальян'])
-        +e.col
-          +popup-category(8, 'Сервис', 'category4', ['Караоке', 'Бильярд', 'Джакузи', 'Бассейн', 'Купель', 'Комната отдыха', 'Спуниковое ТВ', 'Парковка'])
-        +e.col
-          +popup-category(7, 'Стоимость', 'category5', ['Любая', 'до 700 ₽/час', '700-1000 ₽/час', '1000-1500 ₽/час', '1500-2000 ₽/час', '2000-3000 ₽/час', 'от 3000 ₽/час'])._blue
+      +e.categories
+        +e.cols._wrap
+          +e.col
+            +popup-list('Вид парной', 'category', 'category1', ['Финская парная', 'Турецкий хамам', 'Баня на дровах', 'Инфракрасная сауна', 'Русская баня', 'Японская баня Офуро'])
+          +e.col
+            +popup-list('Кухня', 'category', 'category2', ['Ресторан', 'Мангал', 'Алкоголь', 'Разливное пиво', 'Япоские суши', 'Можно со своими продуктами'])
+          +e.col
+            +popup-list('Услуги', 'category', 'category3', ['Веники', 'Банщик', 'СПА терапия', 'Спортивный массаж', 'Эротический массаж', 'Кальян'])
+          +e.col
+            +popup-list('Сервис', 'category', 'category4', ['Караоке', 'Бильярд', 'Джакузи', 'Бассейн', 'Купель', 'Комната отдыха', 'Спуниковое ТВ', 'Парковка'])
+          +e.col
+            +popup-list('Стоимость', 'category', 'category5', ['Любая', 'до 700 ₽/час', '700-1000 ₽/час', '1000-1500 ₽/час', '1500-2000 ₽/час', '2000-3000 ₽/час', 'от 3000 ₽/час'], ['blue'])
       +e.count
         +e.P.count-heading Вместимость сауны
         +label-count('count1', 'двое')
@@ -112,17 +117,17 @@ mixin popup-categories()
         +label-count('count5', 'любая')
       +e.bottom
         +e.bottom-left
-          +e.P.filter Финская парная
+          +e.P.filter._yellow Финская парная
             +e.A(href='#').filter-close
-          +e.P.filter Ароматерапия
+          +e.P.filter._yellow Ароматерапия
             +e.A(href='#').filter-close
-          +e.P.filter Оздоровительный массаж
+          +e.P.filter._yellow Оздоровительный массаж
             +e.A(href='#').filter-close
-          +e.P.filter Оздоровительный массаж
+          +e.P.filter._yellow Оздоровительный массаж
             +e.A(href='#').filter-close
-          +e.P.filter Охраняемая парковка
+          +e.P.filter._yellow Охраняемая парковка
             +e.A(href='#').filter-close
-          +e.A(href='#').filter._res Сбросить фильтры
+          +e.A(href='#').filter._grey._normal Сбросить фильтры
         +e.bottom-right
           +e.BUTTON.button._blue Показать 251 сауну
           +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
@@ -130,7 +135,7 @@ mixin popup-categories()
 // popup-location
 
 mixin popup-location()
-  +b.FORM.popup._location#locationpopup&attributes(attributes)
+  +b.popup._location#locationpopup&attributes(attributes)
     +e.container
       +e.A(href='#').close
         +e.SPAN.close-text Закрыть
@@ -140,7 +145,7 @@ mixin popup-location()
           +e.A(href='#' data-tab-target='location1').tab-link.active на карте
           +e.A(href='#' data-tab-target='location2').tab-link по метро
           +e.A(href='#' data-tab-target='location3').tab-link по районам
-      +e.tab(data-tab='location1' data-tab-group='locations')
+      +e.FORM.tab(data-tab='location1' data-tab-group='locations').active
         +e.map-top
           +e.A(href='#').map-link Любое расположение
           +e.P.address Адрес: Москва, ул. Арбат 1
@@ -148,7 +153,7 @@ mixin popup-location()
             +e.A(href='#').control -
             +e.SPAN.controls-text 22 км
             +e.A(href='#').control +
-        +e.map
+        +e.map#popupmap
         +e.map-bottom
           +e.LABEL.checkbox
             input(type='checkbox')
@@ -156,55 +161,72 @@ mixin popup-location()
               +icon('check')
             +e.SPAN.checkbox-text Показать все сауны на карте
           +e.P.map-hint Выберите  точку на карте, либо введите адрес или метро
-      +e.tab(data-tab='location2' data-tab-group='locations').active
+        +e.button-block
+          +e.BUTTON.button Показать 251 сауну
+          +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
+      +e.FORM.tab(data-tab='location2' data-tab-group='locations')
         +e.metro-top
           +e.P.metro-hint Выберите  станции метро
         +e.metro
           +e.cols._scrollable
             +e.col
-              +popup-list('А', 'metro', ['Авиамоторная', 'Автозаводская', 'Академическая', 'Александровский Сад', 'Алексеевская', 'Алма-Атинская', 'Алтуфьево', 'Аннино', 'Арбатская', 'Аэропорт'], ['green', 'yellow', 'darkred'])
-              +popup-list('Б', 'metro', ['Бабушкинская', 'Багратионовская', 'Баррикадная', 'Бауманская', 'Беговая'], ['grey', 'yellow'])
+              +popup-list('А', 'metro', 'metroa', ['Авиамоторная', 'Автозаводская', 'Академическая', 'Александровский Сад', 'Алексеевская', 'Алма-Атинская', 'Алтуфьево', 'Аннино', 'Арбатская', 'Аэропорт'], ['green', 'yellow', 'darkred'])
+              +popup-list('Б', 'metro', 'metrob1', ['Бабушкинская', 'Багратионовская', 'Баррикадная', 'Бауманская', 'Беговая'], ['grey', 'yellow'])
             +e.col
-              +popup-list('Б', 'metro', ['Бабушкинская', 'Багратионовская', 'Баррикадная', 'Бауманская', 'Беговая'])
-              +popup-list('В', 'metro', ['Вагнеровская', 'Варшавская', 'ВДНХ (станция)', 'Владыкино', 'Водный стадион', 'Волгоградский проспект', 'Волжская', 'Волоколамская', 'Воробьёвы горы', 'Выставочная'])
+              +popup-list('Б', 'metro', 'metrob2', ['Бабушкинская', 'Багратионовская', 'Баррикадная', 'Бауманская', 'Беговая'])
+              +popup-list('В', 'metro', 'metrov', ['Вагнеровская', 'Варшавская', 'ВДНХ (станция)', 'Владыкино', 'Водный стадион', 'Волгоградский проспект', 'Волжская', 'Волоколамская', 'Воробьёвы горы', 'Выставочная'])
             +e.col
-              +popup-list('Г', 'metro', ['Город Мастеров', 'Гуляй-поле'])
-              +popup-list('Д', 'metro', ['Дарвиновская', 'Деловой центр', 'Дзержинская', 'Динамо (Москва)', 'Дмитровская', 'Добрынинская', 'Домодедовская', 'Донская', 'Достоевская', 'Дубровка', 'Выхино'])
-              +popup-list('Ж', 'metro', ['Жулебино'])
+              +popup-list('Г', 'metro', 'metrog', ['Город Мастеров', 'Гуляй-поле'])
+              +popup-list('Д', 'metro', 'metrod', ['Дарвиновская', 'Деловой центр', 'Дзержинская', 'Динамо (Москва)', 'Дмитровская', 'Добрынинская', 'Домодедовская', 'Донская', 'Достоевская', 'Дубровка', 'Выхино'])
+              +popup-list('Ж', 'metro', 'metrozh', ['Жулебино'])
             +e.col
-              +popup-list('И', 'metro', ['Измайловская'])
-              +popup-list('З', 'metro', ['Знамя Революции', 'Зябликово'])
-              +popup-list('К', 'metro', ['Калужская', 'Кантемировская', 'Каховская', 'Каширская', 'Киевская (Арбатско-Покровская линия)', 'Киевская (Кольцевая линия)', 'Киевская (Филёвская линия)', 'Кировская (Москва)', 'Китай-город', 'Кожуховская'])
+              +popup-list('И', 'metro', 'metroi1', ['Измайловская'])
+              +popup-list('З', 'metro', 'metroz', ['Знамя Революции', 'Зябликово'])
+              +popup-list('К', 'metro', 'metrok1', ['Калужская', 'Кантемировская', 'Каховская', 'Каширская', 'Киевская (Арбатско-Покровская линия)', 'Киевская (Кольцевая линия)', 'Киевская (Филёвская линия)', 'Кировская (Москва)', 'Китай-город', 'Кожуховская'])
             +e.col
-              +popup-list('К', 'metro', ['Красногвардейская', 'Краснопресненская', 'Красносельская', 'Красные ворота', 'Крестьянская Застава', 'Кропоткинская', 'Крылатское', 'Кузнецкий Мост (станция)', 'Кузьминки', 'Кунцевская', 'Курская (Арбатско-Покровская линия)', 'Курская (Кольцевая линия)', 'Кутузовская'])
+              +popup-list('К', 'metro', 'metrok2', ['Красногвардейская', 'Краснопресненская', 'Красносельская', 'Красные ворота', 'Крестьянская Застава', 'Кропоткинская', 'Крылатское', 'Кузнецкий Мост (станция)', 'Кузьминки', 'Кунцевская', 'Курская (Арбатско-Покровская линия)', 'Курская (Кольцевая линия)', 'Кутузовская'])
             +e.col
-              +popup-list('И', 'metro', ['Красногвардейская', 'Краснопресненская', 'Красносельская', 'Красные ворота', 'Крестьянская Застава', 'Кропоткинская', 'Крылатское', 'Кузнецкий Мост (станция)', 'Кузьминки', 'Кунцевская', 'Курская (Арбатско-Покровская линия)', 'Курская (Кольцевая линия)', 'Кутузовская'])
+              +popup-list('И', 'metro', 'metroi2', ['Красногвардейская', 'Краснопресненская', 'Красносельская', 'Красные ворота', 'Крестьянская Застава', 'Кропоткинская', 'Крылатское', 'Кузнецкий Мост (станция)', 'Кузьминки', 'Кунцевская', 'Курская (Арбатско-Покровская линия)', 'Курская (Кольцевая линия)', 'Кутузовская'])
         +e.metro-bottom
-          +e.P.filter._metro._metro-grey Авиамоторная
+          +e.P.filter._grey._metro._metro-grey Авиамоторная
             +e.A(href='#').filter-close
-          +e.P.filter._metro._metro-green Автозаводская
+          +e.P.filter._grey._metro._metro-green Автозаводская
             +e.A(href='#').filter-close
-          +e.P.filter._metro._metro-darkred Алтуфьево
+          +e.P.filter._grey._metro._metro-darkred Алтуфьево
             +e.A(href='#').filter-close
           +e.P.filter._darkgrey Сбросить все
             +e.A(href='#').filter-close
-      +e.tab(data-tab='location3' data-tab-group='locations')
+        +e.button-block
+          +e.BUTTON.button Показать 251 сауну
+          +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
+      +e.FORM.tab(data-tab='location3' data-tab-group='locations')
         +e.districts
-          +e.cols
+          +e.cols._scrollable
             +e.col
+              +popup-list('А', 'district', 'districta1', ['Академический', 'Алексеевский', 'Алтуфьевский', 'Арбат', 'Аэропорт'])
+              +popup-list('Б', 'district', 'districtb1', ['Бабушкинский', 'Басманный', 'Беговой', 'Бескудниковский', 'Бибирево', 'Бирюлёво Восточное', 'Бирюлёво Западное', 'Богородское', 'Братеево'])
             +e.col
+              +popup-list('Г', 'district', 'districtg', ['Академический', 'Алексеевский', 'Алтуфьевский', 'Арбат', 'Аэропорт'])
+              +popup-list('Д', 'district', 'districtd', ['Бабушкинский', 'Басманный', 'Беговой', 'Бескудниковский', 'Бибирево', 'Бирюлёво Восточное', 'Бирюлёво Западное', 'Богородское', 'Братеево'])
             +e.col
+              +popup-list('А', 'district', 'districta2', ['Академический', 'Алексеевский', 'Алтуфьевский', 'Арбат', 'Аэропорт'])
+              +popup-list('Б', 'district', 'districtb2', ['Бабушкинский', 'Басманный', 'Беговой', 'Бескудниковский', 'Бибирево', 'Бирюлёво Восточное', 'Бирюлёво Западное', 'Богородское', 'Братеево'])
             +e.col
+              +popup-list('А', 'district', 'districta3', ['Академический', 'Алексеевский', 'Алтуфьевский', 'Арбат', 'Аэропорт'])
+              +popup-list('Б', 'district', 'districtb3', ['Бабушкинский', 'Басманный', 'Беговой', 'Бескудниковский', 'Бибирево', 'Бирюлёво Восточное', 'Бирюлёво Западное', 'Богородское', 'Братеево'])
             +e.col
+              +popup-list('А', 'district', 'districta4', ['Академический', 'Алексеевский', 'Алтуфьевский', 'Арбат', 'Аэропорт'])
+              +popup-list('Б', 'district', 'districtb4', ['Бабушкинский', 'Басманный', 'Беговой', 'Бескудниковский', 'Бибирево', 'Бирюлёво Восточное', 'Бирюлёво Западное', 'Богородское', 'Братеево'])
             +e.col
-            +e.col
-        +e.district-bottom
-          +e.P.filter
+              +popup-list('А', 'district', 'districta5', ['Академический', 'Алексеевский', 'Алтуфьевский', 'Арбат', 'Аэропорт'])
+              +popup-list('Б', 'district', 'districtb5', ['Бабушкинский', 'Басманный', 'Беговой', 'Бескудниковский', 'Бибирево', 'Бирюлёво Восточное', 'Бирюлёво Западное', 'Богородское', 'Братеево'])
+        +e.districts-bottom
+          +e.P.filter._grey Академический
             +e.A(href='#').filter-close
-          +e.P.filter
+          +e.P.filter._grey Бирюлево Восточное
             +e.A(href='#').filter-close
-          +e.P.filter
+          +e.P.filter._darkgrey Сбросить все
             +e.A(href='#').filter-close
-          +e.P.filter
-            +e.A(href='#').filter-close
-      +e.BUTTON.button Показать 251 сауну
+        +e.button-block
+          +e.BUTTON.button Показать 251 сауну
+          +e.P.error Ничего не найдено. Попробуйте использовать другие параметры

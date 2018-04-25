@@ -2,16 +2,22 @@
 
 .fancybox-close-small:focus::after { outline: none; }
 
-.fancybox-enabled { overflow: initial; }
+.fancybox-enabled { overflow: initial !important; }
 
+.fancybox-slide>div { margin: 0; padding: 0; }
 
 .popup {
-  background-color: rgba(#010101, .9);
+  display: none;
+  width: 100%;
+  background-color: rgba(#010101, .9) !important;
   box-sizing: border-box;
-  //max-height: 100vh;
-  //overflow-y: auto;
-  //overflow-x: hidden;
   position: relative;
+  
+  form.error {
+    .popup__error {
+      display: block;
+    }
+  }
   
   &__close {
     position: absolute;
@@ -255,9 +261,8 @@
   }
   
   &__categories {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 78px;
+    padding: 0 58px;
+    margin-top: 15px;
     
     @include screen('tablet-wide') {
       padding: 0;
@@ -266,92 +271,49 @@
     @include screen('tablet-small') {
       margin: 20px 0;
     }
-  }
-  
-  &__category {
-    width: 230px;
-    padding-right: 50px;
-    box-sizing: border-box;
-    margin: 40px 0;
     
-    @include screen('tablet-wide') {
-      width: 33.3333%;
+    .popup__col {
+      width: 230px;
       padding-right: 30px;
+      margin: 15px 0;
+
+      @include screen('tablet-wide') {
+        width: 33.3333%;
+        padding-right: 20px;
+      }
+
+      @include screen('tablet-small') {
+        width: 50%;
+      }
+
+      @include screen('phone-wide') {
+        width: 100%;
+      }
     }
     
-    @include screen('tablet-small') {
-      width: 50%;
-      margin: 20px 0;
-    }
-    
-    @include screen('phone-wide') {
-      width: 100%;
-    }
-    
-    &-heading {
+    .popup__list-heading {
       color: #ffffff;
       font-size: 28px;
       font-weight: 300;
+      letter-spacing: -.005em;
       
       @include screen('tablet-small') {
         font-size: 20px;
       }
     }
     
-    &-list {
-      margin-top: 22px;
+    .popup__list-items {
+      margin-top: 12px;
       padding-left: 3px;
       
       @include screen('tablet-small') {
-        margin-top: 11px;
         padding-left: 0;
       }
     }
     
-    &_blue {
-      
-      .popup__type-text:before {
-        background-color: #6daaff;
-      }
-    }
-  }
-  
-  &__type {
-    position: relative;
-    cursor: pointer;
-    
-    &:hover {
-      .popup__type-text {        
-        @include screen('tablet-small', min) {
-          font-size: 19px;
-          font-weight: 400;
-          letter-spacing: .045em;
-        }
-      }
-    }
-    
-    input {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 0;
-      height: 0;
-      opacity: 0;
-      
-      &:checked ~ .popup__type-text:before {
-        opacity: 1;
-        pointer-events: all;
-      }
-    }
-    
-    &-text {
-      display: inline-block;
-      color: #ffffff;
+    .popup__label-text {
       font-size: 18px;
       line-height: 30px;
-      font-weight: 300;
-      letter-spacing: .02em;
-      position: relative;
       transition: all $ease-main;
       
       @include screen('tablet-small') {
@@ -359,30 +321,17 @@
         line-height: (30/18);
       }
       
-      &:before {
-        content: '';
-        display: block;
-        width: 6px;
-        height: 6px;
-        border-radius: 1000px;
-        background-color: #f7e26f;
-        position: absolute;
-        left: -16px;
-        top: 13px;
-        transition: opacity $ease-main;
-        opacity: 0;
-        pointer-events: none;
-        
-        @include screen('tablet-small') {
-          left: -10px;
-          top: 10px;
+      &:hover {
+        @include screen('tablet-wide', min) {
+          font-size: 19px;
+          letter-spacing: .045em;
         }
       }
     }
   }
   
   &__count {
-    margin-top: -2px;
+    margin-top: 23px;
     padding: 0 85px;
     
     @include screen('tablet-wide') {
@@ -459,7 +408,7 @@
     
     &-groups {
       font-size: 0;
-      margin: 18px 0;
+      margin: 24px 0;
       padding: 0 10px;
       
       @include screen('tablet-small') {
@@ -488,16 +437,13 @@
   }
   
   &__bottom {
-    margin-top: 59px;
+    margin-top: 53px;
     padding: 0 87px;
     display: flex;
     justify-content: space-between;
     
     @include screen('tablet-wide') {
       padding: 0;
-    }
-    
-    @include screen('tablet-small') {
       flex-wrap: wrap;
     }
     
@@ -507,14 +453,10 @@
       margin-right: 120px;
       
       @include screen('tablet-wide') {
-        margin-right: 40px;
-      }
-      
-      @include screen('tablet-small') {
-        width: 100%;
         margin-top: 0;
         margin-right: 0;
         margin-bottom: 20px;
+        width: 100%;
       }
     }
     
@@ -539,9 +481,8 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: 4px 13px;
+    padding: 4px 16px;
     border-radius: 2px;
-    background-color: rgba(#fff, .9);
     color: #1e1e1e;
     font-family: $font-second;
     font-style: italic;
@@ -558,7 +499,7 @@
       height: 12px;
       position: relative;
       margin-left: 12px;
-      margin-right: -3px;
+      margin-right: -6px;
       
       &:before, &:after {
         content: '';
@@ -583,6 +524,19 @@
       }
     }
     
+    &_grey {
+      background-color: rgba(#fff, .9);
+    }
+    
+    &_yellow {
+      background-color: #f7e26f;
+      color: #635b36;
+    }
+    
+    &_normal {
+      font-style: normal;
+    }
+    
     &_darkgrey {
       background-color: rgba(#ffffff, .3);
       color: #fff;
@@ -594,7 +548,6 @@
     }
     
     &_metro {
-      padding-left: 17px;
       
       &:before {
         content: '';
@@ -622,6 +575,7 @@
   }
   
   &__error {
+    display: none;
     opacity: 0.5;
     color: #ffffff;
     font-family: $font-second;
@@ -664,6 +618,7 @@
     letter-spacing: .02em;
     padding-bottom: 3px;
     white-space: nowrap;
+    border-bottom: 1px solid transparent;
     
     @include screen('tablet-small') {
       font-size: 16px;
@@ -789,14 +744,14 @@
     text-align: center;
     position: relative;
     margin-top: 11px;
-    padding: 6px 400px 0;
+    padding: 6px 400px 28px;
     margin-bottom: -13px;
     
     @include screen('tablet-wide') {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: flex-start;
       padding: 0;
       margin-bottom: 20px;
       text-align: left;
@@ -806,7 +761,7 @@
   &__checkbox {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 3px;
     display: flex;
     align-items: center;
     
@@ -814,6 +769,8 @@
       position: relative;
       margin-right: 24px;
       align-items: flex-start;
+      top: 0;
+      margin-bottom: 10px;
     }
     
     input {
@@ -900,17 +857,54 @@
   
   &__metro {
     margin-top: 15px;
-    padding: 0 56px;
+    padding: 0 36px;
     overflow: hidden;
     
     @include screen('tablet-wide') {
       padding: 0;
     }
+    
+    .popup__col {
+      width: 223px;
+    }
+    
+    .popup__list + .popup__list {
+      margin-top: 10px;
+    }
   }
   
   &__metro-bottom {
     margin-top: 21px;
-    padding: 0 38px;
+    padding: 0 38px 12px;
+    padding-right: 400px;
+    
+    @include screen('tablet-wide') {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  
+  &__districts {
+    margin-top: 48px;
+    padding: 0 20px;
+    overflow: hidden;
+    
+    @include screen('tablet-wide') {
+      padding: 0;
+    }
+    
+    .popup__col {
+      width: 210px;
+    }
+    
+    .popup__list + .popup__list {
+      margin-top: 30px;
+    }
+  }
+  
+  &__districts-bottom {
+    margin-top: 102px;
+    padding: 0 35px 12px;
     padding-right: 400px;
     
     @include screen('tablet-wide') {
@@ -925,24 +919,24 @@
     &_scrollable {
       overflow-x: auto;
       overflow-y: hidden;
-      margin-right: -42px;
+      margin-right: -20px;
       margin-bottom: -20px;
       padding-bottom: 20px;
+    }
+    
+    &_wrap {
+      flex-wrap: wrap;
     }
   }
   
   &__col {
     flex-shrink: 0;
-    width: 220px;
-    padding-right: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
     box-sizing: border-box;
   }
   
   &__list {
-    
-    & + & {
-      margin-top: 10px;
-    }
     
     &-heading {
       color: #ffffff;
@@ -1000,6 +994,10 @@
       
       &_grey {
         background-color: #c9c9c9;
+      }
+      
+      &_blue {
+        background-color: #6daaff;
       }
     }
     
@@ -1059,7 +1057,7 @@
   &_location {
     
     .popup__container {
-      padding: 23px 25px 49px;
+      padding: 23px 25px 22px;
       
       @include screen('tablet-small') {
         padding: 20px;
@@ -1075,15 +1073,22 @@
       }
     }
     
+    .popup__button-block {
+      text-align: right;
+      margin-top: -40px;
+      margin-right: 14px;
+      
+      @include screen('tablet-wide') {
+        margin-top: 0;
+        margin-right: 0;
+      }
+    }
+    
     .popup__button {
       min-width: 354px;
       padding: 18px;
-      position: absolute;
-      right: 38px;
-      bottom: 22px;
       
       @include screen('tablet-wide') {
-        position: static;
         display: block;
         margin: 30px auto 0;
       }
@@ -1091,6 +1096,16 @@
       @include screen('tablet-small') {
         min-width: 280px;
         padding: 15px;
+      }
+    }
+    
+    .popup__error {
+      max-width: 354px;
+      text-align: center;
+      margin-left: auto;
+      
+      @include screen('tablet-wide') {
+        max-width: 100%;
       }
     }
   }

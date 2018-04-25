@@ -9,5 +9,12 @@ export default function popups() {
   $('.js-fancybox').fancybox({
     afterLoad: freeze,
     afterClose: unfreeze,
+    smallBtn: false,
+    buttons: false,
+    touch: false,
+  });
+
+  $(document).on('click', '.popup__close', () => {
+    $.fancybox.close();
   });
 }
