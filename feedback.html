@@ -20,177 +20,178 @@
     <div class="feedback">
         <div class="header">
             <div class="container"><a class="header__logo" href="/"><img src="assets/images/vs_logo.svg"/></a>
-                <form class="header__search"><button class="header__search-button"><img src="assets/images/search.png"/></button><input class="header__search-input" placeholder="Название сауны, тип парной или адрес  г. Москва" type="text" /></form><a class="header__discounts" href="#">Акции и скидки</a>
-                <div
-                    class="header__select">Москва<svg class="header__select-arrow"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></div>
+                <form class="header__search"><button class="header__search-button"><img src="assets/images/search.png"/></button><input class="header__search-input" placeholder="Название сауны, тип парной или адрес  г. Москва" type="text" /></form><a class="header__discounts js-fancybox"
+                    href="#salespopup">Акции и скидки</a>
+                <div class="header__select">Москва<svg class="header__select-arrow"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></div>
+            </div>
+            <div class="header__line"><img class="header__linebg" src="assets/images/linebg2.jpg" alt="" role="presentation" /></div>
         </div>
-        <div class="header__line"><img class="header__linebg" src="assets/images/linebg2.jpg" alt="" role="presentation" /></div>
-    </div>
-    <div data-slot-id="headblock" data-slot-res="xl">
-        <div data-target-slot="headblock">
-            <div class="headblock">
-                <div class="container">
-                    <h1 class="headblock__heading">Сауны и бани с отзывами</h1>
-                    <p class="headblock__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться
-                        от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%).</p>
+        <div data-slot-id="headblock" data-slot-res="xl">
+            <div data-target-slot="headblock">
+                <div class="headblock">
+                    <div class="container">
+                        <h1 class="headblock__heading">Сауны и бани с отзывами</h1>
+                        <p class="headblock__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться
+                            от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%).</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="filter"><img class="filter__bg" src="assets/images/bg1.svg" alt="" role="presentation" />
-        <div class="container">
-            <p class="filter__heading">Фильтр поиска:</p>
-            <div class="filter__list">
-                <div class="filter__list-item">
-                    <div class="filter__list-icon"><img src="assets/images/filter1.png" /></div>
-                    <p class="filter__list-text">Тип отдыха</p>
-                    <p class="filter__list-text filter__list-text_mobile">Тип отдыха</p>
-                    <p class="filter__list-select">Любой<svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></p>
-                </div>
-                <div class="filter__list-item">
-                    <div class="filter__list-icon filter__list-icon_cover"><img src="assets/images/filter2.jpg" /></div>
-                    <p class="filter__list-text">Расположение: карта, метро, районы</p>
-                    <p class="filter__list-text filter__list-text_mobile">Расположение</p>
-                    <p class="filter__list-select">Любое<svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></p>
-                </div>
-                <div class="filter__list-item">
-                    <div class="filter__list-icon"><img src="assets/images/filter3.jpg" /></div>
-                    <p class="filter__list-text">Стоимость, тип парной и другое</p>
-                    <p class="filter__list-text filter__list-text_mobile">Дополнительно</p>
-                    <p class="filter__list-select">Ничего не выбрано<svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></p>
+        <div class="filter"><img class="filter__bg" src="assets/images/bg1.svg" alt="" role="presentation" />
+            <div class="container">
+                <p class="filter__heading">Фильтр поиска:</p>
+                <div class="filter__list">
+                    <div class="filter__list-item">
+                        <div class="filter__list-icon"><img src="assets/images/filter1.png" /></div>
+                        <p class="filter__list-text"><a href="#">Тип отдыха</a></p>
+                        <p class="filter__list-text filter__list-text_mobile">Тип отдыха</p>
+                        <p class="filter__list-select">Любой<svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></p>
+                    </div>
+                    <div class="filter__list-item">
+                        <div class="filter__list-icon filter__list-icon_cover"><img src="assets/images/filter2.jpg" /></div>
+                        <p class="filter__list-text"><a class="js-fancybox" href="#locationpopup">Расположение: карта, метро, районы</a></p>
+                        <p class="filter__list-text filter__list-text_mobile">Расположение</p>
+                        <p class="filter__list-select">Любое<svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></p>
+                    </div>
+                    <div class="filter__list-item">
+                        <div class="filter__list-icon"><img src="assets/images/filter3.jpg" /></div>
+                        <p class="filter__list-text"><a class="js-fancybox" href="#categoriespopup">Стоимость, тип парной и другое</a></p>
+                        <p class="filter__list-text filter__list-text_mobile">Дополнительно</p>
+                        <p class="filter__list-select">Ничего не выбрано<svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="switcher">
-        <div class="container">
-            <div class="switcher__types"><a class="switcher__type" href="#">Популярность</a><a class="switcher__type switcher__type_active" href="#">Цена</a></div>
-            <div class="switcher__views"><a class="switcher__view" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_view1"></use></svg></a><a class="switcher__view" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_view2"></use></svg></a></div>
+        <div class="switcher">
+            <div class="container">
+                <div class="switcher__types"><a class="switcher__type" href="#">Популярность</a><a class="switcher__type switcher__type_active" href="#">Цена</a></div>
+                <div class="switcher__views"><a class="switcher__view" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_view1"></use></svg></a><a class="switcher__view" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_view2"></use></svg></a></div>
+            </div>
         </div>
-    </div>
-    <div class="mapblock">
-        <div class="map mapblock__map" id="map"></div>
-        <div class="mapblock__container container"><a class="mapblock__button" href="#"><img class="mapblock__button-icon" src="assets/images/map_arrow.png" alt="" role="presentation"/>Показать на карте</a></div>
-    </div>
-    <div data-slot-id="headblock" data-slot-res="md"></div>
-    <div class="feedback__content">
-        <div class="container">
-            <div class="feedback__reviews">
-                <div class="feedback__list">
-                    <div class="review feedback__review">
-                        <div class="review__top">
-                            <div class="review__top-img"><img src="assets/images/review1.jpg" /></div>
-                            <p class="review__heading"><a href="#">Усадьба банная на Угрешской</a></p>
-                            <div class="rating review__top-rating">
-                                <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
-                                <div class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
-                                <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
-                                <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
-                                <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
-                            </div>
-                            <p class="review__reviews">Отзывы 231</p>
-                        </div>
-                        <div class="review__content">
-                            <div class="review__mob-top">
-                                <p class="review__top-author-name">Петр Петров о(об)</p>
-                                <p class="review__heading">Усадьба банная на Угрешской</p>
-                            </div>
-                            <div class="review__author">
-                                <p class="review__author-name">Петр Петров</p>
-                                <p class="review__date">15 мая 2015</p>
-                            </div>
-                            <div class="review__ratings">
-                                <div class="review__ratings-col">
-                                    <p class="review__ratings-item">Персонал<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                        <span
-                                            class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                            <span
-                                                class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                </span>
-                                    </p>
-                                    <p class="review__ratings-item">Услуги <span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                        <span
-                                            class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                            <span
-                                                class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                </span>
-                                    </p>
+        <div class="mapblock">
+            <div class="map mapblock__map" id="map"></div>
+            <div class="mapblock__container container"><a class="mapblock__button" href="#"><img class="mapblock__button-icon" src="assets/images/map_arrow.png" alt="" role="presentation"/>Показать на карте</a></div>
+        </div>
+        <div data-slot-id="headblock" data-slot-res="md"></div>
+        <div class="feedback__content">
+            <div class="container">
+                <div class="feedback__reviews">
+                    <div class="feedback__list">
+                        <div class="review feedback__review">
+                            <div class="review__top">
+                                <div class="review__top-img"><img src="assets/images/review1.jpg" /></div>
+                                <p class="review__heading"><a href="#">Усадьба банная на Угрешской</a></p>
+                                <div class="rating review__top-rating">
+                                    <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                    <div class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                    <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                    <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                    <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
                                 </div>
-                                <div class="review__ratings-col">
-                                    <p class="review__ratings-item">Интерьер<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                        <span
-                                            class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                            <span
-                                                class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                </span>
-                                    </p>
-                                    <p class="review__ratings-item">Расположение<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                        <span
-                                            class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                            <span
-                                                class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                </span>
-                                    </p>
+                                <p class="review__reviews">Отзывы 231</p>
+                            </div>
+                            <div class="review__content">
+                                <div class="review__mob-top">
+                                    <p class="review__top-author-name">Петр Петров о(об)</p>
+                                    <p class="review__heading">Усадьба банная на Угрешской</p>
                                 </div>
-                            </div>
-                            <p class="review__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в</p>
-                            <div class="review__images">
-                                <div class="review__img"><img src="assets/images/review2.jpg" /></div>
-                                <div class="review__img"><img src="assets/images/review2.jpg" /></div>
-                            </div>
-                            <div class="review__useful">
-                                <p class="review__useful-text">Полезный отзыв?</p>
-                                <div class="review__useful-buttons"><a class="review__useful-button" href="#">Да<span class="review__useful-count">7</span></a><a class="review__useful-button" href="#">Нет<span class="review__useful-count">2</span></a></div>
-                            </div>
-                        </div>
-                        <div class="review__content">
-                            <div class="review__mob-top">
-                                <p class="review__top-author-name">Иван Иванов о(об)</p>
-                                <p class="review__heading">Усадьба банная на Угрешской</p>
-                            </div>
-                            <div class="review__author">
-                                <p class="review__author-name">Иван Иванов</p>
-                                <p class="review__date">15 мая 2015</p>
-                            </div>
-                            <div class="review__ratings">
-                                <div class="review__ratings-col">
-                                    <p class="review__ratings-item">Персонал<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                        <span
-                                            class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                            <span
-                                                class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                </span>
-                                    </p>
-                                    <p class="review__ratings-item">Услуги <span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                        <span
-                                            class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                            <span
-                                                class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                </span>
-                                    </p>
+                                <div class="review__author">
+                                    <p class="review__author-name">Петр Петров</p>
+                                    <p class="review__date">15 мая 2015</p>
                                 </div>
-                                <div class="review__ratings-col">
-                                    <p class="review__ratings-item">Интерьер<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                        <span
-                                            class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                <div class="review__ratings">
+                                    <div class="review__ratings-col">
+                                        <p class="review__ratings-item">Персонал<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
                                             <span
-                                                class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                </span>
-                                    </p>
-                                    <p class="review__ratings-item">Расположение<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                        <span
-                                            class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                <span
+                                                    class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                    </span>
+                                        </p>
+                                        <p class="review__ratings-item">Услуги <span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
                                             <span
-                                                class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                </span>
-                                    </p>
+                                                class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                <span
+                                                    class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                    </span>
+                                        </p>
+                                    </div>
+                                    <div class="review__ratings-col">
+                                        <p class="review__ratings-item">Интерьер<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                            <span
+                                                class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                <span
+                                                    class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                    </span>
+                                        </p>
+                                        <p class="review__ratings-item">Расположение<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                            <span
+                                                class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                <span
+                                                    class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                    </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="review__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в</p>
+                                <div class="review__images">
+                                    <div class="review__img"><img src="assets/images/review2.jpg" /></div>
+                                    <div class="review__img"><img src="assets/images/review2.jpg" /></div>
+                                </div>
+                                <div class="review__useful">
+                                    <p class="review__useful-text">Полезный отзыв?</p>
+                                    <div class="review__useful-buttons"><a class="review__useful-button" href="#">Да<span class="review__useful-count">7</span></a><a class="review__useful-button" href="#">Нет<span class="review__useful-count">2</span></a></div>
                                 </div>
                             </div>
-                            <p class="review__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко Температура парилки от 30 до 50 градусов –
-                                настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягкоТемпература парилки от 30 до 50 градусов – настоящий подарок тем, кто не</p>
-                            <div class="review__useful">
-                                <p class="review__useful-text">Полезный отзыв?</p>
-                                <div class="review__useful-buttons"><a class="review__useful-button" href="#">Да<span class="review__useful-count">7</span></a><a class="review__useful-button" href="#">Нет<span class="review__useful-count">2</span></a></div>
+                            <div class="review__content">
+                                <div class="review__mob-top">
+                                    <p class="review__top-author-name">Иван Иванов о(об)</p>
+                                    <p class="review__heading">Усадьба банная на Угрешской</p>
+                                </div>
+                                <div class="review__author">
+                                    <p class="review__author-name">Иван Иванов</p>
+                                    <p class="review__date">15 мая 2015</p>
+                                </div>
+                                <div class="review__ratings">
+                                    <div class="review__ratings-col">
+                                        <p class="review__ratings-item">Персонал<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                            <span
+                                                class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                <span
+                                                    class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                    </span>
+                                        </p>
+                                        <p class="review__ratings-item">Услуги <span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                            <span
+                                                class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                <span
+                                                    class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                    </span>
+                                        </p>
+                                    </div>
+                                    <div class="review__ratings-col">
+                                        <p class="review__ratings-item">Интерьер<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                            <span
+                                                class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                <span
+                                                    class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                    </span>
+                                        </p>
+                                        <p class="review__ratings-item">Расположение<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                            <span
+                                                class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                <span
+                                                    class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                    </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="review__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко Температура парилки от 30 до 50 градусов
+                                    – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягкоТемпература парилки от 30 до 50 градусов – настоящий подарок тем, кто не</p>
+                                <div
+                                    class="review__useful">
+                                    <p class="review__useful-text">Полезный отзыв?</p>
+                                    <div class="review__useful-buttons"><a class="review__useful-button" href="#">Да<span class="review__useful-count">7</span></a><a class="review__useful-button" href="#">Нет<span class="review__useful-count">2</span></a></div>
                             </div>
                         </div>
                         <div class="review__content">
