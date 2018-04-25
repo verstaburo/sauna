@@ -1,0 +1,29 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Versta Project Template'
+
+block content
+  +b.comments
+    +header()
+    +e.head
+      .container
+        +breadcrumbs(['Москва', 'ЮЗАО', 'район Северное Бутово', 'Варшавское шоссе', 'Баня и сауна GreenRoof'])
+        +e.H1.heading Отзывы о Баня и сауна GreenRoof
+        +e.A(href='#').back-button Вернуться назад
+    +e.content
+      .container
+        +e.cols
+          +e.col._left
+            +card-reviewform()
+            +card-reviews()
+          +e.col._right
+            +card-rating()
+            +e.innercols
+              +e.innercol._left
+                +card-contacts()
+              +e.innercol._right
+                +card-address()
+            +e.banner
+    +lastview()
+    +footer()

@@ -1,0 +1,110 @@
+mixin card()
+  +b.card&attributes(attributes)
+    block
+    
+mixin card-reviewform()
+  +b.card-reviewform&attributes(attributes)
+    +e.H3.heading Отзывы
+      +e.SPAN.count 21
+      +e.A(href='#').link Оставить отзыв
+    +e.content
+      +e.FORM.form
+        +e.form-section
+          +e.INPUT(type='text' name='name' placeholder='Ваше имя и фамилия').field._short
+          +e.TEXTAREA(name='comment' placeholder='Ваш отзыв').field
+          +e.file
+            +e.LABEL.file-label Добавить фото
+              input(type='file')
+            +e.file-icon
+          +e.P.hint Указывать телефон, электронную почту или адрес сайта на фото запрещено!
+            br
+            | Файлы должны быть  не меньше, чем 700x450 пикселей, и не превышать 3 Мб
+        +e.form-section
+          +e.P.subheading Как отдохнули?
+          +e.ratings
+            +e.ratings-col
+              +e.P.ratings-item Персонал
+                +rating-interactive(5, 'staff').__rating
+              +e.P.ratings-item Интерьер
+                +rating-interactive(5, 'int').__rating
+            +e.ratings-col
+              +e.P.ratings-item Услуги
+                +rating-interactive(5, 'service').__rating
+              +e.P.ratings-item Расположение
+                +rating-interactive(5, 'location').__rating
+        +e.form-section
+          +e.BUTTON.button Оставить отзыв
+      +e.success
+        +e.P.success-text._big Спасибо, Василий!
+        +e.P.success-text Очень остроумно! Осталось проверить ваш отзыв и мы опубликуем его.
+
+mixin card-reviews()
+  +b.card-reviews&attributes(attributes)
+    +e.content
+      +review-short('Петр Петров', true, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в').__review
+      +review-short('Иван Иванов', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягкоТемпература парилки от 30 до 50 градусов – настоящий подарок тем, кто не').__review
+      +review-short('Иван Иванов', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через').__review
+
+mixin card-rating()
+  +b.card-rating&attributes(attributes)
+    +e.H3.heading Рейтинг
+    +e.content
+      +e.ratings
+        +rating(3).__rating
+        +e.P.rate 4.0 из 5
+        +e.A(href='#').reviews 24 отзыва
+      +e.P.text
+        | топ
+        +e.SPAN.count 50
+        | Сауны Москвы
+      +e.P.text
+        | топ
+        +e.SPAN.count._green 10
+        | Турецкий хамам
+      +e.lines
+        +e.line
+          +e.P.line-title Персонал
+          +e.line-bar
+            +e.line-fill
+        +e.line
+          +e.P.line-title Расположение
+          +e.line-bar
+            +e.line-fill
+        +e.line
+          +e.P.line-title Интерьер
+          +e.line-bar
+            +e.line-fill
+        +e.line
+          +e.P.line-title Услуги
+          +e.line-bar
+            +e.line-fill
+
+mixin card-contacts()
+  +b.card-contacts&attributes(attributes)
+    +e.H3.heading Контакты
+    +e.content
+      +e.section
+        +e.P.days Пн Вт Ср Чт Пт 
+        +e.P.price 1200-1400 руб/час
+        +e.P.days._red Сб Вс
+        +e.P.price 1500-2000 руб/час
+      +e.section
+        +e.P.text
+          +e.SPAN.icon
+          | Круглосуточно
+      +e.section
+        +e.A(href='tel:+74954223222').tel +7 (495) 422-32-22
+        +e.A(href='tel:+79555332323').tel +7 (955) 533-23-23
+        +e.A(href='#').button Заказать сауну
+
+mixin card-address()
+  +b.card-address&attributes(attributes)
+    +e.H3.heading Адрес
+    +e.content
+      +e.A(href='#').link Москва, Тамбовская улица, д. 4
+      +e.map
+      +e.A(href='#').link._black Посмотреть на большой карте
+      +e.P.place Тверская
+        +e.SPAN.distance 500 метров
+      +e.P.place Тверская
+        +e.SPAN.distance 500 метров

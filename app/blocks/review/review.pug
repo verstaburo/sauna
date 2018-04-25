@@ -42,4 +42,7 @@ mixin review-block(author, images, text)
           +e.SPAN.useful-count 7
         +e.A(href='#').useful-button Нет
           +e.SPAN.useful-count 2
-      
+
+mixin review-short(author, images, text)
+  +b.review._short&attributes(attributes)
+    +review-block(author, images, text)

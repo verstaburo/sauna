@@ -13,5 +13,5 @@ mixin rating-interactive(count, name)
   +b.rating._interactive&attributes(attributes)
     - for (var i = initialCount; i > 0; i--)
       +e.LABEL.box
-        +e.INPUT(type='radio' name='name' value=i-1).control.js-rating-control
+        +e.INPUT(type='radio' name=initialName value=i-1).control.js-rating-control
         +icon('star').__icon
