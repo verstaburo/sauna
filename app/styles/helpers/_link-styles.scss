@@ -1,15 +1,14 @@
 @mixin link {
-  color: $color-main;
-  border: 0;
-  transition: fill $ease-main, color $ease-main, opacity $ease-main, border-color $ease-main;
-  fill: $color-main;
+  color: #2f3b4f;
+  font-family: $font-second;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: .02em;
+  transition: color $ease-main;
 
-  &__text {
-    border-bottom: 1px solid;
-    border-color: inherit;
+  &:hover {
+    color: #27549f;
   }
-
-  &:hover { opacity: .5; }
 }
 
 @mixin link-disabled {

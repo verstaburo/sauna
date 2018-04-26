@@ -1,0 +1,21 @@
+mixin more()
+  +b.more&attributes(attributes)
+    .container
+      +e.H2.heading Хотите еще варианты?
+      +e.cards
+        +e.card
+          +e.P.card-heading Сауны поблизости
+          +imgcard().__imgcard
+          +e.A(href='#').card-button Показать еще
+        +e.card
+          +e.P.card-heading Сауны из ТОП 10
+          +imgcard().__imgcard
+          +e.A(href='#').card-button Показать еще
+        +e.card
+          +e.P.card-heading Турецкий хамам
+          +imgcard().__imgcard
+          +e.A(href='#').card-button Показать еще
+        +e.card
+          +e.P.card-heading Сауны поблизости
+          +imgcard().__imgcard
+          +e.A(href='#').card-button Показать еще

@@ -15,3 +15,16 @@ mixin slide()
   .swiper-slide
     +e.slide&attributes(attributes)
       block
+      
+mixin multislider(pagination, buttons)
+  +b.slider&attributes(attributes).swiper-container.js-multislider
+    .swiper-wrapper
+      block
+    if pagination
+      +e.dots
+        +e.dot
+    if buttons
+      +e.button._prev
+        img(src='assets/images/slide_arrow_dark.png')
+      +e.button._next
+        img(src='assets/images/slide_arrow_dark.png')

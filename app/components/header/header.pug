@@ -17,8 +17,10 @@ mixin header-line(img)
   +e.line&attributes(attributes)
     +e.IMG(src='assets/images/' + img).linebg
 
-mixin header-line-menu(firstlink, secondlink)
+mixin header-line-menu(firstlink, secondlink, img)
   +e.line&attributes(attributes)
+    if img
+      +e.IMG(src='assets/images/' + img).linebg
     +e.menu
       if firstlink
         +e.A(href='#').menu-link= firstlink

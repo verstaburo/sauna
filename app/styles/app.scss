@@ -23,6 +23,10 @@
     padding-left: $container-padding-mobile;
     padding-right: $container-padding-mobile;
   }
+  
+  &_wide {
+    width: 1390px;
+  }
 }
 
 .js-sr {

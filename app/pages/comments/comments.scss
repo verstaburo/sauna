@@ -1,3 +1,94 @@
 .comments {
   display: block;
+  
+  &__head {
+    padding: 25px 0;
+  }
+  
+  &__heading {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: .043em;
+    margin-top: 11px;
+  }
+  
+  &__back-button {
+    background-color: #dadfe0;
+    display: inline-flex;
+    align-items: center;
+    color: #484848;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    margin-top: 10px;
+    padding: 18px 43px;    
+    
+    > * {
+      display: inline-block;
+    }
+    
+    svg {
+      width: 5px;
+      height: 10px;
+      fill: none;
+      stroke: rgba(#000, .2);
+      margin-right: 16px;
+    }
+  }
+  
+  &__content {
+    background-color: #f8f8f8;
+    padding: 36px 0;
+  }
+  
+  &__cols {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__col {
+    
+    &_left {
+      width: calc(100% - 590px);
+    }
+    
+    &_right {
+      width: 565px;
+      padding-top: 11px;
+    }
+  }
+  
+  &__card {
+    
+    & + & {
+      margin-top: 20px;
+    }
+    
+    &_inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      
+      .flex-gr {
+        flex: 1;
+      }
+    }
+  }
+  
+  &__innercols {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  &__innercol {
+    width: calc((100% - 17px)/2);
+    display: flex;
+  }
+  
+  &__banner {
+    margin-top: 28px;
+    height: 300px;
+    background-color: #c6c6c6;
+  }
 }

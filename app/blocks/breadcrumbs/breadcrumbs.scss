@@ -1,4 +1,4 @@
-$breadpadding: 35px;
+$breadpadding: 17px;
 
 .breadcrumbs {
   display: block;
@@ -11,28 +11,25 @@ $breadpadding: 35px;
       padding-right: $breadpadding;
 
       &::after {
-        content: '';
+        content: '>';
         position: absolute;
         top: 0;
         bottom: 0;
         margin: auto;
         right: $breadpadding/2;
-        width: 5px;
-        height: 5px;
-        border-width: 1px 1px 0 0;
-        border-style: solid;
-        border-color: $color-basic;
-        transform-origin: center;
-        transform: translateX(50%) rotate(45deg);
+        font-size: 20px;
+        line-height: 20px;
+        height: 20px;
+        //border-width: 1px 1px 0 0;
+        //border-style: solid;
+        //border-color: $color-basic;
+        //transform-origin: center;
+        transform: translateX(50%);
       }
     }
 
     &:last-child .link {
       pointer-events: none;
-
-      &__text {
-        @include link-disabled;
-      }
     }
   }
 }

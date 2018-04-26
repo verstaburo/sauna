@@ -3,23 +3,23 @@ mixin card()
     block
     
 mixin card-reviewform()
-  +b.card-reviewform&attributes(attributes)
+  +b.card-reviewform._success&attributes(attributes)
     +e.H3.heading Отзывы
       +e.SPAN.count 21
       +e.A(href='#').link Оставить отзыв
     +e.content
       +e.FORM.form
-        +e.form-section
+        +e.form-section._top
           +e.INPUT(type='text' name='name' placeholder='Ваше имя и фамилия').field._short
-          +e.TEXTAREA(name='comment' placeholder='Ваш отзыв').field
+          +e.TEXTAREA(name='comment' placeholder='Ваш отзыв').field._textarea
           +e.file
             +e.LABEL.file-label Добавить фото
               input(type='file')
-            +e.file-icon
+            +icon('file_arrow').__file-icon
           +e.P.hint Указывать телефон, электронную почту или адрес сайта на фото запрещено!
             br
             | Файлы должны быть  не меньше, чем 700x450 пикселей, и не превышать 3 Мб
-        +e.form-section
+        +e.form-section._middle
           +e.P.subheading Как отдохнули?
           +e.ratings
             +e.ratings-col
@@ -32,18 +32,19 @@ mixin card-reviewform()
                 +rating-interactive(5, 'service').__rating
               +e.P.ratings-item Расположение
                 +rating-interactive(5, 'location').__rating
-        +e.form-section
+        +e.form-section._bottom
           +e.BUTTON.button Оставить отзыв
       +e.success
-        +e.P.success-text._big Спасибо, Василий!
+        +e.P.success-heading Спасибо, Василий!
         +e.P.success-text Очень остроумно! Осталось проверить ваш отзыв и мы опубликуем его.
 
 mixin card-reviews()
   +b.card-reviews&attributes(attributes)
     +e.content
-      +review-short('Петр Петров', true, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в').__review
-      +review-short('Иван Иванов', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягкоТемпература парилки от 30 до 50 градусов – настоящий подарок тем, кто не').__review
-      +review-short('Иван Иванов', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через').__review
+      +review-short('Петр Петров', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
+      +review-short('Петр Петров', true, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
+      +review-short('Петр Петров', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
+      +review-short('Петр Петров', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
 
 mixin card-rating()
   +b.card-rating&attributes(attributes)
@@ -65,33 +66,32 @@ mixin card-rating()
         +e.line
           +e.P.line-title Персонал
           +e.line-bar
-            +e.line-fill
+            +e.line-fill(style='width:10%;')
         +e.line
           +e.P.line-title Расположение
           +e.line-bar
-            +e.line-fill
+            +e.line-fill(style='width:34%;')
         +e.line
           +e.P.line-title Интерьер
           +e.line-bar
-            +e.line-fill
+            +e.line-fill(style='width:10%;')
         +e.line
           +e.P.line-title Услуги
           +e.line-bar
-            +e.line-fill
+            +e.line-fill(style='width:30%;')
 
 mixin card-contacts()
   +b.card-contacts&attributes(attributes)
     +e.H3.heading Контакты
-    +e.content
+    +e.content.flex-gr
       +e.section
         +e.P.days Пн Вт Ср Чт Пт 
         +e.P.price 1200-1400 руб/час
         +e.P.days._red Сб Вс
         +e.P.price 1500-2000 руб/час
-      +e.section
-        +e.P.text
-          +e.SPAN.icon
-          | Круглосуточно
+      +e.P.text
+        +e.IMG(src='assets/images/time.png').icon
+        +e.SPAN.text-span Круглосуточно
       +e.section
         +e.A(href='tel:+74954223222').tel +7 (495) 422-32-22
         +e.A(href='tel:+79555332323').tel +7 (955) 533-23-23
@@ -100,11 +100,101 @@ mixin card-contacts()
 mixin card-address()
   +b.card-address&attributes(attributes)
     +e.H3.heading Адрес
-    +e.content
+    +e.content.flex-gr
       +e.A(href='#').link Москва, Тамбовская улица, д. 4
       +e.map
       +e.A(href='#').link._black Посмотреть на большой карте
-      +e.P.place Тверская
+      +e.P.place
+        +e.SPAN.place-text Тверская
         +e.SPAN.distance 500 метров
-      +e.P.place Тверская
+      +e.P.place
+        +e.SPAN.place-text Тверская
         +e.SPAN.distance 500 метров
+
+mixin card-desc()
+  +b.card-desc&attributes(attributes)
+    +e.H3.heading Описание
+      +e.A(href='#').link Распечатать
+    +e.content
+      +e.P.text Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%). до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки.
+      +e.services
+        +e.P.service
+          strong Кухня:
+          | Разливное пиво, домашняя кухня
+        +e.P.service
+          strong Услуги:
+          | Веники, банщик, ароматерапия, кальян
+        +e.P.service
+          strong Парная:
+          | Финская, турецкий хамам
+        +e.P.service
+          strong Бильярд:
+          | Разливное пиво, домашняя кухня
+        +e.P.service
+          strong Бассейн:
+          | 3х4 метра, с подогревом
+        +e.P.service
+          strong Комната отдыха:
+          | Одна
+        +e.P.service
+          strong Вместимость:
+          | до 12 человек
+          +e.count
+            +e.count-group
+              +icon('person').__count-icon
+              +icon('person').__count-icon
+              +icon('person').__count-icon
+              +icon('person').__count-icon
+              +icon('person').__count-icon
+            +e.count-group
+              +icon('person').__count-icon
+              +icon('person').__count-icon
+              +icon('person').__count-icon
+              +icon('person').__count-icon
+              +icon('person').__count-icon
+            +e.count-group
+              +icon('person').__count-icon
+              +icon('person').__count-icon
+              +icon('person').__count-icon
+              +icon('person').__count-icon
+              +icon('person').__count-icon
+      +e.side
+        +e.video
+          +e.playbutton
+        +e.P.sitelink Сайт:
+          a(href='#') www.saunasite.ru
+
+mixin card-sales()
+  +b.card-sales&attributes(attributes)
+    +e.H3.heading Акции в сауне
+    +e.content
+      +e.sale
+        +e.A(href='#').sale-link Скидка в день рождения 50%
+        +e.SPAN.sale-date 1-9 мая
+      +e.sale
+        +e.A(href='#').sale-link 5й час в подарок
+        +e.SPAN.sale-date 1-9 мая
+      +e.sale
+        +e.A(href='#').sale-link Скидка по будням до 30%
+        +e.SPAN.sale-date 1-9 мая
+
+mixin card-questions()
+  +b.card-questions&attributes(attributes)
+    +e.H3.heading Вопросы и ответы 
+    +e.content
+      +e.accordion
+        +e.arrow
+        +e.P.title Что входит в стоимость, а за что надо платить отдельно
+        +e.P.text Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
+      +e.accordion
+        +e.arrow
+        +e.P.title Можно ли в сауну со своими продуктами и алкоголем
+        +e.P.text Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
+      +e.accordion
+        +e.arrow
+        +e.P.title Tolerably earnestly middleton extremely distrusts she boy now no
+        +e.P.text Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
+      +e.accordion
+        +e.arrow
+        +e.P.title She prosperous continuing entreaties companions unreserved you boisterous
+        +e.P.text Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do

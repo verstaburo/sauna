@@ -5,25 +5,28 @@ block head
 
 block content
   +b.comments
-    +header()
+    +header()._wide
+      +header-line-menu(false, 'Добавить заведение')
     +e.head
-      .container
+      .container.container_wide
         +breadcrumbs(['Москва', 'ЮЗАО', 'район Северное Бутово', 'Варшавское шоссе', 'Баня и сауна GreenRoof'])
         +e.H1.heading Отзывы о Баня и сауна GreenRoof
-        +e.A(href='#').back-button Вернуться назад
+        +e.A(href='#').back-button
+          +icon('arrow')
+          span Вернуться назад
     +e.content
-      .container
+      .container.container_wide
         +e.cols
           +e.col._left
-            +card-reviewform()
-            +card-reviews()
+            +card-reviewform().__card
+            +card-reviews().__card
           +e.col._right
-            +card-rating()
+            +card-rating().__card
             +e.innercols
               +e.innercol._left
-                +card-contacts()
+                +card-contacts().__card._inner
               +e.innercol._right
-                +card-address()
+                +card-address().__card._inner
             +e.banner
     +lastview()
     +footer()
