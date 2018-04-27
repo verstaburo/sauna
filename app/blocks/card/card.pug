@@ -38,13 +38,21 @@ mixin card-reviewform()
         +e.P.success-heading Спасибо, Василий!
         +e.P.success-text Очень остроумно! Осталось проверить ваш отзыв и мы опубликуем его.
 
-mixin card-reviews()
+mixin card-reviews(heading, short)
   +b.card-reviews&attributes(attributes)
+    if heading
+      +e.H3.heading Отзывы
+        +e.A(href='#').link Оставить отзыв
     +e.content
       +review-short('Петр Петров', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
       +review-short('Петр Петров', true, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
-      +review-short('Петр Петров', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
-      +review-short('Петр Петров', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
+      if !short
+        +review-short('Петр Петров', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
+        +review-short('Петр Петров', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
+      if short
+        +e.more
+          a(href='#') показать все отзывы
+            +e.SPAN.count 21
 
 mixin card-rating()
   +b.card-rating&attributes(attributes)
@@ -114,7 +122,9 @@ mixin card-address()
 mixin card-desc()
   +b.card-desc&attributes(attributes)
     +e.H3.heading Описание
-      +e.A(href='#').link Распечатать
+      +e.A(href='#').link
+        +e.IMG(src='assets/images/print.png').link-icon
+        | Распечатать
     +e.content
       +e.P.text Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%). до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки.
       +e.services
@@ -136,21 +146,21 @@ mixin card-desc()
         +e.P.service
           strong Комната отдыха:
           | Одна
-        +e.P.service
+        +e.P.service._count
           strong Вместимость:
           | до 12 человек
           +e.count
             +e.count-group
-              +icon('person').__count-icon
-              +icon('person').__count-icon
-              +icon('person').__count-icon
-              +icon('person').__count-icon
-              +icon('person').__count-icon
+              +icon('person').__count-icon._active
+              +icon('person').__count-icon._active
+              +icon('person').__count-icon._active
+              +icon('person').__count-icon._active
+              +icon('person').__count-icon._active
             +e.count-group
-              +icon('person').__count-icon
-              +icon('person').__count-icon
-              +icon('person').__count-icon
-              +icon('person').__count-icon
+              +icon('person').__count-icon._active
+              +icon('person').__count-icon._active
+              +icon('person').__count-icon._active
+              +icon('person').__count-icon._active
               +icon('person').__count-icon
             +e.count-group
               +icon('person').__count-icon
@@ -160,6 +170,7 @@ mixin card-desc()
               +icon('person').__count-icon
       +e.side
         +e.video
+          +e.IMG(src='assets/images/place1.jpg').video-bg
           +e.playbutton
         +e.P.sitelink Сайт:
           a(href='#') www.saunasite.ru
@@ -169,32 +180,35 @@ mixin card-sales()
     +e.H3.heading Акции в сауне
     +e.content
       +e.sale
-        +e.A(href='#').sale-link Скидка в день рождения 50%
+        +e.P.sale-link
+          a(href='#') Скидка в день рождения 50%
         +e.SPAN.sale-date 1-9 мая
       +e.sale
-        +e.A(href='#').sale-link 5й час в подарок
+        +e.P.sale-link
+          a(href='#') 5й час в подарок
         +e.SPAN.sale-date 1-9 мая
       +e.sale
-        +e.A(href='#').sale-link Скидка по будням до 30%
+        +e.P.sale-link
+          a(href='#') Скидка по будням до 30%
         +e.SPAN.sale-date 1-9 мая
 
 mixin card-questions()
   +b.card-questions&attributes(attributes)
     +e.H3.heading Вопросы и ответы 
-    +e.content
-      +e.accordion
-        +e.arrow
-        +e.P.title Что входит в стоимость, а за что надо платить отдельно
-        +e.P.text Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
-      +e.accordion
-        +e.arrow
-        +e.P.title Можно ли в сауну со своими продуктами и алкоголем
-        +e.P.text Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
-      +e.accordion
-        +e.arrow
-        +e.P.title Tolerably earnestly middleton extremely distrusts she boy now no
-        +e.P.text Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
-      +e.accordion
-        +e.arrow
-        +e.P.title She prosperous continuing entreaties companions unreserved you boisterous
-        +e.P.text Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
+    +e.content.js-accordions(data-accordion-multiple='true')
+      +e.accordion.js-accordion
+        +icon('accordion_arrow').__arrow.js-accordion-button
+        +e.P.title.js-accordion-button Что входит в стоимость, а за что надо платить отдельно
+        +e.P.text.js-accordion-body Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
+      +e.accordion.js-accordion
+        +icon('accordion_arrow').__arrow.js-accordion-button
+        +e.P.title.js-accordion-button Можно ли в сауну со своими продуктами и алкоголем
+        +e.P.text.js-accordion-body Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
+      +e.accordion.js-accordion
+        +icon('accordion_arrow').__arrow.js-accordion-button
+        +e.P.title.js-accordion-button Tolerably earnestly middleton extremely distrusts she boy now no
+        +e.P.text.js-accordion-body Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
+      +e.accordion.js-accordion
+        +icon('accordion_arrow').__arrow.js-accordion-button
+        +e.P.title.js-accordion-button She prosperous continuing entreaties companions unreserved you boisterous
+        +e.P.text.js-accordion-body Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do

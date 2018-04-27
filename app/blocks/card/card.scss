@@ -30,6 +30,14 @@
   border-bottom: 1px dashed #719ee3;
 }
 
+@mixin card-link-2() {
+  color: #6094e1;
+  font-family: $font-second;
+  font-size: 17px;
+  letter-spacing: -.01em;
+  border-bottom: 1px solid #6094e1;
+}
+
 @mixin card-content() {
   background-color: #fff;
   border: 1px solid #eee;
@@ -277,6 +285,21 @@
 
 .card-reviews {
   
+  &__heading {
+    @include card-heading;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__link {
+    @include card-link;
+    font-size: 21px;
+    font-weight: 300;
+    margin-right: 20px;
+    border-bottom-style: solid;
+  }
+  
   &__content {
     @include card-content;
     padding: 50px 0;
@@ -290,6 +313,31 @@
     
     & + & {
       margin-top: 76px;
+    }
+  }
+  
+  &__more {
+    @include card-link;
+    border-bottom: 0;
+    text-align: right;
+    margin-top: 39px;
+    margin-right: 35px;
+    
+    a {
+      color: inherit;
+    }
+  }
+  
+  &__count {
+    @include card-count;
+    margin-left: 10px;
+  }
+  
+  &_more {
+    .card-reviews {
+      &__content {
+        padding-bottom: 10px;
+      }
     }
   }
 }
@@ -568,5 +616,299 @@
     color: #747373;
     font-style: italic;
     font-size: 14px;
+  }
+}
+
+// card-desc
+
+.card-desc {
+  
+  &__heading {
+    @include card-heading;
+    display: flex;
+    align-items: flex-start;
+    padding-right: 42px;
+  }
+  
+  &__content {
+    @include card-content;
+    padding: 30px 24px 24px;
+    position: relative;
+  }
+  
+  &__link {
+    @include card-link-2;
+    position: relative;
+    margin-left: auto;
+    
+    &-icon {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: calc(100% + 13px);
+      top: 0;
+    }
+  }
+  
+  &__text {
+    color: #202020;
+    font-family: $font-second;
+    font-size: 16px;
+    letter-spacing: .02em;
+    line-height: 1.6;
+    width: 100%;
+    max-width: 659px;
+  }
+  
+  &__services {
+    margin-top: 17px;
+    padding-right: 230px;
+  }
+  
+  &__service {
+    color: #202020;
+    font-family: $font-second;
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: .02em;
+    margin-top: 12px;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+    
+    strong {
+      font-style: normal;
+      margin-right: 3px;
+    }
+    
+    &_count {
+      margin-top: 10px;
+    }
+  }
+  
+  &__count {
+    margin-left: 25px;
+    display: inline-block;
+    font-size: 0;
+  }
+  
+  &__count-group {
+    display: inline-block;
+    margin-right: 8px;
+  }
+  
+  &__count-icon {
+    width: 7px;
+    height: 17px;
+    margin-right: 1px;
+    fill: #a4a4a4;
+    
+    &_active {
+      fill: #6094e1;
+    }
+  }
+  
+  &__side {
+    position: absolute;
+    right: 38px;
+    bottom: 27px;
+    text-align: right;
+    max-width: 200px;
+  }
+  
+  &__video {
+    width: 133px;
+    height: 88px;
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+  }
+  
+  &__video-bg {
+    @include fill-img;
+  }
+  
+  &__playbutton {
+    @include center-margin(48px, 48px);
+    border-radius: 1000px;
+    background-color: #1393f4;
+    
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 20px solid #fff;
+      margin-right: -10px;
+      margin: auto;
+      left: 9px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  
+  &__sitelink {
+    display: inline-block;
+    text-align: left;
+    margin-top: 9px;
+    font-family: $font-second;
+    font-size: 16px;
+    color: #191919;
+    
+    a {
+      color: #7ca6e6;
+      letter-spacing: -.02em;
+      margin-left: 7px;
+    }
+  }
+}
+
+// card-sales
+
+.card-sales {
+  
+  &__heading {
+    @include card-heading;
+  }
+  
+  &__content {
+    @include card-content;
+    padding: 23px 25px 34px;
+  }
+  
+  &__sale {
+    font-family: $font-second;
+    font-size: 15px;
+    letter-spacing: .05em;
+    position: relative;
+    padding-left: 28px;
+    margin-top: 15px;
+    
+    &:before {
+      content: '';
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-radius: 1000px;
+      background-image: linear-gradient(to top, #903eac 0%, #c03a2b 100%);
+      position: absolute;
+      left: 0;
+      top: 8px;
+    }
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  &__sale-link {
+    color: #699ae3;   
+    display: inline-block;
+    vertical-align: middle;
+    width: 306px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    
+    a {
+      color: inherit;
+      border-bottom: 1px solid #699ae3;
+    }
+  }
+  
+  &__sale-date {
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 0.5;
+    color: #202020;
+    margin-top: 4px;
+  }
+}
+
+// card-questions
+
+.card-questions {
+  
+  &__heading {
+    @include card-heading;
+  }
+  
+  &__content {
+    @include card-content;
+  }
+  
+  &__accordion {
+    position: relative;
+    padding: 49px 23px 17px;
+    border-top: 1px solid rgba(#000, .1);
+    
+    &:first-child {
+      border-top: 0;
+    }
+    
+    &.is-active {
+      .card-questions__arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  
+  &__title {
+    color: #353535;
+    font-family: $font-second;
+    font-size: 18px;
+    letter-spacing: -.02em;
+    position: relative;
+    padding-left: 36px;
+    margin-bottom: 24px;
+    cursor: pointer;
+    transition: opacity $ease-main;
+    
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 9px;
+      height: 9px;
+      border-radius: 1000px;
+      background-color: #ff5845;
+    }
+    
+    &:hover {
+      opacity: .85;
+    }
+  }
+  
+  &__arrow {
+    position: absolute;
+    right: 32px;
+    top: 34px;
+    width: 10px;
+    height: 8px;
+    transition: transform $ease-main, opacity $ease-main;
+    cursor: pointer;
+    
+    &:hover {
+      opacity: .85;
+    }
+  }
+  
+  &__text {
+    display: none;
+    color: #3c3c3c;
+    font-family: $font-second;
+    font-size: 15px;
+    line-height: 1.7;
+    letter-spacing: .045em;
+    box-sizing: border-box;
+    padding: 0 28px;
+    width: 100%;
+    max-width: 650px;
   }
 }

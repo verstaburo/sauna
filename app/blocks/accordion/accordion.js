@@ -10,10 +10,10 @@ const $ = window.$;
 $(document).on('click', '.js-accordion-button', function (e) {
   e.preventDefault();
   const button = $(this);
-  const block = button.parents('.accordion');
-  const body = block.find('.accordion__body');
+  const block = button.parents('.js-accordion');
+  const body = block.find('.js-accordion-body');
   const isActive = Number(block.hasClass('is-active'));
-  const isMultiple = block.parents('.accordions').data('accordion-multiple');
+  const isMultiple = block.parents('.js-accordions').attr('data-accordion-multiple');
 
   if (block.hasClass('is-disabled')) {
     return;

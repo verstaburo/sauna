@@ -1,3 +1,56 @@
 .more {
   display: block;
+  background-color: #f8f8f8;
+  padding: 0 0 18px;
+  
+  &__heading {
+    color: #1f1f1f;
+    font-size: 27px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    padding: 0 4px;
+  }
+  
+  .container {
+    width: 1390px;
+  }
+  
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 26px;
+    padding: 0 4px;
+  }
+  
+  &__card {
+    width: 273px;
+  }
+  
+  &__card-heading {
+    color: #1f1f1f;
+    font-size: 21px;
+    font-weight: 300;
+    letter-spacing: .04em;
+  }
+  
+  &__imgcard {
+    margin-top: 8px;
+    
+    .imgcard__img {
+      padding-top: 69.5%;
+    }
+  }
+  
+  &__card-button {
+    color: #1f1f1f;
+    font-family: $font-second;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: .02em;
+    padding: 10px 24px;
+    box-sizing: border-box;
+    background-color: $color-yellow;
+    display: inline-block;
+    margin-top: 8px;
+  }
 }

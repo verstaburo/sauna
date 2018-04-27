@@ -1,7 +1,10 @@
-mixin imgcard()
+mixin imgcard(img)
   +b.imgcard&attributes(attributes)
     +e.img
-      img(src='assets/images/lastview1.jpg')
+      if img
+        img(src='assets/images/' + img)
+      else
+        img(src='assets/images/lastview1.jpg')
     +e.hover
       +e.P.text САУНА
         br
