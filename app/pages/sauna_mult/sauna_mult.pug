@@ -1,7 +1,7 @@
 extends ../../layouts/default
 
 block head
-  - var pageTitle = 'Sauna'
+  - var pageTitle = 'Sauna mult'
 
 block content
   +b.sauna
@@ -23,27 +23,31 @@ block content
       +multislider(false, true).__slider
         +slide()
           img(src='assets/images/place1.jpg')
+          p.sauna__imgtype Зал обещаний
         +slide()
           img(src='assets/images/place2.jpg')
         +slide()
           img(src='assets/images/place3.jpg')
+          p.sauna__imgtype Зал обещаний
         +slide()
           img(src='assets/images/place4.jpg')
+          p.sauna__imgtype Зал шумахер
         +slide()
           img(src='assets/images/place1.jpg')
+          p.sauna__imgtype Зал обещаний
         +slide()
           img(src='assets/images/place2.jpg')
         +slide()
           img(src='assets/images/place3.jpg')
+          p.sauna__imgtype Зал обещаний
         +slide()
           img(src='assets/images/place4.jpg')
+          p.sauna__imgtype Зал шумахер
       .container.container_wide
-        +e.cols
+        +e.cols._top
           +e.col._left
-            +card-desc().__card
-            +card-sales().__card
-            +e.banner
-            +card-questions().__card
+            +card-desc-mult().__card
+            +card-sales().__card            
           +e.col._right
             +e.innercols
               +e.innercol._left
@@ -51,6 +55,12 @@ block content
               +e.innercol._right
                 +card-address().__card._inner
             +card-rating().__card
+        +card-desc-halls('Залы', 'Зал обещаний', 4)._halls.__card._halls
+        +card-desc-halls(false, 'Зал Шумахер', 1)._halls.__card._halls
+        +e.cols._bottom
+          +e.col._left
+            +card-questions().__card
+          +e.col._right
             +card-reviews(true, true)._more.__card._reviews
     +more()
     +lastview().__lastview

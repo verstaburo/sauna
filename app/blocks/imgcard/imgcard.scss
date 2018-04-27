@@ -15,7 +15,7 @@
     overflow: hidden;
     padding-top: 64%;
     
-    img {
+    > img {
       @include fill-img;
     }
   }
@@ -70,5 +70,24 @@
     padding: 4px 10px;
     min-width: 162px;
     box-sizing: border-box;
+  }
+  
+  &__img-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgba(#000, .3);
+    color: rgba(#fff, .9);
+    font-size: 16px;
+    text-align: center;
+    padding: 4px;
+    font-weight: 500;
+    
+    img {
+      margin-right: 8px;
+      width: 17px;
+    }
   }
 }

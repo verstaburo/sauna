@@ -97,6 +97,14 @@
     padding: 34px 0 33px;
     display: flex;
     justify-content: space-between;
+    
+    &_top {
+      padding-bottom: 0;
+    }
+    
+    &_bottom {
+      padding-top: 16px;
+    }
   }
   
   &__col {
@@ -130,6 +138,12 @@
     &_reviews {
       margin-top: 80px;
     }
+    
+    &_halls {
+      & + & {
+        margin-top: 36px;
+      }
+    }
   }
   
   &__banner {
@@ -146,5 +160,19 @@
   &__innercol {
     width: calc((100% - 17px)/2);
     display: flex;
+  }
+  
+  &__imgtype {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(#000, .3);
+    padding: 5px 21px;
+    max-width: 100%;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-family: $font-second;
+    font-size: 16px;
+    letter-spacing: .04em;
   }
 }

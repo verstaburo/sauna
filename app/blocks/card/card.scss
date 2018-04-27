@@ -685,6 +685,11 @@
     &_count {
       margin-top: 10px;
     }
+    
+    &_halls {
+      font-weight: 700;
+      font-style: normal;
+    }
   }
   
   &__count {
@@ -764,6 +769,120 @@
       color: #7ca6e6;
       letter-spacing: -.02em;
       margin-left: 7px;
+    }
+  }
+  
+  &__halls {
+    margin-top: 18px;
+    box-sizing: border-box;
+    padding-right: 230px;
+    padding-bottom: 35px;
+    
+    &-link {
+      font-family: $font-second;
+      font-size: 16px;
+      font-weight: 300;
+      color: #699ae3;
+      letter-spacing: .02em;
+      margin-top: 10px;
+      
+      a {
+        color: inherit;
+        border-bottom: 1px dashed rgba(#6094e1, .3);
+      }
+    }
+    
+    &-price {
+      color: #202020;
+      margin-left: 10px;
+    }
+  }
+  
+  &__col {
+    box-sizing: border-box;
+    
+    &_left {
+      width: calc(100% - 543px);
+      padding-right: 30px;
+      padding-top: 28px;
+    }
+    
+    &_right {
+      width: 543px;
+    }
+  }
+  
+  &__subheading {
+    color: #010101;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: .04em;
+  }
+  
+  &__days {
+    display: flex;
+    margin-top: 26px;
+    margin-bottom: 25px;
+  }
+  
+  &__days-col {
+    margin-right: 64px;
+  }
+  
+  &__days-title {
+    color: #7f7e7e;
+    font-family: $font-second;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    
+    &_red {
+      color: #fa0101;
+    }
+  }
+  
+  &__days-price {
+    color: #161616;
+    font-size: 21px;
+    font-weight: 300;
+    letter-spacing: -.03em;
+    margin-top: 8px;
+  }
+  
+  &__images {
+    display: flex;
+    margin-bottom: 54px;
+  }
+  
+  &__image {
+    width: 25%;
+  }
+  
+  &__imgblock {
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding-top: 68%;
+    overflow: hidden;
+    
+    img {
+      @include fill-img;
+    }
+  }
+  
+  &_halls {
+    
+    .card-desc {
+      
+      &__content {
+        padding: 7px 0 28px 24px;
+        display: flex;
+      }
+      
+      &__services {
+        padding-right: 0;
+        padding-left: 4px;
+      }
     }
   }
 }
