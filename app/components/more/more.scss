@@ -24,6 +24,10 @@
   
   &__card {
     width: 273px;
+    
+    @include screen('desktop') {
+      width: 23%;
+    }
   }
   
   &__card-heading {

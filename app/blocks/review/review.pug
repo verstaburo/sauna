@@ -9,14 +9,17 @@ mixin review()
       +e.P.reviews Отзывы 231
     block
             
-mixin review-block(author, images, text)
-  +e.content
-    +e.mob-top
-      +e.P.top-author-name= author + ' о(об)'
-      +e.P.heading Усадьба банная на Угрешской
+mixin review-block(author, images, text, short)
+  +e.content&attributes(attributes)
+    if !short
+      +e.mob-top
+        +e.P.top-author-name= author + ' о(об)'
+        +e.P.heading Усадьба банная на Угрешской
     +e.author
       +e.P.author-name= author
       +e.P.date 15 мая 2015
+      if short
+        +rating(3).review__total-rating
     +e.ratings
       +e.ratings-col
         +e.P.ratings-item Персонал
@@ -42,7 +45,20 @@ mixin review-block(author, images, text)
           +e.SPAN.useful-count 7
         +e.A(href='#').useful-button Нет
           +e.SPAN.useful-count 2
+          
+mixin review-answer(author, text, short)
+  +e.content._answer&attributes(attributes)
+    +icon('comment_arrow').__answer-icon
+    if !short
+      +e.mob-top
+        +e.P.top-author-name= author
+    +e.author
+      +e.P.author-name= author
+      +e.P.date 15 мая 2015
+    +e.P.text= text
 
-mixin review-short(author, images, text)
+mixin review-short(author, images, text, answer)
   +b.review._short&attributes(attributes)
-    +review-block(author, images, text)
+    +review-block(author, images, text, true)
+    if answer
+      +review-answer('Администрация сауны', 'Рыночная информация многопланово стабилизирует сублимированный имидж. Опросная анкета, на первый взгляд, допускает комплексный анализ ситуации, полагаясь на инсайдерскую информацию. Пак-шот трансформирует ролевой стратегический маркетинг.', true)._answer

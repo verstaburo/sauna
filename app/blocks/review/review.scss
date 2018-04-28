@@ -129,6 +129,10 @@
         padding-top: 17px;
         margin-top: 23px;
       }
+      
+      &_answer {
+        border-top: 0;
+      }
     }
   }
   
@@ -393,52 +397,223 @@
     }
   }
   
+  &__answer-icon {
+    display: block;
+    width: 25px;
+    height: 10px;
+    margin: 0 auto 20px;  
+    fill: none;
+    stroke: rgba(#000, .2);
+    
+    @include screen('tablet-wide') {
+      display: block;
+      width: 37px;
+      height: 17px;
+      margin: 0 auto 68px;      
+    }
+    
+    @include screen('tablet-small') {
+      width: 20px;
+      height: 10px;
+      margin: 0 auto 20px;
+    }
+  }
+  
   &_short {
+    
     .review {
+      
       &__content {
         padding-top: 0;
         margin-left: 0;
+        
+        &_answer {
+          padding-top: 0;
+          
+          @include screen('tablet-wide') {
+            padding-top: 25px;
+          }
+          
+          @include screen('tablet-small') {
+            padding-top: 0;
+          }
+          
+          .review {
+            
+            &__author {              
+              @include screen('tablet-wide') {
+                padding-left: 150px;
+              }
+              
+              @include screen('tablet-small') {
+                padding-left: 0;
+              }
+            }
+            
+            &__text {
+              @include screen('tablet-wide') {
+                margin-top: 50px;
+              }
+              
+              @include screen('tablet-small') {
+                margin-top: 11px;
+              }
+            }
+          }
+        }
       }
+      
       &__author-name {
         font-size: 15px;
+        
+        @include screen('tablet-wide') {
+          color: #252525;
+          font-size: 30px;
+          line-height: 1.2;
+        }
+        
+        @include screen('tablet-small') {
+          font-size: 18px;
+        }
       }
+      
       &__date {
         font-size: 14px;
         margin-left: 18px;
+        
+        @include screen('tablet-wide') {
+          color: #a4a4a4;
+          font-size: 30px;
+          font-weight: 400;
+          line-height: 1.2;
+          margin-left: 0;
+          margin-top: 5px;
+        }
+        
+        @include screen('tablet-small') {
+          font-size: 16px;
+        }
       }
+      
+      &__total-rating {
+        margin-top: 11px;
+        
+        @include screen('tablet-wide', min) {
+          display: none;
+        }
+        
+        .rating__icon {
+          width: 26px;
+          height: 26px;
+          
+          @include screen('tablet-small') {
+            width: 16px;
+            height: 16px;
+          }
+        }
+        
+        .rating__box {
+          margin-right: 7px;
+          
+          @include screen('tablet-small') {
+            margin-right: 3px;
+          }
+        }
+      }
+      
       &__ratings {
         margin-top: 4px;
         border-bottom: 0;
+        
+        @include screen('tablet-wide') {
+          display: none;
+        }
       }
+      
       &__ratings-item {
         font-size: 14px;
       }
+      
       &__rating {
+        
         .rating__icon {
           width: 15px;
           height: 15px;
         }
+        
         .rating__box {
           margin-right: 3px;
         }
       }
+      
       &__text {
         margin-top: 1px;
+        
+        @include screen('tablet-wide') {
+          color: #252525;
+          font-size: 30px;
+          line-height: (42/30);
+          margin-top: 22px;
+          padding: 0;
+        }
+        
+        @include screen('tablet-small') {
+          margin-top: 11px;
+          font-size: 18px;
+        }
       }
+      
       &__useful {
         font-size: 14px;
         margin-top: 13px;
         margin-left: 2px;
+        
+        @include screen('tablet-wide') {
+          display: none;
+        }
+        
         &-buttons {
           margin-left: 15px;
         }
+        
         &-button {
           padding: 2px 6px 3px 7px;
         }
       }
+      
       &__img {
         width: 153px;
         height: 85px;
+        
+        @include screen('tablet-wide') {
+          width: calc(50% - 32px);
+          height: auto;
+          margin: 16px;
+          padding-top: 27.5%;
+        }
+        
+        @include screen('tablet-small') {
+          width: calc(50% - 16px);
+          margin: 8px;
+        }
+      }
+      
+      &__author {
+        @include screen('tablet-wide') {
+          display: block;
+        }
+      }
+      
+      &__images {
+        @include screen('tablet-wide') {
+          margin: 27px -16px -16px;
+          padding-right: 25px;
+        }
+        
+        @include screen('tablet-small') {
+          margin: 13px -8px -8px;
+          padding-right: 0;
+        }
       }
     }
   }

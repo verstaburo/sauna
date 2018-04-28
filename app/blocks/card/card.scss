@@ -8,6 +8,10 @@
   font-weight: 400;
   letter-spacing: .04em;
   margin-bottom: 6px;
+  
+  @include screen('tablet-wide') {
+    display: none;
+  }
 }
 
 @mixin card-count() {
@@ -42,6 +46,10 @@
   background-color: #fff;
   border: 1px solid #eee;
   box-sizing: border-box;
+  
+  @include screen('tablet-wide') {
+    border: 0;
+  }
 }
 
 @mixin card-input() {
@@ -61,6 +69,18 @@
   letter-spacing: .02em;
   padding: 16px;
   text-align: center;
+}
+
+@mixin card-section-title {
+  color: #1f1f1f;
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  box-sizing: border-box;
+  
+  @include screen('tablet-small') {
+    font-size: 20px;
+  }
 }
 
 // card-reviewform
@@ -290,6 +310,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    @include screen('tablet-wide') {
+      display: flex;
+      @include card-section-title;
+      padding: 0 8px 39px;
+      border-bottom: 1px solid rgba(#000, .1);
+    }
+    
+    @include screen('tablet-small') {
+      padding: 0 0 16px;
+    }
+  }
+  
+  &__heading-count {
+    margin-right: auto;
+    color: #bcbcbc;
+    font-weight: 300;
+    margin-left: 3px;
+    
+    @include screen('tablet-wide', min) {
+      display: none;
+    }
   }
   
   &__link {
@@ -298,11 +340,32 @@
     font-weight: 300;
     margin-right: 20px;
     border-bottom-style: solid;
+    
+    @include screen('tablet-wide') {
+      color: #7f9de0;
+      font-size: 33px;
+      font-weight: 400;
+      border-bottom-style: dashed;
+      margin-right: 17px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 18px;
+      margin-right: 0;
+    }
   }
   
   &__content {
     @include card-content;
     padding: 50px 0;
+    
+    @include screen('tablet-wide') {
+      padding: 14px 0;
+    }
+    
+    @include screen('tablet-small') {
+      padding: 0;
+    }
   }
   
   &__review {
@@ -311,8 +374,31 @@
     max-width: 590px;
     box-sizing: border-box;
     
+    @include screen('tablet-wide') {
+      width: auto;
+      max-width: none;
+      margin: 0 -30px;
+      padding: 36px 83px 56px;
+      border-top: 1px solid rgba(#000, .1);
+    }
+    
+    @include screen('tablet-small') {
+      margin: 0 -20px;
+      padding: 18px 20px 18px;
+    }
+    
     & + & {
       margin-top: 76px;
+      
+      @include screen('tablet-wide') {
+        margin-top: 0;
+      }
+    }
+    
+    &:first-child {
+      @include screen('tablet-wide') {
+        border-top: 0;
+      }
     }
   }
   
@@ -322,6 +408,10 @@
     text-align: right;
     margin-top: 39px;
     margin-right: 35px;
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
     
     a {
       color: inherit;
@@ -469,6 +559,11 @@
   
   &__content {
     @include card-content;
+    
+    @include screen('tablet-wide') {
+      display: flex;
+      flex-direction: column;
+    }
   }
   
   &__days {
@@ -477,6 +572,10 @@
     font-size: 12px;
     font-weight: 700;
     letter-spacing: .03em;
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
     
     &_red {
       color: #fa0101;
@@ -490,8 +589,45 @@
     letter-spacing: -.03em;
     margin-top: 8px;
     
+    @include screen('tablet-wide') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #161616;
+      font-size: 37px;
+      font-weight: 300;
+      margin-top: 23px;
+      padding: 0 34px 13px 14px;
+      letter-spacing: -0.025em;
+    }
+    
+    @include screen('tablet-small') {
+      margin-top: 11px;
+      padding: 0;
+      font-size: 20px;
+    }
+    
     & + .card-contacts__days {
       margin-top: 8px;
+    }
+    
+    &_hide-md {
+      @include screen('tablet-wide') {
+        display: none;
+      }
+    }
+  }
+  
+  &__price-img {
+    margin-top: 3px;
+    max-width: 150px;
+    
+    @include screen('tablet-wide', min) {
+      display: none;
+    }
+    
+    @include screen('tablet-small') {
+      max-width: 75px;
     }
   }
   
@@ -501,20 +637,30 @@
     width: 19px;
     height: 19px;
     margin-right: 7px;
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
   }
   
-  &__text {
+  &__text-span {
     color: #202020;
     font-size: 16px;
     font-weight: 300;
     letter-spacing: .02em;
-    border-top: 1px solid rgba(#000, .1);
-    border-bottom: 1px solid rgba(#000, .1);
-    padding: 8px 24px;
+    display: inline-block;
+    vertical-align: middle;
     
-    &-span {
-      display: inline-block;
-      vertical-align: middle;
+    @include screen('tablet-wide') {
+      font-family: $font-second;
+      font-size: 33px;
+      font-weight: 400;
+      vertical-align: top;
+      margin-top: 2px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 20px;
     }
   }
   
@@ -525,8 +671,37 @@
     letter-spacing: -.02em;
     margin-top: 3px;
     
+    @include screen('tablet-wide') {
+      display: block;
+      font-size: 37px;
+      font-weight: 300;
+      margin-top: 33px;
+      padding-left: 12px;
+      letter-spacing: -.03em;
+      margin-right: 20px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 20px;
+      margin-top: 16px;
+      padding-left: 0;
+      margin-right: 15px;
+    }
+    
     & + & {
       margin-top: 10px;
+      
+      @include screen('tablet-wide') {
+        margin-top: 27px;
+      }
+      
+      @include screen('tablet-small') {
+        margin-top: 13px;
+      }
+    }
+    
+    a {
+      color: inherit;
     }
   }
   
@@ -536,10 +711,95 @@
     width: 100%;
     box-sizing: border-box;
     margin-top: 18px;
+    
+    @include screen('tablet-wide') {
+      align-self: flex-start;
+      width: auto;
+      max-width: 317px;
+      flex: 1;
+      color: #4b4734;
+      font-size: 33px;
+      margin-top: 32px;
+      padding: 29px 13px 38px;
+    }
+    
+    @include screen('tablet-small') {
+      margin-top: 16px;
+      font-size: 20px;
+      padding: 16px;
+      max-width: 217px;
+    }
+    
+    .hide-md {
+      @include screen('tablet-wide') {
+        display: none;
+      }
+    }
+    
+    .show-md {
+      @include screen('tablet-wide', min) {
+        display: none;
+      }
+    }
   }
   
   &__section {
     padding: 16px 22px 11px;
+    
+    @include screen('tablet-wide') {
+      padding: 0;
+    }
+    
+    &_text {
+      border-top: 1px solid rgba(#000, .1);
+      border-bottom: 1px solid rgba(#000, .1);
+      padding: 8px 24px;
+      
+      @include screen('tablet-wide') {
+        order: -1;
+        border-top: 0;
+        padding: 30px 8px 19px;
+      }
+      
+      @include screen('tablet-small') {
+        padding: 20px 0 16px;
+      }
+      
+      .card-contacts__section-title {
+        letter-spacing: -.01em;
+        margin-right: 155px;
+        
+        @include screen('tablet-small') {
+          margin-right: 15px;
+        }
+      }
+    }
+    
+    &_bottom {
+      @include screen('tablet-wide') {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+  }
+  
+  &__section-title {
+    @include card-section-title;
+    
+    @include screen('tablet-wide', min) {
+      display: none;
+    }
+    
+    &_bordered {
+      width: 100%;
+      border-bottom: 1px solid rgba(#000, .1);
+      padding: 35px 10px 11px;
+      
+      @include screen('tablet-small') {
+        padding: 26px 0 16px;
+      }
+    }
   }
 }
 
@@ -555,6 +815,47 @@
     @include card-content;
     padding: 14px;
     text-align: center;
+    
+    @include screen('tablet-wide') {
+      padding: 0;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  &__section {
+    
+    &_top {
+      @include screen('tablet-wide') {
+        padding: 32px 10px 30px;
+        display: flex;
+        border-bottom: 1px solid rgba(#000, .1);
+      }
+      
+      @include screen('tablet-small') {
+        padding: 16px 0;
+      }
+    }
+    
+    &_bottom {
+      @include screen('tablet-wide') {
+        padding: 24px 0 0;
+      }
+    }
+  }
+  
+  &__section-title {
+    @include card-section-title;
+    
+    @include screen('tablet-wide', min) {
+      display: none;
+    }
+    
+    &_bordered {
+      padding: 0 8px 19px;
+      border-bottom: 1px solid rgba(#000, .1);
+    }
   }
   
   &__link {
@@ -563,10 +864,36 @@
     font-size: 16px;
     font-weight: 400;
     letter-spacing: -.02em;
-    border-bottom: 1px dashed rgba(#6094e1, .3);
+    
+    @include screen('tablet-wide') {
+      font-size: 33px;
+      margin-left: 51px;
+      padding-top: 3px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 20px;
+      margin-left: 10px;
+      padding-top: 2px;
+    }
     
     &_black {
       color: #595959;
+    }
+    
+    &_show {
+      @include screen('tablet-wide') {
+        display: none;
+      }
+    }
+    
+    a {
+      color: inherit;
+      border-bottom: 1px dashed rgba(#6094e1, .3);
+      
+      @include screen('tablet-wide') {
+        border-bottom: 0;
+      }
     }
   }
   
@@ -574,6 +901,17 @@
     height: 163px;
     background-color: #ccc;
     margin: 17px -15px 4px;
+    
+    @include screen('tablet-wide') {
+      margin: 0 -30px;
+      height: 366px;
+      order: -1;
+    }
+    
+    @include screen('tablet-small') {
+      margin: 0 -20px;
+      height: 270px;
+    }
   }
   
   &__place {
@@ -590,6 +928,19 @@
     margin-top: 16px;
     padding: 0 28px;
     
+    @include screen('tablet-wide') {
+      color: #202020;
+      font-size: 29px;
+      margin-top: 35px;
+      padding: 0 38px 0 66px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 18px;
+      margin-top: 17px;
+      padding: 0 0 0 30px;
+    }
+    
     &:before {
       content: '';
       display: block;
@@ -600,15 +951,42 @@
       height: 5px;
       border-radius: 1000px;
       background-color: #49bb7b;
+      
+      @include screen('tablet-wide') {
+        display: none;
+      }
     }
     
     & + & {
       margin-top: 0;
+      
+      @include screen('tablet-wide') {
+        margin-top: 17px;
+      }
     }
     
     &-text {
       margin-right: 7px;
       margin-bottom: 2px;
+    }
+    
+    &-icon {
+      width: 25px;
+      height: 14px;
+      position: absolute;
+      left: 16px;
+      top: 6px;
+      
+      @include screen('tablet-wide', min) {
+        display: none;
+      }
+      
+      @include screen('tablet-small') {
+        width: 20px;
+        height: 13px;
+        left: 0;
+        top: 3px;
+      }
     }
   }
   
@@ -616,6 +994,18 @@
     color: #747373;
     font-style: italic;
     font-size: 14px;
+    
+    @include screen('tablet-wide') {
+      opacity: 0.5;
+      color: #212121;
+      font-size: 25px;
+      margin-bottom: 7px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 16px;
+      margin-bottom: 3px;
+    }
   }
 }
 
@@ -634,6 +1024,12 @@
     @include card-content;
     padding: 30px 24px 24px;
     position: relative;
+    
+    @include screen('tablet-wide') {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
   }
   
   &__link {
@@ -658,11 +1054,40 @@
     line-height: 1.6;
     width: 100%;
     max-width: 659px;
+    box-sizing: border-box;
+    
+    @include screen('tablet-wide') {
+      max-width: none;
+      color: #252525;
+      font-size: 30px;
+      line-height: (42/30);
+      margin-top: 40px;
+      padding: 0 16px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 18px;
+      margin-top: 16px;
+      padding: 0;
+    }
   }
-  
+   
   &__services {
     margin-top: 17px;
     padding-right: 230px;
+    
+    @include screen('desktop-wide') {
+      padding-right: 0;
+    }
+    
+    @include screen('tablet-wide') {
+      order: 0;
+      margin-top: 41px;
+    }
+    
+    @include screen('tablet-small') {
+      margin-top: 30px;
+    }
   }
   
   &__service {
@@ -673,6 +1098,19 @@
     letter-spacing: .02em;
     margin-top: 12px;
     
+    @include screen('tablet-wide') {
+      font-size: 33px;
+      font-style: normal;
+      padding: 0 14px;
+      line-height: 1;
+      margin-top: 39px;
+    }
+    
+    @include screen('tablet-small') {
+      padding: 0;
+      font-size: 20px;
+    }
+    
     &:first-child {
       margin-top: 0;
     }
@@ -680,10 +1118,26 @@
     strong {
       font-style: normal;
       margin-right: 3px;
+      
+      @include screen('tablet-wide') {
+        font-family: $font-main;
+        font-weight: 500;
+        display: block;
+        border-bottom: 1px solid rgba(#000, .1);
+        margin: 0 -14px 32px;
+        padding: 0 12px 12px;
+      }
+      
+      @include screen('tablet-small') {
+        padding: 0 0 12px;
+        margin: 0 0 16px;
+      }
     }
     
     &_count {
-      margin-top: 10px;
+      @include screen('tablet-wide', min) {
+        margin-top: 10px;
+      }
     }
     
     &_halls {
@@ -696,6 +1150,16 @@
     margin-left: 25px;
     display: inline-block;
     font-size: 0;
+    
+    @include screen('desktop') {
+      margin-left: 0;
+      margin-top: 12px;
+      display: block;
+    }
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
   }
   
   &__count-group {
@@ -720,6 +1184,16 @@
     bottom: 27px;
     text-align: right;
     max-width: 200px;
+    
+    @include screen('desktop-wide') {
+      position: static;
+      max-width: 100%;
+      margin-top: 24px;
+    }
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
   }
   
   &__video {
@@ -870,6 +1344,43 @@
     }
   }
   
+  &__sales {
+    @include screen('tablet-wide', min) {
+      display: none;
+    }
+    
+    @include screen('tablet-wide') {
+      order: 1;
+      margin-top: 43px;
+    }
+  }
+  
+  &__desc {
+    @include screen('tablet-wide') {
+      order: 2;
+      margin-top: 60px;
+    }
+    
+    @include screen('tablet-small') {
+      margin-top: 30px;
+    }
+  }
+  
+  &__section-title {
+    @include card-section-title;
+    padding: 0 9px 22px;
+    letter-spacing: .025em;
+    border-bottom: 1px solid rgba(#000, .1);
+    
+    @include screen('tablet-wide', min) {
+      display: none;
+    }
+    
+    @include screen('tablet-small') {
+      padding: 0 0 16px;
+    }
+  }
+  
   &_halls {
     
     .card-desc {
@@ -898,6 +1409,25 @@
   &__content {
     @include card-content;
     padding: 23px 25px 34px;
+    
+    @include screen('tablet-wide') {
+      padding: 0;
+    }
+  }
+  
+  &__section-title {
+    @include card-section-title;
+    padding: 0 9px 23px;
+    letter-spacing: .025em;
+    border-bottom: 1px solid rgba(#000, .1);
+    
+    @include screen('tablet-wide', min) {
+      display: none;
+    }
+    
+    @include screen('tablet-small') {
+      padding: 0 0 16px;
+    }
   }
   
   &__sale {
@@ -907,6 +1437,19 @@
     position: relative;
     padding-left: 28px;
     margin-top: 15px;
+    
+    @include screen('tablet-wide') {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 25px 58px 19px 39px;
+      border-bottom: 1px solid rgba(#000, .1);
+      margin-top: 0;
+    }
+    
+    @include screen('tablet-small') {
+      padding: 10px 0 10px 16px;
+    }
     
     &:before {
       content: '';
@@ -918,10 +1461,28 @@
       position: absolute;
       left: 0;
       top: 8px;
+      
+      @include screen('tablet-wide') {
+        left: 16px;
+        top: 36px;
+      }
+      
+      @include screen('tablet-small') {
+        left: 0;
+        top: 16px;
+        width: 8px;
+        height: 8px;
+      }
     }
     
     &:first-child {
       margin-top: 0;
+    }
+    
+    &:last-child {
+      @include screen('tablet-wide') {
+        border-bottom: 0;
+      }
     }
   }
   
@@ -933,9 +1494,24 @@
     padding-right: 10px;
     box-sizing: border-box;
     
+    @include screen('tablet-wide') {
+      color: #7193de;
+      font-size: 33px;
+      width: auto;
+      padding-right: 20px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 20px;
+    }
+    
     a {
       color: inherit;
       border-bottom: 1px solid #699ae3;
+      
+      @include screen('tablet-wide') {
+        border-bottom: 0;
+      }
     }
   }
   
@@ -945,6 +1521,19 @@
     opacity: 0.5;
     color: #202020;
     margin-top: 4px;
+    
+    @include screen('tablet-wide') {
+      opacity: 0.4;
+      color: #000000;
+      font-style: italic;
+      font-size: 25px;
+      flex-shrink: 0;
+      margin-top: 0;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 18px;
+    }
   }
 }
 
@@ -983,6 +1572,7 @@
     letter-spacing: -.02em;
     position: relative;
     padding-left: 36px;
+    padding-right: 27px;
     margin-bottom: 24px;
     cursor: pointer;
     transition: opacity $ease-main;

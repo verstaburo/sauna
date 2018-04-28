@@ -244,8 +244,10 @@
   &_wide {
     
     .header__logo {
-      margin-left: -57px;
-      margin-right: 40px;
+      @include screen('desktop-wide', min) {
+        margin-left: -57px;
+        margin-right: 40px;
+      }
     }
   }
 }

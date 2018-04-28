@@ -9,49 +9,54 @@ block content
       +header-line-menu('Карта сайта', 'Добавить заведение', 'linebg1.jpg')
     +e.head
       .container.container_wide
-        +breadcrumbs(['Москва', 'ЮЗАО', 'район Северное Бутово', 'Варшавское шоссе', 'Баня и сауна GreenRoof'])
+        +breadcrumbs(['Москва', 'ЮЗАО', 'район Северное Бутово', 'Варшавское шоссе', 'Баня и сауна GreenRoof']).__breadcrumbs
         +e.P.category САУНА
         +e.H1.heading GreenRoof
         +e.top
           +rating(3).__rating
           +e.P.top-text 15 отзывов
-          +e.P.top-text
+          +e.P.top-text._checked
             +icon('check').check-icon
             | Заведение проверено
+          +e.P.checked проверено
           +e.social
     +e.content
-      +multislider(false, true).__slider
-        +slide()
-          img(src='assets/images/place1.jpg')
-        +slide()
-          img(src='assets/images/place2.jpg')
-        +slide()
-          img(src='assets/images/place3.jpg')
-        +slide()
-          img(src='assets/images/place4.jpg')
-        +slide()
-          img(src='assets/images/place1.jpg')
-        +slide()
-          img(src='assets/images/place2.jpg')
-        +slide()
-          img(src='assets/images/place3.jpg')
-        +slide()
-          img(src='assets/images/place4.jpg')
+      +put-block-into-slot('multislider', 'xl')
+        +multislider(false, true).__slider
+          +slide()
+            img(src='assets/images/place1.jpg')
+          +slide()
+            img(src='assets/images/place2.jpg')
+          +slide()
+            img(src='assets/images/place3.jpg')
+          +slide()
+            img(src='assets/images/place4.jpg')
+          +slide()
+            img(src='assets/images/place1.jpg')
+          +slide()
+            img(src='assets/images/place2.jpg')
+          +slide()
+            img(src='assets/images/place3.jpg')
+          +slide()
+            img(src='assets/images/place4.jpg')
       .container.container_wide
+        +put-block-into-slot('contactcards', 'md')
+        +put-block-into-slot('multislider', 'md')
         +e.cols
           +e.col._left
-            +card-desc().__card
-            +card-sales().__card
+            +card-desc('salecard', 'md').__card
+            +card-sales('salecard', 'xl').__card._sales
             +e.banner
-            +card-questions().__card
+            +card-questions().__card._questions
           +e.col._right
-            +e.innercols
-              +e.innercol._left
-                +card-contacts().__card._inner
-              +e.innercol._right
-                +card-address().__card._inner
-            +card-rating().__card
+            +put-block-into-slot('contactcards', 'xl')
+              +e.innercols
+                +e.innercol._left
+                  +card-contacts().__card._inner
+                +e.innercol._right
+                  +card-address().__card._inner
+            +card-rating().__card._rating
             +card-reviews(true, true)._more.__card._reviews
-    +more()
+    +more().__more
     +lastview().__lastview
     +footer()

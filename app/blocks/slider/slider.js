@@ -43,9 +43,13 @@ export default function slider() {
       bulletActiveClass: 'active',
     },
     roundLengths: true,
+    resistanceRatio: 0,
+    freeMode: true,
+    freeModeMomentumRatio: 0.2,
+    freeModeMomentumBounce: false,
     breakpoints: {
-      320: {
-        slidesPerView: 1,
+      1020: {
+        slidesPerView: 'auto',
       },
     },
   });

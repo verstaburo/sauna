@@ -3,6 +3,14 @@
   
   &__head {
     padding: 11px 0 19px;
+    
+    @include screen('tablet-wide') {
+      padding: 34px 0 20px;
+    }
+    
+    @include screen('tablet-small') {
+      padding: 20px 0;
+    }
   }
   
   &__category {
@@ -11,6 +19,10 @@
     font-weight: 700;
     letter-spacing: .02em;
     margin-top: 14px;
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
   }
   
   &__heading {
@@ -18,23 +30,72 @@
     font-weight: 700;
     letter-spacing: .02em;
     margin-top: 5px;
+    
+    @include screen('tablet-wide') {
+      color: #161616;
+      font-size: 38px;
+      font-weight: 500;
+      margin-top: 0;
+      padding: 0 9px;
+      letter-spacing: .045em;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 28px;
+      padding: 0;
+    }
   }
   
   &__top {
     margin-top: 18px;
     display: flex;
+    
+    @include screen('tablet-wide') {
+      align-items: flex-end;
+      flex-wrap: wrap;
+      margin-top: 22px;
+      padding: 0 8px;
+    }
+    
+    @include screen('tablet-small') {
+      margin-top: 11px;
+      padding: 0;
+    }
   }
   
   &__rating {
     margin-right: 5px;
     
+    @include screen('tablet-wide') {
+      margin-bottom: 10px;
+      margin-right: 16px;
+    }
+    
+    @include screen('tablet-small') {
+      margin-right: 10px;
+    }
+    
     .rating__icon {
       width: 20px;
       height: 19px;
+      
+      @include screen('tablet-wide') {
+        width: 27px;
+        height: 27px;
+      }
+      
+      @include screen('tablet-small') {
+        width: 20px;
+        height: 20px;
+      }
     }
     
     .rating__box {
       margin-right: 6px;
+      
+      @include screen('tablet-small') {
+        margin-right: 3px;
+      }
     }
   }
   
@@ -45,6 +106,55 @@
     font-style: italic;
     font-size: 18px;
     letter-spacing: .03em;
+    
+    @include screen('tablet-wide') {
+      opacity: 0.5;
+      color: #161616;
+      font-size: 33px;
+      font-weight: 500;
+      margin-bottom: 2px;
+      margin-right: 33px;
+      flex-shrink: 0;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 20px;
+      margin-bottom: 6px;
+      margin-right: 15px;
+    }
+    
+    &_checked {
+      @include screen('tablet-wide') {
+        display: none;
+      }
+    }
+  }
+  
+  &__checked {
+    background-color: rgba($color-yellow, .3);
+    line-height: 52px;
+    text-align: center;
+    color: rgba(#161616, .9);
+    font-family: $font-second;
+    font-size: 29px;
+    font-weight: 500;
+    letter-spacing: .02em;
+    padding: 0 20px;
+    flex: 1;
+    max-width: 276px;
+    margin-right: -15px;
+    
+    @include screen('tablet-wide', min) {
+      display: none;
+    }
+    
+    @include screen('tablet-small') {
+      line-height: 36px;
+      font-size: 18px;
+      padding: 0 10px;
+      max-width: 130px;
+      margin-right: 0;
+    }
   }
   
   &__check-icon {
@@ -61,6 +171,10 @@
     margin-left: auto;
     margin-right: -7px;
     background-color: #ccc;
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
   }
   
   &__slider {
@@ -68,10 +182,23 @@
     max-width: 1440px;
     margin: 0 auto;
     
+    @include screen('tablet-wide') {
+      margin: 29px -30px 0;
+      width: auto;
+    }
+    
+    @include screen('tablet-small') {
+      margin: 25px -20px 0;
+    }
+    
     .slider__slide {
       position: relative;
       padding-top: 68%;
       overflow: hidden;
+      
+      @include screen('tablet-wide') {
+        padding-top: 65.7%;
+      }
       
       img {
         @include fill-img;
@@ -81,22 +208,65 @@
     .slider__button {
       box-shadow: 1px 2px 3px rgba(2, 2, 2, 0.3);
       background-color: #edf1f2;
+      
+      @include screen('tablet-wide') {
+        display: none;
+      }
     }
     
     .swiper-button-disabled {
       opacity: 0;
       pointer-events: none;
     }
+    
+    .swiper-slide {
+      @include screen('tablet-wide') {
+        margin: 0 9px;
+        width: 81.4% !important;
+      }
+      
+      @include screen('tablet-small') {
+        margin: 0 7px;
+      }
+      
+      &:first-child {
+        @include screen('tablet-wide') {
+          margin-left: 27px;
+        }
+        
+        @include screen('tablet-small') {
+          margin-left: 20px;
+        }
+      }
+      
+      &:last-child {
+        @include screen('tablet-wide') {
+          margin-right: 27px;
+        }
+        
+        @include screen('tablet-small') {
+          margin-right: 20px;
+        }
+      }
+    }
   }
   
   &__content {
-    background-color: #f8f8f8;
+    
+    @include screen('tablet-wide', min) {
+      background-color: #f8f8f8;
+    }
   }
   
   &__cols {
     padding: 34px 0 33px;
     display: flex;
     justify-content: space-between;
+    
+    @include screen('tablet-wide') {
+      flex-wrap: wrap;
+      padding: 0;
+    }
     
     &_top {
       padding-bottom: 0;
@@ -111,10 +281,18 @@
     
     &_left {
       width: calc(100% - 587px);
+      
+      @include screen('tablet-wide') {
+        width: 100%;
+      }
     }
     
     &_right {
       width: 570px;
+      
+      @include screen('tablet-wide') {
+        width: 100%;
+      }
     }
   }
   
@@ -137,11 +315,27 @@
     
     &_reviews {
       margin-top: 80px;
+      
+      @include screen('tablet-wide') {
+        margin-top: 84px;
+      }
+      
+      @include screen('tablet-small') {
+        margin-top: 40px;
+      }
     }
     
     &_halls {
       & + & {
         margin-top: 36px;
+      }
+    }
+    
+    &_sales,
+    &_questions,
+    &_rating {
+      @include screen('tablet-wide') {
+        display: none;
       }
     }
   }
@@ -150,16 +344,34 @@
     margin-top: 40px;
     height: 90px;
     background-color: #ccc;
+    
+    @include screen('tablet-wide') {
+      display: none;
+    }
   }
   
   &__innercols {
     display: flex;
     justify-content: space-between;
+    
+    @include screen('tablet-wide') {
+      flex-wrap: wrap;
+    }
   }
   
   &__innercol {
     width: calc((100% - 17px)/2);
     display: flex;
+    
+    @include screen('tablet-wide') {
+      width: 100%;
+    }
+    
+    &_left {
+      @include screen('tablet-wide') {
+        order: 1;
+      }
+    }
   }
   
   &__imgtype {
@@ -174,5 +386,22 @@
     font-family: $font-second;
     font-size: 16px;
     letter-spacing: .04em;
+  }
+  
+  &__breadcrumbs,  
+  &__more,
+  &__lastview {
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
+  
+  .header {
+    
+    &__discounts {
+      @include screen('tablet-wide') {
+        display: none;
+      }
+    }
   }
 }
