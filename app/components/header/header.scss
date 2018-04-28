@@ -231,6 +231,11 @@
       & + & {
         margin-left: 40px;
       }
+      
+      &_side {
+        margin-right: auto;
+        margin-left: -20px;
+      }
     }
     
     &-icon {

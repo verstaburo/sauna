@@ -16,7 +16,7 @@ mixin sitemap()
             else
               +e.A(href='#sitelinks' + (index+1)).nav-link= val
         +e.links
-          +e.cols
+          +e.cols._scrollable
             +e.col
               +sitemap-list('sitelinks1', 'А', ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна', 'Crazy в отеле, сауна', 'ELITE & CLUB GOLD SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна'])
               +sitemap-list('sitelinks2', 'Б', ['Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])

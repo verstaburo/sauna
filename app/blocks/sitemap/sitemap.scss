@@ -7,8 +7,8 @@
   letter-spacing: .02em;
   padding-top: 32px;
   
-  @include screen('tablet-wide') {
-    display: none;
+  @include screen('tablet-small') {
+    padding-top: 20px;
   }
   
   a {
@@ -17,6 +17,10 @@
   
   &__heading {
     font-size: 31px;
+    
+    @include screen('tablet-small') {
+      font-size: 24px;
+    }
   }
   
   &__tab-links {
@@ -25,6 +29,10 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    
+    @include screen('tablet-small') {
+      margin-bottom: 10px;
+    }
   }
   
   &__tab-link {
@@ -32,6 +40,10 @@
     margin: 10px 20px 6px;
     font-size: 21px;
     border-bottom: 1px solid #fdfdfd;
+    
+    @include screen('tablet-small') {
+      font-size: 18px;
+    }
     
     &.active {
       border-bottom: 1px solid transparent;
@@ -63,6 +75,10 @@
     border-bottom: 1px solid #fdfdfd;
     position: relative;
     
+    @include screen('tablet-small') {
+      font-size: 18px;
+    }
+    
     &:after {
       content: '';
       display: block;
@@ -79,6 +95,10 @@
       transition: opacity $ease-main;
       opacity: 0;
       pointer-events: none;
+      
+      @include screen('tablet-wide') {
+        top: calc(100% + 1px);
+      }
     }
     
     &.active {
@@ -95,15 +115,22 @@
     text-align: left;
   }
   
-  &__cols {
-    height: 514px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    margin-right: -20px;
-    padding-right: 20px;
+  &__cols {    
     display: flex;
     justify-content: space-between;
     position: relative;
+    
+    @include screen('tablet-wide') {
+      flex-wrap: wrap;
+    }
+    
+    &_scrollable {
+      height: 514px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      margin-right: -20px;
+      padding-right: 20px;
+    }
   }
   
   &__col {
@@ -112,6 +139,38 @@
     align-self: flex-start;
     padding-bottom: 20px;
     box-sizing: border-box;
+    
+    @include screen('tablet-wide') {
+      width: 50%;
+      
+      &:nth-child(1) {
+        order: 1;
+        padding-bottom: 0;
+      }
+      &:nth-child(2) {
+        order: 3;
+      }
+      &:nth-child(3) {
+        order: 2;
+        padding-bottom: 0;
+      }
+      &:nth-child(4) {
+        order: 4;
+      }
+    }
+    
+    @include screen('tablet-small') {
+      width: 100%;
+      padding-right: 0;
+      
+      &:nth-child(2) {
+        order: 2;
+        padding-bottom: 0;
+      }
+      &:nth-child(3) {
+        order: 3;
+      }
+    }
   }
   
   &__list {
