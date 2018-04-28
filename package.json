@@ -79,7 +79,6 @@
     "vinyl-named": "^1.1.0",
     "webpack": "^2.3.2",
     "webpack-stats-logger": "^1.0.1",
-    "webpack-stream": "^3.2.0",
-    "ymaps": "^0.1.1"
+    "webpack-stream": "^3.2.0"
   }
 }
