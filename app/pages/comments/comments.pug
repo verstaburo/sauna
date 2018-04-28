@@ -1,7 +1,7 @@
 extends ../../layouts/default
 
 block head
-  - var pageTitle = 'Versta Project Template'
+  - var pageTitle = 'Comments'
 
 block content
   +b.comments
@@ -9,7 +9,7 @@ block content
       +header-line-menu(false, 'Добавить заведение')
     +e.head
       .container.container_wide
-        +breadcrumbs(['Москва', 'ЮЗАО', 'район Северное Бутово', 'Варшавское шоссе', 'Баня и сауна GreenRoof'])
+        +breadcrumbs(['Москва', 'ЮЗАО', 'район Северное Бутово', 'Варшавское шоссе', 'Баня и сауна GreenRoof']).__breadcrumbs
         +e.H1.heading Отзывы о Баня и сауна GreenRoof
         +e.A(href='#').back-button
           +icon('arrow')
@@ -21,7 +21,7 @@ block content
             +card-reviewform().__card
             +card-reviews().__card
           +e.col._right
-            +card-rating().__card
+            +card-rating().__card._rating
             +e.innercols
               +e.innercol._left
                 +card-contacts().__card._inner

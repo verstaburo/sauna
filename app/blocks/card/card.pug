@@ -6,7 +6,8 @@ mixin card-reviewform()
   +b.card-reviewform._success&attributes(attributes)
     +e.H3.heading Отзывы
       +e.SPAN.count 21
-      +e.A(href='#').link Оставить отзыв
+      +e.P.link
+        a(href='#') Оставить отзыв
     +e.content
       +e.FORM.form
         +e.form-section._top

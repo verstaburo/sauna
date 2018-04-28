@@ -514,9 +514,18 @@
       &__ratings {
         margin-top: 4px;
         border-bottom: 0;
+        flex-wrap: wrap;
         
         @include screen('tablet-wide') {
           display: none;
+        }
+      }
+      
+      &__ratings-col {
+        margin-right: 21px;
+        
+        &:nth-child(2n) {
+          margin-left: 0;
         }
       }
       
