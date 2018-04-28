@@ -6,12 +6,17 @@ import { freeze, unfreeze } from '../js-functions/freeze';
 const $ = window.$;
 
 export default function popups() {
-  $('.js-fancybox').fancybox({
+  $('.js-fancybox-popup').fancybox({
     afterLoad: freeze,
     afterClose: unfreeze,
     smallBtn: false,
     buttons: false,
     touch: false,
+  });
+
+  $('.js-fancybox').fancybox({
+    afterLoad: freeze,
+    afterClose: unfreeze,
   });
 
   $(document).on('click', '.popup__close', () => {
@@ -38,5 +43,23 @@ export default function popups() {
     setTimeout(() => {
       checkPopupColsWidth();
     }, 100);
+  });
+
+  $(document).on('click', '.popup__control', function (e) {
+    e.preventDefault();
+    const control = $(this).attr('data-control');
+    const controlText = $(this).siblings('.popup__controls-text');
+    const valueText = controlText.text().split(' ');
+    let value = parseInt(valueText[0], 10);
+    if (control === 'minus') {
+      value -= 1;
+      if (value < 0) {
+        value = 0;
+      }
+    } else {
+      value += 1;
+    }
+    const finalText = `${value} ${valueText[1]}`;
+    controlText.text(finalText);
   });
 }

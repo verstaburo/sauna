@@ -150,9 +150,9 @@ mixin popup-location()
           +e.A(href='#').map-link Любое расположение
           +e.P.address Адрес: Москва, ул. Арбат 1
           +e.controls
-            +e.A(href='#').control -
+            +e.A(href='#' data-control='minus').control -
             +e.SPAN.controls-text 22 км
-            +e.A(href='#').control +
+            +e.A(href='#' data-control='plus').control +
         +e.map#popupmap
         +e.map-bottom
           +e.LABEL.checkbox

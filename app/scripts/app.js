@@ -13,6 +13,9 @@ import tooltips from '../blocks/tooltip/tooltip';
 import tabs from '../blocks/tabs/tabs';
 import maps from '../blocks/map/map';
 import card from '../blocks/card/card';
+import tags from '../blocks/tags/tags';
+import filter from '../blocks/filter/filter';
+import switcher from '../blocks/switcher/switcher';
 import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
@@ -40,5 +43,8 @@ $(() => {
   numberinput();
   maps();
   card();
+  tags();
+  filter();
+  switcher();
   scrollanimation();
 });

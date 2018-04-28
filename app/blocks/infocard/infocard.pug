@@ -1,6 +1,6 @@
 mixin infocard(img, reviews, title, name, desc)
   +b.infocard&attributes(attributes)
-    +e.img
+    +e.A(href='#').img
       img(src='assets/images/'+img)
       +e.img-hover
         img(src='assets/images/metro.png')
@@ -23,7 +23,7 @@ mixin infocard(img, reviews, title, name, desc)
 
 mixin infocard-hover(img, reviews, title, name, desc)
   +b.infocard&attributes(attributes)
-    +e.img
+    +e.A(href='#').img
       img(src='assets/images/'+img)
       +e.img-hover
         img(src='assets/images/metro.png')
@@ -53,7 +53,7 @@ mixin infocard-hover(img, reviews, title, name, desc)
 
 mixin infocard-list(img, reviews, title, name, metro, desc)
   +b.infocard&attributes(attributes)
-    +e.img
+    +e.A(href='#').img
       img(src='assets/images/'+img)
     +e.content
       +e.title= title

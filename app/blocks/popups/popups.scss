@@ -390,7 +390,7 @@
         right: 0;
         bottom: 0;
         margin: auto;
-        transition: opacty $ease-main;
+        transition: opacity $ease-main;
         opacity: 0;
         pointer-events: none;
       }
@@ -429,7 +429,10 @@
       height: 25px;
       fill: #a4a4a4;
       margin-right: 1px;
+      cursor: pointer;
+      transition: fill $ease-main;
       
+      &:hover,
       &_active {
         fill: $color-blue;
       }

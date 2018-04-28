@@ -34,9 +34,9 @@ mixin review-block(author, images, text, short)
     +e.P.text= text
     if images
       +e.images
-        +e.img
+        +e.A(href='assets/images/review2_big.jpg' data-fancybox=images).img
           img(src='assets/images/review2.jpg')
-        +e.img
+        +e.A(href='assets/images/review2_big.jpg' data-fancybox=images).img
           img(src='assets/images/review2.jpg')
     +e.useful
       +e.P.useful-text Полезный отзыв?

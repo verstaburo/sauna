@@ -366,6 +366,11 @@
       padding: 3px 6px;
     }
     
+    &:hover {
+      opacity: 1;
+      color: $color-blue;
+    }
+    
     & + & {
       margin-left: -1px;
     }

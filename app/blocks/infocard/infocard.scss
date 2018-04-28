@@ -2,6 +2,7 @@
   display: block;
   
   &__img {
+    display: block;
     position: relative;
     padding-top: 67.8%;
     overflow: hidden;
@@ -58,6 +59,8 @@
     }
     
     &:hover {
+      opacity: 1;
+      
       .infocard__img-hover {
         opacity: 1;
         pointer-events: all;

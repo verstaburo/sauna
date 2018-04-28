@@ -76,6 +76,7 @@
       width: 648px;
       padding: 0 24px;
       flex: none;
+      box-sizing: content-box;
     }
     
     @include screen('tablet') {
@@ -89,24 +90,20 @@
     &:first-child {
       @include screen('tablet-wide') {
         padding-left: 30px;
-        width: 654px;
       }
       
-      @include screen('tablet-small') {
+      @include screen('tablet') {
         padding-left: 20px;
-        width: calc(78% + 8px);
       }
     }
     
     &:last-child {
       @include screen('tablet-wide') {
         padding-right: 30px;
-        width: 654px;
       }
       
-      @include screen('tablet-small') {
+      @include screen('tablet') {
         padding-right: 20px;
-        width: calc(78% + 8px);
       }
     }
   }

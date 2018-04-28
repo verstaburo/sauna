@@ -209,8 +209,13 @@
       margin-top: 25px;
     }
     
+    &_empty {
+      margin-top: 0;
+    }
+    
     &_switcher {
       position: relative;
+      min-height: 58px;
       
       @include screen('desktop-wide') {
         padding: 0 85px;
@@ -219,6 +224,7 @@
       @include screen('tablet-wide') {
         padding: 0;
         padding-bottom: 50px;
+        min-height: 0;
       }
       
       @include screen('tablet-small') {
@@ -308,6 +314,8 @@
     margin: auto;
     width: 10px;
     height: 10px;
+    cursor: pointer;
+    transition: opacity $ease-main;
     
     @include screen('tablet-wide') {
       right: 12px;
@@ -341,6 +349,10 @@
     
     &:after {
       transform: rotate(-45deg);
+    }
+    
+    &:hover {
+      opacity: .7;
     }
   }
   

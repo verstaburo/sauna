@@ -113,7 +113,9 @@
       margin: 4px;
     }
     
+    &:hover,
     &_active {
+      opacity: 1;
       background-color: #78a2e1;
       color: #fff;
     }
