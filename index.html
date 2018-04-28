@@ -20,7 +20,7 @@
     <div class="index">
         <div class="header">
             <div class="container"><a class="header__logo" href="/"><img src="assets/images/vs_logo.svg"/></a>
-                <form class="header__search"><button class="header__search-button"><img src="assets/images/search.png"/></button><input class="header__search-input" placeholder="Название сауны, тип парной или адрес  г. Москва" type="text" /></form><a class="header__discounts js-fancybox"
+                <form class="header__search"><button class="header__search-button"><img src="assets/images/search.png"/></button><input class="header__search-input" placeholder="Название сауны, тип парной или адрес  г. Москва" type="text" /></form><a class="header__discounts js-fancybox-popup"
                     href="#salespopup">Акции и скидки</a>
                 <div class="header__select">Москва<svg class="header__select-arrow"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></div>
             </div>
@@ -49,21 +49,15 @@
                     <div class="filter__list-item">
                         <div class="filter__list-icon"><img src="assets/images/filter1.png" /></div>
                         <p class="filter__list-text"><a href="#">Тип отдыха</a></p>
-                        <p class="filter__list-text filter__list-text_mobile">Тип отдыха</p>
-                        <p class="filter__list-select">Любой<svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></p>
-                    </div>
+                        <p class="filter__list-text filter__list-text_mobile">Тип отдыха</p><a class="filter__list-select" href="#">Любой<svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></a></div>
                     <div class="filter__list-item">
                         <div class="filter__list-icon filter__list-icon_cover"><img src="assets/images/filter2.jpg" /></div>
-                        <p class="filter__list-text"><a class="js-fancybox" href="#locationpopup">Расположение: карта, метро, районы</a></p>
-                        <p class="filter__list-text filter__list-text_mobile">Расположение</p>
-                        <p class="filter__list-select">Любое<svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></p>
-                    </div>
+                        <p class="filter__list-text"><a class="js-fancybox-popup" href="#locationpopup">Расположение: карта, метро, районы</a></p>
+                        <p class="filter__list-text filter__list-text_mobile">Расположение</p><a class="filter__list-select js-fancybox-popup" href="#locationpopup">Любое<svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></a></div>
                     <div class="filter__list-item">
                         <div class="filter__list-icon"><img src="assets/images/filter3.jpg" /></div>
-                        <p class="filter__list-text"><a class="js-fancybox" href="#categoriespopup">Стоимость, тип парной и другое</a></p>
-                        <p class="filter__list-text filter__list-text_mobile">Дополнительно</p>
-                        <p class="filter__list-select">Ничего не выбрано<svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></p>
-                    </div>
+                        <p class="filter__list-text"><a class="js-fancybox-popup" href="#categoriespopup">Стоимость, тип парной и другое</a></p>
+                        <p class="filter__list-text filter__list-text_mobile">Дополнительно</p><a class="filter__list-select js-fancybox-popup" href="#categoriespopup">Ничего не выбрано<svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></a></div>
                 </div>
             </div>
         </div>
@@ -81,7 +75,7 @@
         </div>
         <div class="mapblock index__mapblock">
             <div class="map mapblock__map" id="map"></div>
-            <div class="mapblock__container container"><a class="mapblock__button" href="#"><img class="mapblock__button-icon" src="assets/images/map_arrow.png" alt="" role="presentation"/>Показать заведения рядом</a></div>
+            <div class="mapblock__container container"><a class="mapblock__button" href="maplist.html"><img class="mapblock__button-icon" src="assets/images/map_arrow.png" alt="" role="presentation"/>Показать заведения рядом</a></div>
         </div>
         <div data-slot-id="headblock" data-slot-res="md"></div>
         <div class="places">
@@ -100,10 +94,7 @@
                     <div class="tabs-content">
                         <div class="tabs-content__wrapper" data-tab="tab1" data-tab-group="places">
                             <div class="places__cards">
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place1.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -120,10 +111,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place2.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -141,10 +129,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place3.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -162,10 +147,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place4.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -187,10 +169,7 @@
                         </div>
                         <div class="tabs-content__wrapper active" data-tab="tab2" data-tab-group="places">
                             <div class="places__cards">
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place1.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -207,10 +186,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place2.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -228,10 +204,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place3.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -249,10 +222,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place4.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -274,10 +244,7 @@
                         </div>
                         <div class="tabs-content__wrapper" data-tab="tab3" data-tab-group="places">
                             <div class="places__cards">
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place1.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -294,10 +261,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place2.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -315,10 +279,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place3.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -336,10 +297,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place4.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -361,10 +319,7 @@
                         </div>
                         <div class="tabs-content__wrapper" data-tab="tab4" data-tab-group="places">
                             <div class="places__cards">
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place1.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -381,10 +336,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place2.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -402,10 +354,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place3.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -423,10 +372,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place4.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -448,10 +394,7 @@
                         </div>
                         <div class="tabs-content__wrapper" data-tab="tab5" data-tab-group="places">
                             <div class="places__cards">
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place1.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -468,10 +411,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place2.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -489,10 +429,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place3.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -510,10 +447,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="infocard infocard_img places__card">
-                                    <div class="infocard__img"><img src="assets/images/place4.jpg" />
-                                        <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                                    </div>
+                                <div class="infocard infocard_img places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                     <div class="infocard__content">
                                         <div class="infocard__rating">
                                             <div class="rating">
@@ -725,10 +659,7 @@
             <div class="container">
                 <h2 class="places__heading">Новые заведения в нашем каталоге</h2>
                 <div class="places__cards">
-                    <div class="infocard infocard_hover places__card">
-                        <div class="infocard__img"><img src="assets/images/place1.jpg" />
-                            <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                        </div>
+                    <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                         <div class="infocard__content">
                             <div class="infocard__rating">
                                 <div class="rating">
@@ -746,10 +677,7 @@
                             <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                         </div>
                     </div>
-                    <div class="infocard infocard_hover places__card">
-                        <div class="infocard__img"><img src="assets/images/place2.jpg" />
-                            <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                        </div>
+                    <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                         <div class="infocard__content">
                             <div class="infocard__rating">
                                 <div class="rating">
@@ -768,10 +696,7 @@
                             <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                         </div>
                     </div>
-                    <div class="infocard infocard_hover places__card">
-                        <div class="infocard__img"><img src="assets/images/place3.jpg" />
-                            <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                        </div>
+                    <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                         <div class="infocard__content">
                             <div class="infocard__rating">
                                 <div class="rating">
@@ -789,10 +714,7 @@
                             <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                         </div>
                     </div>
-                    <div class="infocard infocard_hover places__card">
-                        <div class="infocard__img"><img src="assets/images/place4.jpg" />
-                            <div class="infocard__img-hover"><img src="assets/images/metro.png" />Новослободская</div>
-                        </div>
+                    <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/><span class="infocard__img-hover"><img src="assets/images/metro.png"/>Новослободская</span></a>
                         <div class="infocard__content">
                             <div class="infocard__rating">
                                 <div class="rating">
@@ -899,78 +821,75 @@
                                     </div>
                                 </div>
                                 <p class="review__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в</p>
-                                <div class="review__images">
-                                    <div class="review__img"><img src="assets/images/review2.jpg" /></div>
-                                    <div class="review__img"><img src="assets/images/review2.jpg" /></div>
-                                </div>
-                                <div class="review__useful">
-                                    <p class="review__useful-text">Полезный отзыв?</p>
-                                    <div class="review__useful-buttons"><a class="review__useful-button" href="#">Да<span class="review__useful-count">7</span></a><a class="review__useful-button" href="#">Нет<span class="review__useful-count">2</span></a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="review reviews__review">
-                            <div class="review__top">
-                                <div class="review__top-img"><img src="assets/images/review1.jpg" /></div>
-                                <p class="review__heading"><a href="#">Усадьба банная на Угрешской</a></p>
-                                <div class="rating review__top-rating">
-                                    <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
-                                    <div class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
-                                    <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
-                                    <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
-                                    <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
-                                </div>
-                                <p class="review__reviews">Отзывы 231</p>
-                            </div>
-                            <div class="review__content">
-                                <div class="review__mob-top">
-                                    <p class="review__top-author-name">Иван Иванов о(об)</p>
-                                    <p class="review__heading">Усадьба банная на Угрешской</p>
-                                </div>
-                                <div class="review__author">
-                                    <p class="review__author-name">Иван Иванов</p>
-                                    <p class="review__date">15 мая 2015</p>
-                                </div>
-                                <div class="review__ratings">
-                                    <div class="review__ratings-col">
-                                        <p class="review__ratings-item">Персонал<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                            <span
-                                                class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                <span
-                                                    class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                    </span>
-                                        </p>
-                                        <p class="review__ratings-item">Услуги <span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                            <span
-                                                class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                <span
-                                                    class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                    </span>
-                                        </p>
-                                    </div>
-                                    <div class="review__ratings-col">
-                                        <p class="review__ratings-item">Интерьер<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                            <span
-                                                class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                <span
-                                                    class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                    </span>
-                                        </p>
-                                        <p class="review__ratings-item">Расположение<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                            <span
-                                                class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                <span
-                                                    class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
-                                                    </span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <p class="review__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко Температура парилки от 30 до 50 градусов
-                                    – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягкоТемпература парилки от 30 до 50 градусов – настоящий подарок тем, кто не</p>
+                                <div class="review__images"><a class="review__img" href="assets/images/review2_big.jpg" data-fancybox="review1"><img src="assets/images/review2.jpg"/></a><a class="review__img" href="assets/images/review2_big.jpg" data-fancybox="review1"><img src="assets/images/review2.jpg"/></a></div>
                                 <div
                                     class="review__useful">
                                     <p class="review__useful-text">Полезный отзыв?</p>
                                     <div class="review__useful-buttons"><a class="review__useful-button" href="#">Да<span class="review__useful-count">7</span></a><a class="review__useful-button" href="#">Нет<span class="review__useful-count">2</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review reviews__review">
+                        <div class="review__top">
+                            <div class="review__top-img"><img src="assets/images/review1.jpg" /></div>
+                            <p class="review__heading"><a href="#">Усадьба банная на Угрешской</a></p>
+                            <div class="rating review__top-rating">
+                                <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                <div class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                                <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
+                            </div>
+                            <p class="review__reviews">Отзывы 231</p>
+                        </div>
+                        <div class="review__content">
+                            <div class="review__mob-top">
+                                <p class="review__top-author-name">Иван Иванов о(об)</p>
+                                <p class="review__heading">Усадьба банная на Угрешской</p>
+                            </div>
+                            <div class="review__author">
+                                <p class="review__author-name">Иван Иванов</p>
+                                <p class="review__date">15 мая 2015</p>
+                            </div>
+                            <div class="review__ratings">
+                                <div class="review__ratings-col">
+                                    <p class="review__ratings-item">Персонал<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                        <span
+                                            class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                            <span
+                                                class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                </span>
+                                    </p>
+                                    <p class="review__ratings-item">Услуги <span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                        <span
+                                            class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                            <span
+                                                class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                </span>
+                                    </p>
+                                </div>
+                                <div class="review__ratings-col">
+                                    <p class="review__ratings-item">Интерьер<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                        <span
+                                            class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                            <span
+                                                class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                </span>
+                                    </p>
+                                    <p class="review__ratings-item">Расположение<span class="rating review__rating"><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                        <span
+                                            class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span><span class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                            <span
+                                                class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></span>
+                                                </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="review__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко Температура парилки от 30 до 50 градусов –
+                                настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягкоТемпература парилки от 30 до 50 градусов – настоящий подарок тем, кто не</p>
+                            <div class="review__useful">
+                                <p class="review__useful-text">Полезный отзыв?</p>
+                                <div class="review__useful-buttons"><a class="review__useful-button" href="#">Да<span class="review__useful-count">7</span></a><a class="review__useful-button" href="#">Нет<span class="review__useful-count">2</span></a></div>
                             </div>
                         </div>
                     </div>
@@ -983,26 +902,22 @@
         <div class="container">
             <h2 class="blog__heading">Блог</h2>
             <div class="blog__cards">
-                <div class="blogcard blog__card">
-                    <div class="blogcard__img"><img src="assets/images/blog1.jpg" /></div>
+                <div class="blogcard blog__card"><a class="blogcard__img" href="#"><img src="assets/images/blog1.jpg"/></a>
                     <p class="blogcard__date">15 марта 2016</p>
                     <p class="blogcard__title"><a href="#">Сезонное выпадение волос: лечение</a></p>
                     <p class="blogcard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может<br/>позволить себе горячие пропарки. Нежный пар хамама, который подается через<br/>отверстия в стенах, мягко</p><a class="blogcard__category" href="#">Интересное</a></div>
                 <div
-                    class="blogcard blog__card">
-                    <div class="blogcard__img"><img src="assets/images/blog1.jpg" /></div>
+                    class="blogcard blog__card"><a class="blogcard__img" href="#"><img src="assets/images/blog1.jpg"/></a>
                     <p class="blogcard__date">15 марта 2016</p>
                     <p class="blogcard__title"><a href="#">Сезонное выпадение волос: лечение</a></p>
                     <p class="blogcard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может<br/>позволить себе горячие пропарки. Нежный пар хамама, который подается через<br/>отверстия в стенах, мягко</p><a class="blogcard__category" href="#">Ликбез</a></div>
             <div
-                class="blogcard blog__card">
-                <div class="blogcard__img"><img src="assets/images/blog1.jpg" /></div>
+                class="blogcard blog__card"><a class="blogcard__img" href="#"><img src="assets/images/blog1.jpg"/></a>
                 <p class="blogcard__date">15 марта 2016</p>
                 <p class="blogcard__title"><a href="#">Сезонное выпадение волос: лечение</a></p>
                 <p class="blogcard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может<br/>позволить себе горячие пропарки. Нежный пар хамама, который подается через<br/>отверстия в стенах, мягко</p><a class="blogcard__category" href="#">Новости</a></div>
         <div
-            class="blogcard blog__card">
-            <div class="blogcard__img"><img src="assets/images/blog1.jpg" /></div>
+            class="blogcard blog__card"><a class="blogcard__img" href="#"><img src="assets/images/blog1.jpg"/></a>
             <p class="blogcard__date">15 марта 2016</p>
             <p class="blogcard__title"><a href="#">Сезонное выпадение волос: лечение</a></p>
             <p class="blogcard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может<br/>позволить себе горячие пропарки. Нежный пар хамама, который подается через<br/>отверстия в стенах, мягко</p><a class="blogcard__category" href="#">Обзоры</a></div>
@@ -1275,7 +1190,7 @@
                 class="popup__tab active" data-tab="location1" data-tab-group="locations">
                 <div class="popup__map-top"><a class="popup__map-link" href="#">Любое расположение</a>
                     <p class="popup__address">Адрес: Москва, ул. Арбат 1</p>
-                    <div class="popup__controls"><a class="popup__control" href="#">-</a><span class="popup__controls-text">22 км</span><a class="popup__control" href="#">+</a></div>
+                    <div class="popup__controls"><a class="popup__control" href="#" data-control="minus">-</a><span class="popup__controls-text">22 км</span><a class="popup__control" href="#" data-control="plus">+</a></div>
                 </div>
                 <div class="popup__map" id="popupmap"></div>
                 <div class="popup__map-bottom"><label class="popup__checkbox"><input type="checkbox"/><span class="popup__checkbox-box"><svg><use xlink:href="assets/images/icon.svg#icon_check"></use></svg></span><span class="popup__checkbox-text">Показать все сауны на карте</span></label>
