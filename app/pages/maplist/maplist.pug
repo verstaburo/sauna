@@ -1,0 +1,17 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Map'
+
+block content
+  +b.maplist
+    +header()
+      +header-line-menu(false, 'Добавить сауну')
+    +put-block-into-slot('headblock', 'xl')
+      +headblock-span('Результат поиска: ', '214 заведений')
+    +filter()
+      +filter-tags(true)._switcher
+    +put-block-into-slot('headblock', 'md')
+    +mapblock().__mapblock
+    +footer()
+    +popups()

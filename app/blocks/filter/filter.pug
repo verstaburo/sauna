@@ -31,7 +31,7 @@ mixin filter()
       block
 
 
-mixin filter-tags()
+mixin filter-tags(switcher)
   +e.tags&attributes(attributes)
     +e.A(href='#').tag
       +e.SPAN.tag-symbol ₽
@@ -46,3 +46,9 @@ mixin filter-tags()
       +e.SPAN.tag-close
     +e.A(href='#').tag._grey
       | сбросить все
+    if switcher
+      +e.views
+        +e.A(href='#').view
+          +icon('view1')
+        +e.A(href='#').view
+          +icon('view2')

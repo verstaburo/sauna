@@ -200,15 +200,30 @@
   &__tags {
     font-size: 0;
     margin-top: 20px;
-    padding-bottom: 34px;
     
     @include screen('tablet-wide') {
       margin-top: 50px;
-      padding-bottom: 0;
     }
     
     @include screen('tablet-small') {
       margin-top: 25px;
+    }
+    
+    &_switcher {
+      position: relative;
+      
+      @include screen('desktop-wide') {
+        padding: 0 85px;
+      }
+      
+      @include screen('tablet-wide') {
+        padding: 0;
+        padding-bottom: 50px;
+      }
+      
+      @include screen('tablet-small') {
+        padding-bottom: 30px;
+      }
     }
   }
   
@@ -326,6 +341,52 @@
     
     &:after {
       transform: rotate(-45deg);
+    }
+  }
+  
+  &__views {
+    position: absolute;
+    right: -96px;
+    top: 18px;
+    transform: translate3d(0,0,0);
+    
+    @include screen('desktop-wide') {
+      right: 0;
+    }
+    
+    @include screen('tablet-wide') {
+      top: auto;
+      bottom: 0;
+    }
+  }
+  
+  &__view {
+    display: inline-block;
+    vertical-align: top;
+    width: 29px;
+    height: 29px;
+    fill: #d6d2d1;
+    margin-right: 7px;
+    
+    @include screen('tablet-wide') {
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+    }
+    
+    @include screen('tablet-small') {
+      width: 22px;
+      height: 21px;
+      margin-right: 7px;
+    }
+    
+    &:last-child {
+      margin-right: 0;
+    }
+    
+    svg {
+      width: 100%;
+      height: 100%;
     }
   }
 }

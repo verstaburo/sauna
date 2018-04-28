@@ -8735,3 +8735,7 @@ yauzl@^2.2.1:
 yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
+
+ymaps@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/ymaps/-/ymaps-0.1.1.tgz#aab7707f3f1c998e05e6c935087b32998e92d98e"
