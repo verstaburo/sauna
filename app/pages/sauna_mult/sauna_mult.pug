@@ -4,20 +4,21 @@ block head
   - var pageTitle = 'Sauna mult'
 
 block content
-  +b.sauna
+  +b.sauna._mult
     +header()._wide
       +header-line-menu('Карта сайта', 'Добавить заведение', 'linebg1.jpg')
     +e.head
       .container.container_wide
-        +breadcrumbs(['Москва', 'ЮЗАО', 'район Северное Бутово', 'Варшавское шоссе', 'Баня и сауна GreenRoof'])
+        +breadcrumbs(['Москва', 'ЮЗАО', 'район Северное Бутово', 'Варшавское шоссе', 'Баня и сауна GreenRoof']).__breadcrumbs
         +e.P.category САУНА
         +e.H1.heading GreenRoof
         +e.top
           +rating(3).__rating
           +e.P.top-text 15 отзывов
-          +e.P.top-text
+          +e.P.top-text._checked
             +icon('check').check-icon
             | Заведение проверено
+          +e.P.checked проверено
           +e.social
     +e.content
       +multislider(false, true).__slider
@@ -44,24 +45,27 @@ block content
           img(src='assets/images/place4.jpg')
           p.sauna__imgtype Зал шумахер
       .container.container_wide
+        +put-block-into-slot('contactcards', 'md')
         +e.cols._top
           +e.col._left
-            +card-desc-mult().__card
-            +card-sales().__card            
+            +card-desc-mult().__card._desc
+            +card-sales('salecard', 'xl').__card._sales         
           +e.col._right
-            +e.innercols
-              +e.innercol._left
-                +card-contacts().__card._inner
-              +e.innercol._right
-                +card-address().__card._inner
-            +card-rating().__card
-        +card-desc-halls('Залы', 'Зал обещаний', 4)._halls.__card._halls
-        +card-desc-halls(false, 'Зал Шумахер', 1)._halls.__card._halls
+            +put-block-into-slot('contactcards', 'xl')
+              +e.innercols
+                +e.innercol._left
+                  +card-contacts(true)._mult.__card._inner
+                +e.innercol._right
+                  +card-address(true)._mult.__card._inner
+            +card-rating().__card._rating
+        +card-desc-halls('Залы', 'Зал обещаний', 4, 'Описание залов:', 'hallinfo1')._halls.__card._halls
+        +card-desc-halls(false, 'Зал Шумахер', 1, false, 'hallinfo2')._halls.__card._halls
+        +put-block-into-slot('salecard', 'md').card__sales.sauna__card_multsales
         +e.cols._bottom
           +e.col._left
-            +card-questions().__card
+            +card-questions().__card._questions
           +e.col._right
             +card-reviews(true, true)._more.__card._reviews
-    +more()
+    +more().__more
     +lastview().__lastview
     +footer()

@@ -629,6 +629,18 @@
     @include screen('tablet-small') {
       max-width: 75px;
     }
+    
+    &_mult {
+      margin-top: -7px;
+      max-width: 100px;
+      margin-right: 8px;
+      
+      @include screen('tablet-small') {
+        margin-top: -3px;
+        max-width: 75px;
+        margin-right: 0;
+      }
+    }
   }
   
   &__icon {
@@ -800,6 +812,87 @@
         padding: 26px 0 16px;
       }
     }
+    
+    &_mult {
+      @include screen('tablet-wide') {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+  
+  &__halls {
+    @include screen('tablet-wide', min) {
+      display: none;
+    }
+  }
+  
+  &__hall {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 15px 20px 8px;
+    border-bottom: 1px solid rgba(#000, .1);
+    
+    @include screen('tablet-small') {
+      padding: 16px 0;
+    }
+    
+    &-link {
+      color: #7193de;
+      font-family: $font-second;
+      font-size: 30px;
+      letter-spacing: .02em;
+      margin-top: 3px;
+      margin-right: 15px;
+      margin-bottom: 8px;
+      flex: 1;
+      min-width: 50%;
+      
+      @include screen('tablet-small') {
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+      
+      a {
+        color: inherit;
+        border-bottom: 1px dashed rgba(#7193de, .3);
+      }
+    }
+  }
+  
+  &_mult {
+    
+    .card-contacts {
+      
+      &__section-title {
+        
+        &_bordered {
+          padding: 23px 10px 11px;
+          
+          @include screen('tablet-small') {
+            padding: 20px 0 11px;
+          }
+        }
+      }
+      
+      &__price {
+        @include screen('tablet-wide') {
+          display: none;
+        }
+        
+        &_hall {
+          @include screen('tablet-wide') {
+            display: block;
+            margin-top: 0;
+            padding: 0;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -855,6 +948,10 @@
     &_bordered {
       padding: 0 8px 19px;
       border-bottom: 1px solid rgba(#000, .1);
+      
+      @include screen('tablet-small') {
+        padding: 0 0 19px;
+      } 
     }
   }
   
@@ -911,6 +1008,22 @@
     @include screen('tablet-small') {
       margin: 0 -20px;
       height: 270px;
+    }
+  }
+  
+  &__tel {
+    @include screen('tablet-wide') {
+      order: -3;
+      margin-top: -21px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(#000, .1);
+    }
+  }
+  
+  &__time {
+    @include screen('tablet-wide') {
+      order: -2;
+      margin-bottom: -1px;
     }
   }
   
@@ -1007,6 +1120,22 @@
       margin-bottom: 3px;
     }
   }
+  
+  &_mult {
+    
+    .card-address {
+      
+      &__section {
+        
+        &_bottom {
+          @include screen('tablet-wide') {
+            padding: 23px 0 34px;
+            border-bottom: 1px solid rgba(#000, .1);
+          }
+        }
+      }
+    }
+  }
 }
 
 // card-desc
@@ -1018,6 +1147,24 @@
     display: flex;
     align-items: flex-start;
     padding-right: 42px;
+  }
+  
+  &__mobheading {
+    color: #242424;
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: .02em;
+    text-align: center;
+    margin-bottom: 38px;
+    
+    @include screen('tablet-wide', min) {
+      display: none;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
   }
   
   &__content {
@@ -1252,6 +1399,10 @@
     padding-right: 230px;
     padding-bottom: 35px;
     
+    @include screen('desktop-wide') {
+      padding-right: 0;
+    }
+    
     &-link {
       font-family: $font-second;
       font-size: 16px;
@@ -1279,10 +1430,29 @@
       width: calc(100% - 543px);
       padding-right: 30px;
       padding-top: 28px;
+      
+      @include screen('desktop') {
+        width: 50%;
+        padding-right: 20px;
+      }
+      
+      @include screen('tablet-wide') {
+        width: 100%;
+        padding-right: 0;
+        padding-top: 0;
+      }
     }
     
     &_right {
       width: 543px;
+      
+      @include screen('desktop') {
+        width: 50%;
+      }
+      
+      @include screen('tablet-wide') {
+        display: none;
+      }
     }
   }
   
@@ -1291,16 +1461,65 @@
     font-size: 21px;
     font-weight: 500;
     letter-spacing: .04em;
+    
+    @include screen('tablet-wide') {
+      color: #4d4a39;
+      font-size: 50px;
+      font-weight: 400;
+      letter-spacing: .02em;
+      margin-top: 34px;
+      padding: 0 10px;
+      letter-spacing: .04em;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 30px;
+      margin-top: 17px;
+      padding: 0;
+    }
   }
   
   &__days {
     display: flex;
     margin-top: 26px;
     margin-bottom: 25px;
+    
+    @include screen('tablet-wide') {
+      margin-top: 41px;
+      margin-bottom: 44px;
+    }
+    
+    @include screen('tablet-small') {
+      margin: 20px 0;
+    }
   }
   
   &__days-col {
     margin-right: 64px;
+    
+    @include screen('desktop') {
+      margin-right: 20px;
+    }
+    
+    @include screen('tablet-wide') {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-right: 0;
+      width: 100%;
+      padding: 0 8px 4px;
+      border-bottom: 1px solid rgba(#000, .1);
+    }
+    
+    @include screen('tablet-small') {
+      padding: 0 0 8px;
+    }
+    
+    &.hide-md {
+      @include screen('tablet-wide') {
+        display: none;
+      }
+    }
   }
   
   &__days-title {
@@ -1310,8 +1529,21 @@
     font-weight: 700;
     letter-spacing: .02em;
     
+    @include screen('tablet-wide') {
+      display: none;
+    }
+    
     &_red {
       color: #fa0101;
+    }
+  }
+  
+  &__days-mobtitle {
+    @include card-section-title;
+    margin-right: 20px;
+    
+    @include screen('tablet-wide', min) {
+      display: none;
     }
   }
   
@@ -1321,15 +1553,81 @@
     font-weight: 300;
     letter-spacing: -.03em;
     margin-top: 8px;
+    
+    @include screen('tablet-wide') {
+      font-size: 37px;
+      margin-top: -3px;
+      margin-right: -6px;
+      letter-spacing: -.025em;
+    }
+    
+    @include screen('tablet-small') {
+      margin-top: 0;
+      margin-right: 0;
+      font-size: 20px;
+    }
+  }
+  
+  &__images-wrapper {
+    @include screen('tablet-wide') {
+      overflow: hidden;
+      margin: 38px -30px 0;
+    }
+    
+    @include screen('tablet-small') {
+      margin: 20px -20px 0;
+    }
   }
   
   &__images {
     display: flex;
     margin-bottom: 54px;
+    
+    @include screen('tablet-wide') {
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin-bottom: -20px;
+      padding-bottom: 20px;
+    }
   }
   
   &__image {
     width: 25%;
+    box-sizing: border-box;
+    
+    @include screen('tablet-wide') {
+      width: 85%;
+      padding: 0 14px;
+      flex-shrink: 0;
+    }
+    
+    @include screen('tablet-small') {
+      padding: 0 7px;
+    }
+    
+    &:first-child {
+      @include screen('tablet-wide') {
+        padding-left: 37px;
+        width: calc(85% + 23px);
+      }
+      
+      @include screen('tablet-small') {
+        padding-left: 20px;
+        width: calc(85% + 13px);
+      }
+    }
+    
+    &:last-child {
+      @include screen('tablet-wide') {
+        padding-right: 37px;
+        width: calc(85% + 23px);
+      }
+      
+      @include screen('tablet-small') {
+        padding-right: 20px;
+        width: calc(85% + 13px);
+      }
+    }
   }
   
   &__imgblock {
@@ -1338,6 +1636,10 @@
     position: relative;
     padding-top: 68%;
     overflow: hidden;
+    
+    @include screen('tablet-wide') {
+      padding-top: 66%;
+    }
     
     img {
       @include fill-img;
@@ -1381,6 +1683,24 @@
     }
   }
   
+  &__text-title {
+    @include card-section-title;
+    padding: 0 9px 22px;
+    letter-spacing: .025em;
+    border-bottom: 1px solid rgba(#000, .1);
+    margin-top: 56px;
+    
+    @include screen('tablet-wide', min) {
+      display: none;
+    }
+    
+    @include screen('tablet-small') {
+      padding: 0 0 16px;
+    }
+  }
+  
+  
+  
   &_halls {
     
     .card-desc {
@@ -1388,11 +1708,37 @@
       &__content {
         padding: 7px 0 28px 24px;
         display: flex;
+        
+        @include screen('tablet-wide') {
+          margin: 0 -30px;
+          padding: 0 30px 75px;
+        }
+        
+        @include screen('tablet-small') {
+          margin: 0 -20px;
+          padding: 0 20px 30px;
+        }
       }
       
       &__services {
         padding-right: 0;
         padding-left: 4px;
+        
+        @include screen('tablet-wide') {
+          padding-left: 0;
+        }
+      }
+    }
+    
+    &:nth-child(odd) {
+      
+      .card-desc {
+        
+        &__content {
+          @include screen('tablet-wide') {
+            background-color: #edf1f2;
+          }
+        }
       }
     }
   }
@@ -1502,7 +1848,7 @@
     }
     
     @include screen('tablet-small') {
-      font-size: 20px;
+      font-size: 18px;
     }
     
     a {

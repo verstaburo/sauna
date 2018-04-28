@@ -274,6 +274,10 @@
     
     &_bottom {
       padding-top: 16px;
+      
+      @include screen('tablet-wide') {
+        padding-top: 0;
+      }
     }
   }
   
@@ -326,8 +330,16 @@
     }
     
     &_halls {
+      @include screen('tablet-wide') {
+        margin-top: 41px;
+      }
+      
       & + & {
         margin-top: 36px;
+        
+        @include screen('tablet-wide') {
+          margin-top: 0;
+        }
       }
     }
     
@@ -336,6 +348,17 @@
     &_rating {
       @include screen('tablet-wide') {
         display: none;
+      }
+    }
+    
+    &_multsales {
+      @include screen('tablet-wide') {
+        margin-top: 97px;
+        margin-bottom: 54px;
+      }
+      
+      @include screen('tablet-small') {
+        margin: 25px 0;
       }
     }
   }
@@ -401,6 +424,27 @@
     &__discounts {
       @include screen('tablet-wide') {
         display: none;
+      }
+    }
+  }
+  
+  &_mult {
+    
+    .sauna {
+      
+      &__slider {
+        @include screen('tablet-wide') {
+          display: none;
+        }
+      }
+      
+      &__card {
+        
+        &_desc {
+          @include screen('tablet-wide') {
+            display: none;
+          }
+        }
       }
     }
   }

@@ -90,36 +90,76 @@ mixin card-rating()
           +e.line-bar
             +e.line-fill(style='width:30%;')
 
-mixin card-contacts()
+mixin card-contacts(mult)
   +b.card-contacts&attributes(attributes)
     +e.H3.heading Контакты
     +e.content.flex-gr
       +e.section
-        +e.P.section-title._bordered Стоимость:
+        if mult
+          +e.P.section-title._bordered._mult Стоимость:
+            +e.IMG(src='assets/images/payment.png').price-img._mult
+          +e.halls
+            +e.hall
+              +e.P.hall-link
+                a(href='#') Зал Турецкий
+              +e.P.price._hall 1200-1400 руб/час
+            +e.hall
+              +e.P.hall-link
+                a(href='#') Зал Тибетский
+              +e.P.price._hall 1200-1400 руб/час
+            +e.hall
+              +e.P.hall-link
+                a(href='#') Зал Русский
+              +e.P.price._hall 1200-1400 руб/час
+        else
+          +e.P.section-title._bordered Стоимость:
         +e.P.days Пн Вт Ср Чт Пт 
         +e.P.price 1200-1400 руб/час
           +e.IMG(src='assets/images/payment.png').price-img
         +e.P.days._red Сб Вс
         +e.P.price._hide-md 1500-2000 руб/час
-      +e.P.section._text
-        +e.IMG(src='assets/images/time.png').icon
-        +e.section-title Время работы:
-        +e.SPAN.text-span Круглосуточно
-      +e.section._bottom
-        +e.P.section-title._bordered Телефон:
-        +e.tels
-          +e.P.tel
-            a(href='tel:+74954223222') +7 (495) 422-32-22
-          +e.P.tel
-            a(href='tel:+79555332323') +7 (955) 533-23-23
-        +e.A(href='#').button
-          span.hide-md Заказать сауну
-          span.show-md Позвонить
+      if mult
+        +put-block-into-slot('contactstime', 'xl')
+          +e.P.section._text
+            +e.IMG(src='assets/images/time.png').icon
+            +e.section-title Время работы:
+            +e.SPAN.text-span Круглосуточно
+      else
+        +e.P.section._text
+          +e.IMG(src='assets/images/time.png').icon
+          +e.section-title Время работы:
+          +e.SPAN.text-span Круглосуточно
+      if mult
+        +put-block-into-slot('contactstel', 'xl')
+          +e.section._bottom
+            +e.P.section-title._bordered Телефон:
+            +e.tels
+              +e.P.tel
+                a(href='tel:+74954223222') +7 (495) 422-32-22
+              +e.P.tel
+                a(href='tel:+79555332323') +7 (955) 533-23-23
+            +e.A(href='#').button
+              span.hide-md Заказать сауну
+              span.show-md Позвонить
+      else
+        +e.section._bottom
+          +e.P.section-title._bordered Телефон:
+          +e.tels
+            +e.P.tel
+              a(href='tel:+74954223222') +7 (495) 422-32-22
+            +e.P.tel
+              a(href='tel:+79555332323') +7 (955) 533-23-23
+          +e.A(href='#').button
+            span.hide-md Заказать сауну
+            span.show-md Позвонить
 
-mixin card-address()
+mixin card-address(mult)
   +b.card-address&attributes(attributes)
     +e.H3.heading Адрес
     +e.content.flex-gr
+      if mult
+        +put-block-into-slot('contactstel', 'md').card-address__tel
+        +put-block-into-slot('contactstime', 'md').card-address__time
       +e.section._top
         +e.P.section-title Адрес:
         +e.P.link
@@ -230,62 +270,68 @@ mixin card-desc-mult()
         +e.P.sitelink Сайт:
           a(href='#') www.saunasite.ru
           
-mixin card-desc-halls(heading, subheading, imgCount)
+mixin card-desc-halls(heading, subheading, imgCount, mobheading, hallSlotId)
   +b.card-desc&attributes(attributes)
     if heading
       +e.H3.heading= heading
+      +e.P.mobheading= mobheading
     +e.content
       +e.col._left
         +e.P.subheading= subheading
         +e.days
           +e.days-col
             +e.days-title Пн Вт Ср Чт Пт
+            +e.days-mobtitle Стоимость:
             +e.days-price 1200-1400 руб/час
-          +e.days-col
+          +e.days-col.hide-md
             +e.days-title._red Сб Вс
             +e.days-price 1500-2000 руб/час
+        +put-block-into-slot(hallSlotId, 'md')
+        +e.P.text-title Описание зала
         +e.P.text Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%). до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки.
       +e.col._right
-        +e.images
-          - for (var i = 1; i <= imgCount; i++)
-            +e.image
-              +e.imgblock
-                img(src='assets/images/place'+i+'.jpg')
-        +e.services
-          +e.P.service
-            strong Парная:
-            | Финская, турецкий хамам
-          +e.P.service
-            strong Бильярд:
-            | Разливное пиво, домашняя кухня
-          +e.P.service
-            strong Бассейн:
-            | 3х4 метра, с подогревом
-          +e.P.service
-            strong Комната отдыха:
-            | Одна
-          +e.P.service._count
-            strong Вместимость:
-            | до 12 человек
-            +e.count
-              +e.count-group
-                +icon('person').__count-icon._active
-                +icon('person').__count-icon._active
-                +icon('person').__count-icon._active
-                +icon('person').__count-icon._active
-                +icon('person').__count-icon._active
-              +e.count-group
-                +icon('person').__count-icon._active
-                +icon('person').__count-icon._active
-                +icon('person').__count-icon._active
-                +icon('person').__count-icon._active
-                +icon('person').__count-icon
-              +e.count-group
-                +icon('person').__count-icon
-                +icon('person').__count-icon
-                +icon('person').__count-icon
-                +icon('person').__count-icon
-                +icon('person').__count-icon
+        +put-block-into-slot(hallSlotId, 'xl')
+          +e.images-wrapper
+            +e.images
+              - for (var i = 1; i <= imgCount; i++)
+                +e.image
+                  +e.imgblock
+                    img(src='assets/images/place'+i+'.jpg')
+          +e.services
+            +e.P.service
+              strong Парная:
+              | Финская, турецкий хамам
+            +e.P.service
+              strong Бильярд:
+              | Разливное пиво, домашняя кухня
+            +e.P.service
+              strong Бассейн:
+              | 3х4 метра, с подогревом
+            +e.P.service
+              strong Комната отдыха:
+              | Одна
+            +e.P.service._count
+              strong Вместимость:
+              | до 12 человек
+              +e.count
+                +e.count-group
+                  +icon('person').__count-icon._active
+                  +icon('person').__count-icon._active
+                  +icon('person').__count-icon._active
+                  +icon('person').__count-icon._active
+                  +icon('person').__count-icon._active
+                +e.count-group
+                  +icon('person').__count-icon._active
+                  +icon('person').__count-icon._active
+                  +icon('person').__count-icon._active
+                  +icon('person').__count-icon._active
+                  +icon('person').__count-icon
+                +e.count-group
+                  +icon('person').__count-icon
+                  +icon('person').__count-icon
+                  +icon('person').__count-icon
+                  +icon('person').__count-icon
+                  +icon('person').__count-icon
 
 mixin card-sales(blockSlotId, blockSlotRes)
   +b.card-sales&attributes(attributes)
