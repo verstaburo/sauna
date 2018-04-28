@@ -1083,6 +1083,7 @@
       text-align: right;
       margin-top: -40px;
       margin-right: 14px;
+      position: relative;
       
       @include screen('tablet-wide') {
         margin-top: 0;

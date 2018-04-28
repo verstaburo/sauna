@@ -464,7 +464,7 @@
     }
   }
   
-  &_success {
+  &.success {
     .card-reviewform {
       &__count {
         display: inline-block;
