@@ -43,11 +43,11 @@
 }
 
 @mixin card-link-2() {
-  color: #6094e1;
+  color: $color-blue;
   font-family: $font-second;
   font-size: 17px;
   letter-spacing: -.01em;
-  border-bottom: 1px solid #6094e1;
+  border-bottom: 1px solid $color-blue;
 }
 
 @mixin card-content() {
@@ -253,7 +253,7 @@
   }
   
   &__file {
-    border: 1px dashed #6094e1;
+    border: 1px dashed $color-blue;
     background-color: #e1e8f2;
     padding: 36px 35px;
     margin-top: 45px;
@@ -273,8 +273,8 @@
     &-label {
       display: inline-block;
       position: relative;
-      border: 2px solid rgba(#6094e1, .4);
-      color: #6094e1;
+      border: 2px solid rgba($color-blue, .4);
+      color: $color-blue;
       font-size: 14px;
       font-weight: 500;
       letter-spacing: .04em;
@@ -305,7 +305,7 @@
     &-icon {
       width: 15px;
       height: 17px;
-      fill: #6094e1;
+      fill: $color-blue;
       margin: -6px auto 0;
     }
   }
@@ -1134,7 +1134,7 @@
   }
   
   &__link {
-    color: #6094e1;
+    color: $color-blue;
     font-family: $font-second;
     font-size: 16px;
     font-weight: 400;
@@ -1164,7 +1164,7 @@
     
     a {
       color: inherit;
-      border-bottom: 1px dashed rgba(#6094e1, .3);
+      border-bottom: 1px dashed rgba($color-blue, .3);
       
       @include screen('tablet-wide') {
         border-bottom: 0;
@@ -1186,6 +1186,39 @@
     @include screen('tablet-small') {
       margin: 0 -20px;
       height: 270px;
+    }
+    
+    @include screen('tablet-wide', min) {
+      
+      .leaflet-popup-content {
+        min-width: 0;
+        max-width: 200px;
+      }
+  
+      .map-popup {
+        padding-left: 0;
+  
+        &__img {
+          display: none;
+        }
+  
+        &__content {
+          padding: 16px 25px 16px 16px;
+        }
+  
+        &__link {
+          font-size: 14px;
+        }
+  
+        &__price {
+          font-size: 16px;
+          margin-top: 6px !important;
+        }
+  
+        &__rating {
+          margin-top: 6px;
+        }
+      }
     }
   }
   
@@ -1499,7 +1532,7 @@
     fill: #a4a4a4;
     
     &_active {
-      fill: #6094e1;
+      fill: $color-blue;
     }
   }
   
@@ -1591,7 +1624,7 @@
       
       a {
         color: inherit;
-        border-bottom: 1px dashed rgba(#6094e1, .3);
+        border-bottom: 1px dashed rgba($color-blue, .3);
       }
     }
     

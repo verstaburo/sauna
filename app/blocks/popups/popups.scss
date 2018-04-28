@@ -247,10 +247,10 @@
   }
   
   &__reset {
-    color: #6094e1;
+    color: $color-blue;
     font-family: $font-second;
     font-size: 16px;
-    border-bottom: 1px dashed #6094e1;
+    border-bottom: 1px dashed $color-blue;
     margin-left: 22px;
     
     @include screen('tablet-wide') {
@@ -431,7 +431,7 @@
       margin-right: 1px;
       
       &_active {
-        fill: #6094e1;
+        fill: $color-blue;
       }
     }
   }
