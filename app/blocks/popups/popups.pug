@@ -8,23 +8,23 @@ mixin popup()
   +b.popup&attributes(attributes)
     block
 
-mixin popup-list(heading, name, value, texts, iconColors)
+mixin popup-list(heading, name, value, texts, colors)
   +e.list&attributes(attributes)
     +e.P.list-heading= heading
     +e.UL.list-items
       - for (var i = 0; i < texts.length; i++)
-        +popup-label(name, value + i, texts[i], iconColors ? iconColors[i] : 'yellow')
+        +popup-label(name, value + i, texts[i], colors ? colors[i] : 'yellow')
 
-mixin popup-label(name, value, text, iconColor)
+mixin popup-label(name, value, text, color)
   +e.LI.list-item
     +e.LABEL.label
-      input(type='checkbox', name=name, value=value)
-      +e.SPAN.label-icon(class='_' + (iconColor ? iconColor : 'yellow'))
+      input(type='checkbox' name=name value=value data-color=color ? color : 'yellow' data-id=value)
+      +e.SPAN.label-icon(class='_' + (color ? color : 'yellow'))
       +e.SPAN.label-text= text
       
 mixin label-count(value, text)
   +e.LABEL.count-item
-    input(type='radio', name='count', value=value)
+    input(type='radio' name='count' value=value)
     +e.SPAN.count-radio
     +e.SPAN.count-text= text
 
@@ -70,7 +70,8 @@ mixin popup-categories()
         +e.SPAN.close-text Закрыть
         +e.SPAN.close-icon
       +e.P.heading._small Поиск по категориям
-        +e.BUTTON(type='reset').reset очистить форму
+        +e.SPAN.reset
+          a(href='#') очистить форму
       +e.categories
         +e.cols._wrap
           +e.col
@@ -85,49 +86,43 @@ mixin popup-categories()
             +popup-list('Стоимость', 'category', 'category5', ['Любая', 'до 700 ₽/час', '700-1000 ₽/час', '1000-1500 ₽/час', '1500-2000 ₽/час', '2000-3000 ₽/час', 'от 3000 ₽/час'], ['blue'])
       +e.count
         +e.P.count-heading Вместимость сауны
-        +label-count('count1', 'двое')
-        +label-count('count2', 'до 10')
-        +label-count('count3', '10-20')
-        +label-count('count4', 'от 20 человек')
+        +label-count('2', 'двое')
+        +label-count('10', 'до 10')
+        +label-count('20', '10-20')
+        +label-count('max', 'от 20 человек')
         +e.count-groups
           +e.count-group
-            +icon('person').__count-icon._active
-            +icon('person').__count-icon._active
-            +icon('person').__count-icon
-            +icon('person').__count-icon
-            +icon('person').__count-icon
+            +icon('person').__count-icon(data-count='1')
+            +icon('person').__count-icon(data-count='2')
+            +icon('person').__count-icon(data-count='3')
+            +icon('person').__count-icon(data-count='4')
+            +icon('person').__count-icon(data-count='5')
           +e.count-group
-            +icon('person').__count-icon
-            +icon('person').__count-icon
-            +icon('person').__count-icon
-            +icon('person').__count-icon
-            +icon('person').__count-icon
+            +icon('person').__count-icon(data-count='6')
+            +icon('person').__count-icon(data-count='7')
+            +icon('person').__count-icon(data-count='8')
+            +icon('person').__count-icon(data-count='9')
+            +icon('person').__count-icon(data-count='10')
           +e.count-group
-            +icon('person').__count-icon
-            +icon('person').__count-icon
-            +icon('person').__count-icon
-            +icon('person').__count-icon
-            +icon('person').__count-icon
+            +icon('person').__count-icon(data-count='11')
+            +icon('person').__count-icon(data-count='12')
+            +icon('person').__count-icon(data-count='13')
+            +icon('person').__count-icon(data-count='14')
+            +icon('person').__count-icon(data-count='15')
           +e.count-group
-            +icon('person').__count-icon
-            +icon('person').__count-icon
-            +icon('person').__count-icon
-            +icon('person').__count-icon
-            +icon('person').__count-icon
-        +label-count('count5', 'любая')
+            +icon('person').__count-icon(data-count='16')
+            +icon('person').__count-icon(data-count='17')
+            +icon('person').__count-icon(data-count='18')
+            +icon('person').__count-icon(data-count='19')
+            +icon('person').__count-icon(data-count='20')
+        +label-count('any', 'любая')
       +e.bottom
         +e.bottom-left
-          +e.P.filter._yellow Финская парная
-            +e.A(href='#').filter-close
-          +e.P.filter._yellow Ароматерапия
-            +e.A(href='#').filter-close
-          +e.P.filter._yellow Оздоровительный массаж
-            +e.A(href='#').filter-close
-          +e.P.filter._yellow Оздоровительный массаж
-            +e.A(href='#').filter-close
-          +e.P.filter._yellow Охраняемая парковка
-            +e.A(href='#').filter-close
-          +e.A(href='#').filter._grey._normal Сбросить фильтры
+          +e.filters.is-empty
+            +e.P.filter.is-hidden
+              +e.SPAN.filter-text
+              +e.A(href='#').filter-close
+            +e.A(href='#' data-reset).filter._grey._normal Сбросить фильтры
         +e.bottom-right
           +e.BUTTON.button._blue Показать 251 сауну
           +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
@@ -188,14 +183,13 @@ mixin popup-location()
             +e.col
               +popup-list('И', 'metro', 'metroi2', ['Красногвардейская', 'Краснопресненская', 'Красносельская', 'Красные ворота', 'Крестьянская Застава', 'Кропоткинская', 'Крылатское', 'Кузнецкий Мост (станция)', 'Кузьминки', 'Кунцевская', 'Курская (Арбатско-Покровская линия)', 'Курская (Кольцевая линия)', 'Кутузовская'])
         +e.metro-bottom
-          +e.P.filter._grey._metro._metro-grey Авиамоторная
-            +e.A(href='#').filter-close
-          +e.P.filter._grey._metro._metro-green Автозаводская
-            +e.A(href='#').filter-close
-          +e.P.filter._grey._metro._metro-darkred Алтуфьево
-            +e.A(href='#').filter-close
-          +e.P.filter._darkgrey Сбросить все
-            +e.A(href='#').filter-close
+          +e.filters.is-empty
+            +e.P.filter._metro.is-hidden
+              +e.SPAN.filter-text
+              +e.A(href='#').filter-close
+            +e.P.filter._darkgrey
+              +e.SPAN.filter-text Сбросить все
+              +e.A(href='#' data-reset).filter-close
         +e.button-block
           +e.BUTTON.button Показать 251 сауну
           +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
@@ -221,12 +215,13 @@ mixin popup-location()
               +popup-list('А', 'district', 'districta5', ['Академический', 'Алексеевский', 'Алтуфьевский', 'Арбат', 'Аэропорт'])
               +popup-list('Б', 'district', 'districtb5', ['Бабушкинский', 'Басманный', 'Беговой', 'Бескудниковский', 'Бибирево', 'Бирюлёво Восточное', 'Бирюлёво Западное', 'Богородское', 'Братеево'])
         +e.districts-bottom
-          +e.P.filter._grey Академический
-            +e.A(href='#').filter-close
-          +e.P.filter._grey Бирюлево Восточное
-            +e.A(href='#').filter-close
-          +e.P.filter._darkgrey Сбросить все
-            +e.A(href='#').filter-close
+          +e.filters.is-empty
+            +e.P.filter._metro.is-hidden
+              +e.SPAN.filter-text
+              +e.A(href='#').filter-close
+            +e.P.filter._darkgrey
+              +e.SPAN.filter-text Сбросить все
+              +e.A(href='#' data-reset).filter-close
         +e.button-block
           +e.BUTTON.button Показать 251 сауну
           +e.P.error Ничего не найдено. Попробуйте использовать другие параметры

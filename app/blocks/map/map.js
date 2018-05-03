@@ -8,7 +8,7 @@ const $ = window.$;
 
 export default function maps(mapEl) {
   const mapElement = mapEl || 'map';
-  if ($(`#${mapElement}`).length) {
+  if ($(`#${mapElement}:visible`).length && !$(`#${mapElement}`).attr('data-initialized')) {
     const map = L.map(mapElement, { scrollWheelZoom: false }).setView([55.738719, 37.608438], 9);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -62,6 +62,8 @@ export default function maps(mapEl) {
     markers.on('mouseout', (e) => {
       e.layer.setIcon(DefaultIcon);
     });
+
+    $(`#${mapElement}`).attr('data-initialized', true);
   }
 }
 /* eslint-enable no-unused-vars */

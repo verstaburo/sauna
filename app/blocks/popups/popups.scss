@@ -6,6 +6,18 @@
 
 .fancybox-slide>div { margin: 0; padding: 0; }
 
+@mixin popup-filter($class, $color, $fontcolor: false) {
+  &_#{$class} {
+    background-color: $color;
+    @if $fontcolor {
+      color: $fontcolor;
+    }
+    &:before {
+      background-color: $color;
+    }
+  }
+}
+
 .popup {
   display: none;
   width: 100%;
@@ -250,13 +262,17 @@
     color: $color-blue;
     font-family: $font-second;
     font-size: 16px;
-    border-bottom: 1px dashed $color-blue;
     margin-left: 22px;
     
     @include screen('tablet-wide') {
       display: block;
       margin-left: 0;
       margin-top: 12px;
+    }
+    
+    a {
+      color: inherit;
+      border-bottom: 1px dashed $color-blue;
     }
   }
   
@@ -477,7 +493,11 @@
   }
   
   &__filters {
-    margin-right: 24px;
+    overflow: hidden;
+    
+    &.is-empty {
+      height: 0;
+    }
   }
   
   &__filter {
@@ -486,6 +506,7 @@
     align-items: center;
     padding: 4px 16px;
     border-radius: 2px;
+    background-color: rgba(#fff, .9);
     color: #1e1e1e;
     font-family: $font-second;
     font-style: italic;
@@ -494,6 +515,10 @@
     margin-right: 12px;
     margin-bottom: 12px;
     position: relative;
+    
+    &.is-hidden {
+      display: none;
+    }
     
     &-close {
       display: inline-block;
@@ -527,14 +552,11 @@
       }
     }
     
-    &_grey {
-      background-color: rgba(#fff, .9);
-    }
-    
-    &_yellow {
-      background-color: #f7e26f;
-      color: #635b36;
-    }
+    @include popup-filter(grey, rgba(#fff, .9));
+    @include popup-filter(yellow, #f7e26f, #635b36);
+    @include popup-filter(blue, #6daaff);
+    @include popup-filter(green, #49bb7b);
+    @include popup-filter(darkred, #98315f);
     
     &_normal {
       font-style: normal;
@@ -551,6 +573,8 @@
     }
     
     &_metro {
+      background-color: rgba(#fff, .9);
+      color: #1e1e1e;
       
       &:before {
         content: '';
@@ -561,18 +585,6 @@
         width: 9px;
         height: 100%;
         border-radius: 2px 0 0 2px;
-      }
-      
-      &-grey:before {
-        background-color: #c9c9c9;
-      }
-      
-      &-green:before {
-        background-color: #49bb7b;
-      }
-      
-      &-darkred:before {
-        background-color: #98315f;
       }
     }
   }
@@ -1086,7 +1098,6 @@
       text-align: right;
       margin-top: -40px;
       margin-right: 14px;
-      position: relative;
       
       @include screen('tablet-wide') {
         margin-top: 0;
@@ -1097,6 +1108,7 @@
     .popup__button {
       min-width: 354px;
       padding: 18px;
+      position: relative;
       
       @include screen('tablet-wide') {
         display: block;
