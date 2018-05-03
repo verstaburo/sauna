@@ -6,9 +6,10 @@ import 'leaflet.markercluster';
 
 const $ = window.$;
 
-export default function maps() {
-  if ($('#map').length) {
-    const map = L.map('map', { scrollWheelZoom: false }).setView([55.738719, 37.608438], 9);
+export default function maps(mapEl) {
+  const mapElement = mapEl || 'map';
+  if ($(`#${mapElement}`).length) {
+    const map = L.map(mapElement, { scrollWheelZoom: false }).setView([55.738719, 37.608438], 9);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       maxZoom: 18,

@@ -191,7 +191,8 @@
       margin: 25px -20px 0;
     }
     
-    .slider__slide {
+    .slider__slide a {
+      display: block;
       position: relative;
       padding-top: 68%;
       overflow: hidden;

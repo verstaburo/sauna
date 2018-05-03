@@ -1,7 +1,9 @@
 mixin card()
   +b.card&attributes(attributes)
     block
-    
+
+//- card-reviewform
+
 mixin card-reviewform()
   +b.card-reviewform&attributes(attributes)
     +e.H3.heading Отзывы
@@ -39,6 +41,8 @@ mixin card-reviewform()
         +e.P.success-heading Спасибо, Василий!
         +e.P.success-text Очень остроумно! Осталось проверить ваш отзыв и мы опубликуем его.
 
+//- card-reviews
+
 mixin card-reviews(heading, short)
   +b.card-reviews&attributes(attributes)
     if heading
@@ -48,7 +52,7 @@ mixin card-reviews(heading, short)
         +e.A(href='#').link Оставить отзыв
     +e.content
       +review-short('Петр Петров', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
-      +review-short('Петр Петров', true, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,', true).__review
+      +review-short('Петр Петров', 'reviews3', 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,', true).__review
       if !short
         +review-short('Петр Петров', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
         +review-short('Петр Петров', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
@@ -56,6 +60,8 @@ mixin card-reviews(heading, short)
         +e.more
           a(href='#') показать все отзывы
             +e.SPAN.count 21
+
+//- card-rating
 
 mixin card-rating()
   +b.card-rating&attributes(attributes)
@@ -90,6 +96,8 @@ mixin card-rating()
           +e.P.line-title Услуги
           +e.line-bar
             +e.line-fill(style='width:30%;')
+
+//- card-contacts
 
 mixin card-contacts(mult)
   +b.card-contacts&attributes(attributes)
@@ -154,6 +162,8 @@ mixin card-contacts(mult)
             span.hide-md Заказать сауну
             span.show-md Позвонить
 
+//- card-address
+
 mixin card-address(mult)
   +b.card-address&attributes(attributes)
     +e.H3.heading Адрес
@@ -164,9 +174,10 @@ mixin card-address(mult)
       +e.section._top
         +e.P.section-title Адрес:
         +e.P.link
-          a(href='#') Москва, Тамбовская улица, д. 4
+          a(href='maplist.html') Москва, Тамбовская улица, д. 4
       +e.map#map
-      +e.A(href='#').link._black._show Посмотреть на большой карте
+      +e.P.link._black._show 
+        a(href='maplist.html') Посмотреть на большой карте
       +e.section._bottom
         +e.P.section-title._bordered Метро:
         +e.P.place
@@ -179,6 +190,8 @@ mixin card-address(mult)
             +e.IMG(src='assets/images/metro.png').place-icon
             | Тверская
           +e.SPAN.distance 500 метров
+
+//- card-desc
 
 mixin card-desc(saleSlotId, saleSlotRes)
   +b.card-desc&attributes(attributes)
@@ -237,10 +250,12 @@ mixin card-desc(saleSlotId, saleSlotRes)
       +e.side
         +e.video
           +e.IMG(src='assets/images/place1.jpg').video-bg
-          +e.playbutton
+          +e.A(href='https://www.youtube.com/watch?v=30imLMlqK3g' data-fancybox='video1').playbutton
         +e.P.sitelink Сайт:
           a(href='#') www.saunasite.ru
-          
+
+//- card-desc-mult
+
 mixin card-desc-mult()
   +b.card-desc&attributes(attributes)
     +e.H3.heading Описание
@@ -267,10 +282,12 @@ mixin card-desc-mult()
       +e.side
         +e.video
           +e.IMG(src='assets/images/place1.jpg').video-bg
-          +e.playbutton
+          +e.A(href='https://www.youtube.com/watch?v=30imLMlqK3g' data-fancybox='video1').playbutton
         +e.P.sitelink Сайт:
           a(href='#') www.saunasite.ru
-          
+
+//- card-desc-halls
+
 mixin card-desc-halls(heading, subheading, imgCount, mobheading, hallSlotId)
   +b.card-desc&attributes(attributes)
     if heading
@@ -296,7 +313,7 @@ mixin card-desc-halls(heading, subheading, imgCount, mobheading, hallSlotId)
             +e.images
               - for (var i = 1; i <= imgCount; i++)
                 +e.image
-                  +e.imgblock
+                  +e.A(href='assets/images/place'+i+'.jpg' data-fancybox=hallSlotId+i).imgblock
                     img(src='assets/images/place'+i+'.jpg')
           +e.services
             +e.P.service
@@ -334,6 +351,8 @@ mixin card-desc-halls(heading, subheading, imgCount, mobheading, hallSlotId)
                   +icon('person').__count-icon
                   +icon('person').__count-icon
 
+//- card-sales
+
 mixin card-sales(blockSlotId, blockSlotRes)
   +b.card-sales&attributes(attributes)
     +e.H3.heading Акции в сауне
@@ -368,6 +387,8 @@ mixin card-sales(blockSlotId, blockSlotRes)
           +e.P.sale-link
             a(href='#') Скидка по будням до 30%
           +e.SPAN.sale-date 1-9 мая
+
+//- card-questions
 
 mixin card-questions()
   +b.card-questions&attributes(attributes)

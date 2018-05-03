@@ -2,21 +2,20 @@
 import '@fancyapps/fancybox';
 
 import { freeze, unfreeze } from '../js-functions/freeze';
+import maps from '../map/map';
 
 const $ = window.$;
 
 export default function popups() {
   $('.js-fancybox-popup').fancybox({
-    afterLoad: freeze,
+    afterLoad() {
+      freeze();
+      maps('popupmap');
+    },
     afterClose: unfreeze,
     smallBtn: false,
     buttons: false,
     touch: false,
-  });
-
-  $('.js-fancybox').fancybox({
-    afterLoad: freeze,
-    afterClose: unfreeze,
   });
 
   $(document).on('click', '.popup__close', () => {
