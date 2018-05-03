@@ -17,5 +17,17 @@ export default function card() {
       }, 5000);
     }
   });
+
+  $(document).on('click', '.card-reviewform__link a', function (e) {
+    e.preventDefault();
+    const form = $(this).parents('.card-reviewform').find('.card-reviewform__content');
+    if (form.hasClass('is-active')) {
+      form.removeClass('is-active');
+      form.children('.card-reviewform__inner').slideUp(500);
+    } else {
+      form.addClass('is-active');
+      form.children('.card-reviewform__inner').slideDown(500);
+    }
+  });
 }
 /* eslint-enable prefer-arrow-callback */

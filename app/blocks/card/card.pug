@@ -4,52 +4,50 @@ mixin card()
 
 //- card-reviewform
 
-mixin card-reviewform()
+mixin card-reviewform(active)
+  - var contentClass = active ? '__content is-active' : '__content';
+  - var innerDisplay = active ? 'block' : 'none';
   +b.card-reviewform&attributes(attributes)
     +e.H3.heading Отзывы
       +e.SPAN.count 21
       +e.P.link
         a(href='#') Оставить отзыв
-    +e.content
-      +e.FORM.form
-        +e.form-section._top
-          +e.INPUT(type='text' name='name' placeholder='Ваше имя и фамилия').field._short
-          +e.TEXTAREA(name='comment' placeholder='Ваш отзыв').field._textarea
-          +e.file
-            +e.LABEL.file-label Добавить фото
-              input(type='file')
-            +icon('file_arrow').__file-icon
-          +e.P.hint Указывать телефон, электронную почту или адрес сайта на фото запрещено!
-            br
-            | Файлы должны быть  не меньше, чем 700x450 пикселей, и не превышать 3 Мб
-        +e.form-section._middle
-          +e.P.subheading Как отдохнули?
-          +e.ratings
-            +e.ratings-col
-              +e.P.ratings-item Персонал
-                +rating-interactive(5, 'staff').__rating
-              +e.P.ratings-item Интерьер
-                +rating-interactive(5, 'int').__rating
-            +e.ratings-col
-              +e.P.ratings-item Услуги
-                +rating-interactive(5, 'service').__rating
-              +e.P.ratings-item Расположение
-                +rating-interactive(5, 'location').__rating
-        +e.form-section._bottom
-          +e.BUTTON.button Оставить отзыв
-      +e.success
-        +e.P.success-heading Спасибо, Василий!
-        +e.P.success-text Очень остроумно! Осталось проверить ваш отзыв и мы опубликуем его.
+    +e.DIV(class=contentClass)
+      +e.inner(style='display:'+innerDisplay+';')
+        +e.FORM.form
+          +e.form-section._top
+            +e.INPUT(type='text' name='name' placeholder='Ваше имя и фамилия').field._short
+            +e.TEXTAREA(name='comment' placeholder='Ваш отзыв').field._textarea
+            +e.file
+              +e.LABEL.file-label Добавить фото
+                input(type='file')
+              +icon('file_arrow').__file-icon
+            +e.P.hint Указывать телефон, электронную почту или адрес сайта на фото запрещено!
+              br
+              | Файлы должны быть  не меньше, чем 700x450 пикселей, и не превышать 3 Мб
+          +e.form-section._middle
+            +e.P.subheading Как отдохнули?
+            +e.ratings
+              +e.ratings-col
+                +e.P.ratings-item Персонал
+                  +rating-interactive(5, 'staff').__rating
+                +e.P.ratings-item Интерьер
+                  +rating-interactive(5, 'int').__rating
+              +e.ratings-col
+                +e.P.ratings-item Услуги
+                  +rating-interactive(5, 'service').__rating
+                +e.P.ratings-item Расположение
+                  +rating-interactive(5, 'location').__rating
+          +e.form-section._bottom
+            +e.BUTTON.button Оставить отзыв
+        +e.success
+          +e.P.success-heading Спасибо, Василий!
+          +e.P.success-text Очень остроумно! Осталось проверить ваш отзыв и мы опубликуем его.
 
 //- card-reviews
 
-mixin card-reviews(heading, short)
+mixin card-reviews(short)
   +b.card-reviews&attributes(attributes)
-    if heading
-      +e.H3.heading Отзывы
-        if short
-          +e.SPAN.heading-count (53)
-        +e.A(href='#').link Оставить отзыв
     +e.content
       +review-short('Петр Петров', false, 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,').__review
       +review-short('Петр Петров', 'reviews3', 'Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама,', true).__review

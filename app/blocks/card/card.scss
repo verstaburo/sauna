@@ -150,8 +150,9 @@
     }
     
     @include screen('tablet-small') {
+      width: 100%;
       font-size: 18px;
-      margin-top: 2px;
+      margin-top: 5px;
       margin-left: 0;
       margin-right: 0;
     }
@@ -166,6 +167,9 @@
     @include card-content;
     border: 0;
     position: relative;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $ease-main;
     
     &:after {
       content: '';
@@ -178,7 +182,18 @@
       border: 15px solid transparent;
       border-bottom-color: #fff;
       border-bottom-width: 10px;
+      pointer-events: none;
     }
+    
+    &.is-active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+  
+  &__inner {
+    overflow: hidden;
+    display: none;
   }
   
   &__form-section {
@@ -282,6 +297,10 @@
       margin-right: 50px;
       cursor: pointer;
       transition: opacity $ease-main;
+      
+      @include screen('desktop') {
+        padding: 15px 30px;
+      }
       
       @include screen('tablet-wide') {
         font-size: 24px;

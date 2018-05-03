@@ -28,3 +28,8 @@ mixin multislider(pagination, buttons)
         img(src='assets/images/slide_arrow_dark.png')
       +e.button._next
         img(src='assets/images/slide_arrow_dark.png')
+
+mixin scrollslider()
+  +b.slider&attributes(attributes).swiper-container.js-scrollslider
+    .swiper-wrapper
+      block

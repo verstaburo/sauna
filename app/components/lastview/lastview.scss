@@ -23,35 +23,10 @@
   
   &__cards-container {
     margin-top: 11px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    margin-bottom: -20px;
-    padding-bottom: 20px;
-    display: flex;
   }
   
-  &__cards-wrapper {
-    padding: 0 10px;
-    min-width: 100%;
-    box-sizing: border-box;
-    flex-shrink: 0;
-  }
-  
-  &__cards {
-    display: flex;
-  }
-  
-  &__card {
+  .swiper-slide {
     width: 267px;
     margin: 0 13px;
-    flex-shrink: 0;
-    
-    &:first-child {
-      margin-left: 0;
-    }
-    
-    &:last-child {
-      margin-right: 0;
-    }
   }
 }

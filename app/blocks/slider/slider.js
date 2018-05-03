@@ -53,5 +53,15 @@ export default function slider() {
       },
     },
   });
+
+  const myScrollSlider = new Swiper('.js-scrollslider', {
+    speed: 700,
+    slidesPerView: 'auto',
+    roundLengths: true,
+    resistanceRatio: 0,
+    freeMode: true,
+    freeModeMomentumRatio: 0.2,
+    freeModeMomentumBounce: false,
+  });
 }
 /* eslint-enable no-unused-vars */

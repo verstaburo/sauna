@@ -2,11 +2,14 @@ mixin lastview()
   +b.lastview&attributes(attributes)
     .container
       +e.H3.heading Последние просмотренные
-      +e.cards-container
-        +e.cards-wrapper
-          +e.cards
-            +imgcard().lastview__card
-            +imgcard().lastview__card
-            +imgcard().lastview__card
-            +imgcard().lastview__card
-            +imgcard().lastview__card
+      +scrollslider().__cards-container
+        +slide()
+          +imgcard()
+        +slide()
+          +imgcard()
+        +slide()
+          +imgcard()
+        +slide()
+          +imgcard()
+        +slide()
+          +imgcard()
