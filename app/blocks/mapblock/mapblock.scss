@@ -66,4 +66,11 @@
       margin-right: 10px;
     }
   }
+  
+  &:not(.maplist__mapblock) {
+    
+    .leaflet-control-zoom {
+      display: none;
+    }
+  }
 }

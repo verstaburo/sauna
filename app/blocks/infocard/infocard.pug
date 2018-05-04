@@ -1,10 +1,11 @@
-mixin infocard(img, reviews, title, name, desc)
+mixin infocard(img, imgbottom, reviews, title, name, desc)
   +b.infocard&attributes(attributes)
     +e.A(href='#').img
       img(src='assets/images/'+img)
-      +e.img-hover
-        img(src='assets/images/metro.png')
-        | Новослободская
+      if imgbottom
+        +e.img-bottom
+          img(src='assets/images/metro.png')
+          | Новослободская
     +e.content
       +e.rating
         +rating(3)
@@ -25,9 +26,6 @@ mixin infocard-hover(img, reviews, title, name, desc)
   +b.infocard&attributes(attributes)
     +e.A(href='#').img
       img(src='assets/images/'+img)
-      +e.img-hover
-        img(src='assets/images/metro.png')
-        | Новослободская
     +e.content
       +e.rating
         +rating(3)

@@ -2,7 +2,11 @@
   display: block;
   
   &__content {
-    padding: 53px 0;
+    padding: 0 0 53px;
+    
+    @include screen('tablet-wide') {
+      padding: 53px 0;
+    }
     
     @include screen('tablet-small') {
       padding: 27px 0;
@@ -13,6 +17,14 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-top: 53px;
+    position: relative;
+    min-height: 600px;
+    
+    @include screen('tablet-wide') {
+      padding-top: 0;
+      min-height: 0;
+    }
   }
   
   &__list {
@@ -54,9 +66,11 @@
   
   &__banner {
     width: 300px;
-    height: 1392px;
+    height: 600px;
     background-color: #dddddd;
-    margin-right: -11px;
+    position: absolute;
+    top: 53px;
+    right: -11px;
     
     @include screen('tablet-wide') {
       display: none;

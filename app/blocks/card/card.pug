@@ -4,16 +4,14 @@ mixin card()
 
 //- card-reviewform
 
-mixin card-reviewform(active)
-  - var contentClass = active ? '__content is-active' : '__content';
-  - var innerDisplay = active ? 'block' : 'none';
+mixin card-reviewform()
   +b.card-reviewform&attributes(attributes)
     +e.H3.heading Отзывы
       +e.SPAN.count 21
       +e.P.link
         a(href='#') Оставить отзыв
-    +e.DIV(class=contentClass)
-      +e.inner(style='display:'+innerDisplay+';')
+    +e.content
+      +e.inner
         +e.FORM.form
           +e.form-section._top
             +e.INPUT(type='text' name='name' placeholder='Ваше имя и фамилия').field._short
@@ -172,10 +170,10 @@ mixin card-address(mult)
       +e.section._top
         +e.P.section-title Адрес:
         +e.P.link
-          a(href='maplist.html') Москва, Тамбовская улица, д. 4
+          a(href='#locationpopup').js-fancybox-popup Москва, Тамбовская улица, д. 4
       +e.map#map
       +e.P.link._black._show 
-        a(href='maplist.html') Посмотреть на большой карте
+        a(href='#locationpopup').js-fancybox-popup Посмотреть на большой карте
       +e.section._bottom
         +e.P.section-title._bordered Метро:
         +e.P.place

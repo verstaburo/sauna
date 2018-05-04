@@ -17,7 +17,7 @@ mixin header-line(img)
   +e.line&attributes(attributes)
     +e.IMG(src='assets/images/' + img).linebg
 
-mixin header-line-menu(firstlink, secondlink, img, sidelink)
+mixin header-line-menu(firstlink, firstlinkhref, secondlink, img, sidelink)
   +e.line&attributes(attributes)
     if img
       +e.IMG(src='assets/images/' + img).linebg
@@ -25,7 +25,7 @@ mixin header-line-menu(firstlink, secondlink, img, sidelink)
       if sidelink
         +e.A(href='#').menu-link._side= sidelink
       if firstlink
-        +e.A(href='#').menu-link= firstlink
+        +e.A(href=firstlinkhref).menu-link= firstlink
       if secondlink
         +e.A(href='#').menu-link
           +icon('plus').menu-icon

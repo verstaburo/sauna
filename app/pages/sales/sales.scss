@@ -2,7 +2,7 @@
   display: block;
   
   &__content {
-    padding: 35px 0 61px;
+    padding: 0 0 61px;
     background-color: #f8f8f8;
     
     @include screen('tablet-wide') {
@@ -64,12 +64,24 @@
     }
   }
   
+  &__container {
+    position: relative;
+    min-height: 598px;
+    padding-top: 35px;
+    
+    @include screen('tablet-wide') {
+      min-height: 0;
+      padding-top: 0;
+    }
+  }
+  
   &__banner {
     width: 296px;
     height: 598px;
     background-color: #ccc;
-    margin-top: 14px;
-    margin-right: -13px;
+    position: absolute;
+    top: 35px;
+    right: 17px;
     
     @include screen('tablet-wide') {
       display: none;

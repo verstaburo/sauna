@@ -16,6 +16,9 @@ import card from '../blocks/card/card';
 import tags from '../blocks/tags/tags';
 import filter from '../blocks/filter/filter';
 import switcher from '../blocks/switcher/switcher';
+import reviews from '../components/reviews/reviews';
+import sales from '../pages/sales/sales';
+import feedback from '../pages/feedback/feedback';
 import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
@@ -45,5 +48,8 @@ $(() => {
   tags();
   filter();
   switcher();
+  reviews();
+  sales();
+  feedback();
   scrollanimation();
 });

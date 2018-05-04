@@ -15,7 +15,7 @@
       @include fill-img;
     }
     
-    &-hover {
+    &-bottom {
       position: absolute;
       left: 0;
       bottom: 0;
@@ -26,9 +26,6 @@
       font-size: 16px;
       text-align: center;
       padding: 4px;
-      opacity: 0;
-      pointer-events: none;
-      transition: all $ease-main;
       
       @include screen('tablet-wide') {
         font-size: 27px;
@@ -60,11 +57,6 @@
     
     &:hover {
       opacity: 1;
-      
-      .infocard__img-hover {
-        opacity: 1;
-        pointer-events: all;
-      }
     }
   }
   
@@ -302,16 +294,6 @@
     
     @include screen('tablet-wide') {
       display: none;
-    }
-  }
-  
-  &_img {
-    
-    .infocard__content {
-      
-      @include screen('tablet-wide') {
-        display: none;
-      }
     }
   }
   
