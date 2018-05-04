@@ -51,14 +51,18 @@
                     <a
                         class="sitemap__tab-link" href="#" data-tab-target="linkgroup4">По округам</a><a class="sitemap__tab-link" href="#" data-tab-target="linkgroup5">Метро</a><a class="sitemap__tab-link" href="#" data-tab-target="linkgroup6">Улицам</a></div>
                 <div class="sitemap__tab active" data-tab="linkgroup1" data-tab-group="linkgroups">
-                    <div class="sitemap__nav-links"><a class="sitemap__nav-link js-anchor" href="#sitelinks1">А</a><a class="sitemap__nav-link js-anchor" href="#sitelinks2">Б</a><a class="sitemap__nav-link js-anchor" href="#sitelinks3">В</a><a class="sitemap__nav-link js-anchor" href="#sitelinks4">Г</a>
-                        <a
-                            class="sitemap__nav-link js-anchor" href="#sitelinks5">Д</a><a class="sitemap__nav-link js-anchor" href="#sitelinks6">Е</a><a class="sitemap__nav-link js-anchor" href="#sitelinks7">Ж</a><a class="sitemap__nav-link js-anchor" href="#sitelinks8">З</a><a class="sitemap__nav-link js-anchor"
-                                href="#sitelinks9">И</a><a class="sitemap__nav-link js-anchor" href="#sitelinks10">К</a><a class="sitemap__nav-link js-anchor" href="#sitelinks11">Л</a><a class="sitemap__nav-link js-anchor" href="#sitelinks12">М</a><a class="sitemap__nav-link js-anchor"
-                                href="#sitelinks13">Н</a><a class="sitemap__nav-link js-anchor" href="#sitelinks14">О</a><a class="sitemap__nav-link js-anchor" href="#sitelinks15">П</a><a class="sitemap__nav-link js-anchor" href="#sitelinks16">Р</a><a class="sitemap__nav-link js-anchor"
-                                href="#sitelinks17">С</a><a class="sitemap__nav-link js-anchor" href="#sitelinks18">Т</a><a class="sitemap__nav-link js-anchor" href="#sitelinks19">У</a><a class="sitemap__nav-link js-anchor" href="#sitelinks20">Ф</a><a class="sitemap__nav-link js-anchor"
-                                href="#sitelinks21">Х</a><a class="sitemap__nav-link js-anchor" href="#sitelinks22">Ц</a><a class="sitemap__nav-link js-anchor" href="#sitelinks23">Ч</a><a class="sitemap__nav-link js-anchor" href="#sitelinks24">Щ</a><a class="sitemap__nav-link js-anchor"
-                                href="#sitelinks25">Э</a><a class="sitemap__nav-link js-anchor" href="#sitelinks26">Ю</a><a class="sitemap__nav-link js-anchor" href="#sitelinks27">Я</a></div>
+                    <div class="sitemap__nav-links">
+                        <div class="sitemap__nav-links-list"><a class="sitemap__nav-link" href="#sitelinks1">А</a><a class="sitemap__nav-link" href="#sitelinks2">Б</a><a class="sitemap__nav-link" href="#sitelinks3">В</a><a class="sitemap__nav-link" href="#sitelinks4">Г</a><a class="sitemap__nav-link"
+                                href="#sitelinks5">Д</a><a class="sitemap__nav-link" href="#sitelinks6">Е</a><a class="sitemap__nav-link" href="#sitelinks7">Ж</a><a class="sitemap__nav-link" href="#sitelinks8">З</a><a class="sitemap__nav-link" href="#sitelinks9">И</a>
+                            <a
+                                class="sitemap__nav-link" href="#sitelinks10">К</a><a class="sitemap__nav-link" href="#sitelinks11">Л</a><a class="sitemap__nav-link" href="#sitelinks12">М</a><a class="sitemap__nav-link" href="#sitelinks13">Н</a><a class="sitemap__nav-link" href="#sitelinks14">О</a>
+                                <a
+                                    class="sitemap__nav-link" href="#sitelinks15">П</a><a class="sitemap__nav-link" href="#sitelinks16">Р</a><a class="sitemap__nav-link" href="#sitelinks17">С</a><a class="sitemap__nav-link" href="#sitelinks18">Т</a><a class="sitemap__nav-link" href="#sitelinks19">У</a>
+                                    <a
+                                        class="sitemap__nav-link" href="#sitelinks20">Ф</a><a class="sitemap__nav-link" href="#sitelinks21">Х</a><a class="sitemap__nav-link" href="#sitelinks22">Ц</a><a class="sitemap__nav-link" href="#sitelinks23">Ч</a><a class="sitemap__nav-link" href="#sitelinks24">Щ</a>
+                                        <a
+                                            class="sitemap__nav-link" href="#sitelinks25">Э</a><a class="sitemap__nav-link" href="#sitelinks26">Ю</a><a class="sitemap__nav-link" href="#sitelinks27">Я</a></div>
+                    </div>
                     <div class="sitemap__links">
                         <div class="sitemap__cols">
                             <div class="sitemap__col">
@@ -313,8 +317,9 @@
                     </div>
                 </div>
                 <div class="sitemap__tab" data-tab="linkgroup2" data-tab-group="linkgroups">
-                    <div class="sitemap__nav-links"><a class="sitemap__nav-link js-anchor" href="#sitelinks21">Топ-1</a><a class="sitemap__nav-link js-anchor" href="#sitelinks22">Топ-2</a><a class="sitemap__nav-link js-anchor" href="#sitelinks23">Топ-3</a><a class="sitemap__nav-link js-anchor"
-                            href="#sitelinks24">Топ-4</a></div>
+                    <!--+e.nav-links+e.nav-links-list
+  each val, index in ['Топ-1', 'Топ-2', 'Топ-3', 'Топ-4']
+    +e.A(href='#sitelinks2' + (index+1)).nav-link= val-->
                     <div class="sitemap__links">
                         <div class="sitemap__cols">
                             <div class="sitemap__col">
@@ -452,11 +457,9 @@
                     </div>
                 </div>
                 <div class="sitemap__tab" data-tab="linkgroup3" data-tab-group="linkgroups">
-                    <div class="sitemap__nav-links"><a class="sitemap__nav-link js-anchor" href="#sitelinks31">Район 1</a><a class="sitemap__nav-link js-anchor" href="#sitelinks32">Район 2</a><a class="sitemap__nav-link js-anchor" href="#sitelinks33">Район 3</a><a class="sitemap__nav-link js-anchor"
-                            href="#sitelinks34">Район 4</a><a class="sitemap__nav-link js-anchor" href="#sitelinks35">Район 5</a><a class="sitemap__nav-link js-anchor" href="#sitelinks36">Район 6</a><a class="sitemap__nav-link js-anchor" href="#sitelinks37">Район 7</a>
-                        <a
-                            class="sitemap__nav-link js-anchor" href="#sitelinks38">Район 8</a>
-                    </div>
+                    <!--+e.nav-links+e.nav-links-list
+  each val, index in ['Район 1', 'Район 2', 'Район 3', 'Район 4', 'Район 5', 'Район 6', 'Район 7', 'Район 8']
+    +e.A(href='#sitelinks3' + (index+1)).nav-link= val-->
                     <div class="sitemap__links">
                         <div class="sitemap__cols">
                             <div class="sitemap__col">
@@ -669,8 +672,9 @@
                     </div>
                 </div>
                 <div class="sitemap__tab" data-tab="linkgroup4" data-tab-group="linkgroups">
-                    <div class="sitemap__nav-links"><a class="sitemap__nav-link js-anchor" href="#sitelinks41">Округ 1</a><a class="sitemap__nav-link js-anchor" href="#sitelinks42">Округ 2</a><a class="sitemap__nav-link js-anchor" href="#sitelinks43">Округ 3</a><a class="sitemap__nav-link js-anchor"
-                            href="#sitelinks44">Округ 4</a></div>
+                    <!--+e.nav-links+e.nav-links-list
+  each val, index in ['Округ 1', 'Округ 2', 'Округ 3', 'Округ 4']
+    +e.A(href='#sitelinks4' + (index+1)).nav-link= val-->
                     <div class="sitemap__links">
                         <div class="sitemap__cols">
                             <div class="sitemap__col">
@@ -801,10 +805,9 @@
                     </div>
                 </div>
                 <div class="sitemap__tab" data-tab="linkgroup5" data-tab-group="linkgroups">
-                    <div class="sitemap__nav-links"><a class="sitemap__nav-link js-anchor" href="#sitelinks51">Метро 1</a><a class="sitemap__nav-link js-anchor" href="#sitelinks52">Метро 2</a><a class="sitemap__nav-link js-anchor" href="#sitelinks53">Метро 3</a><a class="sitemap__nav-link js-anchor"
-                            href="#sitelinks54">Метро 4</a><a class="sitemap__nav-link js-anchor" href="#sitelinks55">Метро 5</a><a class="sitemap__nav-link js-anchor" href="#sitelinks56">Метро 6</a><a class="sitemap__nav-link js-anchor" href="#sitelinks57">Метро 7</a>
-                        <a
-                            class="sitemap__nav-link js-anchor" href="#sitelinks58">Метро 8</a><a class="sitemap__nav-link js-anchor" href="#sitelinks59">Метро 9</a><a class="sitemap__nav-link js-anchor" href="#sitelinks510">Метро 10</a></div>
+                    <!--+e.nav-links+e.nav-links-list
+  each val, index in ['Метро 1', 'Метро 2', 'Метро 3', 'Метро 4', 'Метро 5', 'Метро 6', 'Метро 7', 'Метро 8', 'Метро 9', 'Метро 10']
+    +e.A(href='#sitelinks5' + (index+1)).nav-link= val-->
                     <div class="sitemap__links">
                         <div class="sitemap__cols">
                             <div class="sitemap__col">
@@ -1059,13 +1062,9 @@
                     </div>
                 </div>
                 <div class="sitemap__tab" data-tab="linkgroup6" data-tab-group="linkgroups">
-                    <div class="sitemap__nav-links"><a class="sitemap__nav-link js-anchor" href="#sitelinks61">Улица 1</a><a class="sitemap__nav-link js-anchor" href="#sitelinks62">Улица 2</a><a class="sitemap__nav-link js-anchor" href="#sitelinks63">Улица 3</a><a class="sitemap__nav-link js-anchor"
-                            href="#sitelinks64">Улица 4</a><a class="sitemap__nav-link js-anchor" href="#sitelinks65">Улица 5</a><a class="sitemap__nav-link js-anchor" href="#sitelinks66">Улица 6</a><a class="sitemap__nav-link js-anchor" href="#sitelinks67">Улица 7</a>
-                        <a
-                            class="sitemap__nav-link js-anchor" href="#sitelinks68">Улица 8</a><a class="sitemap__nav-link js-anchor" href="#sitelinks69">Улица 9</a><a class="sitemap__nav-link js-anchor" href="#sitelinks610">Улица 10</a><a class="sitemap__nav-link js-anchor" href="#sitelinks611">Улица 11</a>
-                            <a
-                                class="sitemap__nav-link js-anchor" href="#sitelinks612">Улица 12</a>
-                    </div>
+                    <!--+e.nav-links+e.nav-links-list
+  each val, index in ['Улица 1', 'Улица 2', 'Улица 3', 'Улица 4', 'Улица 5', 'Улица 6', 'Улица 7', 'Улица 8', 'Улица 9', 'Улица 10', 'Улица 11', 'Улица 12']
+    +e.A(href='#sitelinks6' + (index+1)).nav-link= val-->
                     <div class="sitemap__links">
                         <div class="sitemap__cols">
                             <div class="sitemap__col">
