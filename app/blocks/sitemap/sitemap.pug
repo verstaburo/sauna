@@ -10,8 +10,9 @@ mixin sitemap()
             +e.A(href='#' data-tab-target='linkgroup' + (index + 1)).tab-link= val
       +e.tab(data-tab='linkgroup1' data-tab-group='linkgroups').active
         +e.nav-links
-          each val, index in ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Щ', 'Э', 'Ю', 'Я']
-            +e.A(href='#sitelinks' + (index+1)).nav-link.js-anchor= val
+          +e.nav-links-list
+            each val, index in ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Щ', 'Э', 'Ю', 'Я']
+              +e.A(href='#sitelinks' + (index+1)).nav-link= val
         +e.links
           +e.cols
             +e.col
@@ -31,9 +32,10 @@ mixin sitemap()
               +sitemap-list('sitelinks8', 'З', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
               +sitemap-list('sitelinks9', 'И', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
       +e.tab(data-tab='linkgroup2' data-tab-group='linkgroups')
-        +e.nav-links
-          each val, index in ['Топ-1', 'Топ-2', 'Топ-3', 'Топ-4']
-            +e.A(href='#sitelinks2' + (index+1)).nav-link.js-anchor= val
+        //+e.nav-links
+          +e.nav-links-list
+            each val, index in ['Топ-1', 'Топ-2', 'Топ-3', 'Топ-4']
+              +e.A(href='#sitelinks2' + (index+1)).nav-link= val
         +e.links
           +e.cols
             +e.col
@@ -47,9 +49,10 @@ mixin sitemap()
               +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
               +sitemap-list('sitelinks24', 'Топ-4', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
       +e.tab(data-tab='linkgroup3' data-tab-group='linkgroups')
-        +e.nav-links
-          each val, index in ['Район 1', 'Район 2', 'Район 3', 'Район 4', 'Район 5', 'Район 6', 'Район 7', 'Район 8']
-            +e.A(href='#sitelinks3' + (index+1)).nav-link.js-anchor= val
+        //+e.nav-links
+          +e.nav-links-list
+            each val, index in ['Район 1', 'Район 2', 'Район 3', 'Район 4', 'Район 5', 'Район 6', 'Район 7', 'Район 8']
+              +e.A(href='#sitelinks3' + (index+1)).nav-link= val
         +e.links
           +e.cols
             +e.col
@@ -66,9 +69,10 @@ mixin sitemap()
               +sitemap-list('sitelinks37', 'Район 7', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
               +sitemap-list('sitelinks38', 'Район 8', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
       +e.tab(data-tab='linkgroup4' data-tab-group='linkgroups')
-        +e.nav-links
-          each val, index in ['Округ 1', 'Округ 2', 'Округ 3', 'Округ 4']
-            +e.A(href='#sitelinks4' + (index+1)).nav-link.js-anchor= val
+        //+e.nav-links
+          +e.nav-links-list
+            each val, index in ['Округ 1', 'Округ 2', 'Округ 3', 'Округ 4']
+              +e.A(href='#sitelinks4' + (index+1)).nav-link= val
         +e.links
           +e.cols
             +e.col
@@ -83,9 +87,10 @@ mixin sitemap()
               +sitemap-list(false, false, ['100А, сауна', '24, баня', 'Best Travel, сауна', 'Chillout, сауна'])
               +sitemap-list('sitelinks44', 'Округ 4', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
       +e.tab(data-tab='linkgroup5' data-tab-group='linkgroups')
-        +e.nav-links
-          each val, index in ['Метро 1', 'Метро 2', 'Метро 3', 'Метро 4', 'Метро 5', 'Метро 6', 'Метро 7', 'Метро 8', 'Метро 9', 'Метро 10']
-            +e.A(href='#sitelinks5' + (index+1)).nav-link.js-anchor= val
+        //+e.nav-links
+          +e.nav-links-list
+            each val, index in ['Метро 1', 'Метро 2', 'Метро 3', 'Метро 4', 'Метро 5', 'Метро 6', 'Метро 7', 'Метро 8', 'Метро 9', 'Метро 10']
+              +e.A(href='#sitelinks5' + (index+1)).nav-link= val
         +e.links
           +e.cols
             +e.col
@@ -105,9 +110,10 @@ mixin sitemap()
               +sitemap-list('sitelinks58', 'Метро 8', ['Жrazy в отеле, сауна', 'ELITE & CLUB GOLD', 'SHARK', 'Galaxy на Авиамоторной, сауна', 'Gallon beer, сауна', 'Gold Shark в Алтуфьево, сауна', 'Gustovita, сауна', 'La Primavera, сауна', 'Lady Boss, сауна', 'Lady Boss, сауна', 'Ledy Boss, сауна', 'Relax на Авиамоторной, сауна', 'SPA-сауна на Пролетарской', 'Sabay, сауна', 'Spa-сауна Каскад', 'Spa-сауна Мир', 'Spa-сауна Петровско-Разумовская', 'Spa-сауна Таганская', 'Spa-сауна Электрозаводская', 'Spa-центр Чайка', 'Street-фитнес, сауна'])
               +sitemap-list('sitelinks59', 'Метро 9', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
       +e.tab(data-tab='linkgroup6' data-tab-group='linkgroups')
-        +e.nav-links
-          each val, index in ['Улица 1', 'Улица 2', 'Улица 3', 'Улица 4', 'Улица 5', 'Улица 6', 'Улица 7', 'Улица 8', 'Улица 9', 'Улица 10', 'Улица 11', 'Улица 12']
-            +e.A(href='#sitelinks6' + (index+1)).nav-link.js-anchor= val
+        //+e.nav-links
+          +e.nav-links-list
+            each val, index in ['Улица 1', 'Улица 2', 'Улица 3', 'Улица 4', 'Улица 5', 'Улица 6', 'Улица 7', 'Улица 8', 'Улица 9', 'Улица 10', 'Улица 11', 'Улица 12']
+              +e.A(href='#sitelinks6' + (index+1)).nav-link= val
         +e.links
           +e.cols
             +e.col
