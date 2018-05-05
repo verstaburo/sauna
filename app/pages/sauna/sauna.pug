@@ -24,29 +24,15 @@ block content
       +put-block-into-slot('multislider', 'xl')
         +multislider(false, true).__slider
           +slide()
-            a(href='assets/images/place1.jpg' data-fancybox)
-              img(src='assets/images/place1.jpg')
+            +sauna-slide('saunaslide11', 'place1.jpg')
           +slide()
-            a(href='assets/images/place2.jpg' data-fancybox)
-              img(src='assets/images/place2.jpg')
+            +sauna-slide('saunaslide12', 'place2.jpg')
           +slide()
-            a(href='assets/images/place3.jpg' data-fancybox)
-              img(src='assets/images/place3.jpg')
+            +sauna-slide('saunaslide13', 'place3.jpg')
           +slide()
-            a(href='assets/images/place4.jpg' data-fancybox)
-              img(src='assets/images/place4.jpg')
+            +sauna-slide('saunaslide14', 'place4.jpg')
           +slide()
-            a(href='assets/images/place1.jpg' data-fancybox)
-              img(src='assets/images/place1.jpg')
-          +slide()
-            a(href='assets/images/place2.jpg' data-fancybox)
-              img(src='assets/images/place2.jpg')
-          +slide()
-            a(href='assets/images/place3.jpg' data-fancybox)
-              img(src='assets/images/place3.jpg')
-          +slide()
-            a(href='assets/images/place4.jpg' data-fancybox)
-              img(src='assets/images/place4.jpg')
+            +sauna-slide('saunaslide15', 'place5.jpg')
       .container.container_wide
         +put-block-into-slot('contactcards', 'md')
         +put-block-into-slot('multislider', 'md')
@@ -70,3 +56,14 @@ block content
     +lastview().__lastview
     +footer()
     +popups()
+
+mixin sauna-slide(id, img, type)
+  a(href='#'+id data-fancybox='gallery').sauna__imgblock
+    img(src='assets/images/'+img)
+    if type
+      p.sauna__imgtype= type
+  .sauna__imgpopup(id=id)
+    .sauna__imgblock
+      img(src='assets/images/'+img)
+      if type
+        p.sauna__imgtype= type

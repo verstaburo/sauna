@@ -2,7 +2,7 @@
   display: block;
   
   &__head {
-    padding: 11px 0 19px;
+    padding: 0 0 19px;
     
     @include screen('tablet-wide') {
       padding: 34px 0 20px;
@@ -18,7 +18,7 @@
     font-size: 21px;
     font-weight: 700;
     letter-spacing: .02em;
-    margin-top: 14px;
+    margin-top: 3px;
     
     @include screen('tablet-wide') {
       display: none;
@@ -177,6 +177,47 @@
     }
   }
   
+  &__imgpopup {
+    display: none;
+    width: 40%;
+    min-width: 280px;
+    
+    .sauna__imgblock:hover {
+      
+      img {
+        transform: scale(1);
+      }
+    }
+    
+    .fancybox-close-small {
+      display: none;
+    }
+  }
+  
+  &__imgblock {
+    display: block;
+    position: relative;
+    padding-top: 68%;
+    overflow: hidden;
+    
+    @include screen('tablet-wide') {
+      padding-top: 65.7%;
+    }
+    
+    &:hover {
+      opacity: 1;
+      
+      img {
+        transform: scale(1.025);
+      }
+    }
+    
+    img {
+      @include fill-img;
+      transition: transform $ease-main;
+    }
+  }
+  
   &__slider {
     width: 100%;
     max-width: 1440px;
@@ -189,21 +230,6 @@
     
     @include screen('tablet-small') {
       margin: 25px -20px 0;
-    }
-    
-    .slider__slide a {
-      display: block;
-      position: relative;
-      padding-top: 68%;
-      overflow: hidden;
-      
-      @include screen('tablet-wide') {
-        padding-top: 65.7%;
-      }
-      
-      img {
-        @include fill-img;
-      }
     }
     
     .slider__button {

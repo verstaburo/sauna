@@ -30,6 +30,7 @@
     width: 16.6666%;
     padding: 24px 24px 74px;
     box-sizing: border-box;
+    position: relative;
     
     @include screen('desktop-wide') {
       width: 33.3333%;
@@ -62,23 +63,66 @@
     
     &_pink {
       background-image: linear-gradient(30deg, #f387b8 0%, #f4a2c7 100%);
+      
+      &:before {
+        background-image: linear-gradient(30deg, #f4a2c7 0%, #f387b8 100%);
+      }
     }
     
     &_blue {
       background-image: linear-gradient(77deg, #308aca 0%, #97bed8 100%);
+      
+      &:before {
+        background-image: linear-gradient(77deg, #97bed8 0%, #308aca 100%);
+      }
     }
     
     &_green {
       background-image: linear-gradient(30deg, #b4c850 0%, #2a4a16 100%);
+      
+      &:before {
+        background-image: linear-gradient(30deg, #2a4a16 0%, #b4c850 100%);
+      }
     }
     
     &_black {
       background-image: linear-gradient(45deg, #120c06 0%, #303a45 100%);
+      
+      &:before {
+        background-image: linear-gradient(45deg, #303a45 0%, #120c06 100%);
+      }
     }
     
     &_blue-red-yellow {
       background-image: linear-gradient(45deg, #363496 0%, #fc0d1b 50%, #eae635 100%);
+      
+      &:before {
+        background-image: linear-gradient(45deg, #eae635 0%, #fc0d1b 50%, #363496 100%);
+      }
     }
+    
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $ease-main;
+      z-index: 2;
+    }
+    
+    &:hover:before {
+      opacity: 1;
+    }
+  }
+  
+  &__content {
+    position: relative;
+    z-index: 3;
   }
   
   &__title {

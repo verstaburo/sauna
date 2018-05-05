@@ -7,6 +7,9 @@ block content
   +b.maplist
     +header()
       +header-line-menu(false, false, 'Добавить сауну')
+    +e.breadcrumbs
+      .container
+        +breadcrumbs(['Главная', 'Результат поиска'])
     +put-block-into-slot('headblock', 'xl')
       +headblock-span('Результат поиска: ', '214 заведений')
     +filter()

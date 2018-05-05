@@ -1,7 +1,8 @@
 mixin typecard(img, name)
   +b.typecard&attributes(attributes)
-    +e.content
-      +e.img
-        img(src='assets/images/'+img)
-      +e.P.name= name
-      +e.P.desc 246 заведений
+    +e.block
+      +e.content
+        +e.img
+          img(src='assets/images/'+img)
+        +e.P.name= name
+        +e.P.desc 246 заведений

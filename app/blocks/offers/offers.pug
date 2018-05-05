@@ -12,8 +12,9 @@ mixin offers()
     
 mixin offers-card(title, img, desc)
   +e.card&attributes(attributes)
-    +e.P.title= title
-    +e.img
-      img(src='assets/images/' + img)
-    +e.desc
-      a(href='#')= desc
+    +e.content
+      +e.P.title= title
+      +e.img
+        img(src='assets/images/' + img)
+      +e.desc
+        a(href='#')= desc

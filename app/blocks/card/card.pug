@@ -246,7 +246,7 @@ mixin card-desc(saleSlotId, saleSlotRes)
       +e.side
         +e.video
           +e.IMG(src='assets/images/place1.jpg').video-bg
-          +e.A(href='https://www.youtube.com/watch?v=30imLMlqK3g' data-fancybox='video1').playbutton
+          +e.A(href='https://www.youtube.com/watch?v=30imLMlqK3g' data-fancybox='gallery').playbutton
         +e.P.sitelink Сайт:
           a(href='#') www.saunasite.ru
 
@@ -278,13 +278,13 @@ mixin card-desc-mult()
       +e.side
         +e.video
           +e.IMG(src='assets/images/place1.jpg').video-bg
-          +e.A(href='https://www.youtube.com/watch?v=30imLMlqK3g' data-fancybox='video1').playbutton
+          +e.A(href='https://www.youtube.com/watch?v=30imLMlqK3g' data-fancybox='gallery').playbutton
         +e.P.sitelink Сайт:
           a(href='#') www.saunasite.ru
 
 //- card-desc-halls
 
-mixin card-desc-halls(heading, subheading, imgCount, mobheading, hallSlotId)
+mixin card-desc-halls(heading, subheading, imgCount, mobheading, hallSlotId, imgPopupId)
   +b.card-desc&attributes(attributes)
     if heading
       +e.H3.heading= heading
@@ -309,7 +309,7 @@ mixin card-desc-halls(heading, subheading, imgCount, mobheading, hallSlotId)
             +e.images
               - for (var i = 1; i <= imgCount; i++)
                 +e.image
-                  +e.A(href='assets/images/place'+i+'.jpg' data-fancybox=hallSlotId+i).imgblock
+                  +e.A(href='#'+imgPopupId+i data-fancybox='gallery2').imgblock
                     img(src='assets/images/place'+i+'.jpg')
           +e.services
             +e.P.service

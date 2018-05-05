@@ -18,6 +18,15 @@
     
     img {
       @include fill-img;
+      transition: transform $ease-main;
+    }
+    
+    &:hover {
+      opacity: 1;
+      
+      img {
+        transform: scale(1.025);
+      }
     }
   }
   
