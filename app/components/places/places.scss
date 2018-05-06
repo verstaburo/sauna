@@ -47,6 +47,12 @@
     }
   }
   
+  .tabs-content {
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
+  
   &__cards {
     padding-top: 2px;
     margin: 0 -10px;
@@ -131,6 +137,12 @@
         display: block;
         text-align: left;
       }
+    }
+  }
+  
+  &__mobile {
+    @include screen('tablet-wide', min) {
+      display: none;
     }
   }
 }

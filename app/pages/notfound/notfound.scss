@@ -1,0 +1,151 @@
+.notfound {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+  &__content {
+    flex: 1;
+    background-color: #edf1f2;
+    padding: 25px 0 71px;
+    
+    @include screen('tablet-small') {
+      padding: 30px 0;
+    }
+  }
+  
+  &__heading {
+    color: #191919;
+    font-size: 34px;
+    font-weight: 300;
+    letter-spacing: -.007em;
+    
+    @include screen('tablet-wide') {
+      font-size: 44px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 30px;
+    }
+    
+    &_large {
+      font-size: 260px;
+      font-weight: 100;
+      margin-bottom: -5px;
+      
+      @include screen('tablet-small') {
+        font-size: 120px;
+      }
+    }
+  }
+  
+  &__block {
+    margin-top: 72px;
+    background-color: #fff;
+    padding: 34px 36px 36px;
+    max-width: 1000px;
+    box-sizing: border-box;
+    
+    @include screen('tablet-small') {
+      margin-top: 40px;
+      padding: 20px;
+    }
+  }
+  
+  &__subheading {
+    color: #191919;
+    font-size: 28px;
+    font-weight: 300;
+    
+    @include screen('tablet-wide') {
+      font-size: 38px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 24px;
+    }
+  }
+  
+  &__text {
+    color: #191919;
+    font-family: $font-second;
+    font-size: 15px;
+    letter-spacing: .02em;
+    margin-top: 32px;
+    padding-left: 4px;
+    
+    @include screen('tablet-wide') {
+      font-size: 25px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 15px;
+    }
+    
+    a {
+      color: $color-blue;
+      border-bottom: 1px dashed rgba($color-blue, .3);
+    }
+    
+    & + & {
+      margin-top: 21px;
+    }
+  }
+  
+  &__button {
+    background-color: #dadfe0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #484848;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    margin-top: 37px;
+    margin-left: 4px;
+    padding: 18px 40px;
+    padding-left: 25px;
+    min-width: 314px;
+    box-sizing: border-box;
+    
+    @include screen('tablet-wide') {
+      font-size: 25px;
+      padding: 20px 40px;
+      margin-top: 40px;
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 15px;
+      padding: 15px 30px;
+      margin-top: 30px;
+      min-width: 0;
+    }
+    
+    > * {
+      display: inline-block;
+    }
+    
+    svg {
+      width: 5px;
+      height: 10px;
+      fill: none;
+      stroke: rgba(#000, .2);
+      margin-right: 16px;
+      
+      @include screen('tablet-wide') {
+        width: 10px;
+        height: 20px;
+      }
+      
+      @include screen('tablet-small') {
+        width: 5px;
+        height: 10px;
+      }
+    }
+  }
+  
+  .header__discounts {
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
+}

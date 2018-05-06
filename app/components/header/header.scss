@@ -235,6 +235,10 @@
       &_side {
         margin-right: auto;
         margin-left: -20px;
+        
+        @include screen('desktop-wide') {
+          margin-left: 0;
+        }
       }
     }
     

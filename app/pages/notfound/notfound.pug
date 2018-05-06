@@ -1,0 +1,26 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = '404'
+
+block content
+  +b.notfound
+    +header()
+      +header-line-menu('карта сайта', 'sitemap.html', 'Добавить заведение', false, 'Личный кабинет')
+    +e.content
+      .container
+        +e.H1.heading._large 404
+        +e.H2.heading Страница не существует или была перемещена
+        +e.block
+          +e.P.subheading Что делать?
+          +e.P.text 1. Не паникуйте
+          +e.P.text 2. Проверьте правильность ввода адреса
+          +e.P.text 3. Воспользуйтесь 
+            a(href='#') поиском
+            |  по каталогу
+          +e.P.text 4. Или попробуйте подобрать сауну 
+            a(href='#') в каталоге
+          +e.A(href='#').button
+            +icon('arrow')
+            span Вернуться назад
+    +footer()

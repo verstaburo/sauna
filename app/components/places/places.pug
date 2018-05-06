@@ -41,6 +41,12 @@ mixin places()
               +infocard('place2.jpg', false, true, 'КОТЕДЖ', 'Избушка у реки', '7 отдельных котеджей').places__card
               +infocard('place3.jpg', true, false, 'САУНА', 'Заречье').places__card
               +infocard('place4.jpg', false, true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Краснопресненские бани', '7 отдельных залов').places__card
+        +e.mobile
+          +e.cards
+            +infocard('place1.jpg', true, true, 'САУНА ПРИ ОТЕЛЕ', 'Чикаго Голд').places__card
+            +infocard('place2.jpg', false, true, 'КОТЕДЖ', 'Избушка у реки', '7 отдельных котеджей').places__card
+            +infocard('place3.jpg', true, false, 'САУНА', 'Заречье').places__card
+            +infocard('place4.jpg', false, true, 'ОБЩЕСТВЕННАЯ БАНЯ', 'Краснопресненские бани', '7 отдельных залов').places__card
               
 mixin places-new()
   +b.places._new&attributes(attributes)
