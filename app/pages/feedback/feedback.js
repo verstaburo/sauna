@@ -38,4 +38,10 @@ export default function sales() {
       }
     });
   }
+
+  $(document).on('click', '.feedback__pagination-item', function (e) {
+    e.preventDefault();
+    $(this).siblings().removeClass('feedback__pagination-item_active');
+    $(this).addClass('feedback__pagination-item_active');
+  });
 }

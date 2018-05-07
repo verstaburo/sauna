@@ -3,6 +3,7 @@ mixin popups()
     +popup-sales()
     +popup-categories()
     +popup-location()
+    +callform()
 
 mixin popup()
   +b.popup&attributes(attributes)
@@ -225,3 +226,27 @@ mixin popup-location()
         +e.button-block
           +e.BUTTON.button Показать 251 сауну
           +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
+
+//- callform
+
+mixin callform()
+  +b.callform#callform&attributes(attributes)
+    +e.heading
+      +e.A(href='#').link Сауна Чикаго Голд
+    +e.tels
+      +e.A(href='tel:+74951234567').tel +7(495)123-4567
+      +e.A(href='tel:+74952345678').tel +7(495)234-5678
+    +e.FORM.form
+      +e.P.text Оставьте свой номер телефона 
+        br
+        | и вам перезвонят в течении 
+        br
+        | нескольких минут
+      +e.field
+        +e.INPUT(type='tel' name='tel').input
+        +e.BUTTON.button ОК
+      +e.P.subtext нажимая «ок» Я даю согласие на 
+        br
+        a(href='#') обработку персональных данных
+    +e.bottom
+      +e.A(href='#').close Закрыть

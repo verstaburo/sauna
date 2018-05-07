@@ -1132,3 +1132,166 @@
     }
   }
 }
+
+.callform {
+  display: none;
+  width: 586px;
+  max-width: calc(100% - 60px);
+  background-color: #fbf69b !important;
+  text-align: center !important;
+  
+  @include screen('tablet-small') {
+    max-width: calc(100% - 40px);
+  }
+  
+  &__heading {
+    border-bottom: 1px solid #d6d184;
+    padding: 27px 20px 19px;
+    
+    @include screen('tablet-small') {
+      padding: 20px;
+    }
+  }
+  
+  &__link {
+    color: #76a1e3;
+    font-size: 27px;
+    letter-spacing: .02em;
+    border-bottom: 1px solid #76a1e3;
+    
+    @include screen('tablet-small') {
+      font-size: 20px;
+    }
+  }
+  
+  &__tels {
+    border-bottom: 1px solid #d6d184;
+    padding: 25px 20px 11px;
+    
+    @include screen('tablet-small') {
+      padding: 20px;
+    }
+  }
+  
+  &__tel {
+    color: #595959;
+    font-size: 27px;
+    letter-spacing: .015em;
+    margin: 10px 20px;
+    display: inline-block;
+    
+    @include screen('tablet-small') {
+      font-size: 20px;
+    }
+  }
+  
+  &__form {
+    box-sizing: border-box;
+    padding: 32px 27px 24px 44px;
+    text-align: left !important;
+    
+    @include screen('tablet-small') {
+      padding: 20px;
+    }
+  }
+  
+  &__text {
+    color: #595959;
+    font-size: 24px;
+    line-height: (25/24);
+    letter-spacing: .02em;
+    
+    @include screen('tablet-small') {
+      font-size: 17px;
+    }
+    
+    br {
+      @include screen('phone') {
+        display: none;
+      }
+    }
+  }
+  
+  &__field {
+    display: flex;
+    margin-top: 25px;
+  }
+  
+  &__input {
+    flex: 1;
+    background-color: #fff;
+    color: #595959;
+    font-size: 27px;
+    letter-spacing: .02em;
+    padding: 17px;
+    min-width: 0;
+    
+    @include screen('tablet-small') {
+      font-size: 20px;
+      padding: 15px;
+    }
+  }
+  
+  &__button {
+    background-color: #f7e26f;
+    padding: 17px 28px;
+    color: #595959;
+    font-size: 27px;
+    font-weight: 500;
+    letter-spacing: .02em;
+    
+    @include screen('tablet-small') {
+      font-size: 20px;
+      padding: 15px 25px;
+    }
+    
+    @include screen('phone') {
+      padding: 15px;
+    }
+  }
+  
+  &__subtext {
+    margin-top: 12px;
+    margin-left: 3px;
+    color: #595959;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: (23/21);
+    letter-spacing: .02em;
+    
+    @include screen('tablet-small') {
+      font-size: 16px;
+    }
+    
+    a {
+      color: #76a1e3;
+      border-bottom: 1px dashed #76a1e3;
+    }
+    
+    br {
+      @include screen('phone') {
+        display: none;
+      }
+    }
+  }
+  
+  &__bottom {
+    padding: 14px 20px 21px;
+    
+    @include screen('tablet-small') {
+      padding: 20px;
+    }
+  }
+  
+  &__close {
+    color: #595959;
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: .02em;
+    
+    @include screen('tablet-small') {
+      font-size: 20px;
+    }
+  }
+}

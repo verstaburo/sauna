@@ -18,7 +18,7 @@ export default function popups() {
     touch: false,
   });
 
-  $(document).on('click', '.popup__close', () => {
+  $(document).on('click', '.popup__close, .callform__close', () => {
     $.fancybox.close();
   });
 
@@ -157,5 +157,19 @@ export default function popups() {
       }
     });
     $(this).prop('checked', true).change();
+  });
+
+  $(document).on('click', '.callform__button', function (e) {
+    e.preventDefault();
+    let err = 0;
+    const $this = $(this);
+    const form = $this.parents('.callform__form');
+    const input = form.find('.callform__input');
+    input.each(function () {
+      if ($(this).val() === '') err += 1;
+    });
+    if (err < 1) {
+      form.submit();
+    }
   });
 }

@@ -143,7 +143,7 @@ mixin card-contacts(mult)
                 a(href='tel:+74954223222') +7 (495) 422-32-22
               +e.P.tel
                 a(href='tel:+79555332323') +7 (955) 533-23-23
-            +e.A(href='#').button
+            +e.A(href='#callform').button.js-fancybox-popup
               span.hide-md Заказать сауну
               span.show-md Позвонить
       else
@@ -154,7 +154,7 @@ mixin card-contacts(mult)
               a(href='tel:+74954223222') +7 (495) 422-32-22
             +e.P.tel
               a(href='tel:+79555332323') +7 (955) 533-23-23
-          +e.A(href='#').button
+          +e.A(href='#callform').button.js-fancybox-popup
             span.hide-md Заказать сауну
             span.show-md Позвонить
 
@@ -246,7 +246,7 @@ mixin card-desc(saleSlotId, saleSlotRes)
       +e.side
         +e.video
           +e.IMG(src='assets/images/place1.jpg').video-bg
-          +e.A(href='https://www.youtube.com/watch?v=30imLMlqK3g' data-fancybox='gallery').playbutton
+          +e.A(href='https://www.youtube.com/watch?v=30imLMlqK3g' data-fancybox='video').playbutton
         +e.P.sitelink Сайт:
           a(href='#') www.saunasite.ru
 
@@ -278,7 +278,7 @@ mixin card-desc-mult()
       +e.side
         +e.video
           +e.IMG(src='assets/images/place1.jpg').video-bg
-          +e.A(href='https://www.youtube.com/watch?v=30imLMlqK3g' data-fancybox='gallery').playbutton
+          +e.A(href='https://www.youtube.com/watch?v=30imLMlqK3g' data-fancybox='video').playbutton
         +e.P.sitelink Сайт:
           a(href='#') www.saunasite.ru
 

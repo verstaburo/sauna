@@ -111,6 +111,10 @@
       &_active {
         border-color: $color-blue;
         color: $color-blue;
+        
+        .feedback__pagination-icon {
+          stroke: $color-blue;
+        }
       }
     }
     
@@ -119,6 +123,7 @@
       height: 13px;
       fill: none;
       stroke: #1f1f1f;
+      transition: stroke $ease-main;
       
       @include screen('tablet-small') {
         width: 4px;

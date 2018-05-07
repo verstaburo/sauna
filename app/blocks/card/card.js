@@ -6,14 +6,15 @@ export default function card() {
     e.preventDefault();
     let err = 0;
     const $this = $(this);
-    const input = $('.card-reviewform__field');
+    const form = $this.parents('.card-reviewform__form');
+    const input = form.find('.card-reviewform__field');
     input.each(function () {
       if ($(this).val() === '') err += 1;
     });
     if (err < 1) {
       $this.parents('.card-reviewform').addClass('success');
       setTimeout(function () {
-        $this.parents('form').submit();
+        form.submit();
       }, 5000);
     }
   });
