@@ -136,6 +136,24 @@
     }
   }
   
+  &__selectbox {
+    margin-right: 10px;
+    position: relative;
+    
+    @include screen('desktop-wide') {
+      margin-right: 0;
+    }
+    
+    @include screen('tablet-wide') {
+      position: static;
+      max-width: calc(100% - 230px);
+    }
+    
+    @include screen('tablet-small') {
+      max-width: calc(100% - 120px);
+    }
+  }
+  
   &__select {
     border: 2px solid #f6e177;
     height: 35px;
@@ -143,17 +161,13 @@
     font-size: 18px;
     line-height: 33px;
     letter-spacing: .025em;
-    margin-right: 10px;
     cursor: pointer;
     min-width: 135px;
     position: relative;
     padding: 0 40px 0 12px;
     box-sizing: border-box;
     flex-shrink: 0;
-    
-    @include screen('desktop-wide') {
-      margin-right: 0;
-    }
+    white-space: nowrap;
     
     @include screen('tablet-wide') {
       min-width: 196px;
@@ -191,6 +205,245 @@
         right: 12px;
         top: 0;
       }
+    }
+    
+    span {
+      @include screen('tablet-wide') {
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  
+  &__dropdown {
+    z-index: 10;
+    background: #f1f1f1;
+    padding: 18px 14px;
+    box-shadow: 0 6px 20px -7px #000;
+    width: 300px;
+    left: auto;
+    right: 0;
+    
+    @include screen('tablet-wide') {
+      top: 0;
+      left: 0;
+      width: auto;
+      margin-top: 0;
+      background-color: #fff;
+      padding: 61px 0 20px;
+      overflow: hidden;
+    }
+    
+    &-close {
+      position: absolute;
+      right: 28px;
+      top: 22px;
+      width: 47px;
+      height: 47px;
+      border-radius: 1000px;
+      border: 1px solid #d6d2d1;
+      
+      @include screen('tablet-wide', min) {
+        display: none;
+      }
+      
+      @include screen('tablet-small') {
+        right: 15px;
+        top: 11px;
+        width: 40px;
+        height: 40px;
+      }
+      
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        @include center-margin(16px, 2px);
+        background-color: #7f7f7f;
+      }
+      
+      &:before {
+        transform: rotate(50deg);
+      }
+      
+      &:after {
+        transform: rotate(-50deg);
+      }
+    }
+    
+    .ui-autocomplete {
+      position: static !important;
+      background-color: #fff;
+      width: 100% !important;
+      
+      @include screen('tablet-wide') {
+        padding-top: 27px;
+        overflow: hidden;
+        overflow-y: auto;
+        max-height: calc(100vh - 181px);
+        margin-right: -20px;
+        padding-right: 20px;
+      }
+      
+      @include screen('tablet-small') {
+        padding-top: 18px;
+        max-height: calc(100vh - 145px);
+      }
+    }
+    
+    .ui-autocomplete-category {
+      color: #000000;
+      font-family: $font-second;
+      font-size: 30px;
+      font-weight: bold;
+      padding: 26px 25px 11px;
+      line-height: 1.2;
+      position: relative;
+      
+      @include screen('tablet-wide', min) {
+        display: none;
+      }
+      
+      @include screen('tablet-small') {
+        font-size: 20px;
+        padding: 18px 20px 10px;
+      }
+      
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 25px;
+        right: 0;
+        height: 1px;
+        background-color: #d6d2d1;
+        
+        @include screen('tablet-small') {
+          left: 20px;
+        }
+      }
+    }
+    
+    .ui-menu-item {
+      font-size: 16px;
+      
+      &:last-child {
+        .ui-menu-item-wrapper:after {
+          @include screen('tablet-wide') {
+            display: none;
+          }
+        }
+      }
+    }
+    
+    .ui-menu-item-wrapper {
+      padding: 10px;
+      line-height: 1.2;
+      transition: background-color $ease-main;
+      
+      @include screen('tablet-wide') {
+        color: #000000;
+        font-family: $font-second;
+        font-size: 27px;
+        padding: 27px 25px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+      
+      @include screen('tablet-small') {
+        font-size: 18px;
+        padding: 18px 20px;
+      }
+      
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 25px;
+        right: 0;
+        height: 1px;
+        background-color: #d6d2d1;
+        
+        @include screen('tablet-wide', min) {
+          display: none;
+        }
+        
+        @include screen('tablet-small') {
+          left: 20px;
+        }
+      }
+    }
+    
+    .ui-autocomplete-count {
+      color: #acabab;
+      font-family: $font-main;
+      font-size: 24px;
+      letter-spacing: .02em;
+      margin-left: 20px;
+      margin-top: 4px;
+      width: 110px;
+      display: inline-block;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      
+      @include screen('tablet-wide', min) {
+        display: none;
+      }
+      
+      @include screen('tablet-small') {
+        font-size: 16px;
+        margin-left: 12px;
+        width: 50px;
+        margin-top: 2px;
+      }
+    }
+    
+    .ui-menu-item-wrapper.ui-state-active {
+      margin: 0;
+      background-color: $color-yellow;
+      
+      &:after {
+        @include screen('tablet-wide') {
+          left: 0;
+        }
+      }
+    }
+  }
+  
+  &__city {
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    color: #333;
+    box-shadow: inset 0 2px 4px #BDBDBD;
+    border-bottom: 1px solid #f1f1f1;
+    line-height: 1.2;
+    
+    @include screen('tablet-wide') {
+      color: #000000;
+      font-family: $font-second;
+      font-size: 27px;
+      text-align: center;
+      box-shadow: none;
+      border-bottom: 1px solid #000;
+      padding: 20px 0;
+      margin: 0 25px;
+      width: calc(100% - 50px);
+    }
+    
+    @include screen('tablet-small') {
+      font-size: 18px;
+      padding: 12px 0;
+      margin: 0 20px;
+      width: calc(100% - 40px);
     }
   }
   
