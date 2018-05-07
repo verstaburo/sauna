@@ -11,6 +11,7 @@
     <link href="favicon.ico" rel="shortcut icon">
     <link href="assets/styles/app.min.css" rel="stylesheet">
     <script src="assets/scripts/libs/jquery.min.js"></script>
+    <script src="assets/scripts/libs/jquery-ui.min.js"></script>
 </head>
 
 <body>
@@ -19,7 +20,10 @@
             <div class="container"><a class="header__logo" href="/"><img src="assets/images/vs_logo.svg"/></a>
                 <form class="header__search"><button class="header__search-button"><img src="assets/images/search.png"/></button><input class="header__search-input" placeholder="Название сауны, тип парной или адрес  г. Москва" type="text" /></form><a class="header__discounts js-fancybox-popup"
                     href="#salespopup">Акции и скидки</a>
-                <div class="header__select">Москва<svg class="header__select-arrow"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></div>
+                <div class="header__selectbox">
+                    <div class="header__select js-dropdown-toggle"><span>Москва</span><svg class="header__select-arrow"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></div>
+                    <div class="js-dropdown dropdown header__dropdown" id="city-dropdown"><a class="header__dropdown-close" href="#"></a><input class="header__city" type="text" name="city" placeholder="Введите ваш город" id="city-autocomplete" /></div>
+                </div>
             </div>
             <div class="header__line">
                 <div class="header__menu"><a class="header__menu-link" href="#"><svg class="header__menu-icon"><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg>Добавить заведение</a></div>
