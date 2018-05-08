@@ -8,6 +8,6 @@ export default function tags() {
 
   $(document).on('click', '.tags__side-button', function (e) {
     e.preventDefault();
-    $(this).siblings('.tags__list').find('.tags__list-item').addClass('tags__list-item_active');
+    $(this).siblings('.tags__list-item').addClass('tags__list-item_active');
   });
 }

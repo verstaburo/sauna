@@ -45,28 +45,26 @@
   }
   
   &__side-button {
-    position: absolute;
-    top: 4px;
-    right: -66px;
-    padding: 0 9px;
+    margin: 4px;
+    display: inline-block;
     color: #ffffff;
-    font-size: 14px;
-    line-height: 25px;
-    letter-spacing: .02em;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 40px;
     border-radius: 5px;
-    border: 1px solid #aed8fb;
-    
-    @include screen('desktop-large') {
-      right: 30px;
-    }
+    padding: 0 8px;
+    box-shadow: inset 0 0 0 1px #aed8fb;
     
     @include screen('tablet-wide') {
+      position: absolute;
+      letter-spacing: .02em;
+      right: 30px;
       font-size: 28px;
       font-weight: 500;
       line-height: (43.75/28);
       text-decoration: underline;
       top: -2px;
-      border: 0;
+      box-shadow: none;
     }
     
     @include screen('tablet-small') {

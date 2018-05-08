@@ -1,6 +1,7 @@
 mixin popups()
   +b.popups&attributes(attributes)
     +popup-sales()
+    +popup-types()
     +popup-categories()
     +popup-location()
     +callform()
@@ -39,28 +40,48 @@ mixin popup-sales()
         +e.SPAN.close-icon
       +e.P.heading Выберите подходящую акцию
       +e.UL.sales
-        +label-sale('sale1', 'Любая')
-        +label-sale('sale2', 'Час в подарок')
-        +label-sale('sale3', 'День рождения')
-        +label-sale('sale4', 'Подарок от заведения')
-        +label-sale('sale5', 'Скидка на СПА (SPA)')
-        +label-sale('sale6', 'Мальчишник')
-        +label-sale('sale7', 'Девичник')
-        +label-sale('sale8', 'Подарок от заведения')
-        +label-sale('sale9', 'Подарок от заведения')
+        +label-sale('sales', 'sale1', 'Любая')
+        +label-sale('sales', 'sale2', 'Час в подарок')
+        +label-sale('sales', 'sale3', 'День рождения')
+        +label-sale('sales', 'sale4', 'Подарок от заведения')
+        +label-sale('sales', 'sale5', 'Скидка на СПА (SPA)')
+        +label-sale('sales', 'sale6', 'Мальчишник')
+        +label-sale('sales', 'sale7', 'Девичник')
+        +label-sale('sales', 'sale8', 'Подарок от заведения')
+        +label-sale('sales', 'sale9', 'Подарок от заведения')
       +e.button-block
         +e.BUTTON.button Показать 251 сауну
         +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
       
-mixin label-sale(value, text)
+mixin label-sale(name, value, text)
   +e.LI.sales-item
     +e.LABEL.sale
-      input(type='checkbox' name='sale' value=value)
+      input(type='radio' name=name value=value)
       +e.SPAN.sale-icon
         +icon('diamond')
       +e.P.sale-text= text
         +e.SPAN.sale-check
           +icon('check')
+
+//- popup-types
+
+mixin popup-types()
+  +b.popup._types#typespopup&attributes(attributes)
+    +e.FORM.container
+      +e.A(href='#').close
+        +e.SPAN.close-text Закрыть
+        +e.SPAN.close-icon
+      +e.P.heading Выберите тип сауны
+      +e.UL.sales
+        +label-sale('types', 'type1', 'Любой')
+        +label-sale('types', 'type2', 'Элитный отдых')
+        +label-sale('types', 'type3', 'Отдохнуть вдвоем')
+        +label-sale('types', 'type4', 'Провести мероприятие')
+        +label-sale('types', 'type5', 'Попариться')
+        +label-sale('types', 'type6', 'Отдохнуть компанией')
+      +e.button-block
+        +e.BUTTON.button Показать 251 сауну
+        +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
 
 //- popup-categories
 
