@@ -52,13 +52,13 @@
       margin-top: 53px;
       
       @include screen('tablet-wide') {
-        padding-top: 34px;
+        padding-top: 74px;
         margin-top: 46px;
         border-top: 1px solid rgba(#000, .1);
       }
       
       @include screen('tablet-small') {
-        padding-top: 17px;
+        padding-top: 37px;
         margin-top: 23px;
       }
     }

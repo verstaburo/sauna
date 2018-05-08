@@ -621,4 +621,70 @@
       }
     }
   }
+  
+  &_group {
+    
+    .review {
+      
+      &__top {
+        @include screen('tablet-wide') {
+          display: block;
+          padding-bottom: 10px;
+          margin-bottom: 34px;
+        }
+        
+        @include screen('tablet-small') {
+          margin-bottom: 17px;
+        }
+      }
+      
+      &__mob-top {
+        @include screen('tablet-wide') {
+          display: none;
+        }
+      }
+      
+      &__author {
+        @include screen('tablet-wide') {
+          display: block;
+          margin-bottom: 17px;
+        }
+        
+        @include screen('tablet-small') {
+          margin-bottom: 10px;
+        }
+        
+        &-name {
+          @include screen('tablet-wide') {
+            color: #202020;
+            font-family: $font-second;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.36;
+            letter-spacing: .02em;
+            margin-right: 0;
+          }
+          
+          @include screen('tablet-small') {
+            font-size: 18px;
+          }
+        }
+      }
+      
+      &__date {
+        @include screen('tablet-wide') {
+          color: #a4a4a4;
+          font-size: 30px;
+          font-weight: 400;
+          line-height: 1.2;
+          margin-left: 0;
+          margin-top: 5px;
+        }
+        
+        @include screen('tablet-small') {
+          font-size: 16px;
+        }
+      }
+    }
+  }
 }
