@@ -65,6 +65,7 @@
       text-decoration: underline;
       top: -2px;
       box-shadow: none;
+      margin: 0;
     }
     
     @include screen('tablet-small') {

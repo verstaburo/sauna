@@ -159,10 +159,10 @@ mixin popup-location()
         +e.SPAN.close-icon
       +e.P.heading._medium Расположение:
         +e.tab-links
-          +e.A(href='#' data-tab-target='location1').tab-link.active на карте
-          +e.A(href='#' data-tab-target='location2').tab-link по метро
-          +e.A(href='#' data-tab-target='location3').tab-link по районам
-      +e.FORM.tab(data-tab='location1' data-tab-group='locations').active
+          +e.A(href='#' data-tab-target='map').tab-link.active на карте
+          +e.A(href='#' data-tab-target='metro').tab-link по метро
+          +e.A(href='#' data-tab-target='districts').tab-link по районам
+      +e.FORM.tab(data-tab='map' data-tab-group='locations').active
         +e.map-top
           +e.A(href='#').map-link Любое расположение
           +e.P.address Адрес: Москва, ул. Арбат 1
@@ -181,7 +181,7 @@ mixin popup-location()
         +e.button-block
           +e.BUTTON.button Показать 251 сауну
           +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
-      +e.FORM.tab(data-tab='location2' data-tab-group='locations')
+      +e.FORM.tab(data-tab='metro' data-tab-group='locations')
         +e.metro-top
           +e.P.metro-hint Выберите  станции метро
         +e.metro
@@ -215,7 +215,7 @@ mixin popup-location()
         +e.button-block
           +e.BUTTON.button Показать 251 сауну
           +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
-      +e.FORM.tab(data-tab='location3' data-tab-group='locations')
+      +e.FORM.tab(data-tab='districts' data-tab-group='locations')
         +e.districts
           +e.cols._scrollable
             +e.col

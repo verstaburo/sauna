@@ -163,7 +163,6 @@
     font-family: $font-main;
     font-size: 48px;
     color: #78a2e1;
-    text-decoration: underline;
     letter-spacing: .02em;
     font-weight: 300;
     position: relative;
@@ -176,6 +175,10 @@
     @include screen('tablet-small') {
       font-size: 24px;
       margin-right: 40px;
+    }
+    
+    &-text {
+      border-bottom: 1px solid #78a2e1;
     }
     
     &-icon {
@@ -399,6 +402,49 @@
     svg {
       width: 100%;
       height: 100%;
+    }
+  }
+  
+  &__reset {
+    
+    display: none;
+    position: fixed;
+    z-index: 100;
+    font-size: 0;
+    text-align: center;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    
+    &.is-active {
+      @include screen('tablet-wide') {
+        display: block;
+      }
+    }
+    
+    &-item {
+      display: inline-block;
+      font-size: 26px;
+      line-height: 70px;
+      border-left: 1px solid #999;
+      padding: 0 20px;
+      color: #fff;
+      box-shadow: 0px 5px 1px rgba(0,0,0,0.2);
+      background: rgba(0,0,0,0.7);
+      pointer-events: all;
+      transition: all 0s;
+      
+      @include screen('tablet-small') {
+        font-size: 16px;
+        line-height: 40px;
+        padding: 0 10px;
+      }
+      
+      &:first-child {
+        border-left: 0;
+      }
     }
   }
 }

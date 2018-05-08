@@ -128,7 +128,6 @@ export default function popups() {
     icons.removeClass('popup__count-icon_active');
     icons.each(function () {
       const currentIndex = parseInt($(this).attr('data-count'), 10);
-      console.log(currentIndex);
       if (currentIndex <= index) {
         $(this).addClass('popup__count-icon_active');
       }
@@ -151,7 +150,6 @@ export default function popups() {
     icons.removeClass('popup__count-icon_active');
     icons.each(function () {
       const currentIndex = parseInt($(this).attr('data-count'), 10);
-      console.log(currentIndex);
       if (currentIndex <= count) {
         $(this).addClass('popup__count-icon_active');
       }
@@ -171,5 +169,67 @@ export default function popups() {
     if (err < 1) {
       form.submit();
     }
+  });
+
+  $(document).on('click', '.popup__button', function (e) {
+    e.preventDefault();
+    const form = $(this).parents('form');
+    const popup = $(this).parents('.popup');
+    const popupId = popup.attr('id');
+    let checkedInput;
+    let checkedInputText;
+
+    if (popup.hasClass('popup_types')) {
+      checkedInput = form.find('input:checked');
+      checkedInputText = checkedInput.nextAll('.popup__sale-text').text();
+    } else if (popup.hasClass('popup_location')) {
+      if (form.attr('data-tab') === 'metro' || form.attr('data-tab') === 'districts') {
+        let first = true;
+        checkedInput = form.find('input:checked');
+        checkedInput.each(function () {
+          const currentText = $(this).nextAll('.popup__label-text').text();
+          if (first) {
+            checkedInputText = currentText;
+            first = false;
+          } else {
+            checkedInputText += `, ${currentText}`;
+          }
+        });
+      }
+    } else if (popup.hasClass('popup_categories')) {
+      let first = true;
+      checkedInput = form.find('input:checked');
+      checkedInput.each(function () {
+        const currentText = $(this).nextAll('.popup__label-text, .popup__count-text').text();
+        if (first) {
+          checkedInputText = currentText;
+          first = false;
+        } else {
+          checkedInputText += `, ${currentText}`;
+        }
+      });
+    }
+
+    const checkedCount = checkedInput.length;
+    let totalCount = 0;
+    const filterSelect = $('.filter__list-select');
+    const targetSelect = $(`.filter__list-select[href="#${popupId}"]`);
+
+    targetSelect.attr('data-count', checkedCount);
+    if (checkedInputText === undefined) {
+      checkedInputText = targetSelect.attr('data-default');
+    }
+    targetSelect.find('.filter__list-select-text').text(checkedInputText);
+    filterSelect.each(function () {
+      totalCount += parseInt($(this).attr('data-count'), 10);
+    });
+    const filterReset = $('.filter__reset');
+    if (totalCount > 0) {
+      filterReset.addClass('is-active');
+    } else {
+      filterReset.removeClass('is-active');
+    }
+    filterReset.find('.filter__reset-count').text(totalCount);
+    $.fancybox.close();
   });
 }

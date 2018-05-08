@@ -16,4 +16,9 @@ export default function filter() {
     }
     $(this).parents('.filter__tags').find('.filter__tag').remove();
   });
+
+  $(document).on('click', '.filter__reset-item_res', (e) => {
+    e.preventDefault();
+    location.reload();
+  });
 }

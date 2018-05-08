@@ -16,7 +16,6 @@ export default function dragscroll() {
   });
   $(document).on('mousedown', '.dragscroll', function (c) {
     clicked = true;
-    console.log('clicked');
     curXPos = c.pageX - ($(this).offset().left);
     curYPos = c.pageY - ($(this).offset().top);
     $(this).addClass('dragging');
