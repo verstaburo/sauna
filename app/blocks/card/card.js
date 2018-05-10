@@ -11,6 +11,10 @@ export default function card() {
     input.each(function () {
       if ($(this).val() === '') err += 1;
     });
+    if (form.find('[data-error]').length) {
+      form.find('input[type="file"]').val('');
+      form.find('input[type="hidden"]').remove();
+    }
     if (err < 1) {
       $this.parents('.card-reviewform').addClass('success');
       setTimeout(function () {
@@ -38,16 +42,23 @@ export default function card() {
         const validWidth = $(elem).attr('data-correct-resolution').split('x')[0];
         const validHeight = $(elem).attr('data-correct-resolution').split('x')[1];
         const errorEl = $(elem).next('.card-reviewform__file-error');
+        const preview = $(elem).find('.card-reviewform__file-preview:not(.is-hidden)');
         errorEl.text('');
         $(elem).removeAttr('data-error');
 
         if (file[i].type.split('/')[0] !== 'image') {
           errorEl.text('Файл не является изображением');
+          $(elem).attr('data-error', 'true');
+          preview.remove();
+          $(elem).find('input[type="hidden"]').remove();
           break;
         }
 
         if (file[i].size > validSize) {
           errorEl.text('Размер файла превышает допустимый');
+          $(elem).attr('data-error', 'true');
+          preview.remove();
+          $(elem).find('input[type="hidden"]').remove();
           break;
         }
 
@@ -71,6 +82,8 @@ export default function card() {
                 callback(false);
               } else {
                 errorEl.text('Разрешение файла меньше допустимого');
+                $(elem).find('.card-reviewform__file-preview:not(.is-hidden)').remove();
+                $(elem).find('input[type="hidden"]').remove();
                 callback(true);
               }
             };
