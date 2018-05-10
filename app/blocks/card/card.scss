@@ -278,6 +278,7 @@
     box-sizing: border-box;
     max-width: 660px;
     display: flex;
+    flex-wrap: wrap;
     
     @include screen('tablet-wide') {
       max-width: none;
@@ -285,6 +286,10 @@
     
     @include screen('tablet-small') {
       padding: 20px;
+    }
+    
+    &.dragover {
+      opacity: .8;
     }
     
     &-label {
@@ -334,6 +339,116 @@
       height: 17px;
       fill: $color-blue;
       margin: -6px auto 0;
+    }
+    
+    &-previews {
+      width: 100%;
+      font-size: 0;
+      margin: 10px -10px -10px;
+      
+      @include screen('tablet-wide') {
+        margin: 16px -16px -16px;
+      }
+      
+      @include screen('tablet-small') {
+        margin: 8px -8px -8px;
+      }
+    }
+    
+    &-preview {
+      display: inline-block;
+      width: 153px;
+      height: 85px;
+      position: relative;
+      overflow: hidden;
+      margin: 10px;
+      
+      @include screen('tablet-wide') {
+        width: calc(50% - 32px);
+        height: auto;
+        margin: 16px;
+        padding-top: 27.5%;
+      }
+      
+      @include screen('tablet-small') {
+        width: calc(50% - 16px);
+        margin: 8px;
+      }
+      
+      &.is-hidden {
+        display: none;
+      }
+      
+      img {
+        @include fill-img;
+      }
+    }
+    
+    &-preview-close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      background-color: rgba(#000, .9);
+      z-index: 2;
+      
+      @include screen('tablet-wide') {
+        width: 40px;
+        height: 40px;
+      }
+      
+      @include screen('tablet-small') {
+        width: 30px;
+        height: 30px;
+      }
+      
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        @include center-margin(15px, 2px);
+        background-color: #fff;
+        
+        @include screen('tablet-wide') {
+          width: 20px;
+        }
+        
+        @include screen('tablet-small') {
+          width: 15px;
+        }
+      }
+      
+      &:before {
+        transform: rotate(45deg);
+      }
+      
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+    
+    &-error {
+      opacity: 0.5;
+      color: #ff0000;
+      font-family: $font-second;
+      font-style: italic;
+      font-size: 14px;
+      line-height: (22/14);
+      letter-spacing: .02em;
+      margin-left: 10px;
+      margin-top: 15px;
+
+      @include screen('tablet-wide') {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+
+      @include screen('tablet-small') {
+        margin-top: 10px;
+        font-size: 14px;
+      }
     }
   }
   

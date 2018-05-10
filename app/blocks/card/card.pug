@@ -16,10 +16,15 @@ mixin card-reviewform()
           +e.form-section._top
             +e.INPUT(type='text' name='name' placeholder='Ваше имя и фамилия').field._short
             +e.TEXTAREA(name='comment' placeholder='Ваш отзыв').field._textarea
-            +e.file
+            +e.file(data-correct-size='3000000' data-correct-resolution='700x450')
               +e.LABEL.file-label Добавить фото
-                input(type='file')
+                input(type='file' multiple)
               +icon('file_arrow').__file-icon
+              +e.file-previews
+                +e.file-preview.is-hidden
+                  +e.A(href='#').file-preview-close
+                  img
+            +e.P.file-error
             +e.P.hint Указывать телефон, электронную почту или адрес сайта на фото запрещено!
               br
               | Файлы должны быть  не меньше, чем 700x450 пикселей, и не превышать 3 Мб
