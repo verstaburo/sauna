@@ -25,8 +25,9 @@
                     <div class="js-dropdown dropdown header__dropdown" id="city-dropdown"><a class="header__dropdown-close" href="#"></a><input class="header__city" type="text" name="city" placeholder="Введите ваш город" id="city-autocomplete" /></div>
                 </div>
             </div>
-            <div class="header__line"><img class="header__linebg" src="assets/images/linebg2.jpg" alt="" role="presentation" /></div>
         </div>
+        <div data-slot-id="filter" data-slot-res="md"></div>
+        <div class="topline sales__topline"><img class="topline__linebg" src="assets/images/linebg2.jpg" alt="" role="presentation" /></div>
         <div class="sales__breadcrumbs">
             <div class="container">
                 <ul class="breadcrumbs">
@@ -35,38 +36,39 @@
                 </ul>
             </div>
         </div>
-        <div data-slot-id="headblock" data-slot-res="xl">
-            <div data-target-slot="headblock">
-                <div class="headblock">
-                    <div class="container">
-                        <h1 class="headblock__heading">Акции на день рождения</h1>
-                        <p class="headblock__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться
-                            от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%).</p>
-                    </div>
-                </div>
+        <div class="headblock">
+            <div class="container">
+                <h1 class="headblock__heading">Акции на день рождения</h1>
+                <p class="headblock__text">Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от
+                    напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%).</p>
             </div>
         </div>
-        <div class="filter">
-            <div class="filter__reset">
-                <div class="filter__reset-item">Фильтры: <span class="filter__reset-count">4</span></div><a class="filter__reset-item filter__reset-item_res" href="#">Сбросить все  </a></div><img class="filter__bg" src="assets/images/bg1.svg" alt="" role="presentation" />
-            <div class="container">
-                <p class="filter__heading">Фильтр поиска:</p>
-                <div class="filter__list">
-                    <div class="filter__list-item">
-                        <div class="filter__list-icon"><img src="assets/images/filter1.png" /></div>
-                        <p class="filter__list-text"><a class="js-fancybox-popup" href="#typespopup">Тип отдыха</a></p>
-                        <p class="filter__list-text filter__list-text_mobile">Тип отдыха</p><a class="filter__list-select js-fancybox-popup" href="#typespopup" data-count="0" data-default="Любой"><span class="filter__list-select-text">Любой</span><svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></a></div>
+        <div data-slot-id="filter" data-slot-res="xl">
+            <div data-target-slot="filter">
+                <div class="filter">
+                    <div class="filter__reset">
+                        <div class="filter__reset-item">Фильтры: <span class="filter__reset-count">4</span></div><a class="filter__reset-item filter__reset-item_res" href="#">Сбросить все  </a></div><img class="filter__bg" src="assets/images/bg1.svg" alt="" role="presentation" />
                     <div
-                        class="filter__list-item">
-                        <div class="filter__list-icon filter__list-icon_cover"><img src="assets/images/filter2.jpg" /></div>
-                        <p class="filter__list-text"><a class="js-fancybox-popup" href="#locationpopup">Расположение: карта, метро, районы</a></p>
-                        <p class="filter__list-text filter__list-text_mobile">Расположение</p><a class="filter__list-select js-fancybox-popup" href="#locationpopup" data-count="0" data-default="Любое"><span class="filter__list-select-text">Любое</span><svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></a></div>
-                <div
-                    class="filter__list-item">
-                    <div class="filter__list-icon"><img src="assets/images/filter3.jpg" /></div>
-                    <p class="filter__list-text"><a class="js-fancybox-popup" href="#categoriespopup">Стоимость, тип парной и другое</a></p>
-                    <p class="filter__list-text filter__list-text_mobile">Дополнительно</p><a class="filter__list-select js-fancybox-popup" href="#categoriespopup" data-count="0" data-default="Ничего не выбрано"><span class="filter__list-select-text">Ничего не выбрано</span><svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></a></div>
+                        class="container">
+                        <p class="filter__heading">Фильтр поиска:</p>
+                        <div class="filter__list">
+                            <div class="filter__list-item">
+                                <div class="filter__list-icon"><img src="assets/images/filter1.png" /></div>
+                                <p class="filter__list-text"><a class="js-fancybox-popup" href="#typespopup">Тип отдыха</a></p>
+                                <p class="filter__list-text filter__list-text_mobile">Тип отдыха</p><a class="filter__list-select js-fancybox-popup" href="#typespopup" data-count="0" data-default="Любой"><span class="filter__list-select-text">Любой</span><svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></a></div>
+                            <div
+                                class="filter__list-item">
+                                <div class="filter__list-icon filter__list-icon_cover"><img src="assets/images/filter2.jpg" /></div>
+                                <p class="filter__list-text"><a class="js-fancybox-popup" href="#locationpopup">Расположение: карта, метро, районы</a></p>
+                                <p class="filter__list-text filter__list-text_mobile">Расположение</p><a class="filter__list-select js-fancybox-popup" href="#locationpopup" data-count="0" data-default="Любое"><span class="filter__list-select-text">Любое</span><svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></a></div>
+                        <div
+                            class="filter__list-item">
+                            <div class="filter__list-icon"><img src="assets/images/filter3.jpg" /></div>
+                            <p class="filter__list-text"><a class="js-fancybox-popup" href="#categoriespopup">Стоимость, тип парной и другое</a></p>
+                            <p class="filter__list-text filter__list-text_mobile">Дополнительно</p><a class="filter__list-select js-fancybox-popup" href="#categoriespopup" data-count="0" data-default="Ничего не выбрано"><span class="filter__list-select-text">Ничего не выбрано</span><svg class="filter__list-select-icon"><use xlink:href="assets/images/icon.svg#icon_arrow_down"></use></svg></a></div>
+            </div>
         </div>
+    </div>
     </div>
     </div>
     <div class="switcher">
@@ -77,9 +79,8 @@
     </div>
     <div class="mapblock">
         <div class="map mapblock__map" id="map"></div>
-        <div class="mapblock__container container"><a class="mapblock__button" href="maplist.html"><img class="mapblock__button-icon" src="assets/images/map_arrow.png" alt="" role="presentation"/>Показать на карте</a></div>
+        <div class="mapblock__container container"><a class="mapblock__button" href="maplist.html"><img class="mapblock__button-icon" src="assets/images/map_arrow.png" alt="" role="presentation"/>Показать заведения рядом</a></div>
     </div>
-    <div data-slot-id="headblock" data-slot-res="md"></div>
     <div class="sales__content">
         <div class="sales__container container">
             <div class="sales__list">

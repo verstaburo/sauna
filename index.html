@@ -25,9 +25,9 @@
                     <div class="js-dropdown dropdown header__dropdown" id="city-dropdown"><a class="header__dropdown-close" href="#"></a><input class="header__city" type="text" name="city" placeholder="Введите ваш город" id="city-autocomplete" /></div>
                 </div>
             </div>
-            <div class="header__line">
-                <div class="header__menu"><a class="header__menu-link" href="sitemap.html">карта сайта</a><a class="header__menu-link" href="#"><svg class="header__menu-icon"><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg>Добавить заведение</a></div>
-            </div>
+        </div>
+        <div class="topline index__topline">
+            <div class="topline__menu"><a class="topline__menu-link" href="sitemap.html">карта сайта</a><a class="topline__menu-link" href="#"><svg class="topline__menu-icon"><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg>Добавить заведение</a></div>
         </div>
         <div data-slot-id="headblock" data-slot-res="xl">
             <div data-target-slot="headblock">
@@ -66,7 +66,6 @@
         </div>
     </div>
     </div>
-    <!-- +sitemap()-->
     <div class="tags">
         <div class="tags__container container">
             <p class="tags__desc">Быстрые ссылки:</p>
@@ -99,7 +98,7 @@
                 <div class="tabs-content">
                     <div class="tabs-content__wrapper" data-tab="tab1" data-tab-group="places">
                         <div class="places__cards">
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -114,9 +113,10 @@
                                         <div class="infocard__price">1000 - 1200 руб.</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -132,9 +132,10 @@
                                         <div class="infocard__desc">7 отдельных котеджей</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -150,9 +151,10 @@
                                         <div class="infocard__price">1000 - 1200 руб.</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -168,13 +170,14 @@
                                         <div class="infocard__desc">7 отдельных залов</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="tabs-content__wrapper active" data-tab="tab2" data-tab-group="places">
                         <div class="places__cards">
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -189,9 +192,10 @@
                                         <div class="infocard__price">1000 - 1200 руб.</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -207,9 +211,10 @@
                                         <div class="infocard__desc">7 отдельных котеджей</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -225,9 +230,10 @@
                                         <div class="infocard__price">1000 - 1200 руб.</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -243,13 +249,14 @@
                                         <div class="infocard__desc">7 отдельных залов</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="tabs-content__wrapper" data-tab="tab3" data-tab-group="places">
                         <div class="places__cards">
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -264,9 +271,10 @@
                                         <div class="infocard__price">1000 - 1200 руб.</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -282,9 +290,10 @@
                                         <div class="infocard__desc">7 отдельных котеджей</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -300,9 +309,10 @@
                                         <div class="infocard__price">1000 - 1200 руб.</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -318,13 +328,14 @@
                                         <div class="infocard__desc">7 отдельных залов</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="tabs-content__wrapper" data-tab="tab4" data-tab-group="places">
                         <div class="places__cards">
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -339,9 +350,10 @@
                                         <div class="infocard__price">1000 - 1200 руб.</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -357,9 +369,10 @@
                                         <div class="infocard__desc">7 отдельных котеджей</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -375,9 +388,10 @@
                                         <div class="infocard__price">1000 - 1200 руб.</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -393,13 +407,14 @@
                                         <div class="infocard__desc">7 отдельных залов</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="tabs-content__wrapper" data-tab="tab5" data-tab-group="places">
                         <div class="places__cards">
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -414,9 +429,10 @@
                                         <div class="infocard__price">1000 - 1200 руб.</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -432,9 +448,10 @@
                                         <div class="infocard__desc">7 отдельных котеджей</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -450,9 +467,10 @@
                                         <div class="infocard__price">1000 - 1200 руб.</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
-                            <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/></a>
+                            <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/></a>
                                 <div class="infocard__content">
                                     <div class="infocard__rating">
                                         <div class="rating">
@@ -468,6 +486,7 @@
                                         <div class="infocard__desc">7 отдельных залов</div>
                                         <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                     </div>
+                                    <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                                 </div>
                             </div>
                         </div>
@@ -475,7 +494,7 @@
                 </div>
                 <div class="places__mobile">
                     <div class="places__cards">
-                        <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
+                        <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                             <div class="infocard__content">
                                 <div class="infocard__rating">
                                     <div class="rating">
@@ -490,9 +509,10 @@
                                     <div class="infocard__price">1000 - 1200 руб.</div>
                                     <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                 </div>
+                                <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                             </div>
                         </div>
-                        <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/></a>
+                        <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place2.jpg"/></a>
                             <div class="infocard__content">
                                 <div class="infocard__rating">
                                     <div class="rating">
@@ -508,9 +528,10 @@
                                     <div class="infocard__desc">7 отдельных котеджей</div>
                                     <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                 </div>
+                                <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                             </div>
                         </div>
-                        <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
+                        <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                             <div class="infocard__content">
                                 <div class="infocard__rating">
                                     <div class="rating">
@@ -526,9 +547,10 @@
                                     <div class="infocard__price">1000 - 1200 руб.</div>
                                     <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                 </div>
+                                <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                             </div>
                         </div>
-                        <div class="infocard places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/></a>
+                        <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place4.jpg"/></a>
                             <div class="infocard__content">
                                 <div class="infocard__rating">
                                     <div class="rating">
@@ -544,6 +566,7 @@
                                     <div class="infocard__desc">7 отдельных залов</div>
                                     <div class="infocard__address"><img src="assets/images/pin.png" />ул. Ленина 16/2</div>
                                 </div>
+                                <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                             </div>
                         </div>
                     </div>
@@ -763,7 +786,7 @@
         <div class="container">
             <h2 class="places__heading">Новые заведения в нашем каталоге</h2>
             <div class="places__cards">
-                <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/></a>
+                <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place1.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                     <div class="infocard__content">
                         <div class="infocard__rating">
                             <div class="rating">
@@ -800,7 +823,7 @@
                         <p class="infocard__text">Температура парилки от 30 до 50 градусов<br/>настоящий подарок тем, кто не может <br/>позволить себе горячие пропарки. <br/>Нежный пар хамама, который</p>
                     </div>
                 </div>
-                <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/></a>
+                <div class="infocard infocard_hover places__card"><a class="infocard__img" href="#"><img src="assets/images/place3.jpg"/><span class="infocard__img-bottom"><img src="assets/images/metro.png"/>Новослободская</span></a>
                     <div class="infocard__content">
                         <div class="infocard__rating">
                             <div class="rating">
@@ -809,7 +832,8 @@
                                 <div class="rating__box is-active"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
                                 <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
                                 <div class="rating__box"><svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg></div>
-                            </div><a class="infocard__reviews" href="#">15 отзывов</a></div>
+                            </div>
+                        </div>
                         <div class="infocard__title">САУНА</div><a class="infocard__name" href="#">Заречье</a>
                         <div class="infocard__info">
                             <div class="infocard__price">1000 - 1200 руб.</div>
