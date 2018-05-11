@@ -6,13 +6,12 @@ block head
 block content
   +b.index
     +header()
-      +header-line-menu('карта сайта', 'sitemap.html', 'Добавить заведение')
+    +topline-menu('карта сайта', 'sitemap.html', 'Добавить заведение').__topline
     +put-block-into-slot('headblock', 'xl')
       +headblock-main()._main
     +filter()
-    // +sitemap()
     +tags()
-    +mapblock('Показать заведения рядом').index__mapblock
+    +mapblock('Показать заведения рядом').__mapblock
     +put-block-into-slot('headblock', 'md')
     +places()
     +types()

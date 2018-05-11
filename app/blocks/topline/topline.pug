@@ -1,0 +1,17 @@
+mixin topline(img)
+  +b.topline&attributes(attributes)
+    +e.IMG(src='assets/images/' + img).linebg
+
+mixin topline-menu(firstlink, firstlinkhref, secondlink, img, sidelink)
+  +b.topline&attributes(attributes)
+    if img
+      +e.IMG(src='assets/images/' + img).linebg
+    +e.menu
+      if sidelink
+        +e.A(href='#').menu-link._side= sidelink
+      if firstlink
+        +e.A(href=firstlinkhref).menu-link= firstlink
+      if secondlink
+        +e.A(href='#').menu-link
+          +icon('plus').menu-icon
+          = secondlink

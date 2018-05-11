@@ -1,6 +1,12 @@
 .sauna {
   display: block;
   
+  &__topline {
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
+  
   &__head {
     padding: 0 0 19px;
     

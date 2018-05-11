@@ -1,3 +1,9 @@
-.sitemap {
+.sitemap-page {
   display: block;
+  
+  &__topline {
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
 }

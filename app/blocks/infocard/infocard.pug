@@ -1,5 +1,5 @@
-mixin infocard(img, imgbottom, reviews, title, name, desc)
-  +b.infocard&attributes(attributes)
+mixin infocard(img, imgbottom, reviews, title, name, desc, hover)
+  +b.infocard(class=hover ? '_hover': '')&attributes(attributes)
     +e.A(href='#').img
       img(src='assets/images/'+img)
       if imgbottom
@@ -20,39 +20,27 @@ mixin infocard(img, imgbottom, reviews, title, name, desc)
         +e.address
           img(src='assets/images/pin.png')
           | ул. Ленина 16/2
+      if hover
+        +e.P.text Температура парилки от 30 до 50 градусов
+          br
+          | настоящий подарок тем, кто не может 
+          br
+          | позволить себе горячие пропарки. 
+          br
+          | Нежный пар хамама, который
 
-
-mixin infocard-hover(img, reviews, title, name, desc)
-  +b.infocard&attributes(attributes)
-    +e.A(href='#').img
+mixin infocard-list(img, reviews, title, name, metro, desc, hover)
+  +b.infocard(class=hover ? '_hover': '')&attributes(attributes)
+    +e.A(href='#').img._desktop
       img(src='assets/images/'+img)
-    +e.content
-      +e.rating
-        +rating(3)
-        if reviews
-          +e.A(href='#').reviews 15 отзывов
-      +e.title= title
-      +e.A(href='#').name= name
-      +e.info
-        +e.price 1000 - 1200 руб.
-        if desc
-          +e.desc= desc
-        +e.address
-          img(src='assets/images/pin.png')
-          | ул. Ленина 16/2
-      +e.P.text Температура парилки от 30 до 50 градусов
-        br
-        | настоящий подарок тем, кто не может 
-        br
-        | позволить себе горячие пропарки. 
-        br
-        | Нежный пар хамама, который
-
-
-mixin infocard-list(img, reviews, title, name, metro, desc)
-  +b.infocard&attributes(attributes)
-    +e.A(href='#').img
-      img(src='assets/images/'+img)
+    +e.img._slider
+      +slider(false, true)
+        +slide()
+          img(src='assets/images/' + img)
+        +slide()
+          img(src='assets/images/' + img)
+        +slide()
+          img(src='assets/images/' + img) 
     +e.content
       +e.title= title
       +e.rating
@@ -64,12 +52,22 @@ mixin infocard-list(img, reviews, title, name, metro, desc)
         +e.price 1000 - 1200 руб.
         if metro
           +e.P.metro
+            +e.A(href='#callform').button.js-fancybox-popup Позвонить
             img(src='assets/images/metro.png')
-            | Новослободская
+            | Новослободская            
         if desc
           +e.desc._type
             +e.A(href='#').desctype Финский зал
             | В сауне 7 залов
           +e.address
+            +e.A(href='#callform').button.js-fancybox-popup Позвонить
             img(src='assets/images/pin.png')
             | ул. Ленина 16/2
+      if hover
+        +e.P.text Температура парилки от 30 до 50 градусов
+          br
+          | настоящий подарок тем, кто не может 
+          br
+          | позволить себе горячие пропарки. 
+          br
+          | Нежный пар хамама, который

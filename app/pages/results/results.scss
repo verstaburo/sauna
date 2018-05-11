@@ -1,6 +1,12 @@
 .results {
   display: block;
   
+  &__topline {
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
+  
   &__list {
     padding: 23px 0;
     

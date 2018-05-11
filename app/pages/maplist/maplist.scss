@@ -1,6 +1,12 @@
 .maplist {
   display: block;
   
+  &__topline {
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
+  
   &__mapblock {
     width: 100%;
     max-width: 1440px;

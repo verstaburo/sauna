@@ -1,6 +1,12 @@
 .index {
   display: block;
   
+  &__topline {
+    @include screen('tablet-wide') {
+      display: none;
+    }
+  }
+  
   &__mapblock {
     @include screen('tablet-wide', min) {
       display: none;

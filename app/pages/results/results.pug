@@ -6,7 +6,7 @@ block head
 block content
   +b.results
     +header()
-      +header-line-menu(false, false, 'Добавить сауну')
+    +topline-menu(false, false, 'Добавить сауну').__topline
     +e.breadcrumbs
       .container
         +breadcrumbs(['Главная', 'Результат поиска'])
@@ -15,7 +15,7 @@ block content
     +filter()
       +filter-tags()
     +switcher()
-    +mapblock('Показать на карте')
+    +mapblock('Показать заведения рядом')
     +put-block-into-slot('headblock', 'md')
     +e.list
       +e.list-item

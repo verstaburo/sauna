@@ -1,0 +1,59 @@
+.topline {
+  background-color: #6c7896;
+  min-height: 28px;
+  position: relative;
+  overflow: hidden;
+  
+  @include screen('tablet-wide') {
+    min-height: 56px;
+  }
+  
+  @include screen('tablet-small') {
+    min-height: 28px;
+  }
+  
+  &__linebg {
+    @include fill-img;
+  }
+  
+  &__menu {
+    width: 1330px;
+    padding: 2px 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    
+    &-link {
+      color: #ffffff;
+      //font-family: "PT Sans";
+      font-size: 16px;
+      line-height: (26/16);
+      letter-spacing: -0.03em;
+      
+      & + & {
+        margin-left: 40px;
+      }
+      
+      &_side {
+        margin-right: auto;
+        margin-left: -20px;
+        
+        @include screen('desktop-wide') {
+          margin-left: 0;
+        }
+      }
+    }
+    
+    &-icon {
+      width: 10px;
+      height: 10px;
+      margin-right: 6px;
+      fill: #aeaeae;
+    }
+  }
+}
