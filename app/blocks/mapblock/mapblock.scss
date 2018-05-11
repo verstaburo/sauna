@@ -48,6 +48,18 @@
       margin: 17px 0;
       padding: 16px;
     }
+    
+    .hide-md {
+      @include screen('tablet-wide') {
+        display: none;
+      }
+    }
+    
+    .show-md {
+      @include screen('tablet-wide', min) {
+        display: none;
+      }
+    }
   }
   
   &__button-icon {

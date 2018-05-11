@@ -340,7 +340,6 @@
       &:hover {
         @include screen('tablet-wide', min) {
           font-size: 19px;
-          letter-spacing: .045em;
         }
       }
     }
@@ -495,6 +494,10 @@
   &__filters {
     overflow: hidden;
     
+    @include screen('tablet-wide') {
+      margin: -6px;
+    }
+    
     &.is-empty {
       height: 0;
     }
@@ -515,6 +518,10 @@
     margin-right: 12px;
     margin-bottom: 12px;
     position: relative;
+    
+    @include screen('tablet-wide') {
+      margin: 6px;
+    }
     
     &.is-hidden {
       display: none;
@@ -604,9 +611,13 @@
   &__container {
     width: 100%;
     max-width: 1440px;
-    margin: 0 auto;
+    margin: auto;
     position: relative;
     box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   &__tab-links {

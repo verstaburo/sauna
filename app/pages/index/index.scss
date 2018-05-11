@@ -8,8 +8,10 @@
   }
   
   &__mapblock {
-    @include screen('tablet-wide', min) {
-      display: none;
+    margin: 64px 0 18px;
+    
+    @include screen('tablet-wide') {
+      margin: 0;
     }
   }
   

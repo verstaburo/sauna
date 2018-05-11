@@ -19,13 +19,14 @@
     img {
       @include fill-img;
       transition: transform $ease-main;
+      transform: translateZ(0);
     }
     
     &:hover {
       opacity: 1;
       
       img {
-        transform: scale(1.025);
+        transform: translateZ(0) scale(1.025);
       }
     }
   }

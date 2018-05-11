@@ -10,20 +10,6 @@
   
   &__container {
     position: relative;
-    
-    &.container {
-      @include screen('desktop-large') {
-        padding: 0 120px;
-      }
-      
-      @include screen('tablet-wide') {
-        padding: 0 30px;
-      }
-      
-      @include screen('tablet-small') {
-        padding: 0 20px;
-      }
-    }
   }
   
   &__desc {
@@ -75,6 +61,7 @@
   
   &__list {
     text-align: center;
+    margin: 0 -4px;
     
     @include screen('tablet-wide') {
       text-align: left;

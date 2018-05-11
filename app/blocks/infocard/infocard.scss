@@ -376,6 +376,7 @@
       
       @include screen('tablet-wide') {
         height: auto;
+        overflow: visible;
       }
     }
   }

@@ -210,26 +210,31 @@ export default function popups() {
       });
     }
 
-    const checkedCount = checkedInput.length;
-    let totalCount = 0;
-    const filterSelect = $('.filter__list-select');
-    const targetSelect = $(`.filter__list-select[href="#${popupId}"]`);
+    if (checkedInput) {
+      const checkedCount = checkedInput.length;
+      let totalCount = 0;
+      const filterSelect = $('.filter__list-select');
+      const targetSelect = $(`.filter__list-select[href="#${popupId}"]`);
 
-    targetSelect.attr('data-count', checkedCount);
-    if (checkedInputText === undefined) {
-      checkedInputText = targetSelect.attr('data-default');
+      targetSelect.attr('data-count', checkedCount);
+      if (checkedInputText === undefined) {
+        checkedInputText = targetSelect.attr('data-default');
+      }
+      // targetSelect.find('.filter__list-select-text').text(checkedInputText);
+      const targetSelectIcon = targetSelect.find('.filter__list-select-icon');
+      targetSelect.text(checkedInputText);
+      targetSelect.append(targetSelectIcon);
+      filterSelect.each(function () {
+        totalCount += parseInt($(this).attr('data-count'), 10);
+      });
+      const filterReset = $('.filter__reset');
+      if (totalCount > 0) {
+        filterReset.addClass('is-active');
+      } else {
+        filterReset.removeClass('is-active');
+      }
+      filterReset.find('.filter__reset-count').text(totalCount);
     }
-    targetSelect.find('.filter__list-select-text').text(checkedInputText);
-    filterSelect.each(function () {
-      totalCount += parseInt($(this).attr('data-count'), 10);
-    });
-    const filterReset = $('.filter__reset');
-    if (totalCount > 0) {
-      filterReset.addClass('is-active');
-    } else {
-      filterReset.removeClass('is-active');
-    }
-    filterReset.find('.filter__reset-count').text(totalCount);
     $.fancybox.close();
   });
 }

@@ -11,13 +11,15 @@ block content
       +headblock-main()._main
     +filter()
     +tags()
-    +mapblock('Показать заведения рядом').__mapblock
+    +put-block-into-slot('mapblock', 'md')
     +put-block-into-slot('headblock', 'md')
     +places()
     +types()
     +random()
     +offers()
-    +imgline()
+    //+imgline()
+    +put-block-into-slot('mapblock', 'xl')
+      +mapblock('Поиск на карте', 'Показать заведения рядом').__mapblock
     +places-new()
     +desc()
     +e.banner
