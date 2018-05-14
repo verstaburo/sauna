@@ -19,6 +19,7 @@ import switcher from '../blocks/switcher/switcher';
 import reviews from '../components/reviews/reviews';
 import sales from '../pages/sales/sales';
 import feedback from '../pages/feedback/feedback';
+import comments from '../pages/comments/comments';
 import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
@@ -51,5 +52,6 @@ $(() => {
   reviews();
   sales();
   feedback();
+  comments();
   scrollanimation();
 });

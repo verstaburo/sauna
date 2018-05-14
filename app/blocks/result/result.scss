@@ -16,7 +16,7 @@
     font-size: 16px;
     font-weight: 700;
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 17px;
     
     @include screen('tablet-wide') {
       font-size: 26px;
@@ -31,7 +31,6 @@
   
   &__content {
     display: flex;
-    align-items: flex-end;
     justify-content: space-between;
     
     @include screen('tablet-wide') {
@@ -41,7 +40,6 @@
   
   &__left {
     margin-right: 24px;
-    padding-bottom: 7px;
     
     @include screen('tablet-wide') {
       width: 100%;
@@ -65,7 +63,7 @@
   
   &__row {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     flex-wrap: wrap;
     width: 100%;
   }
@@ -74,19 +72,18 @@
     color: $color-lightblue;
     font-size: 21px;
     font-weight: 700;
-    padding: 3px 0 4px;
     margin-right: 61px;
+    margin-bottom: 15px;
     
     @include screen('tablet-wide') {
       font-size: 31px;
-      padding: 6px 0;
       width: 100%;
       margin-right: 0;
     }
     
     @include screen('tablet-small') {
       font-size: 21px;
-      padding: 3px 0;
+      margin-bottom: 12px;
     }
     
     a {
@@ -97,17 +94,17 @@
   &__rating {
     display: flex;
     align-items: center;
-    margin-right: 27px;
-    padding: 3px 0;
+    margin-top: 3px;
+    margin-bottom: 15px;
     
     @include screen('tablet-wide') {
       width: 100%;
-      margin-right: 0;
-      padding: 6px 0;
+      margin-bottom: 20px;
     }
     
     @include screen('tablet-small') {
-      padding: 3px 0;
+      margin-top: 0;
+      margin-bottom: 12px;
     }
     
     .rating__icon {
@@ -147,17 +144,18 @@
     font-family: $font-second;
     font-size: 16px;
     letter-spacing: .005em;
-    padding: 3px 0;
+    margin-right: 32px;
+    margin-bottom: 15px;
     
     @include screen('tablet-wide') {
       width: 100%;
       font-size: 26px;
-      padding: 6px 0;
+      margin-bottom: 20px;
     }
     
     @include screen('tablet-small') {
       font-size: 16px;
-      padding: 3px 0;
+      margin-bottom: 12px;
     }
   }
   
@@ -165,18 +163,15 @@
     color: #595959;
     font-family: $font-second;
     font-size: 16px;
-    margin-top: 12px;
     letter-spacing: -.01em;
     transition: color $ease-main;
     
     @include screen('tablet-wide') {
       font-size: 26px;
-      margin-top: 24px;
     }
     
     @include screen('tablet-small') {
       font-size: 16px;
-      margin-top: 12px;
     }
   }
   
@@ -186,17 +181,18 @@
     font-family: $font-second;
     font-size: 18px;
     letter-spacing: 0;
-    margin-bottom: 11px;
+    margin-bottom: 15px;
     margin-right: 32px;
+    display: inline-block;
     
     @include screen('tablet-wide') {
       font-size: 28px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     
     @include screen('tablet-small') {
       font-size: 18px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
   }
   
@@ -204,15 +200,17 @@
     color: #020202;
     font-size: 21px;
     letter-spacing: -.025em;
-    margin-right: 31px;
+    margin-bottom: 15px;
     
     @include screen('tablet-wide') {
       width: 100%;
       font-size: 31px;
+      margin-bottom: 20px;
     }
     
     @include screen('tablet-small') {
       font-size: 21px;
+      margin-bottom: 12px;
     }
   }
   
@@ -227,17 +225,16 @@
     font-weight: 300;
     letter-spacing: .04em;
     box-sizing: border-box;
+    display: inline-block;
     
     @include screen('tablet-wide') {
       padding: 12px 20px;
       font-size: 24px;
-      margin-top: 15px;
     }
     
     @include screen('tablet-small') {
       padding: 6px 10px;
       font-size: 14px;
-      margin-top: 10px;
     }
   }
 }

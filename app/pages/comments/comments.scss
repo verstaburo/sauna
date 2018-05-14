@@ -113,6 +113,7 @@
     &_right {
       width: 565px;
       padding-top: 11px;
+      position: relative;
       
       @include screen('tablet-wide') {
         width: 100%;
@@ -123,7 +124,7 @@
   &__card {
     
     & + & {
-      margin-top: 20px;
+      margin-top: 21px;
     }
     
     &_inner {
@@ -147,9 +148,12 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
     
     @include screen('tablet-wide') {
-      flex-wrap: wrap;
+      position: static;
     }
   }
   
@@ -169,6 +173,7 @@
   }
   
   &__banner {
+    width: 100%;
     margin-top: 28px;
     height: 300px;
     background-color: #c6c6c6;

@@ -107,11 +107,10 @@
     @include card-heading;
     display: flex;
     align-items: center;
-    padding: 0 7px;
     min-height: 31px;
-    margin-bottom: 14px;
     
     @include screen('tablet-wide') {
+      padding: 0 9px;
       display: flex;
       @include card-section-title;
       min-height: 45px;
@@ -170,7 +169,8 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity $ease-main;
-    margin-bottom: -6px;
+    margin-top: 10px;
+    margin-bottom: -8px;
     
     &:after {
       content: '';
@@ -189,7 +189,7 @@
     &.is-active {
       opacity: 1;
       pointer-events: all;
-      margin-bottom: 0;
+      margin-bottom: 16px;
     }
   }
   
@@ -489,15 +489,17 @@
   
   &__ratings {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 17px;
-    
-    @include screen('tablet-wide') {
-      flex-wrap: wrap;
-    }
   }
   
   &__ratings-col {
     margin-right: 67px;
+    
+    @include screen('desktop') {
+      width: 100%;
+      margin-right: 0;
+    }
   }
   
   &__ratings-item {
@@ -508,6 +510,10 @@
     font-size: 15px;
     letter-spacing: .02em;
     padding: 10px 0;
+    
+    @include screen('desktop') {
+      justify-content: space-between;
+    }
     
     @include screen('tablet-wide') {
       font-size: 26px;
@@ -2268,7 +2274,7 @@
   &__title {
     color: #353535;
     font-family: $font-second;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: -.02em;
     position: relative;
     padding-left: 36px;
@@ -2282,7 +2288,7 @@
       display: block;
       position: absolute;
       left: 0;
-      top: 8px;
+      top: 4px;
       width: 9px;
       height: 9px;
       border-radius: 1000px;

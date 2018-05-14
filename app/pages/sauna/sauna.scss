@@ -306,11 +306,7 @@
     }
     
     &_bottom {
-      padding-top: 16px;
-      
-      @include screen('tablet-wide') {
-        padding-top: 0;
-      }
+      padding-top: 0;
     }
   }
   
@@ -337,7 +333,9 @@
     margin-top: 16px;
     
     &:first-child {
-      margin-top: 0;
+      @include screen('tablet-wide', min) {
+        margin-top: 0;
+      }
     }
     
     &_inner {
@@ -362,6 +360,10 @@
       }
     }
     
+    &_reviews {
+      margin-top: 6px;
+    }
+    
     &_halls {
       @include screen('tablet-wide') {
         margin-top: 41px;
@@ -384,6 +386,10 @@
       }
     }
     
+    &_rating {
+      margin-bottom: 16px;
+    }
+    
     &_multsales {
       @include screen('tablet-wide') {
         margin-top: 97px;
@@ -397,7 +403,7 @@
   }
   
   &__banner {
-    margin-top: 40px;
+    margin-top: 34px;
     height: 90px;
     background-color: #ccc;
     
@@ -468,6 +474,15 @@
       &__slider {
         @include screen('tablet-wide') {
           display: none;
+        }
+      }
+      
+      &__cols {
+        
+        &_bottom {
+          @include screen('tablet-wide', min) {
+            padding-top: 16px;
+          }
         }
       }
       

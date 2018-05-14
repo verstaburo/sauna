@@ -70,7 +70,7 @@
     background-color: #dddddd;
     position: absolute;
     top: 53px;
-    right: -11px;
+    right: 0;
     
     @include screen('tablet-wide') {
       display: none;
