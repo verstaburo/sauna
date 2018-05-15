@@ -18,6 +18,7 @@ import filter from '../blocks/filter/filter';
 import switcher from '../blocks/switcher/switcher';
 import mapblock from '../blocks/mapblock/mapblock';
 import reviews from '../components/reviews/reviews';
+import random from '../components/random/random';
 import sales from '../pages/sales/sales';
 import feedback from '../pages/feedback/feedback';
 import comments from '../pages/comments/comments';
@@ -52,6 +53,7 @@ $(() => {
   switcher();
   mapblock();
   reviews();
+  random();
   sales();
   feedback();
   comments();

@@ -94,6 +94,7 @@
     width: 33.3333%;
     padding: 10px;
     box-sizing: border-box;
+    transition: opacity $ease-main;
     
     @include screen('tablet-wide') {
       width: 100%;
@@ -104,6 +105,11 @@
       @include screen('tablet-wide') {
         display: none;
       }
+    }
+    
+    &.is-hidden {
+      opacity: 0;
+      pointer-events: none;
     }
   }
 }

@@ -28,6 +28,12 @@ export default function slider() {
     },
   });
 
+  $(document).on('refresh', '.js-slider', () => {
+    for (let i = 0; i < mySlider.length; i += 1) {
+      mySlider[i].update();
+    }
+  });
+
   const myMultiSlider = new Swiper('.js-multislider', {
     speed: 700,
     slidesPerView: 4,
