@@ -85,4 +85,19 @@
       display: none;
     }
   }
+  
+  &_getloc {
+    .mapblock {
+      &__button:not(.js-getloc) {
+        @include screen('tablet-wide') {
+          display: none;
+        }
+      }
+      &__button.js-getloc {
+        @include screen('tablet-wide', min) {
+          display: none;
+        }
+      }
+    }
+  }
 }

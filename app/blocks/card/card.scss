@@ -89,13 +89,13 @@
 
 @mixin card-section-title {
   color: #1f1f1f;
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 500;
   letter-spacing: .04em;
   box-sizing: border-box;
   
   @include screen('tablet-small') {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -145,12 +145,12 @@
     border-bottom: 0;
     
     @include screen('tablet-wide') {
-      font-size: 30px;
+      font-size: 27px;
     }
     
     @include screen('tablet-small') {
       width: 100%;
-      font-size: 18px;
+      font-size: 17px;
       margin-top: 5px;
       margin-left: 0;
       margin-right: 0;
@@ -920,7 +920,7 @@
       justify-content: space-between;
       align-items: center;
       color: #161616;
-      font-size: 37px;
+      font-size: 34px;
       font-weight: 300;
       margin-top: 23px;
       padding: 0 34px 13px 14px;
@@ -991,14 +991,13 @@
     
     @include screen('tablet-wide') {
       font-family: $font-second;
-      font-size: 33px;
+      font-size: 30px;
       font-weight: 400;
       vertical-align: top;
-      margin-top: 2px;
     }
     
     @include screen('tablet-small') {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
   
@@ -1011,7 +1010,7 @@
     
     @include screen('tablet-wide') {
       display: block;
-      font-size: 37px;
+      font-size: 34px;
       font-weight: 300;
       margin-top: 33px;
       padding-left: 12px;
@@ -1056,14 +1055,14 @@
       max-width: 317px;
       flex: 1;
       color: #4b4734;
-      font-size: 33px;
+      font-size: 31px;
       margin-top: 32px;
-      padding: 29px 13px 38px;
+      padding: 32px 13px 35px;
     }
     
     @include screen('tablet-small') {
       margin-top: 16px;
-      font-size: 20px;
+      font-size: 18px;
       padding: 16px;
       max-width: 217px;
     }
@@ -1289,15 +1288,14 @@
     letter-spacing: -.02em;
     
     @include screen('tablet-wide') {
-      font-size: 33px;
+      font-size: 30px;
       margin-left: 51px;
-      padding-top: 3px;
     }
     
     @include screen('tablet-small') {
-      font-size: 20px;
+      font-size: 18px;
       margin-left: 10px;
-      padding-top: 2px;
+      padding-top: 1px;
     }
     
     &_black {
@@ -1402,7 +1400,7 @@
     
     @include screen('tablet-wide') {
       color: #202020;
-      font-size: 29px;
+      font-size: 27px;
       margin-top: 35px;
       padding: 0 38px 0 66px;
     }
@@ -1470,7 +1468,7 @@
     @include screen('tablet-wide') {
       opacity: 0.5;
       color: #212121;
-      font-size: 25px;
+      font-size: 24px;
       margin-bottom: 7px;
     }
     
@@ -1510,7 +1508,7 @@
   
   &__mobheading {
     color: #242424;
-    font-size: 42px;
+    font-size: 38px;
     font-weight: 300;
     letter-spacing: .02em;
     text-align: center;
@@ -1521,7 +1519,7 @@
     }
     
     @include screen('tablet-small') {
-      font-size: 28px;
+      font-size: 26px;
       margin-bottom: 20px;
     }
   }
@@ -1565,14 +1563,14 @@
     @include screen('tablet-wide') {
       max-width: none;
       color: #252525;
-      font-size: 30px;
+      font-size: 27px;
       line-height: (42/30);
       margin-top: 40px;
       padding: 0 16px;
     }
     
     @include screen('tablet-small') {
-      font-size: 18px;
+      font-size: 17px;
       margin-top: 16px;
       padding: 0;
     }
@@ -1605,7 +1603,7 @@
     margin-top: 12px;
     
     @include screen('tablet-wide') {
-      font-size: 33px;
+      font-size: 30px;
       font-style: normal;
       padding: 0 14px;
       line-height: 1;
@@ -1614,7 +1612,7 @@
     
     @include screen('tablet-small') {
       padding: 0;
-      font-size: 20px;
+      font-size: 18px;
     }
     
     &:first-child {
@@ -1823,7 +1821,7 @@
     
     @include screen('tablet-wide') {
       color: #4d4a39;
-      font-size: 50px;
+      font-size: 44px;
       font-weight: 400;
       letter-spacing: .02em;
       margin-top: 34px;
@@ -1832,7 +1830,7 @@
     }
     
     @include screen('tablet-small') {
-      font-size: 30px;
+      font-size: 26px;
       margin-top: 17px;
       padding: 0;
     }
@@ -1914,7 +1912,7 @@
     margin-top: 8px;
     
     @include screen('tablet-wide') {
-      font-size: 37px;
+      font-size: 34px;
       margin-top: -3px;
       margin-right: -6px;
       letter-spacing: -.025em;
@@ -2202,7 +2200,7 @@
     
     @include screen('tablet-wide') {
       color: #7193de;
-      font-size: 33px;
+      font-size: 30px;
       width: auto;
       padding-right: 20px;
     }
@@ -2232,7 +2230,7 @@
       opacity: 0.4;
       color: #000000;
       font-style: italic;
-      font-size: 25px;
+      font-size: 24px;
       flex-shrink: 0;
       margin-top: 0;
     }

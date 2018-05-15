@@ -27,7 +27,9 @@
   
   form.error {
     .popup__error {
-      display: block;
+      @include screen('tablet-wide', min) {
+        display: block;
+      }
     }
   }
   
@@ -119,8 +121,8 @@
     margin-top: 34px;
     margin-bottom: 217px;
     
-    @include screen('tablet-small') {
-      margin-bottom: 50px;
+    @include screen('tablet-wide') {
+      margin-bottom: 0;
     }
     
     &-item {
@@ -239,7 +241,20 @@
     }
   }
   
+  &__button-block {
+    @include screen('tablet-wide') {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 500;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  
   &__button {
+    display: inline-block;
     background-color: $color-yellow;
     color: #3e3e3e;
     font-size: 15px;
@@ -247,14 +262,37 @@
     letter-spacing: .02em;
     transition: opacity $ease-main;
     padding: 15px;
+    box-sizing: border-box;
     
     &:hover {
       opacity: .85;
     }
     
+    &_grey {
+      background-color: #dadada;
+    }
+    
     &_blue {
       background-color: #88ade7;
       color: #fff;
+    }
+    
+    &_small {
+      @include screen('tablet-wide') {
+        width: 35%;
+      }
+    }
+    
+    &_big {
+      @include screen('tablet-wide') {
+        width: 65%;
+      }
+    }
+    
+    &.show-md {
+      @include screen('tablet-wide', min) {
+        display: none;
+      }
     }
   }
   
@@ -483,10 +521,16 @@
       width: 263px;
       margin-right: 37px;
       flex-shrink: 0;
+      font-size: 0;
       
       @include screen('tablet-wide') {
         margin-right: 0;
         width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
       }
     }
   }
@@ -757,12 +801,14 @@
     background-color: #ccc;
     
     @include screen('tablet-wide') {
-      margin-right: 0;
+      margin-left: -25px;
+      margin-right: -25px;
     }
     
     @include screen('tablet-small') {
       height: 300px;
-      margin-right: 0;
+      margin-left: -20px;
+      margin-right: -20px;
     }
   }
   
@@ -889,7 +935,7 @@
   
   &__metro {
     margin-top: 15px;
-    padding: 0 36px;
+    padding: 0 20px;
     overflow: hidden;
     
     @include screen('tablet-wide') {
@@ -909,6 +955,7 @@
     margin-top: 21px;
     padding: 0 38px 12px;
     padding-right: 400px;
+    min-height: 36px;
     
     @include screen('tablet-wide') {
       padding-left: 0;
@@ -923,10 +970,11 @@
     
     @include screen('tablet-wide') {
       padding: 0;
+      margin-top: 65px;
     }
     
     .popup__col {
-      width: 210px;
+      width: 223px;
     }
     
     .popup__list + .popup__list {
@@ -1049,8 +1097,12 @@
       padding: 23px 22px 14px;
       text-align: center;
       
+      @include screen('tablet-wide') {
+        padding: 23px 22px 84px;
+      }
+      
       @include screen('tablet-small') {
-        padding: 20px;
+        padding: 20px 20px 84px;
       }
     }
     
@@ -1066,6 +1118,11 @@
       min-width: 280px;
       padding: 18px;
       
+      @include screen('tablet-wide') {
+        min-width: 0;
+        width: 100%;
+      }
+      
       @include screen('tablet-small') {
         padding: 15px;
       }
@@ -1077,13 +1134,21 @@
     .popup__container {
       padding: 22px 29px 34px;
       
+      @include screen('tablet-wide') {
+        padding: 22px 29px 84px;
+      }
+      
       @include screen('tablet-small') {
-        padding: 20px;
+        padding: 20px 20px 84px;
       }
     }
     
     .popup__button {
       min-width: 263px;
+      
+      @include screen('tablet-wide') {
+        min-width: 0;
+      }
     }
   }
   
@@ -1092,8 +1157,12 @@
     .popup__container {
       padding: 23px 25px 22px;
       
+      @include screen('tablet-wide') {
+        padding: 23px 25px 84px;
+      }
+      
       @include screen('tablet-small') {
-        padding: 20px;
+        padding: 20px 20px 84px;
       }
     }
     
@@ -1123,8 +1192,8 @@
       position: relative;
       
       @include screen('tablet-wide') {
-        display: block;
-        margin: 30px auto 0;
+        min-width: 0;
+        width: 100%;
       }
       
       @include screen('tablet-small') {

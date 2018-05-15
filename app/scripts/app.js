@@ -16,6 +16,7 @@ import card from '../blocks/card/card';
 import tags from '../blocks/tags/tags';
 import filter from '../blocks/filter/filter';
 import switcher from '../blocks/switcher/switcher';
+import mapblock from '../blocks/mapblock/mapblock';
 import reviews from '../components/reviews/reviews';
 import sales from '../pages/sales/sales';
 import feedback from '../pages/feedback/feedback';
@@ -49,6 +50,7 @@ $(() => {
   tags();
   filter();
   switcher();
+  mapblock();
   reviews();
   sales();
   feedback();

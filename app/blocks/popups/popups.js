@@ -96,7 +96,7 @@ export default function popups() {
       .change();
   });
 
-  $(document).on('click', '.popup__filters [data-reset]', function (e) {
+  $(document).on('click', '.popup form [data-reset]', function (e) {
     e.preventDefault();
     const target = $(this).parents('form').find('input[data-id]');
     target
@@ -171,7 +171,7 @@ export default function popups() {
     }
   });
 
-  $(document).on('click', '.popup__button', function (e) {
+  $(document).on('click', '.popup__button:not([data-reset])', function (e) {
     e.preventDefault();
     const form = $(this).parents('form');
     const popup = $(this).parents('.popup');

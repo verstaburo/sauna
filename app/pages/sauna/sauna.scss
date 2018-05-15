@@ -47,7 +47,7 @@
     }
     
     @include screen('tablet-small') {
-      font-size: 28px;
+      font-size: 26px;
       padding: 0;
     }
   }
@@ -116,7 +116,7 @@
     @include screen('tablet-wide') {
       opacity: 0.5;
       color: #161616;
-      font-size: 33px;
+      font-size: 30px;
       font-weight: 500;
       margin-bottom: 2px;
       margin-right: 33px;
@@ -124,7 +124,7 @@
     }
     
     @include screen('tablet-small') {
-      font-size: 20px;
+      font-size: 18px;
       margin-bottom: 6px;
       margin-right: 15px;
     }
@@ -142,7 +142,7 @@
     text-align: center;
     color: rgba(#161616, .9);
     font-family: $font-second;
-    font-size: 29px;
+    font-size: 26px;
     font-weight: 500;
     letter-spacing: .02em;
     padding: 0 20px;
@@ -253,6 +253,8 @@
     }
     
     .swiper-slide {
+      width: 25%;
+      
       @include screen('tablet-wide') {
         margin: 0 9px;
         width: 81.4% !important;

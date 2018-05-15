@@ -1,9 +1,12 @@
-mixin mapblock(buttontext, buttontextmob)
+mixin mapblock(button, getLocation)
   +b.mapblock&attributes(attributes)
     +map().mapblock__map#map
-    if buttontext
+    if button
       +e.container.container
         +e.A(href='maplist.html').button
           +e.IMG(src='assets/images/map_arrow.png').button-icon
-          span.hide-md= buttontext
-          span.show-md= buttontextmob
+          span Поиск на карте
+        if getLocation
+          +e.A(href='#').button.js-getloc
+            +e.IMG(src='assets/images/map_arrow.png').button-icon
+            span Показать заведения рядом
