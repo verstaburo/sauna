@@ -830,16 +830,18 @@
             <p class="popup__heading popup__heading_medium">Расположение:<span class="popup__tab-links"><a class="popup__tab-link active" href="#" data-tab-target="map">на карте</a><a class="popup__tab-link" href="#" data-tab-target="metro">по метро</a><a class="popup__tab-link" href="#" data-tab-target="districts">по районам</a></span></p>
             <form
                 class="popup__tab active" data-tab="map" data-tab-group="locations">
-                <div class="popup__map-top"><a class="popup__map-link" href="#">Любое расположение</a>
-                    <p class="popup__address">Адрес: Москва, ул. Арбат 1</p>
+                <div class="popup__map-top hide-md"><a class="popup__map-link" href="#" data-reset="data-reset">Любое расположение</a>
+                    <p class="popup__address">Адрес: <span class="js-setloc">Москва, ул. Арбат 1</span></p>
                     <div class="popup__controls"><a class="popup__control" href="#" data-control="minus">-</a><span class="popup__controls-text">22 км</span><a class="popup__control" href="#" data-control="plus">+</a></div>
                 </div>
+                <div class="popup__map-top show-md">
+                    <p class="popup__address js-setloc" data-default="Выберите точку на карте">Выберите точку на карте</p><a class="popup__map-link js-getloc" href="#">Рядом со мной</a></div>
                 <div class="popup__map" id="popupmap"></div>
                 <div class="popup__map-bottom"><label class="popup__checkbox"><input type="checkbox"/><span class="popup__checkbox-box"><svg><use xlink:href="assets/images/icon.svg#icon_check"></use></svg></span><span class="popup__checkbox-text">Показать все сауны на карте</span></label>
                     <p
                         class="popup__map-hint">Выберите точку на карте, либо введите адрес или метро</p>
                 </div>
-                <div class="popup__button-block"><button class="popup__button">Показать 251 сауну</button>
+                <div class="popup__button-block"><a class="popup__button popup__button_grey popup__button_small" href="#" data-reset="data-reset">Сбросить</a><button class="popup__button popup__button_big">Показать 251 сауну</button>
                     <p class="popup__error">Ничего не найдено. Попробуйте использовать другие параметры</p>
                 </div>
                 </form>
