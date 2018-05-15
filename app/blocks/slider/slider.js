@@ -69,5 +69,22 @@ export default function slider() {
     freeModeMomentumRatio: 0.2,
     freeModeMomentumBounce: false,
   });
+
+  const popupSlider = new Swiper('.js-popupslider', {
+    speed: 700,
+    slidesPerView: 'auto',
+    roundLengths: true,
+    resistanceRatio: 0,
+    freeMode: true,
+    freeModeMomentumRatio: 0.2,
+    freeModeMomentumBounce: false,
+  });
+
+  $(document).on('refresh', '.js-popupslider', () => {
+    for (let i = 0; i < popupSlider.length; i += 1) {
+      popupSlider[i].update();
+      console.log(1);
+    }
+  });
 }
 /* eslint-enable no-unused-vars */
