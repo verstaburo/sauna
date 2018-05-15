@@ -98,10 +98,17 @@ export default function popups() {
 
   $(document).on('click', '.popup form [data-reset]', function (e) {
     e.preventDefault();
-    const target = $(this).parents('form').find('input[data-id]');
+    const popup = $(this).parents('.popup');
+    const form = $(this).parents('form');
+    const target = form.find('input[data-id]');
     target
       .prop('checked', false)
       .change();
+    if (popup.hasClass('popup_location')) {
+      if (form.attr('data-tab') === 'map') {
+        form.find('.popup__map').trigger('resetmap');
+      }
+    }
   });
 
   $(document).on('click', '.popup__reset', function (e) {
@@ -195,6 +202,14 @@ export default function popups() {
             checkedInputText += `, ${currentText}`;
           }
         });
+      } else if (form.attr('data-tab') === 'map') {
+        if (form.find('.js-setloc').hasClass('is-active')) {
+          checkedInput = '1';
+          checkedInputText = form.find('.js-setloc').first().text();
+        } else {
+          checkedInput = form.find('.js-setloc.is-active');
+          checkedInputText = undefined;
+        }
       }
     } else if (popup.hasClass('popup_categories')) {
       let first = true;
@@ -220,7 +235,6 @@ export default function popups() {
       if (checkedInputText === undefined) {
         checkedInputText = targetSelect.attr('data-default');
       }
-      // targetSelect.find('.filter__list-select-text').text(checkedInputText);
       const targetSelectIcon = targetSelect.find('.filter__list-select-icon');
       targetSelect.text(checkedInputText);
       targetSelect.append(targetSelectIcon);

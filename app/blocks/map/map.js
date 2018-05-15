@@ -3,6 +3,7 @@
 // Для кластеров использовать: https://github.com/Leaflet/Leaflet.markercluster
 import L from 'leaflet';
 import 'leaflet.markercluster';
+import * as Geocoding from 'esri-leaflet-geocoder';
 
 const $ = window.$;
 
@@ -67,11 +68,47 @@ export default function maps(mapEl) {
       e.layer.setIcon(DefaultIcon);
     });
 
+    const geocodeService = Geocoding.geocodeService();
+
     if (mapElement === 'popupmap') {
+      $(document).on('getloc', '.popup .js-getloc', function () {
+        const coords = $(this).attr('data-location').replace(',', '').split(' ');
+        const coordLatLng = {
+          lat: coords[0],
+          lng: coords[1],
+        };
+        map.setView(coordLatLng, 11);
+        geocodeService.reverse().latlng(coordLatLng).run((error, result) => {
+          newIcon
+            .setLatLng(result.latlng)
+            .addTo(map);
+          $('.popup .js-setloc').addClass('is-active').text(result.address.Match_addr);
+          $('.popup_location .popup__button-block').addClass('is-active');
+        });
+      });
+
       map.on('click', (e) => {
-        newIcon
-          .setLatLng(e.latlng)
-          .addTo(map);
+        geocodeService.reverse().latlng(e.latlng).run((error, result) => {
+          newIcon
+            .setLatLng(result.latlng)
+            .addTo(map);
+          $('.popup .js-setloc').addClass('is-active').text(result.address.Match_addr);
+          $('.popup_location .popup__button-block').addClass('is-active');
+        });
+      });
+
+      $(document).on('resetmap', '.popup__map', () => {
+        map.removeLayer(newIcon);
+        $('.popup .js-setloc').each(function () {
+          if ($(this).attr('data-default')) {
+            const defaultText = $(this).attr('data-default');
+            $(this).text(defaultText);
+          } else {
+            $(this).text('');
+          }
+          $(this).removeClass('is-active');
+        });
+        $('.popup_location .popup__button-block').removeClass('is-active');
       });
     }
 

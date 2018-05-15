@@ -164,13 +164,17 @@ mixin popup-location()
           +e.A(href='#' data-tab-target='metro').tab-link по метро
           +e.A(href='#' data-tab-target='districts').tab-link по районам
       +e.FORM.tab(data-tab='map' data-tab-group='locations').active
-        +e.map-top
-          +e.A(href='#').map-link Любое расположение
-          +e.P.address Адрес: Москва, ул. Арбат 1
+        +e.map-top.hide-md
+          +e.A(href='#' data-reset).map-link Любое расположение
+          +e.P.address Адрес: 
+            span.js-setloc Москва, ул. Арбат 1
           +e.controls
             +e.A(href='#' data-control='minus').control -
             +e.SPAN.controls-text 22 км
             +e.A(href='#' data-control='plus').control +
+        +e.map-top.show-md
+          +e.P.address.js-setloc(data-default='Выберите точку на карте') Выберите точку на карте
+          +e.A(href='#').map-link.js-getloc Рядом со мной
         +e.map#popupmap
         +e.map-bottom
           +e.LABEL.checkbox
@@ -180,7 +184,8 @@ mixin popup-location()
             +e.SPAN.checkbox-text Показать все сауны на карте
           +e.P.map-hint Выберите  точку на карте, либо введите адрес или метро
         +e.button-block
-          +e.BUTTON.button Показать 251 сауну
+          +e.A(href='#' data-reset).button._grey._small Сбросить
+          +e.BUTTON.button._big Показать 251 сауну
           +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
       +e.FORM.tab(data-tab='metro' data-tab-group='locations')
         +e.metro-top

@@ -263,6 +263,7 @@
     transition: opacity $ease-main;
     padding: 15px;
     box-sizing: border-box;
+    text-align: center;
     
     &:hover {
       opacity: .85;
@@ -717,13 +718,29 @@
   
   &__map-top {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 17px;
     padding: 0 22px;
     
     @include screen('tablet-wide') {
-      flex-wrap: wrap;
+      justify-content: space-between;
       padding: 0;
+    }
+    
+    @include screen('tablet-small') {
+      flex-wrap: wrap;
+    }
+    
+    &.hide-md {
+      @include screen('tablet-wide') {
+        display: none;
+      }
+    }
+    
+    &.show-md {
+      @include screen('tablet-wide', min) {
+        display: none;
+      }
     }
   }
   
@@ -738,10 +755,14 @@
     margin-right: 50px;
     flex-shrink: 0;
     
+    @include screen('tablet-wide') {
+      margin-right: 0;
+    }
+    
     @include screen('tablet-small') {
       font-size: 16px;
       margin: 7px 0;
-      margin-right: 30px;
+      margin-right: 0;
     }
   }
   
@@ -750,14 +771,20 @@
     font-size: 21px;
     font-weight: 300;
     letter-spacing: .02em;
-    margin: 5px 0;
+    margin: 6px 0 5px;
     margin-right: 53px;
-    flex-shrink: 0;
     
     @include screen('tablet-small') {
       font-size: 16px;
       margin: 7px 0;
-      margin-right: 30px;
+      width: 100%;
+      margin-right: 0;
+    }
+    
+    &.is-active {
+      @include screen('tablet-wide') {
+        color: #00a5fa;
+      }
     }
   }
   
@@ -827,6 +854,11 @@
       padding: 0;
       margin-bottom: 20px;
       text-align: left;
+      display: none;
+    }
+    
+    & ~ .popup__button-block .popup__button_small {
+      display: none;
     }
   }
   
@@ -1183,6 +1215,20 @@
       @include screen('tablet-wide') {
         margin-top: 0;
         margin-right: 0;
+      }
+      
+      &.is-active {
+        .popup__button_small {
+          @include screen('tablet-wide') {
+            display: inline-block;
+            width: 35%;
+          }
+        }
+        .popup__button_big {
+          @include screen('tablet-wide') {
+            width: 65%;
+          }
+        }
       }
     }
     

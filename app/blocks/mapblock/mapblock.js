@@ -4,7 +4,7 @@ export default function mapblock() {
   const getLocButton = $('.js-getloc');
 
   function showPosition(position) {
-    getLocButton.attr('data-location', `${position.coords.latitude}, ${position.coords.longitude}`);
+    getLocButton.attr('data-location', `${position.coords.latitude}, ${position.coords.longitude}`).trigger('getloc');
   }
 
   function getLocation() {

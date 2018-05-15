@@ -33,6 +33,8 @@
     "eslint-config-airbnb-base": "^11.1.3",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-import": "^2.2.0",
+    "esri-leaflet": "^2.1.4",
+    "esri-leaflet-geocoder": "^2.2.9",
     "gulp": "^4.0.0",
     "gulp-cached": "^1.1.0",
     "gulp-changed": "^2.0.0",
