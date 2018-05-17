@@ -164,7 +164,7 @@
   &__sales {
     text-align: left;
     margin-top: 34px;
-    margin-bottom: 217px;
+    margin-bottom: 34px;
     
     @include screen('tablet-wide') {
       margin-bottom: 0;
@@ -1350,6 +1350,7 @@
       
       @include screen('tablet-wide') {
         padding: 42px 42px 117px;
+        justify-content: flex-start;
       }
       
       @include screen('tablet-small') {
