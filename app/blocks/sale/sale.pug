@@ -1,24 +1,24 @@
 mixin sale(img, title)
-  +b.sale&attributes(attributes)
+  +b.sale(itemscope itemtype='http://schema.org/Place')&attributes(attributes)
     +e.top
       +e.img
-        img(src='assets/images/' + img)
+        img(src='assets/images/' + img itemprop='photo')
       +e.heading
-        +e.P.title= title
+        +e.P.title(itemprop='description')= title
         +e.P.name
-          a(href='#') Усадьба банная на Угрешской
+          a(href='#' itemprop='name') Усадьба банная на Угрешской
       +e.rating
-        +rating(2)
-        +e.P.reviews Отзывы 231
-      +e.P.address Москва, ул. Ленина 16/2
+        +rating(2)(itemprop='aggregateRating')
+        +e.P.reviews(itemprop='reviews') Отзывы 231
+      +e.P.address(itemprop='address') Москва, ул. Ленина 16/2
     +e.content
       +e.main
-        +e.P.text Скидка именинникам при предьявлении
+        +e.P.text(itemscope itemtype='http://schema.org/Offer') Скидка именинникам при предьявлении
           br
           | паспорта. 20% на время и 10% на кухню.
         +e.P.tel
-          a(href='tel:+71234567890') +7(123)456-7890
-          a(href='tel:+71234567890') +7(123)456-7890
+          a(href='tel:+71234567890' itemprop='telephone') +7(123)456-7890
+          a(href='tel:+71234567890' itemprop='telephone') +7(123)456-7890
       +e.aside
-        +e.P.price 1500-2000 руб/час
+        +e.P.price(itemscope itemtype='http://schema.org/Offer') 1500-2000 руб/час
         +e.A(href='#').button подробнее

@@ -4,17 +4,17 @@ block head
   - var pageTitle = 'Sauna'
 
 block content
-  +b.sauna
+  +b.sauna(itemscope itemtype='http://schema.org/Place')
     +header()._wide
     +topline-menu('Карта сайта', 'sitemap.html', 'Добавить заведение', 'linebg1.jpg').__topline
     +e.head
       .container.container_wide
         +breadcrumbs(['Москва', 'ЮЗАО', 'район Северное Бутово', 'Варшавское шоссе', 'Баня и сауна GreenRoof']).__breadcrumbs
-        +e.P.category САУНА
-        +e.H1.heading GreenRoof
+        +e.P.category(itemprop='description') САУНА
+        +e.H1.heading(itemprop='name') GreenRoof
         +e.top
-          +rating(3).__rating
-          +e.P.top-text 15 отзывов
+          +rating(3)(itemprop='aggregateRating').__rating
+          +e.P.top-text(itemprop='reviews') 15 отзывов
           +e.P.top-text._checked
             +icon('check').check-icon
             | Заведение проверено
@@ -22,7 +22,7 @@ block content
           +e.social
     +e.content
       +put-block-into-slot('multislider', 'xl')
-        +multislider(false, true).__slider
+        +multislider(false, true).__slider(itemprop='photos')
           +slide()
             +sauna-slide('saunaslide11', 'place1.jpg')
           +slide()

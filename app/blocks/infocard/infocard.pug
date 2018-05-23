@@ -1,27 +1,27 @@
 mixin infocard(img, imgbottom, reviews, title, name, desc, hover)
-  +b.infocard(class=hover ? '_hover': '')&attributes(attributes)
+  +b.infocard(class=hover ? '_hover': '' itemscope itemtype='http://schema.org/Place')&attributes(attributes)
     +e.A(href='#').img
-      img(src='assets/images/'+img)
+      img(src='assets/images/'+img itemprop='photo')
       if imgbottom
-        +e.img-bottom
+        +e.img-bottom(itemprop='address')
           img(src='assets/images/metro.png')
           | Новослободская
     +e.content
       +e.rating
-        +rating(3)
+        +rating(3)(itemprop='aggregateRating')
         if reviews
-          +e.A(href='#').reviews 15 отзывов
-      +e.title= title
-      +e.A(href='#').name= name
+          +e.A(href='#' itemprop='reviews').reviews 15 отзывов
+      +e.title(iremprop='desciption')= title
+      +e.A(href='#' itemprop='name').name= name
       +e.info
-        +e.price 1000 - 1200 руб.
+        +e.price(itemscope itemtype='http://schema.org/Offer') 1000 - 1200 руб.
         if desc
-          +e.desc= desc
-        +e.address
+          +e.desc(itemprop='description')= desc
+        +e.address(itemprop='address')
           img(src='assets/images/pin.png')
           | ул. Ленина 16/2
       if hover
-        +e.P.text Температура парилки от 30 до 50 градусов
+        +e.P.text(itemprop='description') Температура парилки от 30 до 50 градусов
           br
           | настоящий подарок тем, кто не может 
           br
@@ -30,41 +30,41 @@ mixin infocard(img, imgbottom, reviews, title, name, desc, hover)
           | Нежный пар хамама, который
 
 mixin infocard-list(img, reviews, title, name, metro, desc, hover)
-  +b.infocard(class=hover ? '_hover': '')&attributes(attributes)
+  +b.infocard(class=hover ? '_hover': '' itemscope itemtype='http://schema.org/Place')&attributes(attributes)
     +e.A(href='#').img._desktop
       img(src='assets/images/'+img)
-    +e.img._slider
+    +e.img._slider(itemprop='photos')
       +slider(false, true)
         +slide()
-          img(src='assets/images/' + img)
+          img(src='assets/images/' + img itemprop='photo')
         +slide()
-          img(src='assets/images/' + img)
+          img(src='assets/images/' + img itemprop='photo')
         +slide()
-          img(src='assets/images/' + img) 
+          img(src='assets/images/' + img itemprop='photo') 
     +e.content
-      +e.title= title
+      +e.title(iremprop='desciption')= title
       +e.rating
-        +rating(3)
+        +rating(3)(itemprop='aggregateRating')
         if reviews
-          +e.A(href='#').reviews (15 отзывов)      
-      +e.A(href='#').name= name
+          +e.A(href='#' itemprop='reviews').reviews (15 отзывов)      
+      +e.A(href='#' itemprop='name').name= name
       +e.info
-        +e.price 1000 - 1200 руб.
+        +e.price(itemscope itemtype='http://schema.org/Offer') 1000 - 1200 руб.
         if metro
-          +e.P.metro
+          +e.P.metro(itemprop='address')
             +e.A(href='#callform').button.js-fancybox-popup Позвонить
             img(src='assets/images/metro.png')
             | Новослободская            
         if desc
-          +e.desc._type
+          +e.desc._type(itemprop='description')
             +e.A(href='#').desctype Финский зал
             | В сауне 7 залов
-          +e.address
+          +e.address(itemprop='address')
             +e.A(href='#callform').button.js-fancybox-popup Позвонить
             img(src='assets/images/pin.png')
             | ул. Ленина 16/2
       if hover
-        +e.P.text Температура парилки от 30 до 50 градусов
+        +e.P.text(itemprop='description') Температура парилки от 30 до 50 градусов
           br
           | настоящий подарок тем, кто не может 
           br

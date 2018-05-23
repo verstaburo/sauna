@@ -11,24 +11,24 @@ mixin popup()
     block
 
 mixin popup-list(heading, name, value, texts, colors)
-  +e.list&attributes(attributes)
-    +e.P.list-heading= heading
+  +e.list(itemscope itemtype='http://schema.org/ItemList')&attributes(attributes)
+    +e.P.list-heading(itemprop='name')= heading
     +e.UL.list-items
       - for (var i = 0; i < texts.length; i++)
         +popup-label(name, value + i, texts[i], colors ? colors[i] : 'yellow')
 
 mixin popup-label(name, value, text, color)
-  +e.LI.list-item
+  +e.LI.list-item(itemscope itemtype='http://schema.org/ListItem')
     +e.LABEL.label
       input(type='checkbox' name=name value=value data-color=color ? color : 'yellow' data-id=value)
       +e.SPAN.label-icon(class='_' + (color ? color : 'yellow'))
-      +e.SPAN.label-text= text
+      +e.SPAN.label-text(itemprop='name')= text
       
 mixin label-count(value, text)
-  +e.LABEL.count-item
+  +e.LABEL.count-item(itemscope itemtype='http://schema.org/ListItem')
     input(type='radio' name='count' value=value)
     +e.SPAN.count-radio
-    +e.SPAN.count-text= text
+    +e.SPAN.count-text(itemprop='name')= text
 
 //- popup-sales
 
@@ -39,7 +39,7 @@ mixin popup-sales()
         +e.SPAN.close-text Закрыть
         +e.SPAN.close-icon
       +e.P.heading Выберите подходящую акцию
-      +e.UL.sales
+      +e.UL.sales(itemscope itemtype='http://schema.org/ItemList')
         +label-sale('sales', 'sale1', 'Любая')
         +label-sale('sales', 'sale2', 'Час в подарок')
         +label-sale('sales', 'sale3', 'День рождения')
@@ -54,12 +54,12 @@ mixin popup-sales()
         +e.P.error Ничего не найдено. Попробуйте использовать другие параметры
       
 mixin label-sale(name, value, text)
-  +e.LI.sales-item
+  +e.LI.sales-item(itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem')
     +e.LABEL.sale
       input(type='radio' name=name value=value)
       +e.SPAN.sale-icon
         +icon('diamond')
-      +e.P.sale-text= text
+      +e.P.sale-text(itemprop='name')= text
         +e.SPAN.sale-check
           +icon('check')
 
@@ -72,7 +72,7 @@ mixin popup-types()
         +e.SPAN.close-text Закрыть
         +e.SPAN.close-icon
       +e.P.heading Выберите тип сауны
-      +e.UL.sales
+      +e.UL.sales(itemscope itemtype='http://schema.org/ItemList')
         +label-sale('types', 'type1', 'Любой')
         +label-sale('types', 'type2', 'Элитный отдых')
         +label-sale('types', 'type3', 'Отдохнуть вдвоем')
@@ -106,8 +106,8 @@ mixin popup-categories()
             +popup-list('Сервис', 'category', 'category4', ['Караоке', 'Бильярд', 'Джакузи', 'Бассейн', 'Купель', 'Комната отдыха', 'Спуниковое ТВ', 'Парковка'])
           +e.col
             +popup-list('Стоимость', 'category', 'category5', ['Любая', 'до 700 ₽/час', '700-1000 ₽/час', '1000-1500 ₽/час', '1500-2000 ₽/час', '2000-3000 ₽/час', 'от 3000 ₽/час'], ['blue'])
-      +e.count
-        +e.P.count-heading Вместимость сауны
+      +e.count(itemscope itemtype='http://schema.org/ItemList')
+        +e.P.count-heading(itemprop='name') Вместимость сауны
         +label-count('2', 'двое')
         +label-count('10', 'до 10')
         +label-count('20', '10-20')
@@ -164,7 +164,7 @@ mixin popup-location()
           +e.A(href='#' data-tab-target='metro').tab-link по метро
           +e.A(href='#' data-tab-target='districts').tab-link по районам
       +e.FORM.tab(data-tab='map' data-tab-group='locations').active
-        +e.map-top.hide-md
+        +e.map-top.hide-md(itemscope itemtype='http://schema.org/Map')
           +e.A(href='#' data-reset).map-link Любое расположение
           +e.P.address Адрес: 
             span.js-setloc Москва, ул. Арбат 1

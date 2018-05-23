@@ -137,10 +137,10 @@ mixin sitemap()
               +sitemap-list('sitelinks612', 'Улица 12', ['V.V.I.P. клуб Парадиз', 'VIP Сауна Парься по-Царски в Гольяново со скидкой', 'VIP-Сауна Воск', 'VIP-баня Red house', 'VIP-баня на Таганке', 'VIP-клуб Амазон', 'VIP-клуб Джентельмен', 'VIP-клуб Морской', 'VIP-клуб Памир', 'VIP-клуб Эверест', 'VIP-комплекс Exotic', 'VIP-сауна', 'VIP-сауна Swiss Star', 'VIP-сауна Аленка', 'VIP-сауна Аллигатор', 'VIP-сауна Жемчужина', 'VIP-сауна Лотос', 'VIP-сауна Оазис', 'VIP-сауна в Хамовниках', 'VIP-сауна в фитнес-клубе на Берзарина', 'VIP-сауна на Кутузовском'])
 
 mixin sitemap-list(id, heading, links)
-  +e.list(id=id)
+  +e.list(id=id itemscope itemtype='http://schema.org/ItemList')
     if heading
-      +e.P.list-heading= heading
+      +e.P.list-heading(itemprop='name')= heading
     +e.UL.list-items
       each item in links
         +e.LI.list-item
-          +e.A(href='#').list-link= item
+          +e.A(href='#' itemprop='itemListElement').list-link= item

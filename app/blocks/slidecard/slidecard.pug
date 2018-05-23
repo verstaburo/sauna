@@ -1,17 +1,17 @@
 mixin slidecard(img, title, name, desc)
-  +b.slidecard&attributes(attributes)
-    +e.img
+  +b.slidecard(itemscope itemtype='http://schema.org/Place')&attributes(attributes)
+    +e.img(itemprop='photos')
       +slider(false, true)
         +slide()
-          img(src='assets/images/' + img)
+          img(src='assets/images/' + img itemprop='photo')
         +slide()
-          img(src='assets/images/' + img)
+          img(src='assets/images/' + img itemprop='photo')
         +slide()
-          img(src='assets/images/' + img)      
+          img(src='assets/images/' + img itemprop='photo')      
     +e.content
-      +e.title= title
-      +e.A(href='#').name= name
-      +e.desc
+      +e.title(itemprop='description')= title
+      +e.A(href='#' itemprop='name').name= name
+      +e.desc(itemprop='description')
         - for (var i = 0; i < desc.length; i++)
           | #{desc[i]}
           if (i < desc.length - 1)

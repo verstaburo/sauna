@@ -65,14 +65,14 @@ mixin card-reviews(short)
 //- card-rating
 
 mixin card-rating()
-  +b.card-rating&attributes(attributes)
-    +e.H3.heading Рейтинг
+  +b.card-rating(itemscope itemtype='http://schema.org/Rating')&attributes(attributes)
+    +e.H3.heading(itemprop='name') Рейтинг
     +e.content
       +e.ratings
         +rating(3).__rating
-        +e.P.rate 4.0 из 5
+        +e.P.rate(itemprop='ratingValue') 4.0 из 5
         +e.A(href='#').reviews 24 отзыва
-      +e.P.text
+      +e.P.text(itemprop='description')
         | топ
         +e.SPAN.count 50
         | Сауны Москвы
@@ -80,7 +80,7 @@ mixin card-rating()
         | топ
         +e.SPAN.count._green 10
         | Турецкий хамам
-      +e.lines
+      +e.lines(itemprop='description')
         +e.line
           +e.P.line-title Персонал
           +e.line-bar
@@ -101,41 +101,41 @@ mixin card-rating()
 //- card-contacts
 
 mixin card-contacts(mult)
-  +b.card-contacts&attributes(attributes)
+  +b.card-contacts(itemscope itemtype='http://schema.org/Place')&attributes(attributes)
     +e.H3.heading Контакты
     +e.content.flex-gr
-      +e.section
+      +e.section(itemscope itemtype='http://schema.org/Offer')
         if mult
-          +e.P.section-title._bordered._mult Стоимость:
+          +e.P.section-title._bordered._mult(itemprop='name') Стоимость:
             +e.IMG(src='assets/images/payment.png').price-img._mult
           +e.halls
             +e.hall
               +e.P.hall-link
-                a(href='#') Зал Турецкий
-              +e.P.price._hall 1200-1400 руб/час
+                a(href='#' itemprop='description') Зал Турецкий
+              +e.P.price._hall(itemprop='price') 1200-1400 руб/час
             +e.hall
               +e.P.hall-link
-                a(href='#') Зал Тибетский
-              +e.P.price._hall 1200-1400 руб/час
+                a(href='#' itemprop='description') Зал Тибетский
+              +e.P.price._hall(itemprop='price') 1200-1400 руб/час
             +e.hall
               +e.P.hall-link
-                a(href='#') Зал Русский
-              +e.P.price._hall 1200-1400 руб/час
+                a(href='#' itemprop='description') Зал Русский
+              +e.P.price._hall(itemprop='price') 1200-1400 руб/час
         else
-          +e.P.section-title._bordered Стоимость:
-        +e.P.days Пн Вт Ср Чт Пт 
-        +e.P.price 1200-1400 руб/час
+          +e.P.section-title._bordered(itemprop='name') Стоимость:
+        +e.P.days(itemprop='description') Пн Вт Ср Чт Пт 
+        +e.P.price(itemprop='price') 1200-1400 руб/час
           +e.IMG(src='assets/images/payment.png').price-img
-        +e.P.days._red Сб Вс
-        +e.P.price._hide-md 1500-2000 руб/час
+        +e.P.days._red(itemprop='description') Сб Вс
+        +e.P.price._hide-md(itemprop='price') 1500-2000 руб/час
       if mult
         +put-block-into-slot('contactstime', 'xl')
-          +e.P.section._text
+          +e.P.section._text(itemprop='openingHoursSpecification')
             +e.IMG(src='assets/images/time.png').icon
             +e.section-title Время работы:
             +e.SPAN.text-span Круглосуточно
       else
-        +e.P.section._text
+        +e.P.section._text(itemprop='openingHoursSpecification')
           +e.IMG(src='assets/images/time.png').icon
           +e.section-title Время работы:
           +e.SPAN.text-span Круглосуточно
@@ -145,9 +145,9 @@ mixin card-contacts(mult)
             +e.P.section-title._bordered Телефон:
             +e.tels
               +e.P.tel
-                a(href='tel:+74954223222') +7 (495) 422-32-22
+                a(href='tel:+74954223222' itemprop='telephone') +7 (495) 422-32-22
               +e.P.tel
-                a(href='tel:+79555332323') +7 (955) 533-23-23
+                a(href='tel:+79555332323' itemprop='telephone') +7 (955) 533-23-23
             +e.A(href='#callform').button.js-fancybox-popup
               span.hide-md Заказать сауну
               span.show-md Позвонить
@@ -156,9 +156,9 @@ mixin card-contacts(mult)
           +e.P.section-title._bordered Телефон:
           +e.tels
             +e.P.tel
-              a(href='tel:+74954223222') +7 (495) 422-32-22
+              a(href='tel:+74954223222' itemprop='telephone') +7 (495) 422-32-22
             +e.P.tel
-              a(href='tel:+79555332323') +7 (955) 533-23-23
+              a(href='tel:+79555332323' itemprop='telephone') +7 (955) 533-23-23
           +e.A(href='#callform').button.js-fancybox-popup
             span.hide-md Заказать сауну
             span.show-md Позвонить
@@ -166,7 +166,7 @@ mixin card-contacts(mult)
 //- card-address
 
 mixin card-address(mult)
-  +b.card-address&attributes(attributes)
+  +b.card-address(itemscope itemtype='http://schema.org/PostalAddress')&attributes(attributes)
     +e.H3.heading Адрес
     +e.content.flex-gr
       if mult
@@ -175,19 +175,19 @@ mixin card-address(mult)
       +e.section._top
         +e.P.section-title Адрес:
         +e.P.link
-          a(href='#locationpopup').js-fancybox-popup Москва, Тамбовская улица, д. 4
-      +e.map#map
+          a(href='#locationpopup' itemprop='streetAddress').js-fancybox-popup Москва, Тамбовская улица, д. 4
+      +e.map#map(itemscope itemtype='http://schema.org/Map')
       +e.P.link._black._show 
         a(href='#locationpopup').js-fancybox-popup Посмотреть на большой карте
       +e.section._bottom
         +e.P.section-title._bordered Метро:
         +e.P.place
-          +e.SPAN.place-text
+          +e.SPAN.place-text(itemprop='addressLocality')
             +e.IMG(src='assets/images/metro.png').place-icon
             | Тверская
           +e.SPAN.distance 500 метров
         +e.P.place
-          +e.SPAN.place-text
+          +e.SPAN.place-text(itemprop='addressLocality')
             +e.IMG(src='assets/images/metro.png').place-icon
             | Тверская
           +e.SPAN.distance 500 метров
@@ -203,31 +203,31 @@ mixin card-desc(saleSlotId, saleSlotRes)
     +e.content
       +e.desc
         +e.section-title Описание зала
-        +e.P.text Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%). до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки.
+        +e.P.text(itemprop='description') Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%). до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки.
       if saleSlotId
         +b.card-sales.card-desc__sales
           +put-block-into-slot(saleSlotId, saleSlotRes)
-      +e.services
-        +e.P.service
-          strong Кухня:
+      +e.services(itemscope itemtype='http://schema.org/Service')
+        +e.P.service(itemprop='description')
+          strong(itemprop='category') Кухня:
           | Разливное пиво, домашняя кухня
-        +e.P.service
-          strong Услуги:
+        +e.P.service(itemprop='description')
+          strong(itemprop='category') Услуги:
           | Веники, банщик, ароматерапия, кальян
-        +e.P.service
-          strong Парная:
+        +e.P.service(itemprop='description')
+          strong(itemprop='category') Парная:
           | Финская, турецкий хамам
-        +e.P.service
-          strong Бильярд:
+        +e.P.service(itemprop='description')
+          strong(itemprop='category') Бильярд:
           | Разливное пиво, домашняя кухня
-        +e.P.service
-          strong Бассейн:
+        +e.P.service(itemprop='description')
+          strong(itemprop='category') Бассейн:
           | 3х4 метра, с подогревом
-        +e.P.service
-          strong Комната отдыха:
+        +e.P.service(itemprop='description')
+          strong(itemprop='category') Комната отдыха:
           | Одна
-        +e.P.service._count
-          strong Вместимость:
+        +e.P.service._count(itemprop='description')
+          strong(itemprop='category') Вместимость:
           | до 12 человек
           +e.count
             +e.count-group
@@ -253,7 +253,7 @@ mixin card-desc(saleSlotId, saleSlotRes)
           +e.IMG(src='assets/images/place1.jpg').video-bg
           +e.A(href='https://www.youtube.com/watch?v=30imLMlqK3g' data-fancybox='video').playbutton
         +e.P.sitelink Сайт:
-          a(href='#') www.saunasite.ru
+          a(href='#' itemprop='url') www.saunasite.ru
 
 //- card-desc-mult
 
@@ -263,29 +263,29 @@ mixin card-desc-mult()
       +e.A(href='#').link
         +e.IMG(src='assets/images/print.png').link-icon
         | Распечатать
-    +e.content
-      +e.P.text Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%). до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки.
-      +e.services
-        +e.P.service
-          strong Кухня:
+    +e.content(itemscope itemtype='http://schema.org/Place')
+      +e.P.text(itemprop='description') Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%). до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки.
+      +e.services(itemscope itemtype='http://schema.org/Service')
+        +e.P.service(itemprop='description')
+          strong(itemprop='category') Кухня:
           | Разливное пиво, домашняя кухня
-        +e.P.service
-          strong Услуги:
+        +e.P.service(itemprop='description')
+          strong(itemprop='category') Услуги:
           | Веники, банщик, ароматерапия, кальян
-      +e.halls
+      +e.halls(itemscope itemtype='http://schema.org/Offer')
         +e.P.service._halls 2 отдельных зала
         +e.P.halls-link
-          a(href='#') Зал обещаний
-            +e.SPAN.halls-price 1200-1400 руб/час
+          a(href='#' itemprop='name') Зал обещаний
+            +e.SPAN.halls-price(itemprop='price') 1200-1400 руб/час
         +e.P.halls-link
-          a(href='#') Зал шумазер
-            +e.SPAN.halls-price 1200-1500 руб/час
+          a(href='#' itemprop='name') Зал шумазер
+            +e.SPAN.halls-price(itemprop='price') 1200-1500 руб/час
       +e.side
         +e.video
           +e.IMG(src='assets/images/place1.jpg').video-bg
           +e.A(href='https://www.youtube.com/watch?v=30imLMlqK3g' data-fancybox='video').playbutton
         +e.P.sitelink Сайт:
-          a(href='#') www.saunasite.ru
+          a(href='#' itemprop='url') www.saunasite.ru
 
 //- card-desc-halls
 
@@ -294,43 +294,43 @@ mixin card-desc-halls(heading, subheading, imgCount, mobheading, hallSlotId, img
     if heading
       +e.H3.heading= heading
       +e.P.mobheading= mobheading
-    +e.content
+    +e.content(itemscope itemtype='http://schema.org/Place')
       +e.col._left
-        +e.P.subheading= subheading
-        +e.days
+        +e.P.subheading(itemprop='name')= subheading
+        +e.days(itemscope itemtype='http://schema.org/Offer')
           +e.days-col
             +e.days-title Пн Вт Ср Чт Пт
             +e.days-mobtitle Стоимость:
-            +e.days-price 1200-1400 руб/час
+            +e.days-price(itemprop='price') 1200-1400 руб/час
           +e.days-col.hide-md
             +e.days-title._red Сб Вс
-            +e.days-price 1500-2000 руб/час
+            +e.days-price(itemprop='price') 1500-2000 руб/час
         +put-block-into-slot(hallSlotId, 'md')
         +e.P.text-title Описание зала
-        +e.P.text Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%). до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки.
+        +e.P.text(itemprop='description') Температура парилки от 30 до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки. Нежный пар хамама, который подается через отверстия в стенах, мягко разогревает тело, не обжигая его, помогает избавиться от напряжения и мигрени, улучшает сон и успокаивает нервы. Температура повышается постепенно, при этом сухой пар чередуется с очень влажным (до 100%). до 50 градусов – настоящий подарок тем, кто не может позволить себе горячие пропарки.
       +e.col._right
         +put-block-into-slot(hallSlotId, 'xl')
           +e.images-wrapper
-            +e.images
+            +e.images(itemprop='photos')
               - for (var i = 1; i <= imgCount; i++)
                 +e.image
                   +e.A(href='#'+imgPopupId+i data-fancybox='gallery2').imgblock
-                    img(src='assets/images/place'+i+'.jpg')
-          +e.services
-            +e.P.service
-              strong Парная:
+                    img(src='assets/images/place'+i+'.jpg' itemprop='photo')
+          +e.services(itemscope itemtype='http://schema.org/Service')
+            +e.P.service(itemprop='description')
+              strong(itemprop='category') Парная:
               | Финская, турецкий хамам
-            +e.P.service
-              strong Бильярд:
+            +e.P.service(itemprop='description')
+              strong(itemprop='category') Бильярд:
               | Разливное пиво, домашняя кухня
-            +e.P.service
-              strong Бассейн:
+            +e.P.service(itemprop='description')
+              strong(itemprop='category') Бассейн:
               | 3х4 метра, с подогревом
-            +e.P.service
-              strong Комната отдыха:
+            +e.P.service(itemprop='description')
+              strong(itemprop='category') Комната отдыха:
               | Одна
-            +e.P.service._count
-              strong Вместимость:
+            +e.P.service._count(itemprop='description')
+              strong(itemprop='category') Вместимость:
               | до 12 человек
               +e.count
                 +e.count-group
@@ -361,33 +361,33 @@ mixin card-sales(blockSlotId, blockSlotRes)
       +put-block-into-slot(blockSlotId, blockSlotRes)
         +e.content
           +e.P.section-title Акции и спецпредложения:
-          +e.sale
+          +e.sale(itemscope itemtype='http://schema.org/Offer')
             +e.P.sale-link
-              a(href='#') Скидка в день рождения 50%
-            +e.SPAN.sale-date 1-9 мая
-          +e.sale
+              a(href='#' itemprop='name') Скидка в день рождения 50%
+            +e.SPAN.sale-date(itemprop='validThrough') 1-9 мая
+          +e.sale(itemscope itemtype='http://schema.org/Offer')
             +e.P.sale-link
-              a(href='#') 5й час в подарок
-            +e.SPAN.sale-date 1-9 мая
-          +e.sale
+              a(href='#' itemprop='name') 5й час в подарок
+            +e.SPAN.sale-date(itemprop='validThrough') 1-9 мая
+          +e.sale(itemscope itemtype='http://schema.org/Offer')
             +e.P.sale-link
-              a(href='#') Скидка по будням до 30%
-            +e.SPAN.sale-date 1-9 мая
+              a(href='#' itemprop='name') Скидка по будням до 30%
+            +e.SPAN.sale-date(itemprop='validThrough') 1-9 мая
     else
       +e.content
         +e.P.section-title Акции и спецпредложения:
         +e.sale
-          +e.P.sale-link
-            a(href='#') Скидка в день рождения 50%
-          +e.SPAN.sale-date 1-9 мая
+          +e.P.sale-link(itemscope itemtype='http://schema.org/Offer')
+            a(href='#' itemprop='name') Скидка в день рождения 50%
+          +e.SPAN.sale-date(itemprop='validThrough') 1-9 мая
         +e.sale
-          +e.P.sale-link
-            a(href='#') 5й час в подарок
-          +e.SPAN.sale-date 1-9 мая
+          +e.P.sale-link(itemscope itemtype='http://schema.org/Offer')
+            a(href='#' itemprop='name') 5й час в подарок
+          +e.SPAN.sale-date(itemprop='validThrough') 1-9 мая
         +e.sale
-          +e.P.sale-link
-            a(href='#') Скидка по будням до 30%
-          +e.SPAN.sale-date 1-9 мая
+          +e.P.sale-link(itemscope itemtype='http://schema.org/Offer')
+            a(href='#' itemprop='name') Скидка по будням до 30%
+          +e.SPAN.sale-date(itemprop='validThrough') 1-9 мая
 
 //- card-questions
 
@@ -395,19 +395,19 @@ mixin card-questions()
   +b.card-questions&attributes(attributes)
     +e.H3.heading Вопросы и ответы 
     +e.content.js-accordions(data-accordion-multiple='true')
-      +e.accordion.js-accordion
+      +e.accordion.js-accordion(itemscope itemtype='http://schema.org/Question')
         +icon('accordion_arrow').__arrow.js-accordion-button
-        +e.P.title.js-accordion-button Что входит в стоимость, а за что надо платить отдельно
-        +e.P.text.js-accordion-body Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
-      +e.accordion.js-accordion
+        +e.P.title.js-accordion-button(itemprop='name') Что входит в стоимость, а за что надо платить отдельно
+        +e.P.text.js-accordion-body(itemprop='suggestedAnswer') Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
+      +e.accordion.js-accordion(itemscope itemtype='http://schema.org/Question')
         +icon('accordion_arrow').__arrow.js-accordion-button
-        +e.P.title.js-accordion-button Можно ли в сауну со своими продуктами и алкоголем
-        +e.P.text.js-accordion-body Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
-      +e.accordion.js-accordion
+        +e.P.title.js-accordion-button(itemprop='name') Можно ли в сауну со своими продуктами и алкоголем
+        +e.P.text.js-accordion-body(itemprop='suggestedAnswer') Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
+      +e.accordion.js-accordion(itemscope itemtype='http://schema.org/Question')
         +icon('accordion_arrow').__arrow.js-accordion-button
-        +e.P.title.js-accordion-button Tolerably earnestly middleton extremely distrusts she boy now no
-        +e.P.text.js-accordion-body Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
-      +e.accordion.js-accordion
+        +e.P.title.js-accordion-button(itemprop='name') Tolerably earnestly middleton extremely distrusts she boy now no
+        +e.P.text.js-accordion-body(itemprop='suggestedAnswer') Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
+      +e.accordion.js-accordion(itemscope itemtype='http://schema.org/Question')
         +icon('accordion_arrow').__arrow.js-accordion-button
-        +e.P.title.js-accordion-button She prosperous continuing entreaties companions unreserved you boisterous
-        +e.P.text.js-accordion-body Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do
+        +e.P.title.js-accordion-button(itemprop='name') She prosperous continuing entreaties companions unreserved you boisterous
+        +e.P.text.js-accordion-body(itemprop='suggestedAnswer') Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do

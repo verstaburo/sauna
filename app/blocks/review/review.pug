@@ -1,42 +1,42 @@
 mixin review()
-  +b.review&attributes(attributes)
+  +b.review(itemscope itemtype='http://schema.org/Review')&attributes(attributes)
     +e.top
       +e.top-img
-        img(src='assets/images/review1.jpg')
+        img(src='assets/images/review1.jpg' itemprop='image')
       +e.P.heading
-        a(href='#') Усадьба банная на Угрешской
-      +rating(2).review__top-rating
-      +e.P.reviews Отзывы 231
+        a(href='#' itemprop='itemReviewed') Усадьба банная на Угрешской
+      +rating(2)(itemprop='aggregateRating').review__top-rating
+      +e.P.reviews(itemprop='reviews') Отзывы 231
     block
             
 mixin review-block(author, images, text, short)
   +e.content&attributes(attributes)
     if !short
       +e.mob-top
-        +e.P.top-author-name= author + ' о(об)'
-        +e.P.heading Усадьба банная на Угрешской
+        +e.P.top-author-name(itemprop='author')= author + ' о(об)'
+        +e.P.heading(itemprop='about') Усадьба банная на Угрешской
     +e.author
-      +e.P.author-name= author
-      +e.P.date 15 мая 2015
+      +e.P.author-name(itemprop='author')= author
+      +e.P.date(itemprop='dateCreated') 15 мая 2015
       if short
-        +rating(3).review__total-rating
+        +rating(3)(itemprop='aggregateRating').review__total-rating
     +e.ratings
       +e.ratings-col
-        +e.P.ratings-item Персонал
+        +e.P.ratings-item(itemprop='reviewRating') Персонал
           +rating(3).review__rating
-        +e.P.ratings-item Услуги 
+        +e.P.ratings-item(itemprop='reviewRating') Услуги 
           +rating(3).review__rating
       +e.ratings-col
-        +e.P.ratings-item Интерьер
+        +e.P.ratings-item(itemprop='reviewRating') Интерьер
           +rating(3).review__rating
-        +e.P.ratings-item Расположение
+        +e.P.ratings-item(itemprop='reviewRating') Расположение
           +rating(3).review__rating
-    +e.P.text= text
+    +e.P.text(itemprop='review')= text
     if images
       +e.images
-        +e.A(href='assets/images/review2_big.jpg' data-fancybox=images).img
+        +e.A(href='assets/images/review2_big.jpg' data-fancybox=images itemprop='thumbnailUrl').img
           img(src='assets/images/review2.jpg')
-        +e.A(href='assets/images/review2_big.jpg' data-fancybox=images).img
+        +e.A(href='assets/images/review2_big.jpg' data-fancybox=images itemprop='thumbnailUrl').img
           img(src='assets/images/review2.jpg')
     +e.useful
       +e.P.useful-text Полезный отзыв?
@@ -51,14 +51,14 @@ mixin review-answer(author, text, short)
     +icon('comment_arrow').__answer-icon
     if !short
       +e.mob-top
-        +e.P.top-author-name= author
+        +e.P.top-author-name(itemprop='author')= author
     +e.author
-      +e.P.author-name= author
-      +e.P.date 15 мая 2015
-    +e.P.text= text
+      +e.P.author-name(itemprop='author')= author
+      +e.P.date(itemprop='dateCreated') 15 мая 2015
+    +e.P.text(itemprop='review')= text
 
 mixin review-short(author, images, text, answer)
-  +b.review._short&attributes(attributes)
+  +b.review._short(itemscope itemtype='http://schema.org/Review')&attributes(attributes)
     +review-block(author, images, text, true)
     if answer
       +review-answer('Администрация сауны', 'Рыночная информация многопланово стабилизирует сублимированный имидж. Опросная анкета, на первый взгляд, допускает комплексный анализ ситуации, полагаясь на инсайдерскую информацию. Пак-шот трансформирует ролевой стратегический маркетинг.', true)._answer

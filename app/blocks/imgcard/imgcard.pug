@@ -1,17 +1,17 @@
 mixin imgcard(img, bottom)
-  +b.imgcard&attributes(attributes)
+  +b.imgcard(itemscope itemtype='http://schema.org/Place')&attributes(attributes)
     +e.img
       if img
-        img(src='assets/images/' + img)
+        img(src='assets/images/' + img itemprop='photo')
       else
-        img(src='assets/images/lastview1.jpg')
+        img(src='assets/images/lastview1.jpg' itemprop='photo')
       if bottom
-        +e.img-bottom
+        +e.img-bottom(itemprop='address')
           img(src='assets/images/metro.png')
           | Новослободская
     +e.hover
-      +e.P.text САУНА
+      +e.P.text(itemprop='name') САУНА
         br
         | ДВА БЕРЕГА
-      +rating(2).imgcard__rating
+      +rating(2)(itemprop='aggregateRating').imgcard__rating
       +e.A(href='#').button подробнее

@@ -1,15 +1,15 @@
 mixin blogcard(category)
-  +b.blogcard&attributes(attributes)
+  +b.blogcard(itemscope itemtype='http://schema.org/Blog')&attributes(attributes)
     +e.A(href='#').img
-      img(src='assets/images/blog1.jpg')
-    +e.P.date 15 марта 2016
+      img(src='assets/images/blog1.jpg' itemprop='image')
+    +e.P.date(itemprop='dateCreated') 15 марта 2016
     +e.P.title
-      a(href='#') Сезонное выпадение волос: лечение
-    +e.P.text Температура парилки от 30 до 50 градусов
+      a(href='#' itemprop='name') Сезонное выпадение волос: лечение
+    +e.P.text(itemprop='description') Температура парилки от 30 до 50 градусов
       br
       | настоящий подарок тем, кто не может
       br
       | позволить себе горячие пропарки. Нежный пар хамама, который подается через
       br
       | отверстия в стенах, мягко
-    +e.A(href='#').category= category
+    +e.A(href='#' itemprop='genre').category= category

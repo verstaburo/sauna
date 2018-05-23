@@ -1,6 +1,6 @@
 mixin breadcrumbs(json)
-  +b.UL.breadcrumbs&attributes(attributes)
+  +b.UL.breadcrumbs(itemscope itemtype='http://schema.org/BreadcrumbList')&attributes(attributes)
     each crumb in json
-      +e.LI.item
+      +e.LI.item(itemprop='itemListElement')
         +link(href='#')
           =crumb

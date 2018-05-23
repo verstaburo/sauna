@@ -12,9 +12,9 @@ mixin offers()
     
 mixin offers-card(title, img, desc)
   +e.card&attributes(attributes)
-    +e.content
-      +e.P.title= title
+    +e.content(itemscope itemtype='http://schema.org/Offer')
+      +e.P.title(itemprop='name')= title
       +e.img
-        img(src='assets/images/' + img)
+        img(src='assets/images/' + img itemprop='image')
       +e.desc
-        a(href='#')= desc
+        a(href='#' itemprop='description')= desc

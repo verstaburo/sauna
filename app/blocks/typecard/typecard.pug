@@ -1,8 +1,8 @@
 mixin typecard(img, name)
   +b.typecard&attributes(attributes)
     +e.block
-      +e.content
+      +e.content(itemscope itemtype='http://schema.org/Offer')
         +e.img
           img(src='assets/images/'+img)
-        +e.P.name= name
-        +e.P.desc 246 заведений
+        +e.P.name(itemprop='name')= name
+        +e.P.desc(itemprop='description') 246 заведений
